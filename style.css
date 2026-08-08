@@ -11,7 +11,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme="dark"]) {
     --bg: #f4fbf7;
     --surface: #ffffff;
     --text: #062f1e;
@@ -19,6 +19,24 @@
     --accent: #059669;
     --border: #e1f2eb;
   }
+}
+
+:root[data-theme="light"] {
+  --bg: #f4fbf7;
+  --surface: #ffffff;
+  --text: #062f1e;
+  --muted: #4b6b5d;
+  --accent: #059669;
+  --border: #e1f2eb;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b0f0d;
+  --surface: #121a16;
+  --text: #ecfdf5;
+  --muted: #8ca398;
+  --accent: #10b981;
+  --border: #1e2c25;
 }
 
 * {
@@ -156,6 +174,29 @@ nav a:not([aria-current="page"])::after {
 
 nav a:not([aria-current="page"]):hover::after {
   transform: scaleX(1);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.18s var(--ease), background-color 0.18s var(--ease);
+  margin-left: 8px;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+}
+
+.theme-toggle svg {
+  display: block;
 }
 
 /* Border + shadow strengthen once the page is scrolled (progressive) */
