@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - Weather Complications for Wear OS</title>
+  <meta name="description" content="Privacy Policy for Weather Complications for Wear OS by amoledwatchfaces." />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="bar">
+      <div class="crumbs">
+        <a class="brand" href="../../">amoledwatchfaces</a>
+        <span class="sep">›</span>
+        <span class="section">Weather Complications</span>
+      </div>
+      <nav aria-label="Site">
+        <a href="../../#apps">Apps</a>
+        <a href="mailto:support@amoledwatchfaces.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Weather Complications</h1>
+    <p class="tagline">Standalone Weather & Astro Data for Wear OS</p>
+    <p class="muted" style="font-size: 0.9rem; margin-bottom: 32px;">Last Updated: August 8, 2026</p>
+
+    <div class="card">
+      <h3>Privacy Ethos</h3>
+      <p>
+        <strong>Weather Complications for Wear OS</strong> is designed as an independent, transparent utility.
+        We believe your location and environmental data belong to you. Our core principles are:
+      </p>
+      <ul>
+        <li><strong>No Advertising:</strong> We do not include any ad SDKs or tracking pixels.</li>
+        <li><strong>No User Profiles:</strong> We do not collect names, emails, or hardware identifiers (IMEI/Serial).</li>
+        <li><strong>Direct Access:</strong> Weather requests are sent directly from your watch to trusted providers.</li>
+        <li><strong>Minimal Footprint:</strong> We only request the permissions strictly necessary to show you the weather.</li>
+      </ul>
+    </div>
+
+    <h2>Data Access & Permissions</h2>
+    <p>The following system permissions are used to provide real-time weather information on your watch face.</p>
+
+    <div class="card" style="padding: 16px;">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Usage & Purpose</th>
+              <th>Feature Powered</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ACCESS_FINE_LOCATION</code></td>
+              <td>Determines your precise coordinates to fetch hyper-local weather.</td>
+              <td>Automatic location updates.</td>
+            </tr>
+            <tr>
+              <td><code>ACCESS_BACKGROUND_LOCATION</code></td>
+              <td>Allows the watch to refresh weather while the screen is off.</td>
+              <td>Active complications & tiles.</td>
+            </tr>
+            <tr>
+              <td><code>INTERNET</code></td>
+              <td>Used to transmit coordinates to weather APIs and download data.</td>
+              <td>All weather features.</td>
+            </tr>
+            <tr>
+              <td><code>ACCESS_NETWORK_STATE</code></td>
+              <td>Checks if your watch is online before attempting a refresh.</td>
+              <td>Battery saving logic.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2>Data Sharing & External Services</h2>
+    <p>To provide accurate forecasts, your watch sends your latitude and longitude coordinates to weather providers via encrypted HTTPS requests.</p>
+
+    <div class="card">
+      <p><strong>Coordinate Precision:</strong> To protect your privacy, coordinates are rounded to 4 decimal places (~11 meters) prior to transmission. This prevents exact house-level tracking while maintaining forecast accuracy.</p>
+    </div>
+
+    <h3>Integrated Weather Providers</h3>
+    <p>Depending on your settings, data may be requested from the following services:</p>
+    <div class="card">
+      <div class="service-list">
+        <div class="service-item">
+          <span>WeatherAPI.com (Default)</span>
+          <a href="https://www.weatherapi.com/privacy.aspx" target="_blank" rel="noopener">Privacy Policy</a>
+        </div>
+        <div class="service-item">
+          <span>MET Norway (api.met.no)</span>
+          <a href="https://www.met.no/en/About-us/Privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        </div>
+        <div class="service-item">
+          <span>Open-Meteo.com (AQI Data)</span>
+          <a href="https://open-meteo.com/en/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+        </div>
+        <div class="service-item">
+          <span>OpenWeatherMap.org (Optional)</span>
+          <a href="https://openweather.co.uk/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <h2>Data Storage & Retention</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Local Storage:</strong> All preferences and cached weather data are stored on your watch using Android's <code>Jetpack DataStore</code>. This storage is private to the app and cannot be accessed by other applications.</li>
+        <li><strong>Retention:</strong> Cached data is automatically overwritten during every refresh. If you change your weather provider or manual location, previous data is immediately cleared.</li>
+        <li><strong>Uninstall:</strong> All stored data, including location coordinates and API keys, is permanently deleted by the Android system when the app is uninstalled.</li>
+        <li><strong>System Backups:</strong> The app respects the <code>allowBackup="false"</code> flag to ensure that sensitive data like coordinates are not stored in unencrypted cloud backups.</li>
+      </ul>
+    </div>
+
+    <h2>No Data Sale</h2>
+    <div class="card">
+      <p>We do not sell, rent, or trade your data to third parties. There are no background services collecting your location history for marketing purposes.</p>
+    </div>
+
+    <h2>User Rights & Control</h2>
+    <div class="card">
+      <p>You have full control over your data directly from your watch:</p>
+      <ul>
+        <li><strong>Revoke Location:</strong> You can disable location access at any time via <em>Settings > Apps > Permissions</em> on your watch.</li>
+        <li><strong>Switch to Manual:</strong> You can choose a static location in the app settings, which will stop all GPS requests.</li>
+        <li><strong>Clear Cache:</strong> Switching providers or resetting the location in settings will wipe existing cached coordinates.</li>
+      </ul>
+    </div>
+
+    <h2>Children's Privacy</h2>
+    <div class="card">
+      <p>This app does not knowingly collect any personal information from children. Our services are intended for a general audience.</p>
+    </div>
+
+    <h2>Contact Info</h2>
+    <div class="card">
+      <p>If you have any questions regarding this privacy policy or the app's data handling, please contact:</p>
+      <p style="margin-top: 12px; line-height: 1.8;">
+        <strong>Developer:</strong> amoledwatchfaces.com<br />
+        <strong>Email:</strong> <a href="mailto:support@amoledwatchfaces.com">support@amoledwatchfaces.com</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 amoledwatchfaces.com. Built with privacy in mind for the Wear OS community.</p>
+  </footer>
+</body>
+</html>
