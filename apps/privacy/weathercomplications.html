@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,7 +8,7 @@
   <meta name="description" content="Privacy Policy for Weather Complications for Wear OS by amoledwatchfaces." />
   <link rel="stylesheet" href="../../style.css" />
   <script>
-    (function() {
+    (function () {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
@@ -15,19 +16,21 @@
     })();
   </script>
 </head>
+
 <body>
   <header class="site">
     <div class="bar">
       <div class="crumbs">
         <a class="brand" href="../../">amoledwatchfaces</a>
         <span class="sep">›</span>
-        <span class="section">Weather Complications</span>
+        <span class="section">Weather Complications for Wear OS</span>
       </div>
       <nav aria-label="Site">
         <a href="../../#apps">Apps</a>
         <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">Contact</a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">
-          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+            fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -38,7 +41,8 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+            fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
@@ -59,9 +63,12 @@
       </p>
       <ul>
         <li><strong>No Advertising:</strong> We do not include any ad SDKs or tracking pixels.</li>
-        <li><strong>No User Profiles:</strong> We do not collect names, emails, or hardware identifiers (IMEI/Serial).</li>
-        <li><strong>Direct Access:</strong> Weather requests are sent directly from your watch to trusted providers.</li>
-        <li><strong>Minimal Footprint:</strong> We only request the permissions strictly necessary to show you the weather.</li>
+        <li><strong>No User Profiles:</strong> We do not collect names, emails, or hardware identifiers (IMEI/Serial).
+        </li>
+        <li><strong>Direct Access:</strong> Weather requests are sent directly from your watch to trusted providers.
+        </li>
+        <li><strong>Minimal Footprint:</strong> We only request the permissions strictly necessary to show you the
+          weather.</li>
       </ul>
     </div>
 
@@ -105,10 +112,13 @@
     </div>
 
     <h2>Data Sharing & External Services</h2>
-    <p>To provide accurate forecasts, your watch sends your latitude and longitude coordinates to weather providers via encrypted HTTPS requests.</p>
+    <p>To provide accurate forecasts, your watch sends your latitude and longitude coordinates to weather providers via
+      encrypted HTTPS requests.</p>
 
     <div class="card">
-      <p><strong>Coordinate Precision:</strong> To protect your privacy, coordinates are rounded to 4 decimal places (~11 meters) prior to transmission. This prevents exact house-level tracking while maintaining forecast accuracy.</p>
+      <p><strong>Coordinate Precision:</strong> To protect your privacy, coordinates are rounded to 4 decimal places
+        (~11 meters) prior to transmission. This prevents exact house-level tracking while maintaining forecast
+        accuracy.</p>
     </div>
 
     <h3>Integrated Weather Providers</h3>
@@ -137,31 +147,41 @@
     <h2>Data Storage & Retention</h2>
     <div class="card">
       <ul>
-        <li><strong>Local Storage:</strong> All preferences and cached weather data are stored on your watch using Android's <code>Jetpack DataStore</code>. This storage is private to the app and cannot be accessed by other applications.</li>
-        <li><strong>Retention:</strong> Cached data is automatically overwritten during every refresh. If you change your weather provider or manual location, previous data is immediately cleared.</li>
-        <li><strong>Uninstall:</strong> All stored data, including location coordinates and API keys, is permanently deleted by the Android system when the app is uninstalled.</li>
-        <li><strong>System Backups:</strong> The app respects the <code>allowBackup="false"</code> flag to ensure that sensitive data like coordinates are not stored in unencrypted cloud backups.</li>
+        <li><strong>Local Storage:</strong> All preferences and cached weather data are stored on your watch using
+          Android's <code>Jetpack DataStore</code>. This storage is private to the app and cannot be accessed by other
+          applications.</li>
+        <li><strong>Retention:</strong> Cached data is automatically overwritten during every refresh. If you change
+          your weather provider or manual location, previous data is immediately cleared.</li>
+        <li><strong>Uninstall:</strong> All stored data, including location coordinates and API keys, is permanently
+          deleted by the Android system when the app is uninstalled.</li>
+        <li><strong>System Backups:</strong> The app respects the <code>allowBackup="false"</code> flag to ensure that
+          sensitive data like coordinates are not stored in unencrypted cloud backups.</li>
       </ul>
     </div>
 
     <h2>No Data Sale</h2>
     <div class="card">
-      <p>We do not sell, rent, or trade your data to third parties. There are no background services collecting your location history for marketing purposes.</p>
+      <p>We do not sell, rent, or trade your data to third parties. There are no background services collecting your
+        location history for marketing purposes.</p>
     </div>
 
     <h2>User Rights & Control</h2>
     <div class="card">
       <p>You have full control over your data directly from your watch:</p>
       <ul>
-        <li><strong>Revoke Location:</strong> You can disable location access at any time via <em>Settings > Apps > Permissions</em> on your watch.</li>
-        <li><strong>Switch to Manual:</strong> You can choose a static location in the app settings, which will stop all GPS requests.</li>
-        <li><strong>Clear Cache:</strong> Switching providers or resetting the location in settings will wipe existing cached coordinates.</li>
+        <li><strong>Revoke Location:</strong> You can disable location access at any time via <em>Settings > Apps >
+            Permissions</em> on your watch.</li>
+        <li><strong>Switch to Manual:</strong> You can choose a static location in the app settings, which will stop all
+          GPS requests.</li>
+        <li><strong>Clear Cache:</strong> Switching providers or resetting the location in settings will wipe existing
+          cached coordinates.</li>
       </ul>
     </div>
 
     <h2>Children's Privacy</h2>
     <div class="card">
-      <p>This app does not knowingly collect any personal information from children. Our services are intended for a general audience.</p>
+      <p>This app does not knowingly collect any personal information from children. Our services are intended for a
+        general audience.</p>
     </div>
 
     <h2>Contact Info</h2>
@@ -169,7 +189,8 @@
       <p>If you have any questions regarding this privacy policy or the app's data handling, please contact:</p>
       <p style="margin-top: 12px; line-height: 1.8;">
         <strong>Developer:</strong> amoledwatchfaces.com<br />
-        <strong>Email:</strong> <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">support@amoledwatchfaces.com</a>
+        <strong>Email:</strong> <a href="mailto:support@amoledwatchfaces.com" target="_blank"
+          rel="noopener">support@amoledwatchfaces.com</a>
       </p>
     </div>
   </main>
@@ -179,4 +200,5 @@
   </footer>
   <script src="../../theme.js" defer></script>
 </body>
+
 </html>
