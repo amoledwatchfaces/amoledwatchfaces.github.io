@@ -53,7 +53,7 @@
   <main>
     <h1>Weather Complications for Wear OS</h1>
     <p class="tagline">Standalone Weather & Astro Data</p>
-    <p class="muted" style="font-size: 0.9rem; margin-bottom: 32px;">Last Updated: August 8, 2026</p>
+    <p class="muted" style="font-size: 0.9rem; margin-bottom: 32px;">Last Updated: August 20, 2026</p>
 
     <div class="card">
       <h3>Privacy Ethos</h3>
@@ -134,12 +134,28 @@
           <a href="https://www.met.no/en/About-us/privacy" target="_blank" rel="noopener">Privacy Policy</a>
         </div>
         <div class="service-item">
-          <span>OpenWeatherMap.org (Optional)</span>
-          <a href="https://openweather.co.uk/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+          <span>US National Weather Service (weather.gov) (US)</span>
+          <a href="https://www.weather.gov/privacy" target="_blank" rel="noopener">Privacy Policy</a>
         </div>
-        <div class="service-item">
-          <span>Google Maps Platform (Weather, AirQuality, Alerts API) (Optional)</span>
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+        <div class="service-item" style="flex-direction: column; align-items: flex-start; gap: 4px;">
+          <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+            <span>OpenWeatherMap.org (Optional)</span>
+            <a href="https://openweather.co.uk/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+          </div>
+          <span class="muted" style="font-size: 0.85rem; line-height: 1.4;">
+            Works exclusively as BYOK (Bring Your Own Key) where the user provides their own API key. This integration
+            is entirely optional and experimental.
+          </span>
+        </div>
+        <div class="service-item" style="flex-direction: column; align-items: flex-start; gap: 4px;">
+          <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+            <span>Google Maps Platform (Weather, AirQuality, Alerts API) (Optional)</span>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+          </div>
+          <span class="muted" style="font-size: 0.85rem; line-height: 1.4;">
+            Works exclusively as BYOK (Bring Your Own Key) where the user provides their own API key. This integration
+            is entirely optional and experimental.
+          </span>
         </div>
       </div>
     </div>
