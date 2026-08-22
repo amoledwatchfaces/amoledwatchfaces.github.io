@@ -53,7 +53,7 @@
   <main>
     <h1>Weather Complications for Wear OS</h1>
     <p class="tagline">Standalone Weather & Astro Data</p>
-    <p class="muted" style="font-size: 0.9rem; margin-bottom: 32px;">Last Updated: August 20, 2026</p>
+    <p class="muted" style="font-size: 0.9rem; margin-bottom: 32px;">Last Updated: August 22, 2026</p>
 
     <div class="card">
       <h3>Privacy Ethos</h3>
@@ -160,6 +160,22 @@
       </div>
     </div>
 
+    <h3>Crash Reporting &amp; Diagnostics (Optional)</h3>
+    <p>To help improve application stability and diagnose bugs, the app contains optional crash reporting integrations:</p>
+    <div class="card">
+      <div class="service-list" style="margin: 0;">
+        <div class="service-item" style="flex-direction: column; align-items: flex-start; gap: 4px; border-bottom: none; padding-bottom: 0;">
+          <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+            <span>Firebase Crashlytics (Google)</span>
+            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+          </div>
+          <span class="muted" style="font-size: 0.85rem; line-height: 1.4;">
+            Disabled by default. If you explicitly opt-in to crash reporting in the app settings, Crashlytics will transmit anonymous crash logs, stack traces, and basic device characteristics (such as OS version and device model) to help us identify and resolve bugs. No personally identifiable information (PII) or location data is ever included in these reports.
+          </span>
+        </div>
+      </div>
+    </div>
+
     <h2>Data Storage & Retention</h2>
     <div class="card">
       <ul>
@@ -191,6 +207,7 @@
           GPS requests.</li>
         <li><strong>Clear Cache:</strong> Switching providers or resetting the location in settings will wipe existing
           cached coordinates.</li>
+        <li><strong>Crash Reporting Opt-out:</strong> You can enable or disable crash reporting at any time via the application settings on your watch.</li>
       </ul>
     </div>
 
