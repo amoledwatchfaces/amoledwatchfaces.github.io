@@ -52,25 +52,25 @@
 
   <main>
     <h1>Phone Battery Complication for Wear OS</h1>
-    <p class="tagline">Sync Battery Levels Between Your Phone &amp; Watch</p>
+    <p class="tagline">Sync Battery, Calendar, Media &amp; Notifications Between Your Phone &amp; Watch</p>
     <p class="muted" style="font-size: 0.9rem; margin-bottom: 32px;">Last Updated: August 25, 2026</p>
 
     <div class="card">
       <h3>Privacy Ethos</h3>
       <p>
-        <strong>This app</strong> is designed as a direct, helper utility to display your phone's battery level on your watch face. 
+        <strong>This app</strong> is designed as a direct helper utility to display your phone battery, watch battery, calendar events, media playback, and phone notifications directly on your watch face via Wear OS complications. 
         We believe your device status is personal. Our core principles are:
       </p>
       <ul>
         <li><strong>No Advertising:</strong> We do not include any ad SDKs or tracking pixels.</li>
         <li><strong>No Location Tracking:</strong> We do not request, access, or track your location coordinates.</li>
         <li><strong>No User Profiles:</strong> We do not collect names, emails, or hardware identifiers (IMEI/Serial).</li>
-        <li><strong>Local &amp; Direct Sync:</strong> Battery level communication happens directly between your phone and watch using Google Play Services Wearable APIs. No proprietary cloud servers are used to store or route this data.</li>
+        <li><strong>Local &amp; Direct Sync:</strong> All synchronized data (battery levels, calendar events, media playback info, and notifications) is transmitted directly between your phone and watch using Google Play Services Wearable APIs. No proprietary cloud servers are used to store or route this data.</li>
       </ul>
     </div>
 
     <h2>Data Access &amp; Permissions</h2>
-    <p>The following permissions and services are used to synchronize and display battery information:</p>
+    <p>The following permissions and services are used to synchronize and display device status, calendar events, active media, and notification information:</p>
 
     <div class="card" style="padding: 16px;">
       <div class="table-wrap">
@@ -87,7 +87,7 @@
             <tr>
               <td><code>RECEIVE_BOOT_COMPLETED</code></td>
               <td>Mobile &amp; Wear App</td>
-              <td>Allows the application/complication service to automatically re-initialize battery monitoring and syncing when the device boots up.</td>
+              <td>Allows the application/complication service to automatically re-initialize battery and data synchronization tasks when the device boots up.</td>
               <td>Automatic background sync on boot.</td>
             </tr>
             <tr>
@@ -100,13 +100,19 @@
               <td><code>READ_CALENDAR</code></td>
               <td>Mobile App</td>
               <td>Accesses local calendar events to enable syncing of event-based details to the watch complications (if enabled).</td>
-              <td>Calendar data synchronization.</td>
+              <td>Next Event complication.</td>
+            </tr>
+            <tr>
+              <td><code>NotificationListenerService</code> (Notification Access)</td>
+              <td>Mobile App</td>
+              <td>Allows the companion application to read active notifications and active media session metadata from the phone status bar to transmit them to your watch.</td>
+              <td>Phone Notifications &amp; Media Playback complications.</td>
             </tr>
             <tr>
               <td><code>Google Play Services (Wearable API)</code></td>
               <td>Mobile &amp; Wear App</td>
-              <td>Establishes a local communication channel to transfer battery levels and charging states between devices.</td>
-              <td>Real-time battery level syncing.</td>
+              <td>Establishes a local communication channel to transfer battery levels, calendar events, media states, and notification data between devices.</td>
+              <td>Real-time complication synchronization.</td>
             </tr>
           </tbody>
         </table>
@@ -145,9 +151,9 @@
     <h2>Data Storage &amp; Retention</h2>
     <div class="card">
       <ul>
-        <li><strong>Local Storage:</strong> Only the current battery percentage and charging state are temporarily cached locally on your device to feed the watch complication.</li>
-        <li><strong>Retention:</strong> Synced values are overwritten immediately whenever a new battery update is received. No historical battery level history is stored.</li>
-        <li><strong>Uninstall:</strong> All settings and cache are immediately deleted by the system when you uninstall the app from your device.</li>
+        <li><strong>Local Storage:</strong> Only the current active device status (battery levels, calendar event details, active media track/play state, and notification list) is temporarily cached locally on your device to feed the watch complications.</li>
+        <li><strong>Retention:</strong> Synced values are overwritten immediately whenever a new status update is received. No historical records, message contents, or track listings are kept.</li>
+        <li><strong>Uninstall:</strong> All settings, configurations, and cache are immediately deleted by the system when you uninstall the app from your device.</li>
       </ul>
     </div>
 
