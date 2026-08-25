@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - Phone Battery Complication for Wear OS</title>
+  <meta name="description" content="Privacy Policy for Phone Battery Complication for Wear OS by amoledwatchfaces." />
+  <link rel="stylesheet" href="../../style.css" />
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site">
+    <div class="bar">
+      <div class="crumbs">
+        <a class="brand" href="../../">amoledwatchfaces</a>
+        <span class="sep">›</span>
+        <span class="section">Phone Battery Complication for Wear OS</span>
+      </div>
+      <nav aria-label="Site">
+        <a href="../../#apps">Apps</a>
+        <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+            fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+            fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Phone Battery Complication for Wear OS</h1>
+    <p class="tagline">Sync Battery Levels Between Your Phone &amp; Watch</p>
+    <p class="muted" style="font-size: 0.9rem; margin-bottom: 32px;">Last Updated: August 25, 2026</p>
+
+    <div class="card">
+      <h3>Privacy Ethos</h3>
+      <p>
+        <strong>This app</strong> is designed as a direct, helper utility to display your phone's battery level on your watch face. 
+        We believe your device status is personal. Our core principles are:
+      </p>
+      <ul>
+        <li><strong>No Advertising:</strong> We do not include any ad SDKs or tracking pixels.</li>
+        <li><strong>No Location Tracking:</strong> We do not request, access, or track your location coordinates.</li>
+        <li><strong>No User Profiles:</strong> We do not collect names, emails, or hardware identifiers (IMEI/Serial).</li>
+        <li><strong>Local &amp; Direct Sync:</strong> Battery level communication happens directly between your phone and watch using Google Play Services Wearable APIs. No proprietary cloud servers are used to store or route this data.</li>
+      </ul>
+    </div>
+
+    <h2>Data Access &amp; Permissions</h2>
+    <p>The following permissions and services are used to synchronize and display battery information:</p>
+
+    <div class="card" style="padding: 16px;">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Permission/Service</th>
+              <th>Usage &amp; Purpose</th>
+              <th>Feature Powered</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Google Play Services (Wearable API)</code></td>
+              <td>Used to transfer battery levels and charging states between the phone and watch.</td>
+              <td>Real-time battery synchronization.</td>
+            </tr>
+            <tr>
+              <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+              <td>Allows the application to re-initialize battery level sync services when your device boots up.</td>
+              <td>Automatic background syncing.</td>
+            </tr>
+            <tr>
+              <td><code>FOREGROUND_SERVICE</code></td>
+              <td>Ensures background battery monitoring tasks can run reliably.</td>
+              <td>Complication status updates.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2>Data Sharing &amp; External Services</h2>
+    <p>All core synchronization operates entirely between your own paired devices. The only external service present in the app is optional diagnostics:</p>
+
+    <h3>Crash Reporting &amp; Diagnostics (Optional)</h3>
+    <p>To help improve application stability and diagnose bugs, the app contains optional crash reporting integrations:</p>
+    <div class="card">
+      <div class="service-list" style="margin: 0;">
+        <div class="service-item" style="flex-direction: column; align-items: flex-start; gap: 4px; border-bottom: none; padding-bottom: 0;">
+          <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+            <span>Firebase Crashlytics (Google)</span>
+            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+          </div>
+          <span class="muted" style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 8px;">
+            Disabled by default. If you explicitly opt-in to crash reporting in the app settings, Crashlytics will transmit anonymous crash logs, stack traces, and basic device characteristics (such as OS version and device model) to help us identify and resolve bugs. No personally identifiable information (PII) or location data is ever included in these reports.
+          </span>
+          <div class="muted" style="font-size: 0.8rem; line-height: 1.4; border-top: 1px solid var(--border-color); padding-top: 8px; width: 100%;">
+            <strong>Google Play Data Safety Declarations:</strong>
+            <ul style="margin: 4px 0 0 16px; padding: 0;">
+              <li><strong>Data Types:</strong> Crash logs &amp; Device or other IDs.</li>
+              <li><strong>Collected, Shared, or both?</strong> <em>Collected</em> only (not Shared, as Google/Firebase processes this data solely on our behalf).</li>
+              <li><strong>Ephemeral Processing:</strong> <em>No</em> (Firebase stores crash logs and installation IDs on its servers for analysis).</li>
+              <li><strong>User Choice:</strong> <em>Users can choose</em> whether this data is collected (collection is completely optional and controlled by an in-app toggle).</li>
+              <li><strong>Purpose of Collection:</strong> <em>App functionality</em> and/or <em>Analytics</em>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Data Storage &amp; Retention</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Local Storage:</strong> Only the current battery percentage and charging state are temporarily cached locally on your device to feed the watch complication.</li>
+        <li><strong>Retention:</strong> Synced values are overwritten immediately whenever a new battery update is received. No historical battery level history is stored.</li>
+        <li><strong>Uninstall:</strong> All settings and cache are immediately deleted by the system when you uninstall the app from your device.</li>
+      </ul>
+    </div>
+
+    <h2>No Data Sale</h2>
+    <div class="card">
+      <p>We do not sell, rent, or trade your data to third parties. We do not track your device behavior or usage patterns.</p>
+    </div>
+
+    <h2>User Rights &amp; Control</h2>
+    <div class="card">
+      <p>You have full control over the sync status and options:</p>
+      <ul>
+        <li><strong>Stop Sync:</strong> You can pause synchronization or uninstall the companion app at any time to halt communication.</li>
+        <li><strong>Crash Reporting Opt-out:</strong> You can enable or disable crash reporting at any time via the application settings on your device.</li>
+      </ul>
+    </div>
+
+    <h2>Children's Privacy</h2>
+    <div class="card">
+      <p>This app does not knowingly collect any personal information from children. Our services are intended for a general audience.</p>
+    </div>
+
+    <h2>Contact Info</h2>
+    <div class="card">
+      <p>If you have any questions regarding this privacy policy or the app's data handling, please contact:</p>
+      <p style="margin-top: 12px; line-height: 1.8;">
+        <strong>Developer:</strong> amoledwatchfaces.com<br />
+        <strong>Email:</strong> <a href="mailto:support@amoledwatchfaces.com" target="_blank"
+          rel="noopener">support@amoledwatchfaces.com</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 amoledwatchfaces.com. Built with privacy in mind for the Wear OS community.</p>
+  </footer>
+  <script src="../../theme.js" defer></script>
+</body>
+
+</html>
