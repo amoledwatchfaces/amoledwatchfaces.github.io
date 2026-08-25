@@ -93,8 +93,8 @@
             <tr>
               <td><code>QUERY_ALL_PACKAGES</code></td>
               <td>Mobile App</td>
-              <td>Scans installed packages on the mobile device to detect watch faces, manager apps, or companion components for synchronization.</td>
-              <td>Watch companion detection.</td>
+              <td>Because the app doesn't know in advance which apps will post notifications or play media, it cannot use the more restrictive <code>&lt;queries&gt;</code> element (which requires listing specific package names). This permission is the only way to ensure full compatibility with all third-party apps on newer Android versions.</td>
+              <td>Notification &amp; Media sync compatibility.</td>
             </tr>
             <tr>
               <td><code>READ_CALENDAR</code></td>
