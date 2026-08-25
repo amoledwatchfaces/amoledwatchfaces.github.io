@@ -77,26 +77,36 @@
         <table>
           <thead>
             <tr>
-              <th>Permission/Service</th>
+              <th>Permission / Service</th>
+              <th>App Scope</th>
               <th>Usage &amp; Purpose</th>
               <th>Feature Powered</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><code>Google Play Services (Wearable API)</code></td>
-              <td>Used to transfer battery levels and charging states between the phone and watch.</td>
-              <td>Real-time battery synchronization.</td>
-            </tr>
-            <tr>
               <td><code>RECEIVE_BOOT_COMPLETED</code></td>
-              <td>Allows the application to re-initialize battery level sync services when your device boots up.</td>
-              <td>Automatic background syncing.</td>
+              <td>Mobile &amp; Wear App</td>
+              <td>Allows the application/complication service to automatically re-initialize battery monitoring and syncing when the device boots up.</td>
+              <td>Automatic background sync on boot.</td>
             </tr>
             <tr>
-              <td><code>FOREGROUND_SERVICE</code></td>
-              <td>Ensures background battery monitoring tasks can run reliably.</td>
-              <td>Complication status updates.</td>
+              <td><code>QUERY_ALL_PACKAGES</code></td>
+              <td>Mobile App</td>
+              <td>Scans installed packages on the mobile device to detect watch faces, manager apps, or companion components for synchronization.</td>
+              <td>Watch companion detection.</td>
+            </tr>
+            <tr>
+              <td><code>READ_CALENDAR</code></td>
+              <td>Mobile App</td>
+              <td>Accesses local calendar events to enable syncing of event-based details to the watch complications (if enabled).</td>
+              <td>Calendar data synchronization.</td>
+            </tr>
+            <tr>
+              <td><code>Google Play Services (Wearable API)</code></td>
+              <td>Mobile &amp; Wear App</td>
+              <td>Establishes a local communication channel to transfer battery levels and charging states between devices.</td>
+              <td>Real-time battery level syncing.</td>
             </tr>
           </tbody>
         </table>
