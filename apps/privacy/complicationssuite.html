@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - Complications Suite for Wear OS</title>
+  <meta name="description" content="Privacy Policy for Complications Suite for Wear OS by amoledwatchfaces." />
+  <link rel="stylesheet" href="../../style.css" />
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site">
+    <div class="bar">
+      <div class="crumbs">
+        <a class="brand" href="../../">amoledwatchfaces</a>
+        <span class="sep">›</span>
+        <span class="section">Complications Suite for Wear OS</span>
+      </div>
+      <nav aria-label="Site">
+        <a href="../../#apps">Apps</a>
+        <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+            fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+            fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Complications Suite for Wear OS</h1>
+    <p class="tagline">Custom Date, World Clock, Water Tracker, Sunrise &amp; Moon Phases, Timers &amp; Crypto Prices</p>
+    <p class="muted" style="font-size: 0.9rem; margin-bottom: 32px;">Last Updated: August 26, 2026</p>
+
+    <div class="card">
+      <h3>Privacy Ethos</h3>
+      <p>
+        <strong>This app</strong> is designed as a fully local helper utility to add custom complications to your Wear OS watch face, including world clocks, water intake trackers, custom dates, sunrise &amp; sunset data, moon phases, timers, custom text, cryptocurrency prices (Bitcoin/Ethereum), and settings shortcuts. 
+        We believe your information belongs to you. Our core principles are:
+      </p>
+      <ul>
+        <li><strong>No Advertising:</strong> We do not include any ad SDKs or tracking pixels.</li>
+        <li><strong>No External Trackers:</strong> This application does not integrate Firebase, Google Analytics, or any other third-party crash reporting/tracking SDKs.</li>
+        <li><strong>No User Profiles:</strong> We do not collect names, emails, or hardware identifiers (IMEI/Serial).</li>
+        <li><strong>Local-First Processing:</strong> All timer configurations, app launcher shortcuts, astronomical calculations, and device setting toggles are processed entirely locally on your watch. Cryptocurrency prices are fetched directly from public APIs without sending any user metrics.</li>
+      </ul>
+    </div>
+
+    <h2>Data Access &amp; Permissions</h2>
+    <p>The following permissions and services are used strictly to power specific complication types on your watch face:</p>
+
+    <div class="card" style="padding: 16px;">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Permission / Service</th>
+              <th>Usage &amp; Purpose</th>
+              <th>Feature Powered</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ACCESS_COARSE_LOCATION</code></td>
+              <td>Used to fetch your approximate location to calculate sun/moon position, sunrise/sunset, and astronomical data. Location is never stored or transmitted.</td>
+              <td>Moon Phase &amp; Sun Position complications.</td>
+            </tr>
+            <tr>
+              <td><code>QUERY_ALL_PACKAGES</code></td>
+              <td>Retrieves the list of installed applications on your watch so you can select and launch them directly from your watch face.</td>
+              <td>App Launcher &amp; Activity Shortcut complications.</td>
+            </tr>
+            <tr>
+              <td><code>SCHEDULE_EXACT_ALARM</code> &amp; <code>USE_EXACT_ALARM</code></td>
+              <td>Schedules precise timer updates to ensure notifications and alerts trigger at the correct second.</td>
+              <td>Timer complication.</td>
+            </tr>
+            <tr>
+              <td><code>VIBRATE</code></td>
+              <td>Triggers physical watch vibration when a scheduled timer expires.</td>
+              <td>Timer complication alerts.</td>
+            </tr>
+            <tr>
+              <td><code>CHANGE_WIFI_STATE</code></td>
+              <td>Allows the application to toggle or adjust the Wi-Fi status on the device.</td>
+              <td>Wi-Fi Toggle settings shortcut.</td>
+            </tr>
+            <tr>
+              <td><code>POST_NOTIFICATIONS</code></td>
+              <td>Posts alerts or banners on the watch to inform you when a timer has finished.</td>
+              <td>Timer complication alerts.</td>
+            </tr>
+            <tr>
+              <td><code>INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code></td>
+              <td>Used to verify network status, perform basic network state actions for shortcuts, and connect to public API endpoints to retrieve real-time cryptocurrency prices. No personal data is ever transmitted or stored.</td>
+              <td>Network shortcuts &amp; Crypto price complications.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2>Data Sharing &amp; External Services</h2>
+    <p>No third-party SDKs (such as Firebase Crashlytics) or diagnostic systems are present in the app. There is no background tracking or diagnostic sharing of any kind.</p>
+
+    <h2>Data Storage &amp; Retention</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Local Storage:</strong> Your complication preferences, custom text configurations, and timer durations are stored privately on your watch using standard Android system preferences.</li>
+        <li><strong>Uninstall:</strong> All settings and cached data are permanently deleted by the Android system when you uninstall the app from your watch.</li>
+      </ul>
+    </div>
+
+    <h2>No Data Sale</h2>
+    <div class="card">
+      <p>We do not sell, rent, or trade your data to third parties. We do not track your device behavior or usage patterns.</p>
+    </div>
+
+    <h2>User Rights &amp; Control</h2>
+    <div class="card">
+      <p>You have full control over the permissions and settings directly from your watch:</p>
+      <ul>
+        <li><strong>Revoke Location:</strong> You can disable location access at any time via <em>Settings > Apps > Permissions</em> on your watch, which will disable location-based moon/sun tracking but keep all other complications fully functional.</li>
+      </ul>
+    </div>
+
+    <h2>Children's Privacy</h2>
+    <div class="card">
+      <p>This app does not knowingly collect any personal information from children. Our services are intended for a general audience.</p>
+    </div>
+
+    <h2>Contact Info</h2>
+    <div class="card">
+      <p>If you have any questions regarding this privacy policy or the app's data handling, please contact:</p>
+      <p style="margin-top: 12px; line-height: 1.8;">
+        <strong>Developer:</strong> amoledwatchfaces.com<br />
+        <strong>Email:</strong> <a href="mailto:support@amoledwatchfaces.com" target="_blank"
+          rel="noopener">support@amoledwatchfaces.com</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 amoledwatchfaces.com. Built with privacy in mind for the Wear OS community.</p>
+  </footer>
+  <script src="../../theme.js" defer></script>
+</body>
+
+</html>
