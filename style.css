@@ -716,6 +716,27 @@ footer {
   border-color: rgba(5, 150, 105, 0.25);
 }
 
+.badge-paid {
+  background-color: rgba(255, 208, 104, 0.08) !important;
+  color: #ffd068 !important;
+  border-color: rgba(255, 208, 104, 0.25) !important;
+}
+
+/* Light mode overrides for Paid badge */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .badge-paid {
+    background-color: rgba(217, 119, 6, 0.08) !important;
+    color: #d97706 !important;
+    border-color: rgba(217, 119, 6, 0.25) !important;
+  }
+}
+:root[data-theme="light"] .badge-paid {
+  background-color: rgba(217, 119, 6, 0.08) !important;
+  color: #d97706 !important;
+  border-color: rgba(217, 119, 6, 0.25) !important;
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
