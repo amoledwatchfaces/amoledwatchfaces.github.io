@@ -1,10 +1,10 @@
 :root {
-  --bg: #0b0f0d;
-  --surface: #121a16;
+  --bg: #0e1110;
+  --surface: #151b18;
   --text: #ecfdf5;
   --muted: #8ca398;
   --accent: #68ffb7;
-  --border: #1e2c25;
+  --border: #222d27;
   --radius: 14px;
   --max-width: 960px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -31,12 +31,12 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #0b0f0d;
-  --surface: #121a16;
+  --bg: #0e1110;
+  --surface: #151b18;
   --text: #ecfdf5;
   --muted: #8ca398;
   --accent: #68ffb7;
-  --border: #1e2c25;
+  --border: #222d27;
 }
 
 * {
@@ -112,7 +112,8 @@ header.site>.bar {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 1.25rem; /* Brand text stands out more */
+  font-size: 1.25rem;
+  /* Brand text stands out more */
 }
 
 .crumbs .brand:hover {
@@ -122,7 +123,8 @@ header.site>.bar {
 /* Logo visibility & swap rules */
 .logo-light,
 .logo-dark {
-  height: 22px; /* Slightly larger logo to match text */
+  height: 22px;
+  /* Slightly larger logo to match text */
   width: auto;
   display: block;
 }
@@ -130,6 +132,7 @@ header.site>.bar {
 .logo-light {
   display: block;
 }
+
 .logo-dark {
   display: none;
 }
@@ -137,6 +140,7 @@ header.site>.bar {
 :root[data-theme="dark"] .logo-light {
   display: none;
 }
+
 :root[data-theme="dark"] .logo-dark {
   display: block;
 }
@@ -145,6 +149,7 @@ header.site>.bar {
   :root:not([data-theme="light"]) .logo-light {
     display: none;
   }
+
   :root:not([data-theme="light"]) .logo-dark {
     display: block;
   }
@@ -537,7 +542,10 @@ footer {
   box-shadow: 0 8px 30px color-mix(in srgb, #000 20%, transparent);
 }
 
-.play-store-badge {
+.play-store-badge,
+.kofi-badge,
+.bmc-badge,
+.paypal-badge {
   display: inline-block;
   padding: 0 !important;
   background: none !important;
@@ -546,7 +554,10 @@ footer {
   transition: transform 0.18s var(--ease) !important;
 }
 
-.play-store-badge:hover {
+.play-store-badge:hover,
+.kofi-badge:hover,
+.bmc-badge:hover,
+.paypal-badge:hover {
   background: none !important;
   border: none !important;
   transform: translateY(-2px) scale(1.02) !important;
@@ -556,6 +567,94 @@ footer {
   height: 50px;
   width: auto;
   display: block;
+}
+
+.kofi-badge img,
+.bmc-badge img,
+.paypal-badge svg {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.app-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.sub-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 20px;
+}
+
+@media (min-width: 576px) {
+  .sub-card {
+    flex-direction: row;
+  }
+}
+
+.sub-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.sub-card-content {
+  flex-grow: 1;
+}
+
+.sub-card-content h4 {
+  font-size: 1.05rem;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+.sub-card-content p {
+  font-size: 0.9rem;
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.sub-card-content .links {
+  margin-top: 12px;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background-color: rgba(104, 255, 183, 0.08);
+  color: var(--accent);
+  border: 1px solid rgba(104, 255, 183, 0.25);
+  margin-left: 8px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Light mode overrides for badge */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .badge-pill {
+    background-color: rgba(5, 150, 105, 0.08);
+    border-color: rgba(5, 150, 105, 0.25);
+  }
+}
+:root[data-theme="light"] .badge-pill {
+  background-color: rgba(5, 150, 105, 0.08);
+  border-color: rgba(5, 150, 105, 0.25);
 }
 
 @media (prefers-reduced-motion: reduce) {

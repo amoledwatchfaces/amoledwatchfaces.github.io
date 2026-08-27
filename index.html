@@ -22,8 +22,8 @@
     <div class="bar">
       <div class="crumbs">
         <a class="brand" href="./">
-          <img src="logo_light.webp" class="logo-light" alt="amoledwatchfaces logo" />
-          <img src="logo_dark.webp" class="logo-dark" alt="amoledwatchfaces logo" />
+          <img src="assets/logo_light.webp" class="logo-light" alt="amoledwatchfaces logo" />
+          <img src="assets/logo_dark.webp" class="logo-dark" alt="amoledwatchfaces logo" />
           <span>amoledwatchfaces</span>
         </a>
       </div>
@@ -53,7 +53,7 @@
   </header>
 
   <main>
-    <img src="banner.webp" class="main-banner" alt="amoledwatchfaces banner" />
+    <img src="assets/banner.webp" class="main-banner" alt="amoledwatchfaces banner" />
     <h1>amoledwatchfaces</h1>
     <p class="tagline">Privacy-respecting watch faces and apps for Wear OS.</p>
 
@@ -64,9 +64,23 @@
           High-resolution, battery-friendly Wear OS watch faces.
           Built in Android Studio using Watch Face Format.
         </p>
+        <div class="sub-card">
+          <img src="assets/appIcons/catalog.webp" class="sub-card-icon" alt="Watch Face Catalog Icon" />
+          <div class="sub-card-content">
+            <h4>Watch Face Catalog</h4>
+            <p>All AMOLED Watch Faces in one place. Preview and find your perfect watch face.</p>
+            <div class="links">
+              <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.catalog" target="_blank" rel="noopener" class="play-store-badge">
+                <img src="assets/google-play-badge.svg" alt="Get it on Google Play" />
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div class="links">
-          <a href="https://play.google.com/store/apps/dev?id=5591589606735981545" target="_blank" rel="noopener" class="play-store-badge">
-            <img src="google-play-badge.svg" alt="Get it on Google Play" />
+          <a href="https://play.google.com/store/apps/dev?id=5591589606735981545" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="m8.306 6.987 2.449-2.449L2.999.257a2.032 2.032 0 0 0-1.983.005l7.29 6.725zM.287.95c-.178.291-.28.624-.28.977v12.146c0 .342.093.668.261.953l7.331-7.331L.287.95zM14.002 6.33l-2.336-1.289-2.625 2.624 3.217 2.967 1.745-.963c.628-.348 1.004-.972 1.004-1.67a1.894 1.894 0 0 0-1.005-1.669zM8.334 8.373.983 15.724a2.06 2.06 0 0 0 1.021.278c.34 0 .682-.086.995-.259l8.337-4.601-3.002-2.769z"/></svg>
+            Developer profile
           </a>
         </div>
       </div>
@@ -77,6 +91,7 @@
 
       <div class="apps-grid">
         <div class="card">
+          <img src="assets/appIcons/weatherComplications.webp" class="app-icon" alt="Weather Complications Icon" />
           <h3>Weather Complications for Wear OS</h3>
           <p>
             Standalone Weather & Astro Data for Wear OS. Everything runs directly on your
@@ -84,17 +99,14 @@
           </p>
           <div class="links">
             <a href="https://play.google.com/store/apps/details?id=com.weartools.weathercomplications" target="_blank" rel="noopener" class="play-store-badge">
-              <img src="google-play-badge.svg" alt="Get it on Google Play" />
+              <img src="assets/google-play-badge.svg" alt="Get it on Google Play" />
             </a>
             <a href="apps/privacy/weathercomplications.html">Privacy Policy</a>
-            <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">
-              <svg viewBox="0 -960 960 960" width="16" height="16" fill="currentColor"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z"/></svg>
-              Support
-            </a>
           </div>
         </div>
 
         <div class="card">
+          <img src="assets/appIcons/phoneBatteryComplication.webp" class="app-icon" alt="Phone Battery Complication Icon" />
           <h3>Phone Battery Complication for Wear OS</h3>
           <p>
             Sync and display your phone's battery percentage and charging state directly on your watch face.
@@ -102,34 +114,27 @@
           </p>
           <div class="links">
             <a href="https://play.google.com/store/apps/details?id=com.weartools.phonebattcomp" target="_blank" rel="noopener" class="play-store-badge">
-              <img src="google-play-badge.svg" alt="Get it on Google Play" />
+              <img src="assets/google-play-badge.svg" alt="Get it on Google Play" />
             </a>
             <a href="apps/privacy/phonebatterycomplication.html">Privacy Policy</a>
-            <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">
-              <svg viewBox="0 -960 960 960" width="16" height="16" fill="currentColor"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z"/></svg>
-              Support
-            </a>
           </div>
         </div>
 
         <div class="card">
-          <h3>Complications Suite for Wear OS</h3>
+          <img src="assets/appIcons/complicationsSuite.webp" class="app-icon" alt="Complications Suite Icon" />
+          <h3>Complications Suite for Wear OS <span class="badge-pill">Open Source</span></h3>
           <p>
             Add custom complications to your Wear OS watch face. Features world clocks, water trackers, custom dates/text,
             sunrise &amp; sunset indicators, moon phases, timers, cryptocurrency price tickers, and settings shortcuts running local-first.
           </p>
           <div class="links">
             <a href="https://play.google.com/store/apps/details?id=com.weartools.weekdayutccomp" target="_blank" rel="noopener" class="play-store-badge">
-              <img src="google-play-badge.svg" alt="Get it on Google Play" />
+              <img src="assets/google-play-badge.svg" alt="Get it on Google Play" />
             </a>
             <a href="apps/privacy/complicationssuite.html">Privacy Policy</a>
             <a href="https://github.com/amoledwatchfaces/Complications-Suite-Wear-OS/" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
               GitHub
-            </a>
-            <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">
-              <svg viewBox="0 -960 960 960" width="16" height="16" fill="currentColor"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z"/></svg>
-              Support
             </a>
           </div>
         </div>
@@ -140,20 +145,14 @@
       <h2>Support the Project</h2>
       <div class="card support-card">
         <p>
-          amoledwatchfaces is built and maintained by independent developers with a strong focus on privacy. If you enjoy our watch faces and apps, please consider supporting our work!
+          amoledwatchfaces is built and maintained by Tomáš Marcinčin, a solo independent developer with a strong focus on privacy. If you enjoy my watch faces and apps, please consider supporting my work!
         </p>
         <div class="links donation-links">
-          <a href="https://buymeacoffee.com/amoledwatchfaces" target="_blank" rel="noopener" class="bmc-btn">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379c-.197-.069-.42-.098-.57-.241c-.152-.143-.196-.366-.231-.572c-.065-.378-.125-.756-.192-1.133c-.057-.325-.102-.69-.25-.987c-.195-.4-.597-.634-.996-.788a6 6 0 0 0-.626-.194c-1-.263-2.05-.36-3.077-.416a26 26 0 0 0-3.7.062c-.915.083-1.88.184-2.75.5c-.318.116-.646.256-.888.501c-.297.302-.393.77-.177 1.146c.154.267.415.456.692.58c.36.162.737.284 1.123.366c1.075.238 2.189.331 3.287.37q1.829.074 3.65-.118q.449-.05.896-.119c.352-.054.578-.513.474-.834c-.124-.383-.457-.531-.834-.473c-.466.074-.96.108-1.382.146q-1.767.12-3.536.006a22 22 0 0 1-1.157-.107c-.086-.01-.18-.025-.258-.036q-.364-.055-.724-.13c-.111-.027-.111-.185 0-.212h.005q.416-.09.838-.147h.002c.131-.009.263-.032.394-.048a25 25 0 0 1 3.426-.12q1.011.029 2.017.144l.228.031q.4.06.798.145c.392.085.895.113 1.07.542c.055.137.08.288.111.431l.319 1.484a.237.237 0 0 1-.199.284h-.003l-.112.015a37 37 0 0 1-4.743.295a37 37 0 0 1-4.699-.304c-.14-.017-.293-.042-.417-.06c-.326-.048-.649-.108-.973-.161c-.393-.065-.768-.032-1.123.161c-.29.16-.527.404-.675.701c-.154.316-.199.66-.267 1c-.069.34-.176.707-.135 1.056c.087.753.613 1.365 1.37 1.502a39.7 39.7 0 0 0 11.343.376a.483.483 0 0 1 .535.53l-.071.697l-1.018 9.907c-.041.41-.047.832-.125 1.237c-.122.637-.553 1.028-1.182 1.028H6.708l-1.018-9.907l-.071-.697a.483.483 0 0 1 .535-.53a39.7 39.7 0 0 0 11.343-.376c.757-.137 1.283-.749 1.37-1.502c.041-.349-.066-.716-.135-1.056c-.068-.34-.113-.684-.267-1c-.148-.297-.385-.541-.675-.701c-.355-.193-.73-.226-1.123-.161c-.324.053-.647.113-.973.161c-.124.018-.277.043-.417.06a37 37 0 0 1-4.699.304a37 37 0 0 1-4.743-.295l-.112-.015h-.003a.237.237 0 0 1-.199-.284l.319-1.484c.031-.143.056-.294.111-.431c.175-.429.678-.457 1.07-.542c.394-.085.798-.145.798-.145l.228-.031c1.006-.115 2.006-.144 2.017-.144a25 25 0 0 1 3.426.12c.131.016.263.039.394.048h.002c.422.057.838.147.838.147h.005c.111.027.111.185 0 .212c-.078.011-.172.026-.258.036a22 22 0 0 1-1.157.107c-1.769.114-3.538.006-3.536-.006c-.422-.038-.916-.072-1.382-.146c-.377-.058-.71.09-.834.473c-.104.321.122.78.474.834c.447.069.896.119 1.345.168q2.301.292 4.65.118q1.098-.039 2.213-.37c.386-.082.763-.204 1.123-.366c.277-.124.538-.313.692-.58c.216-.376.12-.844-.177-1.146c-.242-.245-.57-.385-.888-.501c-.87-.316-1.835-.417-2.75-.5a26 26 0 0 0-3.7-.062c-1.027.056-2.077.153-3.077.416c-.223.06-.43.125-.626.194c-.399.154-.801.488-.996.788c-.148.297-.193.662-.25.987c-.067.377-.127.755-.192 1.133c-.035.206-.079.429-.231.572c-.15.143-.373.172-.57.241c-.613.216-.882.781-1.001 1.379l-.132.666z"/></svg>
-            Buy Me a Coffee
+          <a href="https://buymeacoffee.com/amoledwatchfaces" target="_blank" rel="noopener" class="bmc-badge">
+            <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=amoledwatchfaces&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" alt="Buy me a coffee" />
           </a>
-          <a href="https://ko-fi.com/amoledwatchfaces" target="_blank" rel="noopener" class="kofi-btn">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            Ko-fi
-          </a>
-          <a href="https://www.paypal.com/donate/?hosted_button_id=3W35U8RUSUZP4" target="_blank" rel="noopener" class="paypal-btn">
-            <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.35.35 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91q.57-.403.993-1.005a4.94 4.94 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.7 2.7 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.7.7 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016q.326.186.548.438c.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.87.87 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.35.35 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32z"/></svg>
-            PayPal
+          <a href="https://ko-fi.com/amoledwatchfaces" target="_blank" rel="noopener" class="kofi-badge">
+            <img src="assets/social/support_me_on_kofi_beige.webp" alt="Support Me on Ko-fi" />
           </a>
         </div>
       </div>
@@ -163,13 +162,13 @@
   <footer>
     <div class="socials">
       <a href="https://www.instagram.com/amoledwatchfaces" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24"><path d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 1 0 12.324 6.162 6.162 0 0 1 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 1 0 2.881 1.44 1.44 0 0 1 0-2.881z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 1 0 12.324 6.162 6.162 0 0 1 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 1 0 2.881 1.44 1.44 0 0 1 0-2.881z" fill="currentColor"/></svg>
       </a>
       <a href="https://t.me/amoledwatchfaces" target="_blank" rel="noopener" aria-label="Telegram">
-        <svg viewBox="0 0 24 24"><path d="M11.944 0C5.344 0 0 5.344 0 11.944c0 6.6 5.344 11.944 11.944 11.944 6.6 0 11.944-5.344 11.944-11.944C23.888 5.344 18.544 0 11.944 0zm5.895 8.222l-1.97 9.28c-.146.658-.538.818-1.085.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.24-.213-.054-.33-.373-.118l-6.87 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.46c.538-.196 1.006.128.832.941z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.944 0C5.344 0 0 5.344 0 11.944c0 6.6 5.344 11.944 11.944 11.944 6.6 0 11.944-5.344 11.944-11.944C23.888 5.344 18.544 0 11.944 0zm5.895 8.222l-1.97 9.28c-.146.658-.538.818-1.085.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.24-.213-.054-.33-.373-.118l-6.87 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.46c.538-.196 1.006.128.832.941z" fill="currentColor"/></svg>
       </a>
       <a href="https://www.facebook.com/amoledwatchfaces" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="currentColor"/></svg>
       </a>
     </div>
     <p>&copy; 2026 amoledwatchfaces.com. Built with privacy in mind for the Wear OS community.</p>
