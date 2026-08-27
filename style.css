@@ -577,6 +577,19 @@ footer {
   display: block;
 }
 
+.donation-links {
+  align-items: center;
+}
+
+.donation-links iframe {
+  transition: transform 0.18s var(--ease) !important;
+  display: block;
+}
+
+.donation-links iframe:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
 .app-icon {
   width: 64px;
   height: 64px;
