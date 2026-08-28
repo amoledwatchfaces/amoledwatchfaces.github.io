@@ -746,3 +746,29 @@ footer {
     animation: none !important;
   }
 }
+
+/* ----------------------------------------------------------------------------
+   App Screenshots
+---------------------------------------------------------------------------- */
+.screenshots-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+.app-screenshot {
+  width: calc(50% - 6px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  background: var(--bg);
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.app-screenshot:hover {
+  transform: scale(1.04);
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  box-shadow: 0 4px 16px color-mix(in srgb, #000 12%, transparent);
+}
