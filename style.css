@@ -6,7 +6,7 @@
   --accent: #68ffb7;
   --border: #222d27;
   --radius: 14px;
-  --max-width: 960px;
+  --max-width: 1200px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -1145,84 +1145,83 @@ footer {
   margin-top: 0 !important;
 }
 
-.watch-mockup-link {
+.watch-preview-link {
   display: block;
   text-decoration: none;
-  transition: transform 0.25s var(--ease);
+  margin-bottom: 16px;
 }
 
-.watch-mockup-link:hover {
-  transform: scale(1.03);
-}
-
-.watch-mockup {
-  position: relative;
-  width: 100%;
-  max-width: 210px;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto 16px;
+.watch-icons-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.watch-case-frame {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: none;
-  z-index: 2;
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+  padding: 8px 0;
+  min-height: 155px;
 }
 
-.watch-case-frame.frame-dark {
+.watch-icons-wrapper.single-icon {
+  justify-content: center;
+}
+
+.watch-icons-wrapper.dual-icons {
+  justify-content: space-evenly;
+  gap: 12px;
+}
+
+.watch-icon-preview {
+  width: 140px;
+  height: 140px;
+  max-width: 47%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  object-fit: cover;
   display: block;
+  box-shadow: 0 8px 24px color-mix(in srgb, #000 24%, transparent);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
 }
 
-.watch-case-frame.frame-light {
-  display: none;
+.watch-icons-wrapper.single-icon .watch-icon-preview {
+  max-width: 140px;
 }
 
-/* Light mode overrides for watch case frame */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .watch-case-frame.frame-dark {
+.watch-icon-preview:hover {
+  transform: translateY(-3px) scale(1.04);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px color-mix(in srgb, #000 36%, transparent);
+}
+
+/* Responsive scaling: make icons larger on smaller / mobile screens */
+@media (max-width: 640px) {
+  .watch-icons-wrapper {
+    min-height: 175px;
+    padding: 12px 0;
+  }
+
+  .watch-icons-wrapper.single-icon .watch-icon-preview {
+    width: 185px;
+    height: 185px;
+    max-width: 65%;
+  }
+
+  .watch-icons-wrapper.dual-icons .watch-icon-preview {
+    width: 155px;
+    height: 155px;
+    max-width: 47%;
+  }
+}
+
+/* If space is too constrained on very small screens, show only one icon */
+@media (max-width: 320px) {
+  .watch-icons-wrapper.dual-icons .secondary-icon {
     display: none;
   }
-  :root:not([data-theme="dark"]) .watch-case-frame.frame-light {
-    display: block;
-    filter: drop-shadow(0 6px 16px color-mix(in srgb, #000 16%, transparent));
+
+  .watch-icons-wrapper.dual-icons .watch-icon-preview {
+    max-width: 180px;
+    width: 100%;
   }
-}
-
-:root[data-theme="light"] .watch-case-frame.frame-dark {
-  display: none;
-}
-
-:root[data-theme="light"] .watch-case-frame.frame-light {
-  display: block;
-  filter: drop-shadow(0 6px 16px color-mix(in srgb, #000 16%, transparent));
-}
-
-:root[data-theme="dark"] .watch-case-frame.frame-dark {
-  display: block;
-}
-
-:root[data-theme="dark"] .watch-case-frame.frame-light {
-  display: none;
-}
-
-.watch-face-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 72.1%;
-  height: 72.1%;
-  border-radius: 50%;
-  object-fit: cover;
-  z-index: 1;
 }
 
 .collection-info {

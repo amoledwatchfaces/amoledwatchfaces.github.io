@@ -9,6 +9,7 @@
         "lastUpdated":  "Aug 18, 2026",
         "releaseDate":  "Aug 26, 2026",
         "icon":  "assets/icons/ultra2.webp",
+        "icon2":  "assets/icons/ultra2_1.webp",
         "shortDescription":  "Sleek, highly customizable watch face. Inspired by Galaxy Watch Ultra 2 Analog."
     },
     {
@@ -21,6 +22,7 @@
         "lastUpdated":  "Aug 7, 2026",
         "releaseDate":  "Aug 7, 2026",
         "icon":  "assets/icons/matte.webp",
+        "icon2":  "assets/icons/matte_1.webp",
         "shortDescription":  "Simple and stylish watch face with large digital clock and custom complications."
     },
     {
@@ -33,6 +35,7 @@
         "lastUpdated":  "Jul 17, 2026",
         "releaseDate":  "Jul 17, 2026",
         "icon":  "assets/icons/military2.webp",
+        "icon2":  "assets/icons/military2_1.webp",
         "shortDescription":  "Tactical aesthetics, an improved LCD digital font, and extensive customization."
     },
     {
@@ -45,6 +48,7 @@
         "lastUpdated":  "Jul 3, 2026",
         "releaseDate":  "Jul 3, 2026",
         "icon":  "assets/icons/vertex.webp",
+        "icon2":  "assets/icons/vertex_1.webp",
         "shortDescription":  "Circular layout with 8 customizable complications. Simple, clean, and effective."
     },
     {
@@ -57,6 +61,7 @@
         "lastUpdated":  "Unknown",
         "releaseDate":  "Jun 10, 2026",
         "icon":  "assets/icons/zenith.webp",
+        "icon2":  "assets/icons/zenith_1.webp",
         "shortDescription":  "7 custom complication slots, weather, gradient progress bars and more."
     },
     {
@@ -69,6 +74,7 @@
         "lastUpdated":  "Unknown",
         "releaseDate":  "May 25, 2026",
         "icon":  "assets/icons/gravity.webp",
+        "icon2":  "assets/icons/gravity_1.webp",
         "shortDescription":  "Designed with a native Wear OS aesthetic. Customizable \u0026 battery friendly."
     },
     {
@@ -81,6 +87,7 @@
         "lastUpdated":  "Unknown",
         "releaseDate":  "May 11, 2026",
         "icon":  "assets/icons/epoch.webp",
+        "icon2":  "assets/icons/epoch_1.webp",
         "shortDescription":  "Sleek analog watch face featuring dynamic date rings and custom complications."
     },
     {
@@ -93,6 +100,7 @@
         "lastUpdated":  "Apr 24, 2026",
         "releaseDate":  "Apr 23, 2026",
         "icon":  "assets/icons/grid.webp",
+        "icon2":  "assets/icons/grid_1.webp",
         "shortDescription":  "Only custom complications, that\u0027s it."
     },
     {
@@ -1221,6 +1229,7 @@
         "lastUpdated":  "Mar 31, 2026",
         "releaseDate":  "May 1, 2023",
         "icon":  "assets/icons/digitalinformer.webp",
+        "icon2":  "assets/icons/digitalinformer_1.webp",
         "shortDescription":  "Material design watch face for Wear OS devices. Battery friendly \u0026 customizable."
     },
     {

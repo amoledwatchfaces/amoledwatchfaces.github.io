@@ -57,13 +57,19 @@ function createCardElement(item) {
 
   const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(item.packageName)}`;
 
+  const hasIcon2 = Boolean(item.icon2);
+  const iconsHtml = hasIcon2
+    ? `<div class="watch-icons-wrapper dual-icons">
+        <img src="${item.icon}" alt="${item.appName}" class="watch-icon-preview primary-icon" loading="lazy" />
+        <img src="${item.icon2}" alt="${item.appName} variation" class="watch-icon-preview secondary-icon" loading="lazy" />
+      </div>`
+    : `<div class="watch-icons-wrapper single-icon">
+        <img src="${item.icon}" alt="${item.appName}" class="watch-icon-preview" loading="lazy" />
+      </div>`;
+
   card.innerHTML = `
-    <a href="${playStoreUrl}" target="_blank" rel="noopener" class="watch-mockup-link" aria-label="${item.appName} on Google Play">
-      <div class="watch-mockup">
-        <img src="${item.icon}" alt="${item.appName}" class="watch-face-icon" loading="lazy" />
-        <img src="assets/luna_crown_adjusted_dark_2.png" alt="" class="watch-case-frame frame-dark" aria-hidden="true" />
-        <img src="assets/luna_crown_adjusted_light_2.png" alt="" class="watch-case-frame frame-light" aria-hidden="true" />
-      </div>
+    <a href="${playStoreUrl}" target="_blank" rel="noopener" class="watch-preview-link" aria-label="${item.appName} on Google Play">
+      ${iconsHtml}
     </a>
     <div class="collection-info">
       <div class="collection-header">
