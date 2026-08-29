@@ -64,7 +64,7 @@ html {
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 48px 21.6px 96px;
+  padding: 48px 21.6px 0;
 }
 
 /* ----------------------------------------------------------------------------
@@ -355,15 +355,15 @@ ul {
   }
 }
 
-.card:has(.links) {
+.apps-grid .card {
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-top: 0 !important;
+  margin-top: 0;
   /* Override vertical margin for grid layout */
 }
 
-.card:has(.links) p {
+.apps-grid .card p {
   flex-grow: 1;
 }
 
@@ -493,7 +493,7 @@ code {
 footer {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 24px;
+  padding: 76px 21.6px 24px;
   color: var(--muted);
   font-size: 0.9rem;
   text-align: center;
@@ -548,6 +548,11 @@ footer {
   margin-bottom: 32px;
   display: block;
   box-shadow: 0 8px 30px color-mix(in srgb, #000 20%, transparent);
+}
+
+.bottom-banner {
+  margin-top: 32px;
+  margin-bottom: 0;
 }
 
 .play-store-badge,
@@ -917,4 +922,72 @@ footer {
   font-size: 18px;
   line-height: 1;
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ----------------------------------------------------------------------------
+   Installation Guide Page
+---------------------------------------------------------------------------- */
+.guide-method {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 21.6px;
+  margin-top: 24px;
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.guide-method:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+.guide-method-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.guide-method-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.guide-steps-list {
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.guide-steps-list li {
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.guide-substeps {
+  margin-top: 8px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style-type: lower-alpha;
+}
+
+.guide-note {
+  background: color-mix(in srgb, var(--text) 4%, transparent);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.guide-note strong {
+  color: var(--text);
 }
