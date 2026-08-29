@@ -772,3 +772,149 @@ footer {
   border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
   box-shadow: 0 4px 16px color-mix(in srgb, #000 12%, transparent);
 }
+
+/* ----------------------------------------------------------------------------
+   BOGO Promotion Page
+---------------------------------------------------------------------------- */
+.bogo-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.bogo-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 21.6px;
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.bogo-step:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+.bogo-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bogo-step-content {
+  flex-grow: 1;
+}
+
+.bogo-step-content h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.bogo-step-content p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.bogo-delivery {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: var(--radius);
+  padding: 18px 21.6px;
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bogo-delivery-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.bogo-delivery p {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.bogo-disclaimer {
+  background: var(--surface);
+  border-inline-start: 4px solid var(--muted);
+  border-block: 1px solid var(--border);
+  border-inline-end: 1px solid var(--border);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px;
+  margin: 24px 0;
+}
+
+.bogo-disclaimer h4 {
+  margin: 0 0 6px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.bogo-disclaimer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.bogo-thanks {
+  text-align: center;
+  padding: 24px 21.6px;
+  margin-top: 24px;
+}
+
+.bogo-thanks h3 {
+  color: var(--accent);
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+}
+
+.bogo-thanks p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.bogo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.bogo-actions a {
+  width: 240px;
+  max-width: 100%;
+  justify-content: center;
+}
+
+.material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
