@@ -767,6 +767,219 @@ footer {
   border-color: rgba(217, 119, 6, 0.25) !important;
 }
 
+.badge-latest {
+  background-color: color-mix(in srgb, var(--accent) 18%, transparent) !important;
+  color: var(--accent) !important;
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent) !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 0 !important;
+}
+
+.badge-coming-soon {
+  background-color: rgba(236, 72, 153, 0.15) !important;
+  color: #f472b6 !important;
+  border-color: rgba(236, 72, 153, 0.35) !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 0 !important;
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ----------------------------------------------------------------------------
+   Latest / Most Recent Release Featured Card
+---------------------------------------------------------------------------- */
+.latest-release-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 32px;
+  padding: 26px;
+  margin-top: 24px;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  animation: RunAniFadeInSlow 0.8s ease-out both;
+}
+
+.latest-release-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.latest-release-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.latest-release-slides-wrapper {
+  position: relative;
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px color-mix(in srgb, #000 28%, transparent), 0 0 20px color-mix(in srgb, var(--accent) 15%, transparent);
+  overflow: hidden;
+  background: var(--bg);
+  display: block;
+  text-decoration: none;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.latest-release-slides-wrapper:hover {
+  transform: scale(1.03);
+  border-color: var(--accent);
+  box-shadow: 0 12px 36px color-mix(in srgb, #000 35%, transparent), 0 0 26px color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+.latest-release-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.latest-release-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.latest-release-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.latest-release-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.latest-release-dot.active {
+  width: 18px;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+.latest-release-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.latest-release-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.latest-release-date {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+.latest-release-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.latest-release-title-link {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.18s var(--ease);
+}
+
+.latest-release-title-link:hover {
+  color: var(--accent);
+}
+
+.latest-release-desc {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.latest-release-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.status-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: color-mix(in srgb, var(--text) 6%, transparent);
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+@media (max-width: 640px) {
+  .latest-release-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+    padding: 22px;
+  }
+
+  .latest-release-badge-row {
+    justify-content: center;
+  }
+
+  .latest-release-date {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .latest-release-actions {
+    justify-content: center;
+  }
+
+  .latest-release-slides-wrapper {
+    width: 170px;
+    height: 170px;
+  }
+}
+
 
 /* ----------------------------------------------------------------------------
    App Screenshots
