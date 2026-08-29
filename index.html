@@ -120,6 +120,56 @@
             Developer profile
           </a>
         </div>
+     </section>
+
+    <section id="collection">
+      <div class="collection-title-row">
+        <h2>Collection</h2>
+        <span id="collection-count" class="collection-count"></span>
+      </div>
+
+      <div class="collection-controls">
+        <div class="filter-chips" role="tablist" aria-label="Filter watch faces">
+          <button type="button" class="filter-chip active" data-filter="all">All</button>
+          <button type="button" class="filter-chip" data-filter="analog">Analog</button>
+          <button type="button" class="filter-chip" data-filter="digital">Digital</button>
+          <button type="button" class="filter-chip" data-filter="weather">Weather</button>
+        </div>
+
+        <div class="sort-wrapper">
+          <label for="sort-select" class="sort-label">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 16 4 4 4-4"></path>
+              <path d="M7 20V4"></path>
+              <path d="m21 8-4-4-4 4"></path>
+              <path d="M17 4v16"></path>
+            </svg>
+            <span>Sort by:</span>
+          </label>
+          <div class="select-container">
+            <select id="sort-select" class="sort-select" aria-label="Sort watch faces">
+              <option value="release-desc">Release Date</option>
+              <option value="updated-desc">Last Updated</option>
+              <option value="alphabetical">Alphabetical</option>
+            </select>
+            <svg class="select-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div id="collection-grid" class="collection-grid">
+        <!-- Watch face cards dynamically rendered by js/collection.js -->
+      </div>
+
+      <div id="collection-actions" class="collection-actions">
+        <button id="load-more-btn" class="collection-btn btn-load-more" type="button">
+          Load More
+        </button>
+        <button id="show-all-btn" class="collection-btn btn-show-all" type="button">
+          Show All
+        </button>
       </div>
     </section>
 
@@ -176,7 +226,10 @@
     </div>
     <p>&copy; 2026 amoledwatchfaces.com. Built with privacy in mind for the Wear OS community.</p>
   </footer>
+
   <script src="theme.js" defer></script>
+  <script src="js/portfolio.js"></script>
+  <script src="js/collection.js" defer></script>
 </body>
 
 </html>
