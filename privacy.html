@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - Watch Faces | amoledwatchfaces</title>
+  <meta name="description" content="Privacy Policy for Wear OS watch faces by amoledwatchfaces." />
+  <meta name="theme-color" content="#0e1110" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png" />
+  <link rel="shortcut icon" type="image/png" href="assets/favicon/favicon.png" />
+
+  <link rel="stylesheet" href="style.css?v=1.4" />
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site">
+    <div class="bar">
+      <div class="crumbs">
+        <a class="brand" href="./">
+          <img src="assets/logo_light.webp" class="logo-light" alt="amoledwatchfaces logo" />
+          <img src="assets/logo_dark.webp" class="logo-dark" alt="amoledwatchfaces logo" />
+          <span>amoledwatchfaces</span>
+        </a>
+        <span class="sep">›</span>
+        <span class="section">Privacy Policy</span>
+      </div>
+      <nav aria-label="Site">
+        <a href="./">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="bogo.html">BOGO</a>
+        <a href="guide.html">Guide</a>
+        <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+            fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+            fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="tagline">Wear OS Watch Faces by amoledwatchfaces</p>
+    <p class="muted" style="font-size: 0.95rem; margin-bottom: 32px;">Last Updated: August 29, 2026</p>
+
+    <div class="card">
+      <h3>Overview & Core Principles</h3>
+      <p>
+        At <strong>amoledwatchfaces</strong>, we respect your privacy. Our Wear OS watch faces are built with a privacy-by-design approach. We do not collect, store, share, or sell any of your personal data.
+      </p>
+      <ul>
+        <li><strong>No Personal Data Collection:</strong> We do not collect names, email addresses, phone numbers, IP addresses, or device serial numbers.</li>
+        <li><strong>No Tracking or Analytics:</strong> Our watch faces do not include third-party advertising SDKs, tracking pixels, or telemetry frameworks.</li>
+        <li><strong>100% Local Execution:</strong> All watch faces run entirely on your watch device using Google's native Watch Face Format (WFF).</li>
+      </ul>
+    </div>
+
+    <h2>Device Permissions & Sensor Data</h2>
+    <p>
+      Depending on the features and complications you choose to display, a watch face may request specific system permissions on your Wear OS device:
+    </p>
+
+    <div class="card">
+      <h3>Sensor Data (Heart Rate & Health)</h3>
+      <p>
+        If a watch face displays body sensor metrics (e.g. heart rate or step count), it accesses these values locally in real time via the standard Wear OS / Health Services APIs. This information is processed exclusively on your device to display the complication value and is never recorded, transmitted, or shared externally.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Complication Data</h3>
+      <p>
+        Watch faces support user-selected complication slots (such as calendar events, weather, world clock, or battery status). All complication data is supplied directly by your chosen system complication providers and Wear OS. The watch face merely renders the provided data on the screen.
+      </p>
+    </div>
+
+    <h2>Third-Party Services</h2>
+    <p>
+      Our watch faces do not integrate with any external cloud servers or third-party data brokers. Standard purchases, downloads, and app updates are managed directly and securely through Google Play, subject to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.
+    </p>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      Our watch faces do not collect any personal information from anyone, including children under the age of 13.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect improvements or regulatory updates. Any changes will be posted directly on this page with an updated revision date.
+    </p>
+
+    <h2>Contact Us</h2>
+    <p>
+      If you have any questions or feedback regarding this Privacy Policy or any of our watch faces, please contact us at:
+    </p>
+    <div class="links" style="margin-top: 16px; margin-bottom: 32px;">
+      <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">
+        support@amoledwatchfaces.com
+      </a>
+    </div>
+  </main>
+
+  <script src="theme.js"></script>
+</body>
+
+</html>

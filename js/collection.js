@@ -60,11 +60,11 @@ function createCardElement(item) {
   const hasIcon2 = Boolean(item.icon2);
   const iconsHtml = hasIcon2
     ? `<div class="watch-icons-wrapper dual-icons">
-        <img src="${item.icon}" alt="${item.appName}" class="watch-icon-preview primary-icon" loading="lazy" />
-        <img src="${item.icon2}" alt="${item.appName} variation" class="watch-icon-preview secondary-icon" loading="lazy" />
+        <img src="${item.icon}" alt="${item.appName}" class="watch-icon-preview primary-icon" />
+        <img src="${item.icon2}" alt="${item.appName} variation" class="watch-icon-preview secondary-icon" />
       </div>`
     : `<div class="watch-icons-wrapper single-icon">
-        <img src="${item.icon}" alt="${item.appName}" class="watch-icon-preview" loading="lazy" />
+        <img src="${item.icon}" alt="${item.appName}" class="watch-icon-preview" />
       </div>`;
 
   card.innerHTML = `
@@ -92,8 +92,27 @@ function createCardElement(item) {
   return card;
 }
 
+function animateCardEntry(card, delayMs = 0) {
+  if (typeof card.animate === 'function') {
+    card.animate(
+      [
+        { opacity: 0, transform: 'translateY(-24px)' },
+        { opacity: 1, transform: 'translateY(0)' }
+      ],
+      {
+        duration: 750,
+        delay: delayMs,
+        easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+        fill: 'both'
+      }
+    );
+  }
+}
+
+let previouslyRenderedCount = 0;
+
 // Render the grid and update pagination controls
-function render() {
+function render(isAppend = false) {
   const grid = document.getElementById('collection-grid');
   const countEl = document.getElementById('collection-count');
   const loadMoreBtn = document.getElementById('load-more-btn');
@@ -104,32 +123,47 @@ function render() {
 
   const processedList = getProcessedList();
   const total = processedList.length;
-  const itemsToDisplay = processedList.slice(0, visibleCount);
+  const targetCount = Math.min(visibleCount, total);
 
-  // Clear existing cards
-  grid.innerHTML = '';
+  if (!isAppend) {
+    // Clear and render first page
+    grid.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+    const itemsToDisplay = processedList.slice(0, targetCount);
+    itemsToDisplay.forEach((item, index) => {
+      const card = createCardElement(item);
+      fragment.appendChild(card);
+      animateCardEntry(card, Math.min(index * 50, 350));
+    });
+    grid.appendChild(fragment);
+  } else {
+    // Incrementally append only newly revealed cards
+    const fragment = document.createDocumentFragment();
+    const itemsToAppend = processedList.slice(previouslyRenderedCount, targetCount);
+    itemsToAppend.forEach((item, index) => {
+      const card = createCardElement(item);
+      fragment.appendChild(card);
+      animateCardEntry(card, Math.min(index * 50, 450));
+    });
+    grid.appendChild(fragment);
+  }
 
-  // Render cards
-  const fragment = document.createDocumentFragment();
-  itemsToDisplay.forEach((item) => {
-    fragment.appendChild(createCardElement(item));
-  });
-  grid.appendChild(fragment);
+  previouslyRenderedCount = targetCount;
 
   // Update item counter
   if (countEl) {
-    countEl.textContent = `Showing ${itemsToDisplay.length} of ${total} watch faces`;
+    countEl.textContent = `Showing ${targetCount} of ${total} watch faces`;
   }
 
   // Update button visibility and state
   if (actionsContainer) {
-    if (visibleCount >= total) {
+    if (targetCount >= total) {
       if (loadMoreBtn) loadMoreBtn.style.display = 'none';
       if (showAllBtn) showAllBtn.style.display = 'none';
     } else {
       if (loadMoreBtn) {
         loadMoreBtn.style.display = 'inline-flex';
-        const remaining = total - visibleCount;
+        const remaining = total - targetCount;
         const nextBatch = Math.min(remaining, LOAD_MORE_STEP);
         loadMoreBtn.textContent = `Load More (+${nextBatch})`;
       }
@@ -150,7 +184,7 @@ function initCollection() {
       chip.classList.add('active');
       currentFilter = chip.dataset.filter || 'all';
       visibleCount = INITIAL_LOAD_COUNT;
-      render();
+      render(false);
     });
   });
 
@@ -160,7 +194,7 @@ function initCollection() {
     sortSelect.addEventListener('change', (e) => {
       currentSort = e.target.value;
       visibleCount = INITIAL_LOAD_COUNT;
-      render();
+      render(false);
     });
   }
 
@@ -169,7 +203,7 @@ function initCollection() {
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', () => {
       visibleCount += LOAD_MORE_STEP;
-      render();
+      render(true);
     });
   }
 
@@ -178,12 +212,12 @@ function initCollection() {
   if (showAllBtn) {
     showAllBtn.addEventListener('click', () => {
       visibleCount = getPortfolio().length;
-      render();
+      render(true);
     });
   }
 
   // Initial render
-  render();
+  render(false);
 }
 
 // Initialize on DOM ready
