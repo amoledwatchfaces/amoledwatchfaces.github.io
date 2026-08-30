@@ -97,12 +97,13 @@ self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
   const playUrl = findNestedValue(event.notification, 'play_url') || findNestedValue(event.notification, 'playurl');
-  const defaultUrl = findNestedValue(event.notification, 'url') ||
+  const websiteUrl = findNestedValue(event.notification, 'url') ||
     findNestedValue(event.notification, 'link') ||
     findNestedValue(event.notification, 'click_action') ||
     '/';
 
-  let urlToOpen = defaultUrl;
+  // Card click opens webpage ('/'), button click opens Google Play
+  let urlToOpen = websiteUrl;
   if (event.action === 'open_play_store' && playUrl) {
     urlToOpen = playUrl;
   }
