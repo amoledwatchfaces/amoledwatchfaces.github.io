@@ -62,9 +62,31 @@ html {
 }
 
 main {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 24px 21.6px 0;
+}
+
+/* ----------------------------------------------------------------------------
+   Snow / Particles Canvas Container (Full-screen overlay covering header & content)
+---------------------------------------------------------------------------- */
+#particles-js,
+#particles-js canvas,
+.tsparticles-canvas-el {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  z-index: 9999 !important;
 }
 
 /* ----------------------------------------------------------------------------
@@ -244,6 +266,26 @@ nav a:not([aria-current="page"]):hover::after {
 
 .theme-toggle svg {
   display: block;
+}
+
+.snow-toggle {
+  margin-left: 4px;
+}
+
+.snow-toggle .material-symbols-outlined {
+  font-size: 20px;
+  line-height: 1;
+  display: block;
+  user-select: none;
+}
+
+.snow-toggle.active {
+  color: var(--accent);
+}
+
+.snow-toggle.disabled {
+  color: var(--muted);
+  opacity: 0.4;
 }
 
 /* Border + shadow strengthen once the page is scrolled (progressive) */
@@ -514,6 +556,8 @@ code {
 }
 
 footer {
+  position: relative;
+  z-index: 2;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 48px 21.6px 24px;

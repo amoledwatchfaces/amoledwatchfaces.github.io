@@ -14,7 +14,9 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png" />
   <link rel="shortcut icon" type="image/png" href="assets/favicon/favicon.png" />
 
-  <link rel="stylesheet" href="style.css?v=1.4" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=snowflake" />
+  <link rel="stylesheet" href="style.css?v=2.4" />
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme');
@@ -26,6 +28,8 @@
 </head>
 
 <body>
+  <div id="particles-js"></div>
+
   <header class="site">
     <div class="bar">
       <div class="crumbs">
@@ -43,6 +47,10 @@
         <a href="bogo.html">BOGO</a>
         <a href="guide.html">Guide</a>
         <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">Contact</a>
+        <button id="snow-toggle" class="theme-toggle snow-toggle" aria-label="Toggle snow animation"
+          title="Toggle snow animation" style="display: none;">
+          <span class="material-symbols-outlined">snowflake</span>
+        </button>
         <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">
           <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
             fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
@@ -127,7 +135,10 @@
     </div>
   </main>
 
-  <script src="theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.5/tsparticles.min.js"></script>
+  <script src="js/particles.js?v=1.7"></script>
+
+  <script src="theme.js" defer></script>
 </body>
 
 </html>
