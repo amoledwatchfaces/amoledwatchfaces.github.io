@@ -7,11 +7,36 @@ const ORIGIN = self.location.origin;
 const DEFAULT_ICON = ORIGIN + '/assets/logo_notification.webp';
 const DEFAULT_BADGE = ORIGIN + '/assets/logo_notification_badge.png';
 
-// Intercept showNotification so that Firebase SDK automatic notifications
-// always include your custom logo, status bar badge, and action buttons if custom data is provided.
+/**
+ * Deep search for a case-insensitive key in an object tree
+ */
+function findNestedValue(obj, targetKey, depth = 0) {
+  if (!obj || typeof obj !== 'object' || depth > 4) return null;
+  const targetLower = targetKey.toLowerCase();
+
+  for (const key of Object.keys(obj)) {
+    if (key.toLowerCase() === targetLower) {
+      if (typeof obj[key] === 'string' && obj[key].trim().length > 0) {
+        return obj[key].trim();
+      }
+    }
+  }
+
+  for (const key of Object.keys(obj)) {
+    if (typeof obj[key] === 'object' && obj[key] !== null) {
+      const result = findNestedValue(obj[key], targetKey, depth + 1);
+      if (result) return result;
+    }
+  }
+  return null;
+}
+
+// Intercept showNotification so that all notifications
+// automatically include the custom logo, status bar badge, and Google Play action button if play_url is present.
 const nativeShowNotification = self.registration.showNotification.bind(self.registration);
 self.registration.showNotification = function (title, options = {}) {
   options = options || {};
+
   if (!options.icon) {
     options.icon = DEFAULT_ICON;
   }
@@ -19,16 +44,16 @@ self.registration.showNotification = function (title, options = {}) {
     options.badge = DEFAULT_BADGE;
   }
 
-  // Check if custom data contains a play_url or button_text
-  const customData = options.data?.FCM_MSG?.data || options.data || {};
-  const playUrl = customData.play_url;
-  const buttonText = customData.button_text || (playUrl ? 'Get it on Google Play' : null);
+  // Extract play_url and button_text from any level of the payload data
+  const playUrl = findNestedValue(options, 'play_url') || findNestedValue(options, 'playurl');
+  const customButtonText = findNestedValue(options, 'button_text') || findNestedValue(options, 'buttontext');
+  const buttonTitle = customButtonText || (playUrl ? 'Get it on Google Play' : null);
 
-  if (buttonText && (!options.actions || options.actions.length === 0)) {
+  if (buttonTitle && playUrl) {
     options.actions = [
       {
         action: 'open_play_store',
-        title: buttonText
+        title: buttonTitle
       }
     ];
   }
@@ -50,7 +75,7 @@ const messaging = firebase.messaging();
 // Handle background messages
 messaging.onBackgroundMessage((payload) => {
   // If the push already contains a notification payload, Firebase SDK displays it automatically
-  // (and our showNotification wrapper ensures the icon and badge are attached).
+  // (and our showNotification wrapper ensures the icon, badge, and action button are attached).
   if (payload.notification) {
     return;
   }
@@ -61,9 +86,7 @@ messaging.onBackgroundMessage((payload) => {
     icon: payload.data?.icon || DEFAULT_ICON,
     badge: DEFAULT_BADGE,
     image: payload.data?.image || payload.data?.image_url,
-    data: {
-      url: payload.data?.url || payload.fcmOptions?.link || '/'
-    }
+    data: payload.data || {}
   };
 
   return self.registration.showNotification(notificationTitle, notificationOptions);
@@ -73,14 +96,13 @@ messaging.onBackgroundMessage((payload) => {
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
-  const customData = event.notification?.data?.FCM_MSG?.data || event.notification?.data || {};
-  const playUrl = customData.play_url;
-
-  let urlToOpen = customData.url ||
-    event.notification?.data?.FCM_MSG?.notification?.click_action ||
-    event.notification?.data?.link ||
+  const playUrl = findNestedValue(event.notification, 'play_url') || findNestedValue(event.notification, 'playurl');
+  const defaultUrl = findNestedValue(event.notification, 'url') ||
+    findNestedValue(event.notification, 'link') ||
+    findNestedValue(event.notification, 'click_action') ||
     '/';
 
+  let urlToOpen = defaultUrl;
   if (event.action === 'open_play_store' && playUrl) {
     urlToOpen = playUrl;
   }
