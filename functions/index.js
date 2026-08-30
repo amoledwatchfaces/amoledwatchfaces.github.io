@@ -33,22 +33,30 @@ exports.subscribetoannouncements = functions.https.onRequest(async (req, res) =>
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { token, topic = "announcements" } = req.body || {};
+  const { token, topic = "announcements", action = "subscribe" } = req.body || {};
 
   if (!token || typeof token !== "string") {
     return res.status(400).json({ error: "Valid FCM token is required" });
   }
 
   try {
-    const response = await admin.messaging().subscribeToTopic([token], topic);
-    console.log(`Subscribed token to topic '${topic}':`, response);
+    let response;
+    if (action === "unsubscribe") {
+      response = await admin.messaging().unsubscribeFromTopic([token], topic);
+      console.log(`Unsubscribed token from topic '${topic}':`, response);
+    } else {
+      response = await admin.messaging().subscribeToTopic([token], topic);
+      console.log(`Subscribed token to topic '${topic}':`, response);
+    }
+
     return res.status(200).json({
       success: true,
+      action: action,
       topic: topic,
       results: response
     });
   } catch (error) {
-    console.error("Error subscribing to topic:", error);
+    console.error(`Error performing ${action} on topic:`, error);
     return res.status(500).json({ error: error.message });
   }
 });

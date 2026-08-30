@@ -1,6 +1,6 @@
 // Firebase Cloud Messaging Client Integration
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import { getMessaging, getToken, onMessage } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js';
+import { getMessaging, getToken, deleteToken, onMessage } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCf9OO9QZqjG94SSLunG1i_6jWjmeyxr78",
@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 const VAPID_KEY = "BDoBSM37A2p1ng-rN1HC7_eWD7H5HQ5hajujQjC9dOL6uH3mN0z5EN9oJQuxCjBxYN4UJAzkvdEG_qp0T2XXfbs";
 
-// Cloud Function endpoint to subscribe web tokens to the 'announcements' topic
+// Cloud Function endpoint to subscribe/unsubscribe web tokens to the 'announcements' topic
 const SUBSCRIBE_ENDPOINT = "https://subscribetoannouncements-66490687416.europe-west1.run.app";
 
 const app = initializeApp(firebaseConfig);
@@ -36,13 +36,31 @@ async function subscribeTokenToTopic(token) {
     const res = await fetch(SUBSCRIBE_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: token, topic: 'announcements' })
+      body: JSON.stringify({ token: token, topic: 'announcements', action: 'subscribe' })
     });
     if (res.ok) {
       console.log('Successfully subscribed token to announcements topic');
     }
   } catch (err) {
-    console.warn('Could not reach subscribe endpoint (will succeed once Cloud Function is deployed):', err);
+    console.warn('Could not reach subscribe endpoint:', err);
+  }
+}
+
+/**
+ * Send the FCM token to Cloud Function to unsubscribe from 'announcements'
+ */
+async function unsubscribeTokenFromTopic(token) {
+  try {
+    const res = await fetch(SUBSCRIBE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token: token, topic: 'announcements', action: 'unsubscribe' })
+    });
+    if (res.ok) {
+      console.log('Successfully unsubscribed token from announcements topic');
+    }
+  } catch (err) {
+    console.warn('Could not reach unsubscribe endpoint:', err);
   }
 }
 
@@ -77,6 +95,7 @@ export async function requestNotificationPermission() {
         localStorage.setItem('notifications_enabled', 'true');
         await subscribeTokenToTopic(currentToken);
         updateNotificationButtonState(true);
+        alert('Notifications enabled! You will receive announcements for new watch faces and updates.');
         return currentToken;
       }
     } else if (permission === 'denied') {
@@ -89,6 +108,30 @@ export async function requestNotificationPermission() {
 }
 
 /**
+ * Unsubscribe from notifications, delete token, and revert UI
+ */
+export async function unsubscribeFromNotifications() {
+  if (!messaging) return;
+
+  const currentToken = localStorage.getItem('fcm_token');
+  if (currentToken) {
+    await unsubscribeTokenFromTopic(currentToken);
+  }
+
+  try {
+    await deleteToken(messaging);
+    console.log('FCM Token deleted from client');
+  } catch (err) {
+    console.warn('Error deleting FCM token:', err);
+  }
+
+  localStorage.removeItem('fcm_token');
+  localStorage.setItem('notifications_enabled', 'false');
+  updateNotificationButtonState(false);
+  alert('Notifications have been turned off on this device.');
+}
+
+/**
  * Update UI state of notification bell button
  */
 function updateNotificationButtonState(isSubscribed) {
@@ -97,8 +140,8 @@ function updateNotificationButtonState(isSubscribed) {
 
   if (isSubscribed) {
     btn.classList.add('subscribed');
-    btn.setAttribute('title', 'Notifications enabled');
-    btn.setAttribute('aria-label', 'Notifications enabled');
+    btn.setAttribute('title', 'Notifications active (Click to disable)');
+    btn.setAttribute('aria-label', 'Notifications active (Click to disable)');
   } else {
     btn.classList.remove('subscribed');
     btn.setAttribute('title', 'Enable notifications');
@@ -113,8 +156,6 @@ export function setupForegroundMessageListener() {
   if (!messaging) return;
   onMessage(messaging, (payload) => {
     console.log('Foreground message received in active tab:', payload);
-    // In foreground, we do not call new Notification() because the browser/service worker
-    // already delivers the system notification.
   });
 }
 
@@ -123,15 +164,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('notif-toggle');
   if (!btn) return;
 
-  if ('Notification' in window && Notification.permission === 'granted') {
+  const isEnabled = localStorage.getItem('notifications_enabled') === 'true';
+  if ('Notification' in window && Notification.permission === 'granted' && isEnabled) {
     updateNotificationButtonState(true);
+  } else {
+    updateNotificationButtonState(false);
   }
 
   btn.addEventListener('click', async () => {
-    if ('Notification' in window && Notification.permission === 'granted') {
-      // Re-verify token
-      await requestNotificationPermission();
-      alert('Notifications are active! You will receive announcements for new watch faces and updates.');
+    const isCurrentlySubscribed = 'Notification' in window &&
+      Notification.permission === 'granted' &&
+      localStorage.getItem('notifications_enabled') === 'true';
+
+    if (isCurrentlySubscribed) {
+      const confirmDisable = confirm('You are currently receiving announcements.\n\nDo you want to turn off notifications on this device?');
+      if (confirmDisable) {
+        await unsubscribeFromNotifications();
+      }
     } else {
       await requestNotificationPermission();
     }
