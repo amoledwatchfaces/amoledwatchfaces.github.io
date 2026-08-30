@@ -288,6 +288,18 @@ nav a:not([aria-current="page"]):hover::after {
   opacity: 0.4;
 }
 
+.notif-toggle {
+  margin-left: 4px;
+}
+
+.notif-toggle.subscribed {
+  color: var(--accent);
+}
+
+.notif-toggle.subscribed svg {
+  fill: currentColor;
+}
+
 /* Border + shadow strengthen once the page is scrolled (progressive) */
 @supports (animation-timeline: scroll()) {
   header.site {
