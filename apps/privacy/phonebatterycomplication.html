@@ -38,8 +38,6 @@
           <img src="../../assets/logo_dark.webp" class="logo-dark" alt="amoledwatchfaces logo" />
           <span>amoledwatchfaces</span>
         </a>
-        <span class="sep">›</span>
-        <span class="section">Phone Battery Complication</span>
       </div>
       <nav aria-label="Site">
         <a href="../../">Home</a>
@@ -74,26 +72,32 @@
   </header>
 
   <main>
-    <h1>Phone Battery Complication</h1>
-    <p class="tagline">Sync Battery, Calendar, Media &amp; Notifications Between Your Phone &amp; Watch</p>
+    <h1>Privacy Policy - Phone Battery Complication</h1>
+    <!--
+    <p class="tagline">Sync Battery, Calendar, Media &amp; Notifications Between Your Phone &amp; Watch</p>-->
     <p class="muted" style="font-size: 0.9rem; margin-bottom: 32px;">Last Updated: August 25, 2026</p>
 
     <div class="card">
       <h3>Privacy Ethos</h3>
       <p>
-        <strong>This app</strong> is designed as a direct helper utility to display your phone battery, watch battery, calendar events, media playback, and phone notifications directly on your watch face via Wear OS complications. 
+        <strong>This app</strong> is designed as a direct helper utility to display your phone battery, watch battery,
+        calendar events, media playback, and phone notifications directly on your watch face via Wear OS complications.
         We believe your device status is personal. Our core principles are:
       </p>
       <ul>
         <li><strong>No Advertising:</strong> We do not include any ad SDKs or tracking pixels.</li>
         <li><strong>No Location Tracking:</strong> We do not request, access, or track your location coordinates.</li>
-        <li><strong>No User Profiles:</strong> We do not collect names, emails, or hardware identifiers (IMEI/Serial).</li>
-        <li><strong>Local &amp; Direct Sync:</strong> All synchronized data (battery levels, calendar events, media playback info, and notifications) is transmitted directly between your phone and watch using Google Play Services Wearable APIs. No proprietary cloud servers are used to store or route this data.</li>
+        <li><strong>No User Profiles:</strong> We do not collect names, emails, or hardware identifiers (IMEI/Serial).
+        </li>
+        <li><strong>Local &amp; Direct Sync:</strong> All synchronized data (battery levels, calendar events, media
+          playback info, and notifications) is transmitted directly between your phone and watch using Google Play
+          Services Wearable APIs. No proprietary cloud servers are used to store or route this data.</li>
       </ul>
     </div>
 
     <h2>Data Access &amp; Permissions</h2>
-    <p>The following permissions and services are used to synchronize and display device status, calendar events, active media, and notification information:</p>
+    <p>The following permissions and services are used to synchronize and display device status, calendar events, active
+      media, and notification information:</p>
 
     <div class="card" style="padding: 16px;">
       <div class="table-wrap">
@@ -110,31 +114,38 @@
             <tr>
               <td><code>RECEIVE_BOOT_COMPLETED</code></td>
               <td>Mobile &amp; Wear App</td>
-              <td>Allows the application/complication service to automatically re-initialize battery and data synchronization tasks when the device boots up.</td>
+              <td>Allows the application/complication service to automatically re-initialize battery and data
+                synchronization tasks when the device boots up.</td>
               <td>Automatic background sync on boot.</td>
             </tr>
             <tr>
               <td><code>QUERY_ALL_PACKAGES</code></td>
               <td>Mobile App</td>
-              <td>Because the app doesn't know in advance which apps will post notifications or play media, it cannot use the more restrictive <code>&lt;queries&gt;</code> element (which requires listing specific package names). This permission is the only way to ensure full compatibility with all third-party apps on newer Android versions.</td>
+              <td>Because the app doesn't know in advance which apps will post notifications or play media, it cannot
+                use the more restrictive <code>&lt;queries&gt;</code> element (which requires listing specific package
+                names). This permission is the only way to ensure full compatibility with all third-party apps on newer
+                Android versions.</td>
               <td>Notification &amp; Media sync compatibility.</td>
             </tr>
             <tr>
               <td><code>READ_CALENDAR</code></td>
               <td>Mobile App</td>
-              <td>Accesses local calendar events to enable syncing of event-based details to the watch complications (if enabled).</td>
+              <td>Accesses local calendar events to enable syncing of event-based details to the watch complications (if
+                enabled).</td>
               <td>Next Event complication.</td>
             </tr>
             <tr>
               <td><code>NotificationListenerService</code> (Notification Access)</td>
               <td>Mobile App</td>
-              <td>Allows the companion application to read active notifications and active media session metadata from the phone status bar to transmit them to your watch.</td>
+              <td>Allows the companion application to read active notifications and active media session metadata from
+                the phone status bar to transmit them to your watch.</td>
               <td>Phone Notifications &amp; Media Playback complications.</td>
             </tr>
             <tr>
               <td><code>Google Play Services (Wearable API)</code></td>
               <td>Mobile &amp; Wear App</td>
-              <td>Establishes a local communication channel to transfer battery levels, calendar events, media states, and notification data between devices.</td>
+              <td>Establishes a local communication channel to transfer battery levels, calendar events, media states,
+                and notification data between devices.</td>
               <td>Real-time complication synchronization.</td>
             </tr>
           </tbody>
@@ -143,27 +154,37 @@
     </div>
 
     <h2>Data Sharing &amp; External Services</h2>
-    <p>All core synchronization operates entirely between your own paired devices. The only external service present in the app is optional diagnostics:</p>
+    <p>All core synchronization operates entirely between your own paired devices. The only external service present in
+      the app is optional diagnostics:</p>
 
     <h3>Crash Reporting &amp; Diagnostics (Optional)</h3>
-    <p>To help improve application stability and diagnose bugs, the app contains optional crash reporting integrations:</p>
+    <p>To help improve application stability and diagnose bugs, the app contains optional crash reporting integrations:
+    </p>
     <div class="card">
       <div class="service-list" style="margin: 0;">
-        <div class="service-item" style="flex-direction: column; align-items: flex-start; gap: 4px; border-bottom: none; padding-bottom: 0;">
+        <div class="service-item"
+          style="flex-direction: column; align-items: flex-start; gap: 4px; border-bottom: none; padding-bottom: 0;">
           <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
             <span>Firebase Crashlytics (Google)</span>
             <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy Policy</a>
           </div>
           <span class="muted" style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 8px;">
-            Disabled by default. If you explicitly opt-in to crash reporting in the app settings, Crashlytics will transmit anonymous crash logs, stack traces, and basic device characteristics (such as OS version and device model) to help us identify and resolve bugs. No personally identifiable information (PII) or location data is ever included in these reports.
+            Disabled by default. If you explicitly opt-in to crash reporting in the app settings, Crashlytics will
+            transmit anonymous crash logs, stack traces, and basic device characteristics (such as OS version and device
+            model) to help us identify and resolve bugs. No personally identifiable information (PII) or location data
+            is ever included in these reports.
           </span>
-          <div class="muted" style="font-size: 0.8rem; line-height: 1.4; border-top: 1px solid var(--border-color); padding-top: 8px; width: 100%;">
+          <div class="muted"
+            style="font-size: 0.8rem; line-height: 1.4; border-top: 1px solid var(--border-color); padding-top: 8px; width: 100%;">
             <strong>Google Play Data Safety Declarations:</strong>
             <ul style="margin: 4px 0 0 16px; padding: 0;">
               <li><strong>Data Types:</strong> Crash logs &amp; Device or other IDs.</li>
-              <li><strong>Collected, Shared, or both?</strong> <em>Collected</em> only (not Shared, as Google/Firebase processes this data solely on our behalf).</li>
-              <li><strong>Ephemeral Processing:</strong> <em>No</em> (Firebase stores crash logs and installation IDs on its servers for analysis).</li>
-              <li><strong>User Choice:</strong> <em>Users can choose</em> whether this data is collected (collection is completely optional and controlled by an in-app toggle).</li>
+              <li><strong>Collected, Shared, or both?</strong> <em>Collected</em> only (not Shared, as Google/Firebase
+                processes this data solely on our behalf).</li>
+              <li><strong>Ephemeral Processing:</strong> <em>No</em> (Firebase stores crash logs and installation IDs on
+                its servers for analysis).</li>
+              <li><strong>User Choice:</strong> <em>Users can choose</em> whether this data is collected (collection is
+                completely optional and controlled by an in-app toggle).</li>
               <li><strong>Purpose of Collection:</strong> <em>App functionality</em> and/or <em>Analytics</em>.</li>
             </ul>
           </div>
@@ -174,29 +195,37 @@
     <h2>Data Storage &amp; Retention</h2>
     <div class="card">
       <ul>
-        <li><strong>Local Storage:</strong> Only the current active device status (battery levels, calendar event details, active media track/play state, and notification list) is temporarily cached locally on your device to feed the watch complications.</li>
-        <li><strong>Retention:</strong> Synced values are overwritten immediately whenever a new status update is received. No historical records, message contents, or track listings are kept.</li>
-        <li><strong>Uninstall:</strong> All settings, configurations, and cache are immediately deleted by the system when you uninstall the app from your device.</li>
+        <li><strong>Local Storage:</strong> Only the current active device status (battery levels, calendar event
+          details, active media track/play state, and notification list) is temporarily cached locally on your device to
+          feed the watch complications.</li>
+        <li><strong>Retention:</strong> Synced values are overwritten immediately whenever a new status update is
+          received. No historical records, message contents, or track listings are kept.</li>
+        <li><strong>Uninstall:</strong> All settings, configurations, and cache are immediately deleted by the system
+          when you uninstall the app from your device.</li>
       </ul>
     </div>
 
     <h2>No Data Sale</h2>
     <div class="card">
-      <p>We do not sell, rent, or trade your data to third parties. We do not track your device behavior or usage patterns.</p>
+      <p>We do not sell, rent, or trade your data to third parties. We do not track your device behavior or usage
+        patterns.</p>
     </div>
 
     <h2>User Rights &amp; Control</h2>
     <div class="card">
       <p>You have full control over the sync status and options:</p>
       <ul>
-        <li><strong>Stop Sync:</strong> You can pause synchronization or uninstall the companion app at any time to halt communication.</li>
-        <li><strong>Crash Reporting Opt-out:</strong> You can enable or disable crash reporting at any time via the application settings on your device.</li>
+        <li><strong>Stop Sync:</strong> You can pause synchronization or uninstall the companion app at any time to halt
+          communication.</li>
+        <li><strong>Crash Reporting Opt-out:</strong> You can enable or disable crash reporting at any time via the
+          application settings on your device.</li>
       </ul>
     </div>
 
     <h2>Children's Privacy</h2>
     <div class="card">
-      <p>This app does not knowingly collect any personal information from children. Our services are intended for a general audience.</p>
+      <p>This app does not knowingly collect any personal information from children. Our services are intended for a
+        general audience.</p>
     </div>
 
     <h2>Contact Info</h2>
@@ -213,13 +242,22 @@
   <footer>
     <div class="socials">
       <a href="https://www.instagram.com/amoledwatchfaces" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24"><path d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 1 0 12.324 6.162 6.162 0 0 1 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 1 0 2.881 1.44 1.44 0 0 1 0-2.881z"/></svg>
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 1 0 12.324 6.162 6.162 0 0 1 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 1 0 2.881 1.44 1.44 0 0 1 0-2.881z" />
+        </svg>
       </a>
       <a href="https://t.me/amoledwatchfaces" target="_blank" rel="noopener" aria-label="Telegram">
-        <svg viewBox="0 0 24 24"><path d="M11.944 0C5.344 0 0 5.344 0 11.944c0 6.6 5.344 11.944 11.944 11.944 6.6 0 11.944-5.344 11.944-11.944C23.888 5.344 18.544 0 11.944 0zm5.895 8.222l-1.97 9.28c-.146.658-.538.818-1.085.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.24-.213-.054-.33-.373-.118l-6.87 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.46c.538-.196 1.006.128.832.941z"/></svg>
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M11.944 0C5.344 0 0 5.344 0 11.944c0 6.6 5.344 11.944 11.944 11.944 6.6 0 11.944-5.344 11.944-11.944C23.888 5.344 18.544 0 11.944 0zm5.895 8.222l-1.97 9.28c-.146.658-.538.818-1.085.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.24-.213-.054-.33-.373-.118l-6.87 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.46c.538-.196 1.006.128.832.941z" />
+        </svg>
       </a>
       <a href="https://www.facebook.com/amoledwatchfaces" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+        </svg>
       </a>
     </div>
     <p>&copy; 2026 amoledwatchfaces.com. Built with privacy in mind for the Wear OS community.</p>
