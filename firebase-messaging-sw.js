@@ -8,31 +8,15 @@ const DEFAULT_ICON = ORIGIN + '/assets/logo_notification.webp';
 const DEFAULT_BADGE = ORIGIN + '/assets/logo_notification_badge.png';
 
 /**
- * Deep search for a case-insensitive key in an object tree
+ * Extract custom data object from Firebase Console payload
  */
-function findNestedValue(obj, targetKey, depth = 0) {
-  if (!obj || typeof obj !== 'object' || depth > 5) return null;
-  const targetLower = targetKey.toLowerCase();
-
-  for (const key of Object.keys(obj)) {
-    if (key.toLowerCase() === targetLower) {
-      if (typeof obj[key] === 'string' && obj[key].trim().length > 0) {
-        return obj[key].trim();
-      }
-    }
-  }
-
-  for (const key of Object.keys(obj)) {
-    if (typeof obj[key] === 'object' && obj[key] !== null) {
-      const result = findNestedValue(obj[key], targetKey, depth + 1);
-      if (result) return result;
-    }
-  }
-  return null;
+function getCustomData(dataObj) {
+  if (!dataObj || typeof dataObj !== 'object') return {};
+  return dataObj.FCM_MSG?.data || dataObj.data || dataObj;
 }
 
-// Intercept showNotification so that all notifications
-// automatically include the custom logo, status bar badge, and Google Play action button if play_url is present.
+// Intercept showNotification so that Firebase Console notifications
+// automatically include your custom logo, status bar badge, and Google Play button
 const nativeShowNotification = self.registration.showNotification.bind(self.registration);
 self.registration.showNotification = function (title, options = {}) {
   options = options || {};
@@ -44,26 +28,20 @@ self.registration.showNotification = function (title, options = {}) {
     options.badge = DEFAULT_BADGE;
   }
 
-  // Extract play_url and button_text from any level of the payload data
-  const playUrl = findNestedValue(options, 'play_url') || findNestedValue(options, 'playurl');
-  const customButtonText = findNestedValue(options, 'button_text') || findNestedValue(options, 'buttontext');
-  const buttonTitle = customButtonText || (playUrl ? 'Get it on Google Play' : null);
+  // Read custom data sent from Firebase Console
+  const customData = getCustomData(options.data);
+  const playUrl = customData.play_url;
+  const buttonTitle = customData.button_text || (playUrl ? 'Get it on Google Play' : null);
+  const websiteUrl = customData.url || customData.link || '/';
 
-  const websiteUrl = findNestedValue(options, 'url') ||
-    findNestedValue(options, 'link') ||
-    findNestedValue(options, 'click_action') ||
-    '/';
-
-  // Explicitly store resolved URLs in options.data so they persist into event.notification.data
+  // Explicitly store resolved URLs in options.data for notificationclick
   if (typeof options.data !== 'object' || options.data === null) {
     options.data = {};
   }
   if (playUrl) {
     options.data.resolved_play_url = playUrl;
   }
-  if (websiteUrl) {
-    options.data.resolved_website_url = websiteUrl;
-  }
+  options.data.resolved_website_url = websiteUrl;
 
   if (buttonTitle && playUrl) {
     options.actions = [
@@ -91,7 +69,6 @@ const messaging = firebase.messaging();
 // Handle background messages
 messaging.onBackgroundMessage((payload) => {
   // If the push already contains a notification payload, Firebase SDK displays it automatically
-  // (and our showNotification wrapper ensures the icon, badge, and action button are attached).
   if (payload.notification) {
     return;
   }
@@ -113,27 +90,16 @@ self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
   const notifData = event.notification.data || {};
-  const playUrl = notifData.resolved_play_url ||
-    findNestedValue(event.notification.data, 'play_url') ||
-    findNestedValue(event.notification.data, 'playurl');
+  const customData = getCustomData(notifData);
 
-  const websiteUrl = notifData.resolved_website_url ||
-    findNestedValue(event.notification.data, 'url') ||
-    findNestedValue(event.notification.data, 'link') ||
-    findNestedValue(event.notification.data, 'click_action') ||
-    '/';
+  const playUrl = notifData.resolved_play_url || customData.play_url;
+  const websiteUrl = notifData.resolved_website_url || customData.url || '/';
 
-  // Card click opens webpage ('/'), button click opens Google Play
+  // Card click opens webpage ('/'), button click opens Google Play (play_url)
   let urlToOpen = websiteUrl;
   if (event.action === 'open_play_store' && playUrl) {
     urlToOpen = playUrl;
   }
-
-  console.log('notificationclick event:', {
-    action: event.action,
-    playUrl: playUrl,
-    urlToOpen: urlToOpen
-  });
 
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true }).then((windowClients) => {
