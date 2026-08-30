@@ -8,7 +8,7 @@ const DEFAULT_ICON = ORIGIN + '/assets/logo_notification.webp';
 const DEFAULT_BADGE = ORIGIN + '/assets/logo_notification_badge.png';
 
 // Intercept showNotification so that Firebase SDK automatic notifications
-// always include your custom logo and status bar badge even when omitted in Firebase Console.
+// always include your custom logo, status bar badge, and action buttons if custom data is provided.
 const nativeShowNotification = self.registration.showNotification.bind(self.registration);
 self.registration.showNotification = function (title, options = {}) {
   options = options || {};
@@ -18,6 +18,21 @@ self.registration.showNotification = function (title, options = {}) {
   if (!options.badge) {
     options.badge = DEFAULT_BADGE;
   }
+
+  // Check if custom data contains a play_url or button_text
+  const customData = options.data?.FCM_MSG?.data || options.data || {};
+  const playUrl = customData.play_url;
+  const buttonText = customData.button_text || (playUrl ? 'Get it on Google Play' : null);
+
+  if (buttonText && (!options.actions || options.actions.length === 0)) {
+    options.actions = [
+      {
+        action: 'open_play_store',
+        title: buttonText
+      }
+    ];
+  }
+
   return nativeShowNotification(title, options);
 };
 
@@ -57,10 +72,18 @@ messaging.onBackgroundMessage((payload) => {
 // Handle notification click to focus or open the URL
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  const urlToOpen = event.notification?.data?.url ||
+
+  const customData = event.notification?.data?.FCM_MSG?.data || event.notification?.data || {};
+  const playUrl = customData.play_url;
+
+  let urlToOpen = customData.url ||
     event.notification?.data?.FCM_MSG?.notification?.click_action ||
     event.notification?.data?.link ||
     '/';
+
+  if (event.action === 'open_play_store' && playUrl) {
+    urlToOpen = playUrl;
+  }
 
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true }).then((windowClients) => {
