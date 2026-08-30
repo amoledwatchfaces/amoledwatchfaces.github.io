@@ -108,11 +108,24 @@ export function setupForegroundMessageListener() {
     console.log('Foreground message received:', payload);
     const title = payload.notification?.title || payload.data?.title || 'amoledwatchfaces';
     const body = payload.notification?.body || payload.data?.body || '';
+    const image = payload.notification?.image || payload.data?.image;
+    
     if (Notification.permission === 'granted') {
-      new Notification(title, {
+      const options = {
         body: body,
-        icon: '/assets/logo_dark.webp'
-      });
+        icon: 'assets/logo_notification.webp',
+        badge: 'assets/logo_notification_badge.png',
+        data: {
+          url: payload.data?.url || payload.fcmOptions?.link || '/'
+        }
+      };
+      if (image) options.image = image;
+
+      const notif = new Notification(title, options);
+      notif.onclick = () => {
+        window.focus();
+        if (options.data.url) window.location.href = options.data.url;
+      };
     }
   });
 }

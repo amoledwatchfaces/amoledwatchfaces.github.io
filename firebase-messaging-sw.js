@@ -15,17 +15,24 @@ const messaging = firebase.messaging();
 
 // Handle background messages
 messaging.onBackgroundMessage((payload) => {
-  const notificationTitle = payload.notification?.title || payload.data?.title || 'amoledwatchfaces';
+  // If the push already contains a notification payload, Firebase SDK displays it automatically.
+  // We only manually show notifications for data-only payloads to avoid duplicates.
+  if (payload.notification) {
+    return;
+  }
+
+  const notificationTitle = payload.data?.title || 'amoledwatchfaces';
   const notificationOptions = {
-    body: payload.notification?.body || payload.data?.body || '',
-    icon: payload.notification?.icon || '/assets/logo_dark.webp',
-    badge: '/assets/logo_dark.webp',
+    body: payload.data?.body || '',
+    icon: payload.data?.icon || 'assets/logo_notification.webp',
+    badge: 'assets/logo_notification_badge.png',
+    image: payload.data?.image || payload.data?.image_url,
     data: {
       url: payload.data?.url || payload.fcmOptions?.link || '/'
     }
   };
 
-  self.registration.showNotification(notificationTitle, notificationOptions);
+  return self.registration.showNotification(notificationTitle, notificationOptions);
 });
 
 // Handle notification click to focus or open the URL
