@@ -11,7 +11,7 @@ const DEFAULT_BADGE = ORIGIN + '/assets/logo_notification_badge.png';
  * Deep search for a case-insensitive key in an object tree
  */
 function findNestedValue(obj, targetKey, depth = 0) {
-  if (!obj || typeof obj !== 'object' || depth > 4) return null;
+  if (!obj || typeof obj !== 'object' || depth > 5) return null;
   const targetLower = targetKey.toLowerCase();
 
   for (const key of Object.keys(obj)) {
@@ -48,6 +48,22 @@ self.registration.showNotification = function (title, options = {}) {
   const playUrl = findNestedValue(options, 'play_url') || findNestedValue(options, 'playurl');
   const customButtonText = findNestedValue(options, 'button_text') || findNestedValue(options, 'buttontext');
   const buttonTitle = customButtonText || (playUrl ? 'Get it on Google Play' : null);
+
+  const websiteUrl = findNestedValue(options, 'url') ||
+    findNestedValue(options, 'link') ||
+    findNestedValue(options, 'click_action') ||
+    '/';
+
+  // Explicitly store resolved URLs in options.data so they persist into event.notification.data
+  if (typeof options.data !== 'object' || options.data === null) {
+    options.data = {};
+  }
+  if (playUrl) {
+    options.data.resolved_play_url = playUrl;
+  }
+  if (websiteUrl) {
+    options.data.resolved_website_url = websiteUrl;
+  }
 
   if (buttonTitle && playUrl) {
     options.actions = [
@@ -96,10 +112,15 @@ messaging.onBackgroundMessage((payload) => {
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
-  const playUrl = findNestedValue(event.notification, 'play_url') || findNestedValue(event.notification, 'playurl');
-  const websiteUrl = findNestedValue(event.notification, 'url') ||
-    findNestedValue(event.notification, 'link') ||
-    findNestedValue(event.notification, 'click_action') ||
+  const notifData = event.notification.data || {};
+  const playUrl = notifData.resolved_play_url ||
+    findNestedValue(event.notification.data, 'play_url') ||
+    findNestedValue(event.notification.data, 'playurl');
+
+  const websiteUrl = notifData.resolved_website_url ||
+    findNestedValue(event.notification.data, 'url') ||
+    findNestedValue(event.notification.data, 'link') ||
+    findNestedValue(event.notification.data, 'click_action') ||
     '/';
 
   // Card click opens webpage ('/'), button click opens Google Play
@@ -107,6 +128,12 @@ self.addEventListener('notificationclick', (event) => {
   if (event.action === 'open_play_store' && playUrl) {
     urlToOpen = playUrl;
   }
+
+  console.log('notificationclick event:', {
+    action: event.action,
+    playUrl: playUrl,
+    urlToOpen: urlToOpen
+  });
 
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true }).then((windowClients) => {
