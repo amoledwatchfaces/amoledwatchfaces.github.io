@@ -50,8 +50,15 @@ async function subscribeTokenToTopic(token) {
  * Request notification permissions and register token.
  */
 export async function requestNotificationPermission() {
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+
   if (!messaging) {
-    alert('Push notifications are not supported on this browser.');
+    if (isIOS && !isStandalone) {
+      alert('On iOS / iPhone, Apple requires adding the website to your Home Screen first.\n\n1. Tap the Share button in Safari (or Chrome).\n2. Select "Add to Home Screen".\n3. Open amoledwatchfaces from your Home Screen and tap the bell icon to enable notifications.');
+    } else {
+      alert('Push notifications are not supported on this browser.');
+    }
     return null;
   }
 

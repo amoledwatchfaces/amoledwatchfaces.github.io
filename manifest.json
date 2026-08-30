@@ -1,0 +1,23 @@
+{
+  "name": "amoledwatchfaces",
+  "short_name": "AWF",
+  "description": "Privacy-respecting watch faces and apps for Wear OS.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e1110",
+  "theme_color": "#0e1110",
+  "icons": [
+    {
+      "src": "/assets/logo_notification.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo_notification.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
