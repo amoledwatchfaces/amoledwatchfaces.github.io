@@ -48,6 +48,26 @@
       }
     })();
   </script>
+
+  <!-- Sender -->
+  <script>
+    (function (s, e, n, d, er) {
+      s['Sender'] = er;
+      s[er] = s[er] || function () {
+        (s[er].q = s[er].q || []).push(arguments)
+      }, s[er].l = 1 * new Date();
+      s[er].on = function (event, callback) {
+        s[er].listeners = s[er].listeners || {};
+        (s[er].listeners[event] = s[er].listeners[event] || []).push(callback);
+      };
+      var a = e.createElement(n),
+        m = e.getElementsByTagName(n)[0];
+      a.async = 1;
+      a.src = d;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+    sender('b28e1c9e2a9537')
+  </script>
 </head>
 
 <body>
@@ -236,7 +256,8 @@
       <a href="https://x.com/amoledwfs" target="_blank" rel="noopener" aria-label="X (formerly Twitter)">
         <svg viewBox="0 0 16 16">
           <path d="M0 0h16v16H0z" fill="none" />
-          <path fill="currentColor" d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+          <path fill="currentColor"
+            d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
         </svg>
       </a>
       <a href="https://t.me/amoledwatchfaces" target="_blank" rel="noopener" aria-label="Telegram">
