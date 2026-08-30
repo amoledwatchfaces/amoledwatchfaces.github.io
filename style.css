@@ -518,6 +518,42 @@ ul {
   color: #000000;
 }
 
+/* Secondary / Outlined Link Button */
+.links a.btn-secondary,
+.links a.secondary,
+.links a.btn-outline {
+  background: transparent;
+  border: 1.5px solid color-mix(in srgb, var(--text) 32%, var(--border));
+  color: var(--text);
+}
+
+.links a.btn-secondary:hover,
+.links a.secondary:hover,
+.links a.btn-outline:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .links a.btn-secondary:hover,
+  :root:not([data-theme="dark"]) .links a.secondary:hover,
+  :root:not([data-theme="dark"]) .links a.btn-outline:hover {
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+
+:root[data-theme="light"] .links a.btn-secondary:hover,
+:root[data-theme="light"] .links a.secondary:hover,
+:root[data-theme="light"] .links a.btn-outline:hover {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 code {
   background: var(--bg);
   border: 1px solid var(--border);
