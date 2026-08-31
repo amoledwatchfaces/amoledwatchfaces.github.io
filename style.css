@@ -2032,9 +2032,7 @@ main > picture .main-banner {
 .admin-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.82);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -2055,9 +2053,14 @@ main > picture .main-banner {
   max-width: 540px;
   width: 100%;
   padding: 28px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   max-height: 90vh;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  transform: translateZ(0);
+  will-change: transform;
+  contain: content;
 }
 
 .admin-modal-header {
@@ -2305,6 +2308,8 @@ main > picture .main-banner {
   gap: 10px;
   max-height: 220px;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .admin-giveaway-item {
