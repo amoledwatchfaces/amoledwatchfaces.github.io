@@ -153,14 +153,21 @@ function updateNotificationButtonState(isSubscribed) {
   const btn = document.getElementById('notif-toggle');
   if (!btn) return;
 
+  const bellActive = btn.querySelector('.bell-active-icon');
+  const bellDefault = btn.querySelector('.bell-default-icon');
+
   if (isSubscribed) {
     btn.classList.add('subscribed');
     btn.setAttribute('title', 'Notifications active (Click to disable)');
     btn.setAttribute('aria-label', 'Notifications active (Click to disable)');
+    if (bellActive) bellActive.style.display = 'block';
+    if (bellDefault) bellDefault.style.display = 'none';
   } else {
     btn.classList.remove('subscribed');
     btn.setAttribute('title', 'Enable notifications');
     btn.setAttribute('aria-label', 'Enable notifications');
+    if (bellActive) bellActive.style.display = 'none';
+    if (bellDefault) bellDefault.style.display = 'block';
   }
 }
 
