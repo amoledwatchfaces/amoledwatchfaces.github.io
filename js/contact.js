@@ -16,34 +16,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('btn-submit-contact');
   const honeypotInput = document.getElementById('website-hp');
 
-  // Populate Watch Faces Dropdown from portfolio.js
-  if (typeof portfolio !== 'undefined' && Array.isArray(portfolio) && watchfaceSelect) {
-    const sorted = [...portfolio].sort((a, b) => a.appName.localeCompare(b.appName));
-    sorted.forEach(wf => {
-      const opt = document.createElement('option');
-      opt.value = wf.appName;
-      opt.textContent = `${wf.appName} (${wf.packageName})`;
-      watchfaceSelect.appendChild(opt);
-    });
-  }
-
-  // Pre-select topic or watchface if query params exist (e.g. ?topic=bogo or ?watchface=Aurora)
+  // Populate Watch Faces Dropdown from data/portfolio.json
   const urlParams = new URLSearchParams(window.location.search);
   const paramTopic = urlParams.get('topic');
   const paramWf = urlParams.get('watchface') || urlParams.get('app');
 
-  if (paramTopic && topicSelect) {
-    const matchingOption = Array.from(topicSelect.options).find(o => o.value.toLowerCase() === paramTopic.toLowerCase());
-    if (matchingOption) topicSelect.value = matchingOption.value;
-  }
-
-  if (paramWf && watchfaceSelect) {
-    const matchingWf = Array.from(watchfaceSelect.options).find(o => o.value.toLowerCase().includes(paramWf.toLowerCase()));
-    if (matchingWf) {
-      watchfaceSelect.value = matchingWf.value;
-      if (watchfaceGroup) watchfaceGroup.style.display = 'flex';
+  async function populateWatchfaces() {
+    if (!watchfaceSelect) return;
+    let list = window.portfolio;
+    if (!list || !Array.isArray(list) || list.length === 0) {
+      try {
+        const res = await fetch('data/portfolio.json');
+        if (res.ok) list = await res.json();
+      } catch (e) {
+        console.warn('Failed to load portfolio:', e);
+      }
+    }
+    if (Array.isArray(list)) {
+      const sorted = [...list].sort((a, b) => a.appName.localeCompare(b.appName));
+      sorted.forEach(wf => {
+        const opt = document.createElement('option');
+        opt.value = wf.appName;
+        opt.textContent = `${wf.appName} (${wf.packageName})`;
+        watchfaceSelect.appendChild(opt);
+      });
+      if (paramWf) {
+        const matchingWf = Array.from(watchfaceSelect.options).find(o => o.value.toLowerCase().includes(paramWf.toLowerCase()));
+        if (matchingWf) {
+          watchfaceSelect.value = matchingWf.value;
+          if (watchfaceGroup) watchfaceGroup.style.display = 'flex';
+        }
+      }
     }
   }
+  populateWatchfaces();
 
   // Show/hide watch face selector based on topic
   if (topicSelect && watchfaceGroup) {

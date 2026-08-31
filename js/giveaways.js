@@ -27,37 +27,51 @@ document.addEventListener('DOMContentLoaded', () => {
   let parsedCsvCodes = [];
 
   // Populate Portfolio Watch Face Dropdown
-  if (typeof portfolio !== 'undefined' && Array.isArray(portfolio) && watchfaceSelect) {
-    const sortedPortfolio = [...portfolio].sort((a, b) => a.appName.localeCompare(b.appName));
-    sortedPortfolio.forEach(wf => {
-      const opt = document.createElement('option');
-      opt.value = wf.packageName;
-      opt.textContent = `${wf.appName} (${wf.packageName})`;
-      opt.dataset.title = wf.appName.toLowerCase().includes('watch face') ? wf.appName : `${wf.appName} Watch Face`;
-      opt.dataset.icon = wf.icon || wf.icon2 || 'assets/logo_notification.webp';
-      watchfaceSelect.appendChild(opt);
-    });
-
-    watchfaceSelect.addEventListener('change', () => {
-      const selected = watchfaceSelect.selectedOptions[0];
-      if (selected && selected.value) {
-        packageInput.value = selected.value;
-        titleInput.value = selected.dataset.title || '';
-        iconInput.value = selected.dataset.icon || 'assets/logo_notification.webp';
+  let localPortfolio = [];
+  async function loadPortfolioForGiveaways() {
+    if (window.portfolio && Array.isArray(window.portfolio) && window.portfolio.length > 0) {
+      localPortfolio = window.portfolio;
+    } else {
+      try {
+        const res = await fetch('data/portfolio.json');
+        if (res.ok) localPortfolio = await res.json();
+      } catch (e) {
+        console.warn('Failed to load portfolio for giveaways:', e);
       }
-    });
+    }
 
-    if (packageInput) {
-      packageInput.addEventListener('input', () => {
-        const val = packageInput.value.trim().toLowerCase();
-        const match = portfolio.find(p => p.packageName.toLowerCase() === val || p.appName.toLowerCase() === val);
-        if (match) {
-          titleInput.value = match.appName.toLowerCase().includes('watch face') ? match.appName : `${match.appName} Watch Face`;
-          iconInput.value = match.icon || match.icon2 || 'assets/logo_notification.webp';
-          watchfaceSelect.value = match.packageName;
+    if (Array.isArray(localPortfolio) && watchfaceSelect) {
+      const sortedPortfolio = [...localPortfolio].sort((a, b) => a.appName.localeCompare(b.appName));
+      sortedPortfolio.forEach(wf => {
+        const opt = document.createElement('option');
+        opt.value = wf.packageName;
+        opt.textContent = `${wf.appName} (${wf.packageName})`;
+        opt.dataset.title = wf.appName.toLowerCase().includes('watch face') ? wf.appName : `${wf.appName} Watch Face`;
+        opt.dataset.icon = `assets/icons/${wf.id}.webp`;
+        watchfaceSelect.appendChild(opt);
+      });
+
+      watchfaceSelect.addEventListener('change', () => {
+        const selected = watchfaceSelect.selectedOptions[0];
+        if (selected && selected.value) {
+          packageInput.value = selected.value;
+          titleInput.value = selected.dataset.title || '';
+          iconInput.value = selected.dataset.icon || 'assets/logo_notification.webp';
         }
       });
     }
+  }
+  loadPortfolioForGiveaways();
+
+  if (packageInput) {
+    packageInput.addEventListener('input', () => {
+      const val = packageInput.value.trim().toLowerCase();
+      const match = localPortfolio.find(p => p.packageName.toLowerCase() === val || p.appName.toLowerCase() === val);
+      if (match) {
+        titleInput.value = match.appName.toLowerCase().includes('watch face') ? match.appName : `${match.appName} Watch Face`;
+        iconInput.value = `assets/icons/${match.id}.webp`;
+      }
+    });
   }
 
   // Restore saved admin secret

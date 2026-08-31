@@ -2,6 +2,7 @@
 const INITIAL_LOAD_COUNT = 6;
 const LOAD_MORE_STEP = 12;
 
+let portfolioData = [];
 let currentFilter = 'all'; // 'all' | 'free' | 'analog' | 'digital' | 'weather'
 let currentSort = 'release-desc'; // 'release-desc' | 'updated-desc' | 'alphabetical'
 let searchQuery = '';
@@ -15,8 +16,26 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
+async function fetchPortfolio() {
+  if (portfolioData.length > 0) return portfolioData;
+  if (window.portfolio && Array.isArray(window.portfolio) && window.portfolio.length > 0) {
+    portfolioData = window.portfolio;
+    return portfolioData;
+  }
+  try {
+    const res = await fetch('data/portfolio.json');
+    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+    portfolioData = await res.json();
+    window.portfolio = portfolioData;
+    return portfolioData;
+  } catch (err) {
+    console.error('Failed to load data/portfolio.json:', err);
+    return [];
+  }
+}
+
 function getPortfolio() {
-  return window.portfolio || [];
+  return portfolioData.length > 0 ? portfolioData : (window.portfolio || []);
 }
 
 // Helper: parse date strings like "Aug 26, 2026" or return 0 for "Unknown"
@@ -31,6 +50,9 @@ function getProcessedList() {
   const items = getPortfolio();
   // 1. Filter
   let list = items.filter((item) => {
+    // Only show watch faces (not standalone utility apps)
+    if (item.isWatchFace === false) return false;
+
     // Only show available items if isAvailable is defined
     if (item.isAvailable === false) return false;
 
@@ -75,14 +97,17 @@ function createCardElement(item) {
 
   const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(item.packageName)}`;
 
-  const hasIcon2 = Boolean(item.icon2);
+  const iconSrc = `assets/icons/${item.id}.webp`;
+  const icon2Src = `assets/icons/${item.id}_1.webp`;
+  const hasIcon2 = Boolean(item.hasAltImages);
+
   const iconsHtml = hasIcon2
     ? `<div class="watch-icons-wrapper dual-icons">
-        <img src="${item.icon}" alt="${item.appName}" class="watch-icon-preview primary-icon" />
-        <img src="${item.icon2}" alt="${item.appName} variation" class="watch-icon-preview secondary-icon" />
+        <img src="${iconSrc}" alt="${item.appName}" class="watch-icon-preview primary-icon" />
+        <img src="${icon2Src}" alt="${item.appName} variation" class="watch-icon-preview secondary-icon" />
       </div>`
     : `<div class="watch-icons-wrapper single-icon">
-        <img src="${item.icon}" alt="${item.appName}" class="watch-icon-preview" />
+        <img src="${iconSrc}" alt="${item.appName}" class="watch-icon-preview" />
       </div>`;
 
   card.innerHTML = `
@@ -231,7 +256,9 @@ function render(isAppend = false) {
 }
 
 // Setup event listeners
-function initCollection() {
+async function initCollection() {
+  await fetchPortfolio();
+
   // Search input & clear button
   const searchInput = document.getElementById('collection-search');
   const searchClearBtn = document.getElementById('search-clear-btn');
@@ -312,7 +339,7 @@ function initLatestRelease() {
   const container = document.getElementById('latest-release-container');
   if (!container) return;
 
-  const items = getPortfolio();
+  const items = getPortfolio().filter((i) => i.isWatchFace !== false);
   if (!items || items.length === 0) return;
 
   // Find item with the most recent release date
@@ -328,14 +355,16 @@ function initLatestRelease() {
   const isAvail = latest.isAvailable !== false;
   const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(latest.packageName)}`;
 
-  // Build candidate images: name.webp, name_1.webp, name_2.webp, name_3.webp
-  const iconBase = latest.icon ? latest.icon.replace(/\.webp$/i, '') : '';
-  const candidateImages = [
-    `${iconBase}.webp`,
-    `${iconBase}_1.webp`,
-    `${iconBase}_2.webp`,
-    `${iconBase}_3.webp`
-  ];
+  // Build candidate images: id.webp, id_1.webp, id_2.webp, id_3.webp
+  const iconBase = `assets/icons/${latest.id}`;
+  const candidateImages = latest.hasAltImages
+    ? [
+        `${iconBase}.webp`,
+        `${iconBase}_1.webp`,
+        `${iconBase}_2.webp`,
+        `${iconBase}_3.webp`
+      ]
+    : [`${iconBase}.webp`];
 
   const slidesHtml = candidateImages.map((src, index) => `
     <img src="${src}" alt="${latest.appName} preview variation ${index + 1}" class="latest-release-slide ${index === 0 ? 'active' : ''}" data-index="${index}" />
