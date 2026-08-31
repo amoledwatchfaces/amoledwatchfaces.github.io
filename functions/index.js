@@ -229,11 +229,13 @@ exports.giveawayapi = functions.https.onRequest(async (req, res) => {
           updatedAt: admin.firestore.FieldValue.serverTimestamp()
         });
 
-        // Record user claim for this specific giveaway
+        // Record user claim for this specific giveaway with 30-day expiration
+        const thirtyDaysFromNow = new Date(Date.now() + (30 * 24 * 60 * 60 * 1000));
         transaction.set(claimRef, {
           giveawayId: currentGiveawayId,
           code: codeValue,
           timestamp: admin.firestore.FieldValue.serverTimestamp(),
+          expireAt: thirtyDaysFromNow,
           packageName: freshData.packageName || ""
         });
 
@@ -362,7 +364,30 @@ exports.giveawayapi = functions.https.onRequest(async (req, res) => {
       }
 
       const giveawayRef = db.collection("giveaways").doc(targetId);
+      const codesCol = giveawayRef.collection("codes");
+
       if (action === "delete") {
+        // 1. Purge all codes in subcollection
+        const codesSnap = await codesCol.limit(500).get();
+        if (!codesSnap.empty) {
+          const batch = db.batch();
+          codesSnap.docs.forEach(doc => batch.delete(doc.ref));
+          await batch.commit();
+        }
+
+        // 2. Purge all associated claims for this giveaway from giveaway_claims
+        const claimsSnap = await db.collection("giveaway_claims")
+          .where("giveawayId", "==", targetId)
+          .limit(500)
+          .get();
+
+        if (!claimsSnap.empty) {
+          const batch = db.batch();
+          claimsSnap.docs.forEach(doc => batch.delete(doc.ref));
+          await batch.commit();
+        }
+
+        // 3. Delete the main giveaway document
         await giveawayRef.delete();
       } else {
         await giveawayRef.update({ isActive: false, remainingCodes: 0 });
@@ -370,7 +395,7 @@ exports.giveawayapi = functions.https.onRequest(async (req, res) => {
 
       return res.status(200).json({
         success: true,
-        message: `Giveaway '${targetId}' successfully ${action === "delete" ? "deleted" : "deactivated"}.`
+        message: `Giveaway '${targetId}' and its claim records successfully ${action === "delete" ? "deleted" : "deactivated"}.`
       });
     }
 
