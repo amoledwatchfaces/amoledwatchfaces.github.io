@@ -76,7 +76,7 @@ exports.subscribetoannouncements = functions.https.onRequest(async (req, res) =>
 
 /**
  * 2. Endpoint: giveawayapi
- * Unified endpoint for fetching giveaway metadata, claiming promo codes, and importing codes.
+ * Multi-giveaway endpoint for fetching active giveaways, claiming promo codes, and importing codes.
  */
 exports.giveawayapi = functions.https.onRequest(async (req, res) => {
   setCorsHeaders(req, res);
@@ -92,67 +92,111 @@ exports.giveawayapi = functions.https.onRequest(async (req, res) => {
   const ipHash = crypto.createHash("sha256").update(String(rawIp).split(",")[0].trim()).digest("hex");
 
   try {
-    // ACTION: GET ACTIVE GIVEAWAY
+    // ACTION: GET ALL ACTIVE GIVEAWAYS
     if (action === "get") {
-      const docRef = db.collection("giveaways").doc("active");
-      const docSnap = await docRef.get();
+      const targetId = req.query.giveawayId || req.query.id;
 
-      if (!docSnap.exists) {
+      if (targetId) {
+        // Fetch specific giveaway
+        const docSnap = await db.collection("giveaways").doc(targetId).get();
+        if (!docSnap.exists) {
+          return res.status(404).json({ success: false, error: "Giveaway not found" });
+        }
+        const data = docSnap.data();
         return res.status(200).json({
           success: true,
-          isActive: false,
-          message: "No active giveaway at the moment."
+          giveaway: {
+            id: docSnap.id,
+            title: data.title || "Featured Watch Face",
+            packageName: data.packageName || "",
+            iconUrl: data.iconUrl || "assets/logo_notification.webp",
+            bannerUrl: data.bannerUrl || "",
+            playStoreUrl: data.playStoreUrl || (data.packageName ? `https://play.google.com/store/apps/details?id=${data.packageName}` : "https://play.google.com/store/apps/dev?id=5591589606735981545"),
+            totalCodes: Number(data.totalCodes) || 0,
+            remainingCodes: Math.max(0, Number(data.remainingCodes) || 0),
+            isActive: Boolean(data.isActive && data.remainingCodes > 0)
+          }
         });
       }
 
-      const data = docSnap.data();
+      // Fetch all active giveaways
+      const snapshot = await db.collection("giveaways").get();
+
+      if (snapshot.empty) {
+        return res.status(200).json({
+          success: true,
+          giveaways: [],
+          message: "No active giveaways at the moment."
+        });
+      }
+
+      const giveaways = [];
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        // Include if marked active
+        if (data.isActive !== false) {
+          giveaways.push({
+            id: doc.id,
+            title: data.title || "Featured Watch Face",
+            packageName: data.packageName || "",
+            iconUrl: data.iconUrl || "assets/logo_notification.webp",
+            bannerUrl: data.bannerUrl || "",
+            playStoreUrl: data.playStoreUrl || (data.packageName ? `https://play.google.com/store/apps/details?id=${data.packageName}` : "https://play.google.com/store/apps/dev?id=5591589606735981545"),
+            totalCodes: Number(data.totalCodes) || 0,
+            remainingCodes: Math.max(0, Number(data.remainingCodes) || 0),
+            isActive: Boolean(data.isActive && data.remainingCodes > 0),
+            createdAt: data.createdAt ? data.createdAt.toMillis() : 0
+          });
+        }
+      });
+
+      // Sort newest first
+      giveaways.sort((a, b) => b.createdAt - a.createdAt);
+
       return res.status(200).json({
         success: true,
-        isActive: Boolean(data.isActive && data.remainingCodes > 0),
-        giveaway: {
-          title: data.title || "Featured Watch Face",
-          packageName: data.packageName || "",
-          iconUrl: data.iconUrl || "/assets/logo_notification.webp",
-          bannerUrl: data.bannerUrl || "",
-          playStoreUrl: data.playStoreUrl || (data.packageName ? `https://play.google.com/store/apps/details?id=${data.packageName}` : "https://play.google.com/store/apps/dev?id=5591589606735981545"),
-          totalCodes: Number(data.totalCodes) || 0,
-          remainingCodes: Math.max(0, Number(data.remainingCodes) || 0)
-        }
+        giveaways: giveaways
       });
     }
 
-    // ACTION: CLAIM PROMO CODE
+    // ACTION: CLAIM PROMO CODE FOR SPECIFIC GIVEAWAY
     if (action === "claim") {
       if (req.method !== "POST") {
         return res.status(405).json({ error: "POST method required for claim" });
       }
 
-      const giveawayRef = db.collection("giveaways").doc("active");
-      const claimRef = db.collection("giveaway_claims").doc(ipHash);
+      const targetGiveawayId = req.body?.giveawayId || req.query.giveawayId || "active";
+      const giveawayRef = db.collection("giveaways").doc(targetGiveawayId);
 
-      // Check Rate-Limit: 1 claim per IP per active giveaway (within 12 hours)
+      const giveawaySnap = await giveawayRef.get();
+      if (!giveawaySnap.exists) {
+        return res.status(404).json({ error: "Giveaway not found." });
+      }
+
+      const giveawayData = giveawaySnap.data();
+      const currentGiveawayId = targetGiveawayId;
+      const claimRef = db.collection("giveaway_claims").doc(`${ipHash}_${currentGiveawayId}`);
+
+      // Check Rate-Limit: 1 claim per IP per giveaway
       const existingClaim = await claimRef.get();
       if (existingClaim.exists) {
         const claimData = existingClaim.data();
-        const twelveHoursAgo = Date.now() - (12 * 60 * 60 * 1000);
-        if (claimData.timestamp && claimData.timestamp.toMillis() > twelveHoursAgo) {
-          return res.status(429).json({
-            error: "You have already claimed a promo code for this giveaway.",
-            code: claimData.code,
-            redeemUrl: `https://play.google.com/redeem?code=${encodeURIComponent(claimData.code)}`
-          });
-        }
+        return res.status(429).json({
+          error: "You have already claimed a promo code for this giveaway.",
+          code: claimData.code,
+          redeemUrl: `https://play.google.com/redeem?code=${encodeURIComponent(claimData.code)}`
+        });
       }
 
       // Execute atomic transaction to claim 1 unclaimed code
       const result = await db.runTransaction(async (transaction) => {
-        const giveawaySnap = await transaction.get(giveawayRef);
-        if (!giveawaySnap.exists) {
-          throw new Error("No active giveaway found.");
+        const freshGiveawaySnap = await transaction.get(giveawayRef);
+        if (!freshGiveawaySnap.exists) {
+          throw new Error("Giveaway not found.");
         }
 
-        const giveawayData = giveawaySnap.data();
-        if (!giveawayData.isActive || giveawayData.remainingCodes <= 0) {
+        const freshData = freshGiveawaySnap.data();
+        if (!freshData.isActive || freshData.remainingCodes <= 0) {
           throw new Error("OUT_OF_CODES");
         }
 
@@ -178,36 +222,38 @@ exports.giveawayapi = functions.https.onRequest(async (req, res) => {
         });
 
         // Decrement remainingCodes
-        const newRemaining = Math.max(0, giveawayData.remainingCodes - 1);
+        const newRemaining = Math.max(0, freshData.remainingCodes - 1);
         transaction.update(giveawayRef, {
           remainingCodes: newRemaining,
           isActive: newRemaining > 0,
           updatedAt: admin.firestore.FieldValue.serverTimestamp()
         });
 
-        // Record user claim
+        // Record user claim for this specific giveaway
         transaction.set(claimRef, {
+          giveawayId: currentGiveawayId,
           code: codeValue,
           timestamp: admin.firestore.FieldValue.serverTimestamp(),
-          packageName: giveawayData.packageName || ""
+          packageName: freshData.packageName || ""
         });
 
         return {
           code: codeValue,
           remainingCodes: newRemaining,
-          packageName: giveawayData.packageName
+          packageName: freshData.packageName
         };
       });
 
       return res.status(200).json({
         success: true,
+        giveawayId: currentGiveawayId,
         code: result.code,
         redeemUrl: `https://play.google.com/redeem?code=${encodeURIComponent(result.code)}`,
         remainingCodes: result.remainingCodes
       });
     }
 
-    // ACTION: IMPORT PROMO CODES (Admin)
+    // ACTION: IMPORT / CREATE PROMO CODES (Admin)
     if (action === "import") {
       if (req.method !== "POST") {
         return res.status(405).json({ error: "POST method required for import" });
@@ -224,13 +270,12 @@ exports.giveawayapi = functions.https.onRequest(async (req, res) => {
       if (Array.isArray(codesArray)) {
         parsedCodes = codesArray.map(c => String(c).trim()).filter(Boolean);
       } else if (typeof codesCsv === "string") {
-        // Parse CSV string (supports header "Promotion code" or plain list of codes)
         const lines = codesCsv.split(/\r?\n/);
         for (const line of lines) {
           const trimmed = line.trim();
           if (!trimmed) continue;
           if (trimmed.toLowerCase().includes("promotion code") || trimmed.toLowerCase().includes("promo code")) {
-            continue; // Skip header
+            continue;
           }
           const code = trimmed.split(",")[0].trim().replace(/^["']|["']$/g, "");
           if (code) parsedCodes.push(code);
@@ -244,13 +289,29 @@ exports.giveawayapi = functions.https.onRequest(async (req, res) => {
         return res.status(400).json({ error: "No valid promo codes found in request." });
       }
 
-      const giveawayRef = db.collection("giveaways").doc("active");
+      // Generate a unique document ID per watch face package/name
+      const giveawayId = (packageName || title || `giveaway_${Date.now()}`)
+        .toLowerCase()
+        .replace(/[^a-z0-9_]/g, "_")
+        .replace(/^_+|_+$/g, "");
+
+      const giveawayRef = db.collection("giveaways").doc(giveawayId);
+      const codesCol = giveawayRef.collection("codes");
+
+      // Purge any existing codes in this specific giveaway
+      const existingCodesSnap = await codesCol.limit(500).get();
+      if (!existingCodesSnap.empty) {
+        const deleteBatch = db.batch();
+        existingCodesSnap.docs.forEach(doc => deleteBatch.delete(doc.ref));
+        await deleteBatch.commit();
+      }
 
       // Save main giveaway metadata
       await giveawayRef.set({
+        id: giveawayId,
         title: title || "Featured Watch Face Giveaway",
         packageName: packageName || "",
-        iconUrl: iconUrl || "/assets/logo_notification.webp",
+        iconUrl: iconUrl || "assets/logo_notification.webp",
         bannerUrl: bannerUrl || "",
         playStoreUrl: playStoreUrl || (packageName ? `https://play.google.com/store/apps/details?id=${packageName}` : "https://play.google.com/store/apps/dev?id=5591589606735981545"),
         totalCodes: parsedCodes.length,
@@ -260,10 +321,8 @@ exports.giveawayapi = functions.https.onRequest(async (req, res) => {
         updatedAt: admin.firestore.FieldValue.serverTimestamp()
       });
 
-      // Batch write promo codes in chunks of 400 (Firestore max batch is 500)
-      const codesCol = giveawayRef.collection("codes");
+      // Batch write new promo codes in chunks of 400 (Firestore max batch is 500)
       const CHUNK_SIZE = 400;
-
       for (let i = 0; i < parsedCodes.length; i += CHUNK_SIZE) {
         const batch = db.batch();
         const chunk = parsedCodes.slice(i, i + CHUNK_SIZE);
@@ -281,7 +340,37 @@ exports.giveawayapi = functions.https.onRequest(async (req, res) => {
       return res.status(200).json({
         success: true,
         message: `Successfully imported ${parsedCodes.length} promo codes for '${title || "Giveaway"}'!`,
-        totalCodes: parsedCodes.length
+        totalCodes: parsedCodes.length,
+        giveawayId: giveawayId
+      });
+    }
+
+    // ACTION: DELETE / DEACTIVATE GIVEAWAY (Admin)
+    if (action === "delete" || action === "deactivate") {
+      if (req.method !== "POST") {
+        return res.status(405).json({ error: "POST method required" });
+      }
+
+      const providedSecret = req.headers["x-admin-secret"] || req.body?.adminSecret;
+      if (!ADMIN_SECRET || !providedSecret || providedSecret !== ADMIN_SECRET) {
+        return res.status(401).json({ error: "Unauthorized. Invalid admin secret." });
+      }
+
+      const targetId = req.body?.giveawayId || req.query.giveawayId;
+      if (!targetId) {
+        return res.status(400).json({ error: "giveawayId is required" });
+      }
+
+      const giveawayRef = db.collection("giveaways").doc(targetId);
+      if (action === "delete") {
+        await giveawayRef.delete();
+      } else {
+        await giveawayRef.update({ isActive: false, remainingCodes: 0 });
+      }
+
+      return res.status(200).json({
+        success: true,
+        message: `Giveaway '${targetId}' successfully ${action === "delete" ? "deleted" : "deactivated"}.`
       });
     }
 

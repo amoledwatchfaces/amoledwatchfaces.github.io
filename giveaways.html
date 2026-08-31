@@ -111,63 +111,24 @@
     <p class="tagline">Claim your free Google Play promotion code for the featured Wear OS watch face below. Limited codes available!</p>
 
     <div class="giveaway-wrapper">
-      <!-- Active Giveaway Card -->
-      <section id="giveaway-card" class="giveaway-card" aria-label="Active Giveaway Card">
-        <div id="giveaway-badge" class="giveaway-badge-top">
-          <span class="live-dot"></span> Active Giveaway
-        </div>
-
-        <div class="giveaway-icon-wrap">
-          <img id="giveaway-icon" src="assets/logo_notification.webp" alt="Featured Watch Face" class="giveaway-icon" />
-        </div>
-
-        <h2 id="giveaway-title" class="giveaway-title">Featured Watch Face</h2>
-        <div class="giveaway-author">
-          by <a id="giveaway-author-link" href="https://play.google.com/store/apps/dev?id=5591589606735981545" target="_blank" rel="noopener">amoledwatchfaces™</a>
-        </div>
-
-        <div class="giveaway-inventory">
-          <span>Codes Left:</span>
-          <span id="inventory-number" class="inventory-number">—</span>
-        </div>
-
-        <!-- Action / Claim Area -->
-        <div id="claim-action-area">
-          <button id="btn-claim-promo" class="btn-claim-promo" type="button">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 12 20 22 4 22 4 12"></polyline>
-              <rect x="2" y="7" width="20" height="5"></rect>
-              <line x1="12" y1="22" x2="12" y2="7"></line>
-              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-            </svg>
-            Claim Free Promo Code
-          </button>
-        </div>
-
-        <!-- Revealed Code Display (shown once claimed) -->
-        <div id="code-reveal-area" class="code-reveal-area" style="display: none;">
-          <div class="promo-code-card">
-            <span id="promo-code-text" class="promo-code-text">XXXX-XXXX-XXXX</span>
-            <button id="btn-copy-code" class="btn-copy-code" type="button" title="Copy Promo Code">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              Copy Code
-            </button>
+      <!-- Dynamic Giveaways Grid (supports 1, 2, or more watch face giveaways) -->
+      <div id="giveaways-grid" class="giveaways-grid">
+        <!-- Initial skeleton card while loading -->
+        <section class="giveaway-card">
+          <div class="giveaway-badge-top">
+            <span class="live-dot"></span> Loading Giveaways...
           </div>
-
-          <a id="btn-redeem-direct" class="btn-redeem-direct" href="#" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.35 0 .68.12.95.34l12.44 8.5c.67.46.85 1.38.39 2.05-.1.14-.22.26-.36.36L5.45 21.66c-.27.22-.6.34-.95.34-.83 0-1.5-.67-1.5-1.5z"></path>
-            </svg>
-            Redeem on Google Play
-          </a>
-
-          <p class="claim-note">Tap the button above to automatically apply this promo code on Google Play, or copy and paste it into the Play Store redeem menu.</p>
-        </div>
-      </section>
+          <div class="giveaway-icon-wrap skeleton-box"></div>
+          <h2 class="giveaway-title">Loading Featured Watch Face...</h2>
+          <div class="giveaway-inventory">
+            <span>Codes Left:</span>
+            <span class="inventory-number">—</span>
+          </div>
+          <button class="btn-claim-promo" type="button" disabled>
+            <div class="spinner"></div> Loading...
+          </button>
+        </section>
+      </div>
 
       <!-- How to Redeem Guide -->
       <section id="redeem-guide" class="bogo-rules">
