@@ -1903,12 +1903,12 @@ main > picture .main-banner {
 /* Revealed Code Container */
 .code-reveal-area {
   width: 100%;
-  max-width: 440px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-top: 12px;
+  margin-top: 8px;
   animation: fadeInCode 0.35s var(--ease);
+  box-sizing: border-box;
 }
 
 @keyframes fadeInCode {
@@ -1920,20 +1920,27 @@ main > picture .main-banner {
   background: color-mix(in srgb, var(--text) 4%, transparent);
   border: 2px dashed color-mix(in srgb, var(--accent) 60%, var(--border));
   border-radius: 16px;
-  padding: 18px 20px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
 }
 
 .promo-code-text {
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: var(--accent);
   user-select: all;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  text-align: left;
 }
 
 .btn-copy-code {
@@ -1941,22 +1948,38 @@ main > picture .main-banner {
   border: 1px solid var(--border);
   color: var(--text);
   font-family: inherit;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: 8px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   transition: all 0.15s var(--ease);
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .btn-copy-code:hover {
   background: var(--accent);
   border-color: var(--accent);
   color: #000000;
+}
+
+@media (max-width: 440px) {
+  .promo-code-card {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 12px;
+  }
+  .promo-code-text {
+    text-align: center;
+  }
+  .btn-copy-code {
+    justify-content: center;
+  }
 }
 
 .btn-redeem-direct {
