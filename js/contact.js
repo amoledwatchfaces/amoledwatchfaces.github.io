@@ -1,5 +1,8 @@
-// Contact Page Client Script
-const CONTACT_ENDPOINT = "https://contactapi-66490687416.europe-west1.run.app";
+// Web3Forms Endpoint (Free, instant direct email to support@amoledwatchfaces.com)
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+
+// Default public access key for amoledwatchfaces (can also be read from hidden input or config)
+const WEB3FORMS_ACCESS_KEY = "f8a0026e-41bc-4089-a226-03f6f96dfa2a";
 
 document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
@@ -49,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (val === 'Technical Issue / Bug' || val === 'BOGO Promotion Claim' || val === 'Feature Request / Feedback') {
         watchfaceGroup.style.display = 'flex';
       } else {
-        watchfaceGroup.style.display = 'flex'; // Keep accessible
+        watchfaceGroup.style.display = 'flex';
       }
     });
   }
@@ -71,32 +74,50 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      // Check honeypot for bots
+      if (hp) {
+        showStatus('Thank you! Your message has been sent.', 'success');
+        contactForm.reset();
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.innerHTML = `<div class="spinner" style="width: 18px; height: 18px; border: 2px solid rgba(0,0,0,0.2); border-top-color: #000; border-radius: 50%; animation: spin-loader 0.8s linear infinite;"></div> Sending Message...`;
       statusMessage.style.display = 'none';
 
+      // Read custom access key from input if provided, otherwise default
+      const customKeyInput = document.getElementById('web3forms-key');
+      const accessKey = (customKeyInput && customKeyInput.value.trim()) ? customKeyInput.value.trim() : WEB3FORMS_ACCESS_KEY;
+
+      const payload = {
+        access_key: accessKey,
+        name: name,
+        email: email,
+        replyto: email,
+        from_name: "amoledwatchfaces Website",
+        subject: `[Contact Form] ${topic}: ${name}` + (watchFace ? ` (${watchFace})` : ''),
+        topic: topic,
+        watchface: watchFace || "N/A",
+        message: message
+      };
+
       try {
-        const response = await fetch(CONTACT_ENDPOINT, {
+        const response = await fetch(WEB3FORMS_ENDPOINT, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            action: 'contact',
-            name: name,
-            email: email,
-            topic: topic,
-            watchFace: watchFace,
-            message: message,
-            website_hp: hp
-          })
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
         });
 
         const result = await response.json();
 
-        if (response.ok && result.success) {
-          showStatus(result.message || '🎉 Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
+        if (response.ok && (result.success || result.status === 200)) {
+          showStatus('🎉 Thank you! Your message has been sent successfully. We will reply to your email soon.', 'success');
           contactForm.reset();
         } else {
-          showStatus(result.error || 'Failed to send message. Please try emailing support@amoledwatchfaces.com directly.', 'error');
+          showStatus(result.message || 'Failed to send message. Please try emailing support@amoledwatchfaces.com directly.', 'error');
         }
       } catch (err) {
         console.error('Contact submission error:', err);
