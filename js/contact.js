@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (topicSelect && watchfaceGroup) {
     topicSelect.addEventListener('change', () => {
       const val = topicSelect.value;
-      if (val === 'Technical Issue / Bug' || val === 'BOGO Promotion Claim' || val === 'Feature Request / Feedback') {
+      if (val === 'Technical Issue / Bug' || val === 'Feature Request / Feedback') {
         watchfaceGroup.style.display = 'flex';
       } else {
         watchfaceGroup.style.display = 'flex';
