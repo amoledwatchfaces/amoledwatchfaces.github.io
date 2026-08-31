@@ -273,13 +273,6 @@ nav a:not([aria-current="page"]):hover::after {
   margin-left: 4px;
 }
 
-.snow-toggle .material-symbols-outlined {
-  font-size: 20px;
-  line-height: 1;
-  display: block;
-  user-select: none;
-}
-
 .snow-toggle.active {
   color: var(--accent);
 }
@@ -1278,11 +1271,7 @@ main > picture .main-banner {
   justify-content: center;
 }
 
-.material-symbols-outlined {
-  font-size: 18px;
-  line-height: 1;
-  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
+
 
 /* ----------------------------------------------------------------------------
    Installation Guide Page
