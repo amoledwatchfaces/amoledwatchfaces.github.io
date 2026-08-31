@@ -449,7 +449,116 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
     });
+  /* ==========================================================================
+     Admin Giveaways List & 1-Click Delete
+     ========================================================================== */
+  const adminListContainer = document.getElementById('admin-giveaways-list');
+  const refreshAdminListBtn = document.getElementById('btn-refresh-admin-list');
+
+  async function loadAdminGiveawaysList() {
+    if (!adminListContainer) return;
+    adminListContainer.innerHTML = `<p style="color: var(--muted); font-size: 0.88rem; margin: 0;">Loading active giveaways...</p>`;
+
+    try {
+      const response = await fetch(`${GIVEAWAY_ENDPOINT}?action=get`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const data = await response.json();
+      const giveaways = data.giveaways || (data.giveaway ? [data.giveaway] : []);
+
+      if (!giveaways || giveaways.length === 0) {
+        adminListContainer.innerHTML = `<p style="color: var(--muted); font-size: 0.88rem; margin: 0;">No active giveaways found in database.</p>`;
+        return;
+      }
+
+      adminListContainer.innerHTML = '';
+      giveaways.forEach(giveaway => {
+        const item = document.createElement('div');
+        item.className = 'admin-giveaway-item';
+        item.id = `admin-item-${giveaway.id}`;
+
+        item.innerHTML = `
+          <div class="admin-giveaway-item-info">
+            <img src="${giveaway.iconUrl || 'assets/logo_notification.webp'}" alt="${giveaway.title}" class="admin-giveaway-item-icon" />
+            <div class="admin-giveaway-item-text">
+              <span class="admin-giveaway-item-title">${giveaway.title}</span>
+              <span class="admin-giveaway-item-meta">Remaining: <strong>${giveaway.remainingCodes}</strong> / ${giveaway.totalCodes}</span>
+            </div>
+          </div>
+          <button class="btn-delete-giveaway" type="button" data-id="${giveaway.id}" data-title="${giveaway.title}">
+            🗑️ Delete
+          </button>
+        `;
+
+        const deleteBtn = item.querySelector('.btn-delete-giveaway');
+        deleteBtn.addEventListener('click', async () => {
+          const secret = adminSecretInput.value.trim();
+          if (!secret) {
+            alert('Please enter your Admin Secret Key above before deleting.');
+            adminSecretInput.focus();
+            return;
+          }
+
+          const confirmed = confirm(`Are you sure you want to delete the giveaway for "${giveaway.title}"?`);
+          if (!confirmed) return;
+
+          deleteBtn.disabled = true;
+          deleteBtn.textContent = 'Deleting...';
+
+          try {
+            const delRes = await fetch(`${GIVEAWAY_ENDPOINT}?action=delete`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-admin-secret': secret
+              },
+              body: JSON.stringify({
+                action: 'delete',
+                giveawayId: giveaway.id,
+                adminSecret: secret
+              })
+            });
+
+            const delJson = await delRes.json();
+
+            if (delRes.ok && delJson.success) {
+              item.remove();
+              loadGiveaways();
+              if (adminListContainer.children.length === 0) {
+                adminListContainer.innerHTML = `<p style="color: var(--muted); font-size: 0.88rem; margin: 0;">No active giveaways found in database.</p>`;
+              }
+            } else {
+              alert(delJson.error || 'Failed to delete giveaway.');
+              deleteBtn.disabled = false;
+              deleteBtn.textContent = '🗑️ Delete';
+            }
+          } catch (e) {
+            console.error('Delete error:', e);
+            alert('Network error while deleting giveaway.');
+            deleteBtn.disabled = false;
+            deleteBtn.textContent = '🗑️ Delete';
+          }
+        });
+
+        adminListContainer.appendChild(item);
+      });
+    } catch (e) {
+      console.warn('Failed to load admin giveaways list:', e);
+      adminListContainer.innerHTML = `<p style="color: #ef4444; font-size: 0.88rem; margin: 0;">Could not load active giveaways.</p>`;
+    }
   }
+
+  if (refreshAdminListBtn) {
+    refreshAdminListBtn.addEventListener('click', loadAdminGiveawaysList);
+  }
+
+  // Reload admin list when modal opens
+  const originalOpenAdminModal = openAdminModal;
+  openAdminModal = function() {
+    originalOpenAdminModal();
+    loadAdminGiveawaysList();
+  };
 
   loadGiveaways();
 });
