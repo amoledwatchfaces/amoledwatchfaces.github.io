@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gridElement.innerHTML = '';
 
     if (!giveaways || giveaways.length === 0) {
-      renderEmptyState("No active giveaways at the moment. Check back soon!");
+      renderEmptyState("No active giveaways at the moment. Check back soon for new watch face promotions!");
       return;
     }
 
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gridElement.innerHTML = `
       <section class="giveaway-card" style="max-width: 540px; margin: 0 auto; width: 100%;">
         <div class="giveaway-badge-top out-of-codes">
-          <span class="live-dot" style="background:#ef4444"></span> No Active Giveaway
+          <span class="live-dot" style="background:#ef4444"></span> No Active Giveaways
         </div>
         <div class="giveaway-icon-wrap">
           <img src="assets/logo_notification.webp" alt="amoledwatchfaces" class="giveaway-icon" loading="lazy" decoding="async" />
