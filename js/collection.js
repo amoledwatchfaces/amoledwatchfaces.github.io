@@ -4,7 +4,16 @@ const LOAD_MORE_STEP = 12;
 
 let currentFilter = 'all'; // 'all' | 'free' | 'analog' | 'digital' | 'weather'
 let currentSort = 'release-desc'; // 'release-desc' | 'updated-desc' | 'alphabetical'
+let searchQuery = '';
 let visibleCount = INITIAL_LOAD_COUNT;
+
+function escapeHtml(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
 
 function getPortfolio() {
   return window.portfolio || [];
@@ -25,10 +34,18 @@ function getProcessedList() {
     // Only show available items if isAvailable is defined
     if (item.isAvailable === false) return false;
 
-    if (currentFilter === 'free') return item.isFree === true;
-    if (currentFilter === 'analog') return item.isAnalog === true;
-    if (currentFilter === 'digital') return item.isAnalog === false;
-    if (currentFilter === 'weather') return item.hasWeather === true;
+    if (currentFilter === 'free' && !item.isFree) return false;
+    if (currentFilter === 'analog' && !item.isAnalog) return false;
+    if (currentFilter === 'digital' && item.isAnalog) return false;
+    if (currentFilter === 'weather' && !item.hasWeather) return false;
+
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      const nameMatch = (item.appName || '').toLowerCase().includes(q);
+      const descMatch = (item.shortDescription || '').toLowerCase().includes(q);
+      if (!nameMatch && !descMatch) return false;
+    }
+
     return true; // 'all'
   });
 
@@ -124,6 +141,44 @@ function render(isAppend = false) {
 
   const processedList = getProcessedList();
   const total = processedList.length;
+
+  if (total === 0) {
+    grid.innerHTML = `
+      <div class="collection-empty-state">
+        <svg class="empty-icon" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="currentColor">
+          <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+        </svg>
+        <h3>No watch faces found</h3>
+        <p>No results matching "<strong>${escapeHtml(searchQuery)}</strong>". Try checking for typos or clear your search.</p>
+        <button type="button" class="btn-clear-search" id="empty-clear-btn">Clear search</button>
+      </div>
+    `;
+    if (countEl) {
+      countEl.textContent = `0 watch faces found`;
+    }
+    if (actionsContainer) {
+      if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+      if (showAllBtn) showAllBtn.style.display = 'none';
+    }
+
+    const emptyClearBtn = document.getElementById('empty-clear-btn');
+    if (emptyClearBtn) {
+      emptyClearBtn.addEventListener('click', () => {
+        const searchInput = document.getElementById('collection-search');
+        if (searchInput) {
+          searchInput.value = '';
+          searchInput.focus();
+        }
+        searchQuery = '';
+        const searchClearBtn = document.getElementById('search-clear-btn');
+        if (searchClearBtn) searchClearBtn.style.display = 'none';
+        visibleCount = INITIAL_LOAD_COUNT;
+        render(false);
+      });
+    }
+    return;
+  }
+
   const targetCount = Math.min(visibleCount, total);
 
   if (!isAppend) {
@@ -177,6 +232,34 @@ function render(isAppend = false) {
 
 // Setup event listeners
 function initCollection() {
+  // Search input & clear button
+  const searchInput = document.getElementById('collection-search');
+  const searchClearBtn = document.getElementById('search-clear-btn');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      if (searchClearBtn) {
+        searchClearBtn.style.display = searchQuery ? 'inline-flex' : 'none';
+      }
+      visibleCount = INITIAL_LOAD_COUNT;
+      render(false);
+    });
+  }
+
+  if (searchClearBtn) {
+    searchClearBtn.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+      }
+      searchQuery = '';
+      searchClearBtn.style.display = 'none';
+      visibleCount = INITIAL_LOAD_COUNT;
+      render(false);
+    });
+  }
+
   // Filter chips
   const chips = document.querySelectorAll('.filter-chip');
   chips.forEach((chip) => {
@@ -184,6 +267,7 @@ function initCollection() {
       chips.forEach((c) => c.classList.remove('active'));
       chip.classList.add('active');
       currentFilter = chip.dataset.filter || 'all';
+      visibleCount = INITIAL_LOAD_COUNT;
       render(false);
     });
   });
@@ -193,6 +277,7 @@ function initCollection() {
   if (sortSelect) {
     sortSelect.addEventListener('change', (e) => {
       currentSort = e.target.value;
+      visibleCount = INITIAL_LOAD_COUNT;
       render(false);
     });
   }

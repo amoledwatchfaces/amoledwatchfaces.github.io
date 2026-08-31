@@ -1395,6 +1395,73 @@ main > picture .main-banner {
   border-radius: var(--radius);
 }
 
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 220px;
+  max-width: 280px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 0 14px;
+  transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease);
+}
+
+.search-box:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.search-icon {
+  flex-shrink: 0;
+  color: var(--muted);
+  margin-right: 8px;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.94rem;
+  padding: 7px 0;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.search-clear-btn {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  margin-left: 4px;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.search-clear-btn:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--text) 10%, transparent);
+}
+
+@media (max-width: 768px) {
+  .search-box {
+    max-width: 100%;
+    flex-basis: 100%;
+    order: -1;
+  }
+}
+
 .filter-chips {
   display: flex;
   align-items: center;
@@ -1496,6 +1563,58 @@ main > picture .main-banner {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
+}
+
+/* Empty Search State */
+.collection-empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--muted);
+}
+
+.collection-empty-state .empty-icon {
+  color: var(--muted);
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+.collection-empty-state h3 {
+  font-size: 1.25rem;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.collection-empty-state p {
+  font-size: 0.96rem;
+  margin: 0 0 20px;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.btn-clear-search {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 22px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.18s var(--ease), transform 0.18s var(--ease);
+}
+
+.btn-clear-search:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 /* Card Fade In Animation */
