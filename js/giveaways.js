@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const manualPasteInput = document.getElementById('csv-manual-paste');
   const adminStatus = document.getElementById('admin-status-message');
   const submitGiveawayBtn = document.getElementById('btn-submit-giveaway');
+  const adminListContainer = document.getElementById('admin-giveaways-list');
+  const refreshAdminListBtn = document.getElementById('btn-refresh-admin-list');
 
   let activeGiveawaysList = [];
   let parsedCsvCodes = [];
@@ -263,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
       adminBackdrop.style.display = 'flex';
       adminStatus.style.display = 'none';
       if (titleInput) titleInput.focus();
+      loadAdminGiveawaysList();
     }
   }
 
@@ -449,12 +452,11 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
     });
+  }
+
   /* ==========================================================================
      Admin Giveaways List & 1-Click Delete
      ========================================================================== */
-  const adminListContainer = document.getElementById('admin-giveaways-list');
-  const refreshAdminListBtn = document.getElementById('btn-refresh-admin-list');
-
   async function loadAdminGiveawaysList() {
     if (!adminListContainer) return;
     adminListContainer.innerHTML = `<p style="color: var(--muted); font-size: 0.88rem; margin: 0;">Loading active giveaways...</p>`;
@@ -552,13 +554,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (refreshAdminListBtn) {
     refreshAdminListBtn.addEventListener('click', loadAdminGiveawaysList);
   }
-
-  // Reload admin list when modal opens
-  const originalOpenAdminModal = openAdminModal;
-  openAdminModal = function() {
-    originalOpenAdminModal();
-    loadAdminGiveawaysList();
-  };
 
   loadGiveaways();
 });
