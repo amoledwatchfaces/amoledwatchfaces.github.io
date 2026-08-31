@@ -180,20 +180,27 @@
           <input id="admin-secret-input" type="password" placeholder="Enter your admin secret key" required autocomplete="current-password" />
         </div>
 
+        <div class="form-group">
+          <label for="giveaway-watchface-select">Select from Portfolio (Auto-fills Name &amp; Icon)</label>
+          <select id="giveaway-watchface-select" style="background: color-mix(in srgb, var(--text) 4%, transparent); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; color: var(--text); font-family: inherit;">
+            <option value="">-- Choose Watch Face from Portfolio --</option>
+          </select>
+        </div>
+
         <div class="form-row">
           <div class="form-group">
-            <label for="giveaway-title-input">Watch Face Name</label>
-            <input id="giveaway-title-input" type="text" placeholder="e.g. Ultra 2 Watch Face" required />
+            <label for="giveaway-package-input">Google Play Package Name</label>
+            <input id="giveaway-package-input" type="text" placeholder="e.g. com.amoledwatchfaces.aurora" required />
           </div>
           <div class="form-group">
-            <label for="giveaway-package-input">Google Play Package Name</label>
-            <input id="giveaway-package-input" type="text" placeholder="e.g. com.amoledwatchfaces.ultra2" required />
+            <label for="giveaway-title-input">Watch Face Name</label>
+            <input id="giveaway-title-input" type="text" placeholder="e.g. Aurora Watch Face" required />
           </div>
         </div>
 
         <div class="form-group">
-          <label for="giveaway-icon-input">Icon URL (optional)</label>
-          <input id="giveaway-icon-input" type="text" placeholder="assets/logo_notification.webp or https://play-lh.googleusercontent.com/..." />
+          <label for="giveaway-icon-input">Icon URL (Auto-detected)</label>
+          <input id="giveaway-icon-input" type="text" placeholder="assets/icons/aurora.webp" />
         </div>
 
         <div class="form-group">
@@ -255,6 +262,7 @@
   <script src="js/particles.js?v=1.7"></script>
   <script src="theme.js" defer></script>
   <script type="module" src="js/notifications.js"></script>
+  <script src="js/portfolio.js"></script>
   <script src="js/giveaways.js" defer></script>
 </body>
 

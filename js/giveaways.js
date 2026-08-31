@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeAdminBtn = document.getElementById('btn-close-admin-modal');
   const adminForm = document.getElementById('admin-giveaway-form');
   const adminSecretInput = document.getElementById('admin-secret-input');
+  const watchfaceSelect = document.getElementById('giveaway-watchface-select');
   const titleInput = document.getElementById('giveaway-title-input');
   const packageInput = document.getElementById('giveaway-package-input');
   const iconInput = document.getElementById('giveaway-icon-input');
@@ -24,6 +25,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let activeGiveawaysList = [];
   let parsedCsvCodes = [];
+
+  // Populate Portfolio Watch Face Dropdown
+  if (typeof portfolio !== 'undefined' && Array.isArray(portfolio) && watchfaceSelect) {
+    const sortedPortfolio = [...portfolio].sort((a, b) => a.appName.localeCompare(b.appName));
+    sortedPortfolio.forEach(wf => {
+      const opt = document.createElement('option');
+      opt.value = wf.packageName;
+      opt.textContent = `${wf.appName} (${wf.packageName})`;
+      opt.dataset.title = wf.appName.toLowerCase().includes('watch face') ? wf.appName : `${wf.appName} Watch Face`;
+      opt.dataset.icon = wf.icon || wf.icon2 || 'assets/logo_notification.webp';
+      watchfaceSelect.appendChild(opt);
+    });
+
+    watchfaceSelect.addEventListener('change', () => {
+      const selected = watchfaceSelect.selectedOptions[0];
+      if (selected && selected.value) {
+        packageInput.value = selected.value;
+        titleInput.value = selected.dataset.title || '';
+        iconInput.value = selected.dataset.icon || 'assets/logo_notification.webp';
+      }
+    });
+
+    if (packageInput) {
+      packageInput.addEventListener('input', () => {
+        const val = packageInput.value.trim().toLowerCase();
+        const match = portfolio.find(p => p.packageName.toLowerCase() === val || p.appName.toLowerCase() === val);
+        if (match) {
+          titleInput.value = match.appName.toLowerCase().includes('watch face') ? match.appName : `${match.appName} Watch Face`;
+          iconInput.value = match.icon || match.icon2 || 'assets/logo_notification.webp';
+          watchfaceSelect.value = match.packageName;
+        }
+      });
+    }
+  }
 
   // Restore saved admin secret
   const savedSecret = localStorage.getItem('awf_admin_secret');
