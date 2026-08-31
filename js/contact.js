@@ -1,5 +1,5 @@
 // Contact Page Client Script
-const CONTACT_ENDPOINT = "https://giveawayapi-66490687416.europe-west1.run.app?action=contact";
+const CONTACT_ENDPOINT = "https://contactapi-66490687416.europe-west1.run.app";
 
 document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
