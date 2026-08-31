@@ -110,8 +110,8 @@
     <h1>Watch Face Giveaway</h1>
     <p class="tagline">Claim your free Google Play promotion code for the featured Wear OS watch face below. Limited codes available!</p>
 
+    <!-- Dynamic Giveaways Grid (supports 1, 2, or more watch face giveaways) -->
     <div class="giveaway-wrapper">
-      <!-- Dynamic Giveaways Grid (supports 1, 2, or more watch face giveaways) -->
       <div id="giveaways-grid" class="giveaways-grid">
         <!-- Initial skeleton card while loading -->
         <section class="giveaway-card">
@@ -129,38 +129,69 @@
           </button>
         </section>
       </div>
+    </div>
 
-      <!-- How to Redeem Guide -->
-      <section id="redeem-guide" class="bogo-rules">
-        <h2>How to Redeem Your Promo Code</h2>
+    <!-- How to Redeem Guide -->
+    <section id="redeem-guide" class="bogo-rules" style="margin-top: 56px;">
+      <h2>How to Redeem Your Promo Code</h2>
 
-        <div class="bogo-steps">
-          <div class="bogo-step">
-            <div class="bogo-step-num">1</div>
-            <div class="bogo-step-content">
-              <h3>Claim Your Code</h3>
-              <p>Click <strong>"Claim Free Promo Code"</strong> above to generate your single-use Google Play code.</p>
-            </div>
-          </div>
-
-          <div class="bogo-step">
-            <div class="bogo-step-num">2</div>
-            <div class="bogo-step-content">
-              <h3>Redeem on Google Play</h3>
-              <p>Tap <strong>"Redeem on Google Play"</strong> or open the <strong>Google Play Store app &rarr; Tap your profile avatar &rarr; Payments &amp; subscriptions &rarr; Redeem code</strong>.</p>
-            </div>
-          </div>
-
-          <div class="bogo-step">
-            <div class="bogo-step-num">3</div>
-            <div class="bogo-step-content">
-              <h3>Install on Your Watch</h3>
-              <p>Once redeemed, the watch face is permanently tied to your Google account. Select your Wear OS watch device during install to download it directly to your smartwatch.</p>
-            </div>
+      <div class="bogo-steps">
+        <div class="bogo-step">
+          <div class="bogo-step-num">1</div>
+          <div class="bogo-step-content">
+            <h3>Claim Your Code</h3>
+            <p>Click <strong>"Claim Free Promo Code"</strong> above to generate your single-use Google Play code.</p>
           </div>
         </div>
-      </section>
-    </div>
+
+        <div class="bogo-step">
+          <div class="bogo-step-num">2</div>
+          <div class="bogo-step-content">
+            <h3>Redeem on Google Play</h3>
+            <p>Tap <strong>"Redeem on Google Play"</strong> or open the <strong>Google Play Store app &rarr; Tap your profile avatar &rarr; Payments &amp; subscriptions &rarr; Redeem code</strong>.</p>
+          </div>
+        </div>
+
+        <div class="bogo-step">
+          <div class="bogo-step-num">3</div>
+          <div class="bogo-step-content">
+            <h3>Install on Your Watch</h3>
+            <p>Once redeemed, the watch face is permanently tied to your Google account. Select your Wear OS watch device during install to download it directly to your smartwatch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support the Project Section -->
+    <section id="support">
+      <h2>Support the Project</h2>
+      <div class="card support-card">
+        <p>
+          amoledwatchfaces is built and maintained by Tomáš Marcinčin, a solo independent developer with a strong focus
+          on privacy. If you enjoy my watch faces and apps, please consider supporting my work!
+        </p>
+        <div class="links donation-links">
+          <a href="https://buymeacoffee.com/amoledwatchfaces" target="_blank" rel="noopener" class="bmc-badge">
+            <img
+              src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=amoledwatchfaces&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff"
+              alt="Buy me a coffee" />
+          </a>
+          <a href="https://ko-fi.com/amoledwatchfaces" target="_blank" rel="noopener" class="kofi-badge">
+            <img src="assets/social/support_me_on_kofi_beige.webp" alt="Support Me on Ko-fi" />
+          </a>
+          <a href="https://github.com/sponsors/amoledwatchfaces" target="_blank" rel="noopener" class="btn-custom">
+            <span class="btn-content">
+              <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="color: #db61a2;">
+                <path
+                  d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z">
+                </path>
+              </svg>
+              Sponsor
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Hidden Admin Giveaway Manager Modal -->
@@ -243,19 +274,38 @@
     </div>
   </div>
 
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-links">
-        <a href="https://x.com/amoledwfs" target="_blank" rel="noopener">X</a>
-        <a href="https://t.me/amoledwatchfaces" target="_blank" rel="noopener">Telegram</a>
-        <a href="https://instagram.com/amoledwatchfaces" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://facebook.com/amoledwatchfaces" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://youtube.com/@amoledwatchfaces" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://reddit.com/r/amoledwatchfaces" target="_blank" rel="noopener">Reddit</a>
-        <a href="https://github.com/amoledwatchfaces" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <p class="footer-copy">&copy; 2026 amoledwatchfaces™. All rights reserved. <a href="#admin" id="admin-trigger-link" style="opacity: 0.35; color: inherit; text-decoration: none; font-size: 0.85rem;" title="Giveaway Admin Manager">🔒</a></p>
+  <footer>
+    <div class="socials">
+      <a href="https://www.instagram.com/amoledwatchfaces" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 1 0 12.324 6.162 6.162 0 0 1 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 1 0 2.881 1.44 1.44 0 0 1 0-2.881z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <a href="https://x.com/amoledwfs" target="_blank" rel="noopener" aria-label="X (formerly Twitter)">
+        <svg viewBox="0 0 16 16">
+          <path d="M0 0h16v16H0z" fill="none" />
+          <path fill="currentColor"
+            d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+        </svg>
+      </a>
+      <a href="https://t.me/amoledwatchfaces" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M11.944 0C5.344 0 0 5.344 0 11.944c0 6.6 5.344 11.944 11.944 11.944 6.6 0 11.944-5.344 11.944-11.944C23.888 5.344 18.544 0 11.944 0zm5.895 8.222l-1.97 9.28c-.146.658-.538.818-1.085.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.24-.213-.054-.33-.373-.118l-6.87 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.46c.538-.196 1.006.128.832.941z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/amoledwatchfaces" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+            fill="currentColor" />
+        </svg>
+      </a>
     </div>
+    <p>&copy; 2026 amoledwatchfaces.com. Built with privacy in mind for the Wear OS community.</p>
   </footer>
 
   <script src="js/particles.min.js"></script>
