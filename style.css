@@ -1714,9 +1714,10 @@ main > picture .main-banner {
 
 .giveaways-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 28px;
   width: 100%;
+  contain: content;
 }
 
 .giveaways-grid:has(.giveaway-card:only-child) {
@@ -1736,8 +1737,8 @@ main > picture .main-banner {
   text-align: center;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  transform: translateZ(0);
+  contain: layout style;
   transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 

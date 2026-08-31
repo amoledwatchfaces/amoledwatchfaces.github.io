@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="live-dot" style="background:#ef4444"></span> No Active Giveaway
         </div>
         <div class="giveaway-icon-wrap">
-          <img src="assets/logo_notification.webp" alt="amoledwatchfaces" class="giveaway-icon" />
+          <img src="assets/logo_notification.webp" alt="amoledwatchfaces" class="giveaway-icon" loading="lazy" decoding="async" />
         </div>
         <h2 class="giveaway-title">Stay Tuned!</h2>
         <p class="tagline" style="margin-bottom: 24px;">${message}</p>
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="giveaway-icon-wrap">
-        <img src="${giveaway.iconUrl || 'assets/logo_notification.webp'}" alt="${giveaway.title}" class="giveaway-icon" />
+        <img src="${giveaway.iconUrl || 'assets/logo_notification.webp'}" alt="${giveaway.title}" class="giveaway-icon" loading="lazy" decoding="async" />
       </div>
 
       <h2 class="giveaway-title">${giveaway.title}</h2>
@@ -517,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         item.innerHTML = `
           <div class="admin-giveaway-item-info">
-            <img src="${giveaway.iconUrl || 'assets/logo_notification.webp'}" alt="${giveaway.title}" class="admin-giveaway-item-icon" />
+            <img src="${giveaway.iconUrl || 'assets/logo_notification.webp'}" alt="${giveaway.title}" class="admin-giveaway-item-icon" loading="lazy" decoding="async" />
             <div class="admin-giveaway-item-text">
               <span class="admin-giveaway-item-title">${giveaway.title}</span>
               <span class="admin-giveaway-item-meta">Remaining: <strong>${giveaway.remainingCodes}</strong> / ${giveaway.totalCodes}</span>
