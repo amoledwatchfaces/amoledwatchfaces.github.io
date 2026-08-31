@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: name,
         email: email,
         replyto: email,
-        from_name: `${name}`,
+        from_name: name,
         subject: `[Contact Form] ${topic}: ` + (watchFace ? ` (${watchFace})` : ''),
         topic: topic,
         watchface: watchFace || "N/A",
