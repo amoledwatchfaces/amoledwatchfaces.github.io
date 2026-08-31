@@ -1,8 +1,8 @@
 // Web3Forms Endpoint (Free, instant direct email to support@amoledwatchfaces.com)
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
-// Default public access key for amoledwatchfaces (can also be read from hidden input or config)
-const WEB3FORMS_ACCESS_KEY = "f8a0026e-41bc-4089-a226-03f6f96dfa2a";
+// Access key for support@amoledwatchfaces.com
+const WEB3FORMS_ACCESS_KEY = "849e7bf7-e1b6-42a0-8f7d-98933c47e4a0";
 
 document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
