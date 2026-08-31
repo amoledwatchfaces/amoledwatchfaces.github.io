@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
         name: name,
         email: email,
         replyto: email,
-        from_name: "amoledwatchfaces Website",
-        subject: `[Contact Form] ${topic}: ${name}` + (watchFace ? ` (${watchFace})` : ''),
+        from_name: `${name}`,
+        subject: `[Contact Form] ${topic}: ` + (watchFace ? ` (${watchFace})` : ''),
         topic: topic,
         watchface: watchFace || "N/A",
         message: message
