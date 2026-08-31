@@ -1,6 +1,4 @@
-// Firebase Cloud Messaging Client Integration
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import { getMessaging, getToken, deleteToken, onMessage } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js';
+// Firebase Cloud Messaging Client Integration (Lazy-loaded on demand)
 
 const firebaseConfig = {
   apiKey: "AIzaSyCf9OO9QZqjG94SSLunG1i_6jWjmeyxr78",
@@ -17,14 +15,26 @@ const VAPID_KEY = "BDoBSM37A2p1ng-rN1HC7_eWD7H5HQ5hajujQjC9dOL6uH3mN0z5EN9oJQuxC
 // Cloud Function endpoint to subscribe/unsubscribe web tokens to the 'announcements' topic
 const SUBSCRIBE_ENDPOINT = "https://subscribetoannouncements-66490687416.europe-west1.run.app";
 
-const app = initializeApp(firebaseConfig);
+let app = null;
 let messaging = null;
 
-if (typeof window !== 'undefined' && 'serviceWorker' in navigator && 'PushManager' in window) {
+/**
+ * Lazy-load Firebase SDK on demand
+ */
+async function getFirebaseMessaging() {
+  if (messaging) return messaging;
+  if (typeof window === 'undefined' || !('serviceWorker' in navigator) || !('PushManager' in window)) {
+    return null;
+  }
   try {
+    const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
+    const { getMessaging } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js');
+    if (!app) app = initializeApp(firebaseConfig);
     messaging = getMessaging(app);
+    return messaging;
   } catch (e) {
-    console.warn('Firebase Messaging not supported on this browser:', e);
+    console.warn('Firebase Messaging not supported or failed to load:', e);
+    return null;
   }
 }
 
@@ -71,7 +81,9 @@ export async function requestNotificationPermission() {
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
 
-  if (!messaging) {
+  const msgInstance = await getFirebaseMessaging();
+
+  if (!msgInstance) {
     if (isIOS && !isStandalone) {
       alert('On iOS / iPhone, Apple requires adding the website to your Home Screen first.\n\n1. Tap the Share button in Safari (or Chrome).\n2. Select "Add to Home Screen".\n3. Open amoledwatchfaces from your Home Screen and tap the bell icon to enable notifications.');
     } else {
@@ -84,7 +96,8 @@ export async function requestNotificationPermission() {
     const permission = await Notification.requestPermission();
     if (permission === 'granted') {
       const swRegistration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
-      const currentToken = await getToken(messaging, {
+      const { getToken } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js');
+      const currentToken = await getToken(msgInstance, {
         vapidKey: VAPID_KEY,
         serviceWorkerRegistration: swRegistration
       });
@@ -111,7 +124,8 @@ export async function requestNotificationPermission() {
  * Unsubscribe from notifications, delete token, and revert UI
  */
 export async function unsubscribeFromNotifications() {
-  if (!messaging) return;
+  const msgInstance = await getFirebaseMessaging();
+  if (!msgInstance) return;
 
   const currentToken = localStorage.getItem('fcm_token');
   if (currentToken) {
@@ -119,7 +133,8 @@ export async function unsubscribeFromNotifications() {
   }
 
   try {
-    await deleteToken(messaging);
+    const { deleteToken } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js');
+    await deleteToken(msgInstance);
     console.log('FCM Token deleted from client');
   } catch (err) {
     console.warn('Error deleting FCM token:', err);
@@ -152,9 +167,11 @@ function updateNotificationButtonState(isSubscribed) {
 /**
  * Setup foreground message handler
  */
-export function setupForegroundMessageListener() {
-  if (!messaging) return;
-  onMessage(messaging, (payload) => {
+export async function setupForegroundMessageListener() {
+  const msgInstance = await getFirebaseMessaging();
+  if (!msgInstance) return;
+  const { onMessage } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging.js');
+  onMessage(msgInstance, (payload) => {
     console.log('Foreground message received in active tab:', payload);
   });
 }
@@ -179,12 +196,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isCurrentlySubscribed) {
       const confirmDisable = confirm('You are currently receiving announcements.\n\nDo you want to turn off notifications on this device?');
       if (confirmDisable) {
-        await unsubscribeFromNotifications();
+        btn.disabled = true;
+        try {
+          await unsubscribeFromNotifications();
+        } finally {
+          btn.disabled = false;
+        }
       }
     } else {
-      await requestNotificationPermission();
+      btn.disabled = true;
+      try {
+        await requestNotificationPermission();
+      } finally {
+        btn.disabled = false;
+      }
     }
   });
-
-  setupForegroundMessageListener();
 });
