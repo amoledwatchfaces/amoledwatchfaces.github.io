@@ -257,7 +257,7 @@ function initLatestRelease() {
   `).join('');
 
   const dotsHtml = candidateImages.map((_, index) => `
-    <span class="latest-release-dot ${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="Slide ${index + 1}"></span>
+    <button type="button" class="latest-release-dot ${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="Slide ${index + 1}"></button>
   `).join('');
 
   const badgeStatusHtml = isAvail

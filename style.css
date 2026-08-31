@@ -992,6 +992,8 @@ main > picture .main-banner {
 .latest-release-dot {
   width: 6px;
   height: 6px;
+  border: none;
+  padding: 0;
   border-radius: 50%;
   background: var(--border);
   transition: all 0.3s ease;
