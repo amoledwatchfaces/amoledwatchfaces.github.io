@@ -7,12 +7,12 @@
         "isAvailable":  true,
         "isFree":  false,
         "isAnalog":  true,
-        "hasWeather":  false,
+        "hasWeather":  true,
         "isTrialEnabled":  true,
         "hasAltImages":  true,
-        "pushToken":  "hYN/8ZA6bV2o1N6I5npq7TAZSXLBKS3XdtMy91qfNmw=:MS4wLjA=",
+        "pushToken":  "8qKY15BwnZODdyWg4ezCsntS9NGLB7X68BtGERZ0H5w=:MS4wLjA=",
         "releaseDate":  "Aug 26, 2026",
-        "lastUpdated":  "Aug 18, 2026",
+        "lastUpdated":  "Sep 2, 2026",
         "shortDescription":  "Sleek, highly customizable watch face. Inspired by Galaxy Watch Ultra 2 Analog."
     },
     {
