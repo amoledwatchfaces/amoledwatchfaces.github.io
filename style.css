@@ -614,15 +614,14 @@ footer p {
 
 .footer-privacy-link {
   color: var(--muted);
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 3px;
-  text-decoration-color: color-mix(in srgb, var(--muted) 40%, transparent);
-  transition: color 0.18s var(--ease), text-decoration-color 0.18s var(--ease);
+  transition: color 0.18s var(--ease), text-decoration 0.18s var(--ease);
 }
 
 .footer-privacy-link:hover {
   color: var(--accent);
-  text-decoration-color: var(--accent);
+  text-decoration: underline;
 }
 
 .footer-links {
