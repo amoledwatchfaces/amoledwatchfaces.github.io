@@ -608,6 +608,27 @@ footer {
   text-align: center;
 }
 
+footer p {
+  margin: 0;
+}
+
+.footer-privacy-link {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--muted) 40%, transparent);
+  transition: color 0.18s var(--ease), text-decoration-color 0.18s var(--ease);
+}
+
+.footer-privacy-link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.footer-links {
+  margin: 8px 0 0;
+}
+
 /* ----------------------------------------------------------------------------
    Soft entrance animation (disabled when the user prefers reduced motion)
 ---------------------------------------------------------------------------- */

@@ -78,63 +78,152 @@
 
   <main>
     <h1>Privacy Policy</h1>
-    <p class="tagline">Wear OS Watch Faces by amoledwatchfaces</p>
-    <p class="muted" style="font-size: 0.95rem; margin-bottom: 32px;">Last Updated: August 29, 2026</p>
+    <p class="tagline">Wear OS Watch Faces, Apps, and Website by amoledwatchfaces™</p>
+    <p class="muted" style="font-size: 0.95rem; margin-bottom: 32px;">Last Updated: September 4, 2026</p>
 
     <div class="card">
       <h3>Overview & Core Principles</h3>
       <p>
-        At <strong>amoledwatchfaces</strong>, we respect your privacy. Our Wear OS watch faces are built with a privacy-by-design approach. We do not collect, store, share, or sell any of your personal data.
+        At <strong>amoledwatchfaces™</strong> (operated by independent developer Tomáš Marcinčin), we are deeply committed to user privacy. Whether you are using our Wear OS watch faces, Android companion apps, or browsing our website, we operate with a strict <strong>privacy-by-design</strong> philosophy.
       </p>
       <ul>
-        <li><strong>No Personal Data Collection:</strong> We do not collect names, email addresses, phone numbers, IP addresses, or device serial numbers.</li>
-        <li><strong>No Tracking or Analytics:</strong> Our watch faces do not include third-party advertising SDKs, tracking pixels, or telemetry frameworks.</li>
-        <li><strong>100% Local Execution:</strong> All watch faces run entirely on your watch device using Google's native Watch Face Format (WFF).</li>
+        <li><strong>No User Profiling or Selling Data:</strong> We do not track you across the web, profile your behavior, or sell any personal data to third parties or brokers.</li>
+        <li><strong>No Analytics or Ad Trackers:</strong> We do not load Google Analytics, Meta Pixel, or commercial advertising SDKs.</li>
+        <li><strong>Minimal Data Processing:</strong> We only process the absolute minimum data required to deliver requested services (such as answering your support emails or delivering opt-in notifications).</li>
       </ul>
     </div>
 
-    <h2>Device Permissions & Sensor Data</h2>
+    <!-- Section 1: Watch Faces & Apps -->
+    <h2>1. Wear OS Watch Faces & Applications</h2>
     <p>
-      Depending on the features and complications you choose to display, a watch face may request specific system permissions on your Wear OS device:
+      Our Wear OS watch faces and Android apps are designed for local, offline execution directly on your watch device:
     </p>
 
     <div class="card">
-      <h3>Sensor Data (Heart Rate & Health)</h3>
+      <h3>Local Execution & Permissions</h3>
       <p>
-        If a watch face displays body sensor metrics (e.g. heart rate or step count), it accesses these values locally in real time via the standard Wear OS / Health Services APIs. This information is processed exclusively on your device to display the complication value and is never recorded, transmitted, or shared externally.
+        All watch faces run natively using Google's declarative <strong>Watch Face Format (WFF)</strong> without external network calls or telemetry frameworks.
+      </p>
+      <ul>
+        <li><strong>Body Sensor Data (Heart Rate & Health):</strong> If a watch face displays heart rate or step counts, it queries the local Wear OS / Health Services APIs in real time. This information never leaves your device and is never recorded or transmitted externally.</li>
+        <li><strong>Complications:</strong> Watch faces render complications provided directly by your selected system complication providers and Wear OS. The watch face merely displays the data on screen.</li>
+        <li><strong>Google Play Purchases & Updates:</strong> App downloads, license verification, and updates are handled securely and exclusively by Google Play under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+      </ul>
+    </div>
+
+    <!-- Section 2: Website Privacy -->
+    <h2>2. Website Privacy Policy (amoledwatchfaces.com)</h2>
+    <p>
+      This section describes how data is handled when you visit our website:
+    </p>
+
+    <div class="card">
+      <h3>Infrastructure, Hosting & CDN</h3>
+      <p>
+        Our website is hosted on <strong>GitHub Pages</strong> and protected by <strong>Cloudflare</strong> as a content delivery network (CDN) and reverse proxy.
+      </p>
+      <p>
+        When you visit our site, Cloudflare and GitHub automatically process standard server log data (such as your IP address, browser user-agent, operating system, and request timestamps) strictly for delivering web pages, optimizing speed, and defending against DDoS attacks or malicious traffic. This processing is based on our <strong>legitimate interest</strong> under <strong>Article 6(1)(f) of the GDPR</strong> to provide a secure and stable website.
       </p>
     </div>
 
     <div class="card">
-      <h3>Complication Data</h3>
+      <h3>Customer Support & Contact Inquiries</h3>
       <p>
-        Watch faces support user-selected complication slots (such as calendar events, weather, world clock, or battery status). All complication data is supplied directly by your chosen system complication providers and Wear OS. The watch face merely renders the provided data on the screen.
+        When you submit an inquiry through our <a href="contact">Contact Form</a> or email us directly at <code>support@amoledwatchfaces.com</code>:
+      </p>
+      <ul>
+        <li><strong>Data Collected:</strong> Your name, email address, topic, and message content.</li>
+        <li><strong>Service Provider:</strong> The contact form securely forwards your message to us using <strong>Web3Forms</strong>.</li>
+        <li><strong>Purpose & Legal Basis:</strong> We use this information solely to review, respond to, and resolve your support inquiries, bug reports, or BOGO claims. The legal basis for this processing is <strong>GDPR Article 6(1)(b)</strong> (taking steps at the request of the user prior to or in fulfillment of a service) and <strong>Article 6(1)(f)</strong> (legitimate interest in providing responsive customer support).</li>
+        <li><strong>Retention:</strong> Support correspondence is retained only as long as necessary to resolve your request and is deleted upon request.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Web Push Notifications</h3>
+      <p>
+        Our website offers optional Web Push Notifications to alert you about new watch face releases, updates, and promotions.
+      </p>
+      <ul>
+        <li><strong>Consent-Based (Opt-In):</strong> Notifications are entirely optional. A push token is only created if you voluntarily click the notification bell icon and explicitly grant permission in your browser prompt (<strong>GDPR Article 6(1)(a) Consent</strong>).</li>
+        <li><strong>Technology:</strong> We use <strong>Google Firebase Cloud Messaging (FCM)</strong>. An anonymous, randomly generated device registration token is created and stored in your browser's local storage. No names, emails, or personal identities are attached to this token.</li>
+        <li><strong>Revoking Consent:</strong> You can withdraw consent and disable notifications at any time simply by clicking the bell icon on the website or changing your browser notification permissions. When disabled, your token is immediately deleted from local storage and unsubscribed.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Cookies & Local Storage</h3>
+      <p>
+        We do <strong>not</strong> use tracking cookies, advertising cookies, or third-party behavioral analytics cookies.
+      </p>
+      <p>
+        We use your browser's native <strong>localStorage</strong> strictly for functional, non-tracking site preferences:
+      </p>
+      <ul>
+        <li><code>theme</code>: Remembers your dark or light mode preference.</li>
+        <li><code>snowDisabled</code>: Remembers whether you have paused the seasonal particle animation.</li>
+        <li><code>awf_giveaway_code_*</code>: Stores your claimed giveaway promo code in your browser so you don't lose it before redeeming it on Google Play.</li>
+        <li><code>fcm_token</code> & <code>notifications_enabled</code>: Stores your notification status if you explicitly opted into announcements.</li>
+      </ul>
+      <p>
+        Because these storage items are <strong>strictly necessary for functional UI and user-requested features</strong> and do not track you across other websites, a consent banner is not required under the EU ePrivacy Directive.
       </p>
     </div>
 
-    <h2>Third-Party Services</h2>
-    <p>
-      Our watch faces do not integrate with any external cloud servers or third-party data brokers. Standard purchases, downloads, and app updates are managed directly and securely through Google Play, subject to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.
-    </p>
+    <!-- Section 3: GDPR Rights -->
+    <h2>3. Your Rights Under GDPR (EU / EEA Users)</h2>
+    <div class="card">
+      <p>
+        If you reside in the European Economic Area (EEA), you have specific statutory rights regarding your personal data under the General Data Protection Regulation (GDPR):
+      </p>
+      <ul>
+        <li><strong>Right of Access (Art. 15 GDPR):</strong> You have the right to request confirmation of whether we hold personal data concerning you (e.g. past support emails) and obtain a copy.</li>
+        <li><strong>Right to Rectification (Art. 16 GDPR):</strong> You have the right to request correction of inaccurate personal data.</li>
+        <li><strong>Right to Erasure (Art. 17 GDPR):</strong> You have the right to request the deletion of your personal data (the "Right to be Forgotten"), including past support messages or stored notification tokens.</li>
+        <li><strong>Right to Restriction of Processing (Art. 18 GDPR):</strong> You have the right to request that we restrict the processing of your data under certain conditions.</li>
+        <li><strong>Right to Withdraw Consent (Art. 7(3) GDPR):</strong> Where processing is based on consent (such as push notifications), you may withdraw your consent at any time without penalty.</li>
+        <li><strong>Right to Lodge a Complaint:</strong> You have the right to file a complaint with a competent Data Protection Authority in your EU member state.</li>
+      </ul>
+      <p style="margin-top: 14px;">
+        To exercise any of these rights, simply email us at <a href="mailto:support@amoledwatchfaces.com">support@amoledwatchfaces.com</a>. We will respond promptly within the statutory timeline.
+      </p>
+    </div>
 
-    <h2>Children's Privacy</h2>
-    <p>
-      Our watch faces do not collect any personal information from anyone, including children under the age of 13.
-    </p>
+    <!-- Section 4: Children's Privacy -->
+    <h2>4. Children's Privacy</h2>
+    <div class="card">
+      <p>
+        Our services, watch faces, and website are not directed to children under the age of 13 (or under 16 in the EEA). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will promptly delete it.
+      </p>
+    </div>
 
-    <h2>Changes to This Policy</h2>
-    <p>
-      We may update this Privacy Policy from time to time to reflect improvements or regulatory updates. Any changes will be posted directly on this page with an updated revision date.
-    </p>
+    <!-- Section 5: Changes to This Policy -->
+    <h2>5. Changes to This Policy</h2>
+    <div class="card">
+      <p>
+        We may update this Privacy Policy from time to time to reflect improvements, new features, or regulatory updates. Any changes will be posted directly on this page with an updated "Last Updated" revision date at the top.
+      </p>
+    </div>
 
-    <h2>Contact Us</h2>
-    <p>
-      If you have any questions or feedback regarding this Privacy Policy or any of our watch faces, please contact us at:
-    </p>
-    <div class="links" style="margin-top: 16px; margin-bottom: 32px;">
-      <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">
-        support@amoledwatchfaces.com
-      </a>
+    <!-- Section 6: Data Controller Contact -->
+    <h2>6. Contact Us & Data Controller</h2>
+    <div class="card">
+      <p>
+        The Data Controller responsible for data processing on this website and in relation to amoledwatchfaces™ is:
+      </p>
+      <p style="margin: 8px 0;">
+        <strong>Tomáš Marcinčin (amoledwatchfaces™)</strong><br />
+        Independent Developer &bull; Slovakia (European Union)
+      </p>
+      <p>
+        If you have questions, feedback, or data privacy requests, please contact us anytime:
+      </p>
+      <div class="links" style="margin-top: 16px;">
+        <a href="mailto:support@amoledwatchfaces.com" target="_blank" rel="noopener">
+          support@amoledwatchfaces.com
+        </a>
+      </div>
     </div>
   </main>
 
@@ -169,6 +258,7 @@
       </a>
     </div>
     <p>&copy; 2026 amoledwatchfaces.com. Built with privacy in mind for the Wear OS community.</p>
+    <p class="footer-links"><a href="privacy" class="footer-privacy-link">Privacy Policy</a></p>
   </footer>
 
   <script src="js/particles.js?v=1.8" defer></script>
