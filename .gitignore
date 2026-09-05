@@ -16,3 +16,4 @@ temp/
 Thumbs.db
 .vscode/
 .idea/
+jsconfig.json
