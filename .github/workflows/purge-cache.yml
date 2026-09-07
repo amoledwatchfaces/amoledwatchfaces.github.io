@@ -45,7 +45,7 @@ jobs:
           print('Commit range checked:', cmd)
           print('Changed files in push:', changed_files)
 
-          ignored_prefixes = ('.github/', '.git', 'README.md', '.gitignore', '.gitattributes', '.nojekyll', '_config.yml')
+          ignored_prefixes = ('.github/', '.git', 'README.md', '.gitignore', '.gitattributes', '_config.yml')
           urls = set()
 
           for f in changed_files:
