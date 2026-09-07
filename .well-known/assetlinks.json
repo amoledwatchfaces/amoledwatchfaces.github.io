@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.amoledwatchfaces.catalog",
+      "sha256_cert_fingerprints": [
+        "9A:28:EB:91:49:A6:2A:B1:FF:DA:DC:CE:32:7B:CA:C4:D7:0A:17:22:54:DE:48:91:5B:C4:F3:7E:D7:DE:ED:9E"
+      ]
+    }
+  }
+]
