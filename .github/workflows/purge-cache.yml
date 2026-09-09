@@ -14,10 +14,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Wait for GitHub Pages deployment
+        run: |
+          echo "Waiting 45s for GitHub Pages deployment to finish before purging CDN cache..."
+          sleep 45
+
       - name: Identify changed URLs and purge Cloudflare cache
         run: |
           python3 -c "
-          import json, subprocess, os, urllib.request
+          import json, subprocess, os, urllib.request, re
 
           zone_id = os.environ.get('CF_ZONE_ID')
           token = os.environ.get('CF_API_TOKEN')
@@ -48,6 +53,23 @@ jobs:
           ignored_prefixes = ('.github/', '.git', 'README.md', '.gitignore', '.gitattributes', '_config.yml')
           urls = set()
 
+          # Scan all HTML files in repo to detect query-string versioned references (e.g. style.css?v=2.5)
+          html_files = []
+          for root, _, files in os.walk('.'):
+              if any(root.startswith(p) for p in ('.git', '.github')):
+                  continue
+              for name in files:
+                  if name.endswith('.html'):
+                      html_files.append(os.path.join(root, name))
+
+          html_contents = []
+          for hf in html_files:
+              try:
+                  with open(hf, 'r', encoding='utf-8') as fp:
+                      html_contents.append(fp.read())
+              except Exception:
+                  pass
+
           for f in changed_files:
               if f.startswith(ignored_prefixes):
                   continue
@@ -63,6 +85,22 @@ jobs:
                   urls.add(f'{domain}/{f}')
               else:
                   urls.add(f'{domain}/{f}')
+                  # Find any query string references across HTML pages (e.g., style.css?v=2.5)
+                  basename = f.split('/')[-1]
+                  pattern = re.compile(r'[\"\'](?:[^\"\']*/)?(' + re.escape(basename) + r'\?[^\"\']*)[\"\']')
+                  for content in html_contents:
+                      for match in pattern.findall(content):
+                          clean_match = re.sub(r'^\.+/', '', match)
+                          if '/' in f:
+                              parent_dir = '/'.join(f.split('/')[:-1])
+                              urls.add(f'{domain}/{parent_dir}/{clean_match}')
+                          else:
+                              urls.add(f'{domain}/{clean_match}')
+
+          # If global assets changed, ensure home index is also purged
+          if any(f in changed_files for f in ['style.css', 'theme.js']):
+              urls.add(f'{domain}/')
+              urls.add(f'{domain}/index.html')
 
           url_list = list(urls)
           print('URLs to purge:', url_list)
