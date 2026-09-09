@@ -2497,7 +2497,7 @@
     },
     {
         "id": "awfoledanalog",
-        "appName": "OLED Analog Watch face",
+        "appName": "OLED Analog",
         "packageName": "com.watchfacestudio.awfoledanalog",
         "isWatchFace": true,
         "isAvailable": true,
@@ -2609,7 +2609,7 @@
     },
     {
         "id": "awffit5",
-        "appName": "Fit 5 Watch Face",
+        "appName": "Fit 5",
         "packageName": "com.watchfacestudio.awffit5",
         "isWatchFace": true,
         "isAvailable": true,
