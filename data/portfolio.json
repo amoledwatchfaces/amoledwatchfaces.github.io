@@ -1,5 +1,21 @@
 [
     {
+        "id": "adventurer2",
+        "appName": "Adventurer 2",
+        "packageName": "com.amoledwatchfaces.adventurer2",
+        "isWatchFace": true,
+        "isAvailable": false,
+        "isFree": false,
+        "isAnalog": false,
+        "hasWeather": true,
+        "isTrialEnabled": false,
+        "hasAltImages": false,
+        "pushToken": "K0EBGKkTaGZ5VayhQ9nmstFzN+av3ZlRSvjT79z9EMo=:MS4wLjA=",
+        "releaseDate": "Sep 18, 2026",
+        "lastUpdated": "Sep 18, 2026",
+        "shortDescription": "Available soon..."
+    },
+    {
         "id": "ultra2",
         "appName": "Ultra 2",
         "packageName": "com.amoledwatchfaces.ultra2",
