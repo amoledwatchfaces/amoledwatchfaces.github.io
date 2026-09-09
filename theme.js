@@ -1,3 +1,4 @@
+// amoledwatchfaces theme - v2.7
 function init() {
   initThemeToggle();
   initHeadingAnchors();
