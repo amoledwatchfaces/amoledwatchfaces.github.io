@@ -30,9 +30,7 @@
 
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="assets/logo.webp" />
-  <link rel="stylesheet" href="style.css?v=2.2" />
-
-  <link rel="stylesheet" href="style.css?v=2.6" />
+  <link rel="stylesheet" href="style.css?v=2.7" />
 
   <!-- Anti-Flicker Theme Initialization -->
   <script>
@@ -42,6 +40,26 @@
       const theme = savedTheme ? savedTheme : (systemDark ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', theme);
     })();
+  </script>
+
+  <!-- Sender -->
+  <script>
+    (function (s, e, n, d, er) {
+      s['Sender'] = er;
+      s[er] = s[er] || function () {
+        (s[er].q = s[er].q || []).push(arguments)
+      }, s[er].l = 1 * new Date();
+      s[er].on = function(event, callback) {
+        s[er].listeners = s[er].listeners || {};
+        (s[er].listeners[event] = s[er].listeners[event] || []).push(callback);
+      };
+      var a = e.createElement(n),
+          m = e.getElementsByTagName(n)[0];
+      a.async = 1;
+      a.src = d;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+    sender('b28e1c9e2a9537')
   </script>
 </head>
 
@@ -252,6 +270,15 @@
             </span>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- Keep in Touch Section -->
+    <section id="newsletter">
+      <h2>Keep in Touch</h2>
+      <div class="card newsletter-card">
+        <p>Subscribe to our newsletter to receive updates on new watch face releases, updates, and promotions.</p>
+        <div style="text-align: left" class="sender-form-field" data-sender-form-id="bYYj2b"></div>
       </div>
     </section>
   </main>
