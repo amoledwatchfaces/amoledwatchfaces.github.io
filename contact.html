@@ -42,7 +42,7 @@
     })();
   </script>
 
-  <!-- Sender -->
+  <!-- Sender (Explicit rendering to prevent automatic popup aADV7j on contact page) -->
   <script>
     (function (s, e, n, d, er) {
       s['Sender'] = er;
@@ -58,8 +58,23 @@
       a.async = 1;
       a.src = d;
       m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
-    sender('b28e1c9e2a9537')
+    })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js?explicit=true', 'sender');
+    sender('b28e1c9e2a9537');
+
+    function initSenderForm() {
+      if (window.senderForms) {
+        window.senderForms.render('bYYj2b');
+        if (typeof window.senderForms.destroy === 'function') {
+          window.senderForms.destroy('aADV7j');
+        }
+      }
+    }
+
+    if (!window.senderFormsLoaded) {
+      window.addEventListener('onSenderFormsLoaded', initSenderForm);
+    } else {
+      initSenderForm();
+    }
   </script>
 </head>
 
