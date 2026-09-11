@@ -2735,7 +2735,7 @@ main > picture .main-banner {
 
 .btn-submit-contact {
   background: var(--accent);
-  color: #000000;
+  color: var(--bg);
   font-family: inherit;
   font-size: 1rem;
   font-weight: 700;
