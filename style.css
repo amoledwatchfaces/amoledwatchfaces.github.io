@@ -983,9 +983,11 @@ main > picture .main-banner {
 .badge-pill {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  line-height: 1;
   font-size: 0.75rem;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 3px 9px 4px;
   border-radius: 99px;
   background-color: rgba(104, 255, 183, 0.08);
   color: var(--primary);
