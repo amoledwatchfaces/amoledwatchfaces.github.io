@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
           await navigator.clipboard.writeText(code);
           const original = copyBtn.innerHTML;
           copyBtn.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
-          copyBtn.style.background = 'var(--accent)';
+          copyBtn.style.background = 'var(--primary)';
           copyBtn.style.color = '#000000';
           setTimeout(() => {
             copyBtn.innerHTML = original;
@@ -508,7 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================================================== */
   async function loadAdminGiveawaysList() {
     if (!adminListContainer) return;
-    adminListContainer.innerHTML = `<p style="color: var(--muted); font-size: 0.88rem; margin: 0;">Loading active giveaways...</p>`;
+    adminListContainer.innerHTML = `<p style="color: var(--on-surface-variant); font-size: 0.88rem; margin: 0;">Loading active giveaways...</p>`;
 
     try {
       const response = await fetch(`${GIVEAWAY_ENDPOINT}?action=get`, {
@@ -519,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const giveaways = data.giveaways || (data.giveaway ? [data.giveaway] : []);
 
       if (!giveaways || giveaways.length === 0) {
-        adminListContainer.innerHTML = `<p style="color: var(--muted); font-size: 0.88rem; margin: 0;">No active giveaways found in database.</p>`;
+        adminListContainer.innerHTML = `<p style="color: var(--on-surface-variant); font-size: 0.88rem; margin: 0;">No active giveaways found in database.</p>`;
         return;
       }
 
@@ -578,7 +578,7 @@ document.addEventListener('DOMContentLoaded', () => {
               item.remove();
               loadGiveaways();
               if (adminListContainer.children.length === 0) {
-                adminListContainer.innerHTML = `<p style="color: var(--muted); font-size: 0.88rem; margin: 0;">No active giveaways found in database.</p>`;
+                adminListContainer.innerHTML = `<p style="color: var(--on-surface-variant); font-size: 0.88rem; margin: 0;">No active giveaways found in database.</p>`;
               }
             } else {
               alert(delJson.error || 'Failed to delete giveaway.');

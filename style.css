@@ -1,43 +1,100 @@
-/* amoledwatchfaces styles - v2.7 */
-:root {
-  --bg: #0e1110;
-  --surface: #151b18;
-  --text: #ecfdf5;
-  --muted: #8ca398;
-  --accent: #68ffb7;
-  --border: #222d27;
+/* amoledwatchfaces styles - v2.8 */
+:root,
+:root[data-theme="dark"] {
+  /* Material 3 Color Roles - Dark Theme (AMOLED Baseline) */
+  --primary: #68ffb7;
+  --on-primary: #003822;
+  --primary-container: #005234;
+  --on-primary-container: #85ffc7;
+  --inverse-primary: #059669;
+
+  --secondary: #b3ccbe;
+  --on-secondary: #1f352a;
+  --secondary-container: #354b40;
+  --on-secondary-container: #cfe9d9;
+
+  --tertiary: #a5cdd9;
+  --on-tertiary: #063540;
+  --tertiary-container: #234c57;
+  --on-tertiary-container: #c1e9f6;
+
+  --error: #ffb4ab;
+  --on-error: #690005;
+  --error-container: #93000a;
+  --on-error-container: #ffdad6;
+
+  --background: #0e1110;
+  --on-background: #ecfdf5;
+  --surface: #0e1110;
+  --on-surface: #ecfdf5;
+  --surface-variant: #1a231f;
+  --on-surface-variant: #8ca398;
+  --inverse-surface: #ecfdf5;
+  --inverse-on-surface: #0e1110;
+
+  --surface-dim: #0e1110;
+  --surface-bright: #25312b;
+  --surface-container-lowest: #090c0b;
+  --surface-container-low: #111614;
+  --surface-container: #151b18;
+  --surface-container-high: #1b221f;
+  --surface-container-highest: #212a25;
+
+  --outline: #222d27;
+  --outline-variant: #2e3d35;
+  --shadow: #000000;
+  --scrim: #000000;
+
+  /* Layout & Motion */
   --radius: 14px;
   --max-width: 1200px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg: #f3fcf7;
-    --surface: #d7e6df;
-    --text: #062f1e;
-    --muted: #4b6b5d;
-    --accent: #059669;
-    --border: #cddad4;
-  }
-}
-
 :root[data-theme="light"] {
-  --bg: #f3fcf7;
-  --surface: #d7e6df;
-  --text: #062f1e;
-  --muted: #4b6b5d;
-  --accent: #059669;
-  --border: #cddad4;
-}
+  /* Material 3 Color Roles - Light Theme */
+  --primary: #059669;
+  --on-primary: #ffffff;
+  --primary-container: #a3f7cb;
+  --on-primary-container: #002113;
+  --inverse-primary: #68ffb7;
 
-:root[data-theme="dark"] {
-  --bg: #0e1110;
-  --surface: #151b18;
-  --text: #ecfdf5;
-  --muted: #8ca398;
-  --accent: #68ffb7;
-  --border: #222d27;
+  --secondary: #4c6356;
+  --on-secondary: #ffffff;
+  --secondary-container: #cfe9d9;
+  --on-secondary-container: #092015;
+
+  --tertiary: #3c6470;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #c1e9f6;
+  --on-tertiary-container: #001f27;
+
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #410002;
+
+  --background: #f3fcf7;
+  --on-background: #062f1e;
+  --surface: #f3fcf7;
+  --on-surface: #062f1e;
+  --surface-variant: #dbe5de;
+  --on-surface-variant: #4b6b5d;
+  --inverse-surface: #062f1e;
+  --inverse-on-surface: #f3fcf7;
+
+  --surface-dim: #d3ded7;
+  --surface-bright: #f8fffb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #ecf6f0;
+  --surface-container: #d7e6df;
+  --surface-container-high: #cfded7;
+  --surface-container-highest: #c7d6cf;
+
+  --outline: #cddad4;
+  --outline-variant: #b8c7c0;
+  --shadow: #000000;
+  --scrim: #000000;
 }
 
 * {
@@ -48,8 +105,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--background);
+  color: var(--on-surface);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
@@ -97,7 +154,7 @@ header.site {
   position: sticky;
   inset-block-start: 0;
   z-index: 10;
-  background: color-mix(in srgb, var(--bg) 60%, transparent);
+  background: color-mix(in srgb, var(--background) 60%, transparent);
   -webkit-backdrop-filter: blur(12px) saturate(1.3);
   backdrop-filter: blur(12px) saturate(1.3);
   border-block-end: 1px solid transparent;
@@ -128,7 +185,7 @@ header.site>.bar {
 
 .crumbs .brand {
   font-weight: 600;
-  color: var(--text);
+  color: var(--on-surface);
   text-decoration: none;
   letter-spacing: -0.015em;
   white-space: nowrap;
@@ -141,7 +198,7 @@ header.site>.bar {
 }
 
 .crumbs .brand:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 /* Logo visibility & swap rules */
@@ -154,39 +211,29 @@ header.site>.bar {
 }
 
 .logo-light {
-  display: block;
+  display: none;
 }
 
 .logo-dark {
-  display: none;
-}
-
-:root[data-theme="dark"] .logo-light {
-  display: none;
-}
-
-:root[data-theme="dark"] .logo-dark {
   display: block;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .logo-light {
-    display: none;
-  }
+:root[data-theme="light"] .logo-light {
+  display: block;
+}
 
-  :root:not([data-theme="light"]) .logo-dark {
-    display: block;
-  }
+:root[data-theme="light"] .logo-dark {
+  display: none;
 }
 
 .crumbs .sep {
-  color: var(--muted);
+  color: var(--on-surface-variant);
   user-select: none;
   font-size: 1rem;
 }
 
 .crumbs .section {
-  color: var(--text);
+  color: var(--on-surface);
   text-decoration: none;
   white-space: nowrap;
   overflow: hidden;
@@ -196,7 +243,7 @@ header.site>.bar {
 }
 
 .crumbs .section:hover {
-  color: var(--text);
+  color: var(--on-surface);
 }
 
 /* ----------------------------------------------------------------------------
@@ -211,7 +258,7 @@ nav {
 
 nav a {
   position: relative;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -222,13 +269,13 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--text);
+  color: var(--on-surface);
 }
 
 /* Active section pill */
 nav a[aria-current="page"] {
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 14%, transparent);
 }
 
 /* Animated underline grows from center on hover (skip the active pill) */
@@ -250,7 +297,7 @@ nav a:not([aria-current="page"]):hover::after {
 .theme-toggle {
   background: transparent;
   border: none;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   cursor: pointer;
   padding: 6px;
   border-radius: 8px;
@@ -262,8 +309,8 @@ nav a:not([aria-current="page"]):hover::after {
 }
 
 .theme-toggle:hover {
-  color: var(--text);
-  background: color-mix(in srgb, var(--text) 8%, transparent);
+  color: var(--on-surface);
+  background: color-mix(in srgb, var(--on-surface) 8%, transparent);
 }
 
 .theme-toggle svg {
@@ -275,11 +322,11 @@ nav a:not([aria-current="page"]):hover::after {
 }
 
 .snow-toggle.active {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .snow-toggle.disabled {
-  color: var(--muted);
+  color: var(--on-surface-variant);
   opacity: 0.4;
 }
 
@@ -288,7 +335,7 @@ nav a:not([aria-current="page"]):hover::after {
 }
 
 .notif-toggle.subscribed {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .notif-toggle.subscribed svg {
@@ -305,7 +352,7 @@ nav a:not([aria-current="page"]):hover::after {
 
   @keyframes header-elevate {
     to {
-      border-block-end-color: var(--border);
+      border-block-end-color: var(--outline);
       box-shadow: 0 6px 24px color-mix(in srgb, #000 16%, transparent);
     }
   }
@@ -314,7 +361,7 @@ nav a:not([aria-current="page"]):hover::after {
 /* Fallback for browsers without scroll-driven animations: a subtle static line */
 @supports not (animation-timeline: scroll()) {
   header.site {
-    border-block-end-color: var(--border);
+    border-block-end-color: var(--outline);
   }
 }
 
@@ -338,7 +385,7 @@ h2 {
 }
 
 .section-subtitle {
-  color: var(--muted);
+  color: var(--on-surface-variant);
   font-size: 1.05rem;
   margin: -4px 0 28px;
   max-width: 740px;
@@ -355,24 +402,24 @@ h3 {
 
 p,
 li {
-  color: var(--text);
+  color: var(--on-surface);
   font-size: 1.02rem;
   line-height: 1.65;
 }
 
 .muted {
-  color: var(--muted);
+  color: var(--on-surface-variant);
 }
 
 .tagline {
-  color: var(--muted);
+  color: var(--on-surface-variant);
   font-size: 1.15rem;
   line-height: 1.5;
   margin-top: 0;
 }
 
 a {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 ul {
@@ -383,8 +430,8 @@ ul {
    Cards
 ---------------------------------------------------------------------------- */
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--surface-container);
+  border: 1px solid var(--outline);
   border-radius: var(--radius);
   padding: 24px 21.6px;
   margin-top: 24px;
@@ -402,7 +449,7 @@ ul {
 /* Lift only app cards (those holding a link row), not long text cards */
 .card:has(.links):hover {
   transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--outline));
   box-shadow: 0 10px 30px color-mix(in srgb, #000 14%, transparent);
 }
 
@@ -447,8 +494,8 @@ ul {
 }
 
 .card thead th {
-  background: var(--bg);
-  color: var(--accent);
+  background: var(--background);
+  color: var(--primary);
 }
 
 .card th,
@@ -456,7 +503,7 @@ ul {
   text-align: left;
   vertical-align: top;
   padding: 10px 12px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--outline);
 }
 
 .table-wrap {
@@ -475,7 +522,7 @@ ul {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--outline);
 }
 
 /* ----------------------------------------------------------------------------
@@ -492,9 +539,9 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--text);
-  border: 1px solid var(--text);
-  color: var(--bg);
+  background: var(--on-surface);
+  border: 1px solid var(--on-surface);
+  color: var(--background);
   text-decoration: none;
   font-weight: 600;
   padding: 10px 18px;
@@ -504,21 +551,13 @@ ul {
 }
 
 .links a:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--bg);
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
   transform: translateY(-2px);
 }
 
 /* Light mode hover override: logo accent color #68ffb7 and black text */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .links a:hover {
-    background: #68ffb7;
-    border-color: #68ffb7;
-    color: #000000;
-  }
-}
-
 :root[data-theme="light"] .links a:hover {
   background: #68ffb7;
   border-color: #68ffb7;
@@ -530,44 +569,34 @@ ul {
 .links a.secondary,
 .links a.btn-outline {
   background: transparent;
-  border: 1.5px solid color-mix(in srgb, var(--text) 32%, var(--border));
-  color: var(--text);
+  border: 1.5px solid color-mix(in srgb, var(--on-surface) 32%, var(--outline));
+  color: var(--on-surface);
 }
 
 .links a.btn-secondary:hover,
 .links a.secondary:hover,
 .links a.btn-outline:hover {
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  border-color: var(--accent);
-  color: var(--accent);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  border-color: var(--primary);
+  color: var(--primary);
   transform: translateY(-2px);
-}
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .links a.btn-secondary:hover,
-  :root:not([data-theme="dark"]) .links a.secondary:hover,
-  :root:not([data-theme="dark"]) .links a.btn-outline:hover {
-    background: color-mix(in srgb, var(--accent) 10%, transparent);
-    border-color: var(--accent);
-    color: var(--accent);
-  }
 }
 
 :root[data-theme="light"] .links a.btn-secondary:hover,
 :root[data-theme="light"] .links a.secondary:hover,
 :root[data-theme="light"] .links a.btn-outline:hover {
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  border-color: var(--accent);
-  color: var(--accent);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 code {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--background);
+  border: 1px solid var(--outline);
   padding: 2px 6px;
   border-radius: 6px;
   font-size: 0.9em;
-  color: var(--accent);
+  color: var(--primary);
 }
 
 
@@ -580,7 +609,7 @@ code {
 }
 
 .socials a {
-  color: var(--muted);
+  color: var(--on-surface-variant);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -588,7 +617,7 @@ code {
 }
 
 .socials a:hover {
-  color: var(--accent);
+  color: var(--primary);
   transform: translateY(-2px);
 }
 
@@ -604,7 +633,7 @@ footer {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 48px 21.6px 24px;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   font-size: 0.9rem;
   text-align: center;
 }
@@ -614,14 +643,14 @@ footer p {
 }
 
 .footer-privacy-link {
-  color: var(--muted);
+  color: var(--on-surface-variant);
   text-decoration: none;
   text-underline-offset: 3px;
   transition: color 0.18s var(--ease), text-decoration 0.18s var(--ease);
 }
 
 .footer-privacy-link:hover {
-  color: var(--accent);
+  color: var(--primary);
   text-decoration: underline;
 }
 
@@ -654,7 +683,7 @@ h3 {
   margin-left: 8px;
   width: 28px;
   height: 28px;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   border-radius: 6px;
   opacity: 0;
   visibility: hidden;
@@ -683,8 +712,8 @@ h3:hover .heading-anchor,
 }
 
 .heading-anchor:hover {
-  color: var(--accent);
-  background-color: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 12%, transparent);
 }
 
 .heading-anchor:active svg {
@@ -692,7 +721,7 @@ h3:hover .heading-anchor,
 }
 
 .heading-anchor:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
@@ -702,10 +731,10 @@ h3:hover .heading-anchor,
   bottom: 28px;
   left: 50%;
   transform: translate(-50%, 20px);
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 0 1px 1px var(--border);
+  background: var(--surface-container);
+  color: var(--on-surface);
+  border: 1px solid var(--outline);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 0 1px 1px var(--outline);
   padding: 10px 20px;
   border-radius: 9999px;
   font-size: 0.9rem;
@@ -728,7 +757,7 @@ h3:hover .heading-anchor,
 .anchor-toast svg {
   width: 16px;
   height: 16px;
-  fill: var(--accent);
+  fill: var(--primary);
   flex-shrink: 0;
 }
 
@@ -777,7 +806,7 @@ h3:hover .heading-anchor,
   width: 100%;
   height: auto;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
+  border: 1px solid var(--outline);
   margin-bottom: 32px;
   display: block;
   box-shadow: 0 8px 30px color-mix(in srgb, #000 20%, transparent);
@@ -911,8 +940,8 @@ main > picture .main-banner {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--background);
+  border: 1px solid var(--outline);
   border-radius: 12px;
   padding: 18px;
   margin-top: 20px;
@@ -938,13 +967,13 @@ main > picture .main-banner {
 .sub-card-content h4 {
   font-size: 1.05rem;
   margin: 0 0 6px;
-  color: var(--text);
+  color: var(--on-surface);
 }
 
 .sub-card-content p {
   font-size: 0.9rem;
   margin: 0 0 12px;
-  color: var(--muted);
+  color: var(--on-surface-variant);
 }
 
 .sub-card-content .links {
@@ -959,7 +988,7 @@ main > picture .main-banner {
   padding: 3px 9px;
   border-radius: 99px;
   background-color: rgba(104, 255, 183, 0.08);
-  color: var(--accent);
+  color: var(--primary);
   border: 1px solid rgba(104, 255, 183, 0.25);
   margin-left: 8px;
   vertical-align: middle;
@@ -968,13 +997,6 @@ main > picture .main-banner {
 }
 
 /* Light mode overrides for badge */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .badge-pill {
-    background-color: rgba(5, 150, 105, 0.08);
-    border-color: rgba(5, 150, 105, 0.25);
-  }
-}
-
 :root[data-theme="light"] .badge-pill {
   background-color: rgba(5, 150, 105, 0.08);
   border-color: rgba(5, 150, 105, 0.25);
@@ -987,14 +1009,6 @@ main > picture .main-banner {
 }
 
 /* Light mode overrides for Paid badge */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .badge-paid {
-    background-color: rgba(217, 119, 6, 0.08) !important;
-    color: #d97706 !important;
-    border-color: rgba(217, 119, 6, 0.25) !important;
-  }
-}
-
 :root[data-theme="light"] .badge-paid {
   background-color: rgba(217, 119, 6, 0.08) !important;
   color: #d97706 !important;
@@ -1002,9 +1016,9 @@ main > picture .main-banner {
 }
 
 .badge-latest {
-  background-color: color-mix(in srgb, var(--accent) 18%, transparent) !important;
-  color: var(--accent) !important;
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent) !important;
+  background-color: color-mix(in srgb, var(--primary) 18%, transparent) !important;
+  color: var(--primary) !important;
+  border-color: color-mix(in srgb, var(--primary) 40%, transparent) !important;
   font-weight: 700;
   letter-spacing: 0.04em;
   margin-left: 0 !important;
@@ -1035,8 +1049,8 @@ main > picture .main-banner {
   gap: 32px;
   padding: 26px;
   margin-top: 24px;
-  background: var(--surface);
-  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+  background: var(--surface-container);
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--outline));
   border-radius: var(--radius);
   position: relative;
   overflow: hidden;
@@ -1050,7 +1064,7 @@ main > picture .main-banner {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), transparent);
+  background: linear-gradient(90deg, var(--primary), transparent);
 }
 
 .latest-release-visual {
@@ -1066,10 +1080,10 @@ main > picture .main-banner {
   width: 155px;
   height: 155px;
   border-radius: 50%;
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 30px color-mix(in srgb, #000 28%, transparent), 0 0 20px color-mix(in srgb, var(--accent) 15%, transparent);
+  border: 1px solid var(--outline);
+  box-shadow: 0 10px 30px color-mix(in srgb, #000 28%, transparent), 0 0 20px color-mix(in srgb, var(--primary) 15%, transparent);
   overflow: hidden;
-  background: var(--bg);
+  background: var(--background);
   display: block;
   text-decoration: none;
   transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
@@ -1077,8 +1091,8 @@ main > picture .main-banner {
 
 .latest-release-slides-wrapper:hover {
   transform: scale(1.03);
-  border-color: var(--accent);
-  box-shadow: 0 12px 36px color-mix(in srgb, #000 35%, transparent), 0 0 26px color-mix(in srgb, var(--accent) 28%, transparent);
+  border-color: var(--primary);
+  box-shadow: 0 12px 36px color-mix(in srgb, #000 35%, transparent), 0 0 26px color-mix(in srgb, var(--primary) 28%, transparent);
 }
 
 .latest-release-slide {
@@ -1112,7 +1126,7 @@ main > picture .main-banner {
   border: none;
   padding: 0;
   border-radius: 50%;
-  background: var(--border);
+  background: var(--outline);
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -1120,7 +1134,7 @@ main > picture .main-banner {
 .latest-release-dot.active {
   width: 18px;
   border-radius: 4px;
-  background: var(--accent);
+  background: var(--primary);
 }
 
 .latest-release-content {
@@ -1139,7 +1153,7 @@ main > picture .main-banner {
 
 .latest-release-date {
   font-size: 0.88rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   margin-left: auto;
 }
 
@@ -1147,23 +1161,23 @@ main > picture .main-banner {
   font-size: 1.45rem;
   font-weight: 700;
   margin: 0 0 6px;
-  color: var(--text);
+  color: var(--on-surface);
   letter-spacing: -0.02em;
 }
 
 .latest-release-title-link {
-  color: var(--text);
+  color: var(--on-surface);
   text-decoration: none;
   transition: color 0.18s var(--ease);
 }
 
 .latest-release-title-link:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .latest-release-desc {
   font-size: 1rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   line-height: 1.55;
   margin: 0 0 16px;
 }
@@ -1180,9 +1194,9 @@ main > picture .main-banner {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: color-mix(in srgb, var(--text) 6%, transparent);
-  border: 1px dashed var(--border);
-  color: var(--muted);
+  background: color-mix(in srgb, var(--on-surface) 6%, transparent);
+  border: 1px dashed var(--outline);
+  color: var(--on-surface-variant);
   font-size: 0.92rem;
   font-weight: 500;
   padding: 8px 14px;
@@ -1232,15 +1246,15 @@ main > picture .main-banner {
   height: auto;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 1px solid var(--border);
+  border: 1px solid var(--outline);
   object-fit: cover;
-  background: var(--bg);
+  background: var(--background);
   transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 
 .app-screenshot:hover {
   transform: scale(1.04);
-  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  border-color: color-mix(in srgb, var(--primary) 50%, var(--outline));
   box-shadow: 0 4px 16px color-mix(in srgb, #000 12%, transparent);
 }
 
@@ -1258,8 +1272,8 @@ main > picture .main-banner {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--surface-container);
+  border: 1px solid var(--outline);
   border-radius: var(--radius);
   padding: 20px 21.6px;
   transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
@@ -1272,16 +1286,16 @@ main > picture .main-banner {
 
 .bogo-step:hover {
   transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--outline));
 }
 
 .bogo-step-num {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--accent) 15%, transparent);
-  color: var(--accent);
-  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  background: color-mix(in srgb, var(--primary) 15%, transparent);
+  color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1302,14 +1316,14 @@ main > picture .main-banner {
 
 .bogo-step-content p {
   margin: 0;
-  color: var(--text);
+  color: var(--on-surface);
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 .bogo-delivery {
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
   border-radius: var(--radius);
   padding: 18px 21.6px;
   margin: 24px 0;
@@ -1321,7 +1335,7 @@ main > picture .main-banner {
 }
 
 .bogo-delivery-icon {
-  color: var(--accent);
+  color: var(--primary);
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -1331,14 +1345,14 @@ main > picture .main-banner {
   margin: 0;
   font-size: 0.98rem;
   font-weight: 500;
-  color: var(--text);
+  color: var(--on-surface);
 }
 
 .bogo-disclaimer {
-  background: var(--surface);
-  border-inline-start: 4px solid var(--muted);
-  border-block: 1px solid var(--border);
-  border-inline-end: 1px solid var(--border);
+  background: var(--surface-container);
+  border-inline-start: 4px solid var(--on-surface-variant);
+  border-block: 1px solid var(--outline);
+  border-inline-end: 1px solid var(--outline);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 16px 20px;
   margin: 24px 0;
@@ -1351,13 +1365,13 @@ main > picture .main-banner {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--muted);
+  color: var(--on-surface-variant);
 }
 
 .bogo-disclaimer p {
   margin: 0;
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   line-height: 1.5;
 }
 
@@ -1370,14 +1384,14 @@ main > picture .main-banner {
 }
 
 .bogo-thanks h3 {
-  color: var(--accent);
+  color: var(--primary);
   font-size: 1.3rem;
   margin: 0 0 8px;
 }
 
 .bogo-thanks p {
   margin: 0 0 20px;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   font-size: 0.95rem;
 }
 
@@ -1401,8 +1415,8 @@ main > picture .main-banner {
    Installation Guide Page
 ---------------------------------------------------------------------------- */
 .guide-method {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--surface-container);
+  border: 1px solid var(--outline);
   border-radius: var(--radius);
   padding: 24px 21.6px;
   margin-top: 24px;
@@ -1415,7 +1429,7 @@ main > picture .main-banner {
 .guide-method:nth-of-type(3) { animation-delay: 0.25s; }
 
 .guide-method:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--outline));
 }
 
 .guide-method-header {
@@ -1426,7 +1440,7 @@ main > picture .main-banner {
   gap: 10px;
   margin-bottom: 16px;
   padding-bottom: 14px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--outline);
 }
 
 .guide-method-header h2 {
@@ -1457,17 +1471,17 @@ main > picture .main-banner {
 }
 
 .guide-note {
-  background: color-mix(in srgb, var(--text) 4%, transparent);
-  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--on-surface) 4%, transparent);
+  border-left: 3px solid var(--primary);
   border-radius: 0 8px 8px 0;
   padding: 12px 16px;
   margin-top: 16px;
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
 }
 
 .guide-note strong {
-  color: var(--text);
+  color: var(--on-surface);
 }
 
 /* ----------------------------------------------------------------------------
@@ -1492,7 +1506,7 @@ main > picture .main-banner {
 
 .collection-count {
   font-size: 0.98rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
 }
 
 .collection-controls {
@@ -1503,8 +1517,8 @@ main > picture .main-banner {
   gap: 16px;
   margin-bottom: 28px;
   padding: 14px 18px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--surface-container);
+  border: 1px solid var(--outline);
   border-radius: var(--radius);
 }
 
@@ -1514,21 +1528,21 @@ main > picture .main-banner {
   align-items: center;
   flex: 1 1 220px;
   max-width: 280px;
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--background);
+  border: 1px solid var(--outline);
   border-radius: 9999px;
   padding: 0 14px;
   transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease);
 }
 
 .search-box:focus-within {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 15%, transparent);
 }
 
 .search-icon {
   flex-shrink: 0;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   margin-right: 8px;
 }
 
@@ -1536,7 +1550,7 @@ main > picture .main-banner {
   width: 100%;
   border: none;
   background: transparent;
-  color: var(--text);
+  color: var(--on-surface);
   font-family: inherit;
   font-size: 0.94rem;
   padding: 7px 0;
@@ -1544,7 +1558,7 @@ main > picture .main-banner {
 }
 
 .search-input::placeholder {
-  color: var(--muted);
+  color: var(--on-surface-variant);
   opacity: 0.7;
 }
 
@@ -1553,7 +1567,7 @@ main > picture .main-banner {
   border: none;
   padding: 4px;
   margin-left: 4px;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -1563,8 +1577,8 @@ main > picture .main-banner {
 }
 
 .search-clear-btn:hover {
-  color: var(--text);
-  background: color-mix(in srgb, var(--text) 10%, transparent);
+  color: var(--on-surface);
+  background: color-mix(in srgb, var(--on-surface) 10%, transparent);
 }
 
 @media (max-width: 768px) {
@@ -1584,8 +1598,8 @@ main > picture .main-banner {
 
 .filter-chip {
   background: transparent;
-  color: var(--muted);
-  border: 1px solid var(--border);
+  color: var(--on-surface-variant);
+  border: 1px solid var(--outline);
   border-radius: 9999px;
   padding: 7px 16px;
   font-size: 0.94rem;
@@ -1596,27 +1610,19 @@ main > picture .main-banner {
 }
 
 .filter-chip:hover {
-  color: var(--text);
-  border-color: var(--accent);
+  color: var(--on-surface);
+  border-color: var(--primary);
   transform: translateY(-1px);
 }
 
 .filter-chip.active {
-  background: var(--accent);
-  color: var(--bg);
-  border-color: var(--accent);
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
   font-weight: 600;
 }
 
 /* Light mode override for active filter chips */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .filter-chip.active {
-    background: #68ffb7;
-    color: #000000;
-    border-color: #68ffb7;
-  }
-}
-
 :root[data-theme="light"] .filter-chip.active {
   background: #68ffb7;
   color: #000000;
@@ -1634,7 +1640,7 @@ main > picture .main-banner {
   align-items: center;
   gap: 6px;
   font-size: 0.94rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
 }
 
 .select-container {
@@ -1646,9 +1652,9 @@ main > picture .main-banner {
 .sort-select {
   appearance: none;
   -webkit-appearance: none;
-  background: var(--bg);
-  color: var(--text);
-  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--on-surface);
+  border: 1px solid var(--outline);
   border-radius: 8px;
   padding: 7px 34px 7px 14px;
   font-size: 0.94rem;
@@ -1661,14 +1667,14 @@ main > picture .main-banner {
 .sort-select:hover,
 .sort-select:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--primary);
 }
 
 .select-arrow {
   position: absolute;
   right: 10px;
   pointer-events: none;
-  color: var(--muted);
+  color: var(--on-surface-variant);
 }
 
 /* Collection Grid & Cards */
@@ -1687,21 +1693,21 @@ main > picture .main-banner {
   justify-content: center;
   text-align: center;
   padding: 60px 20px;
-  background: var(--surface);
-  border: 1px dashed var(--border);
+  background: var(--surface-container);
+  border: 1px dashed var(--outline);
   border-radius: var(--radius);
-  color: var(--muted);
+  color: var(--on-surface-variant);
 }
 
 .collection-empty-state .empty-icon {
-  color: var(--muted);
+  color: var(--on-surface-variant);
   opacity: 0.6;
   margin-bottom: 12px;
 }
 
 .collection-empty-state h3 {
   font-size: 1.25rem;
-  color: var(--text);
+  color: var(--on-surface);
   margin: 0 0 8px;
 }
 
@@ -1713,8 +1719,8 @@ main > picture .main-banner {
 }
 
 .btn-clear-search {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--primary);
+  color: var(--background);
   border: none;
   border-radius: 9999px;
   padding: 8px 22px;
@@ -1781,7 +1787,7 @@ main > picture .main-banner {
   max-width: 47%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  border: 1px solid var(--border);
+  border: 1px solid var(--outline);
   object-fit: cover;
   display: block;
   box-shadow: 0 8px 24px color-mix(in srgb, #000 24%, transparent);
@@ -1794,7 +1800,7 @@ main > picture .main-banner {
 
 .watch-icon-preview:hover {
   transform: translateY(-3px) scale(1.04);
-  border-color: var(--accent);
+  border-color: var(--primary);
   box-shadow: 0 12px 30px color-mix(in srgb, #000 36%, transparent);
 }
 
@@ -1852,19 +1858,19 @@ main > picture .main-banner {
 }
 
 .collection-title-link {
-  color: var(--text);
+  color: var(--on-surface);
   text-decoration: none;
   transition: color 0.18s var(--ease);
 }
 
 .collection-title-link:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .collection-desc {
   font-size: 0.98rem;
   line-height: 1.55;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   margin: 0 0 16px;
   flex-grow: 1;
 }
@@ -1895,28 +1901,20 @@ main > picture .main-banner {
 }
 
 .btn-load-more {
-  background: var(--text);
-  color: var(--bg);
-  border: 1px solid var(--text);
+  background: var(--on-surface);
+  color: var(--background);
+  border: 1px solid var(--on-surface);
 }
 
 .btn-load-more:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--bg);
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 30%, transparent);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 30%, transparent);
 }
 
 /* Light mode hover override for Load More button */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .btn-load-more:hover {
-    background: #68ffb7;
-    border-color: #68ffb7;
-    color: #000000;
-  }
-}
-
 :root[data-theme="light"] .btn-load-more:hover {
   background: #68ffb7;
   border-color: #68ffb7;
@@ -1925,14 +1923,14 @@ main > picture .main-banner {
 
 .btn-show-all {
   background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
+  color: var(--on-surface);
+  border: 1px solid var(--outline);
 }
 
 .btn-show-all:hover {
-  background: color-mix(in srgb, var(--text) 8%, transparent);
-  border-color: var(--text);
-  color: var(--text);
+  background: color-mix(in srgb, var(--on-surface) 8%, transparent);
+  border-color: var(--on-surface);
+  color: var(--on-surface);
   transform: translateY(-2px);
 }
 
@@ -1961,8 +1959,8 @@ main > picture .main-banner {
 }
 
 .giveaway-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--surface-container);
+  border: 1px solid var(--outline);
   border-radius: 24px;
   padding: 36px 32px;
   box-shadow: var(--shadow-sm);
@@ -1978,8 +1976,8 @@ main > picture .main-banner {
 }
 
 .giveaway-card:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-  box-shadow: 0 12px 36px color-mix(in srgb, var(--accent) 8%, transparent);
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--outline));
+  box-shadow: 0 12px 36px color-mix(in srgb, var(--primary) 8%, transparent);
 }
 
 .giveaway-badge-top {
@@ -1992,9 +1990,9 @@ main > picture .main-banner {
   letter-spacing: 0.08em;
   padding: 6px 14px;
   border-radius: 9999px;
-  background: color-mix(in srgb, var(--accent) 15%, transparent);
-  color: var(--accent);
-  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  background: color-mix(in srgb, var(--primary) 15%, transparent);
+  color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
   margin-bottom: 24px;
 }
 
@@ -2023,9 +2021,9 @@ main > picture .main-banner {
   height: 160px;
   border-radius: 36px;
   padding: 5px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 40%, transparent), transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
-  box-shadow: 0 12px 32px color-mix(in srgb, var(--accent) 15%, transparent);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 40%, transparent), transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--outline));
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--primary) 15%, transparent);
   margin-bottom: 22px;
   display: flex;
   align-items: center;
@@ -2043,14 +2041,14 @@ main > picture .main-banner {
 .giveaway-title {
   font-size: 1.8rem;
   font-weight: 800;
-  color: var(--text);
+  color: var(--on-surface);
   margin: 0 0 8px;
   line-height: 1.25;
 }
 
 .giveaway-author {
   font-size: 0.95rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   margin: 0 0 20px;
   display: flex;
   align-items: center;
@@ -2058,14 +2056,14 @@ main > picture .main-banner {
 }
 
 .giveaway-author a {
-  color: var(--text);
+  color: var(--on-surface);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.15s var(--ease);
 }
 
 .giveaway-author a:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .giveaway-inventory {
@@ -2074,16 +2072,16 @@ main > picture .main-banner {
   gap: 8px;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text);
-  background: color-mix(in srgb, var(--text) 5%, transparent);
-  border: 1px solid var(--border);
+  color: var(--on-surface);
+  background: color-mix(in srgb, var(--on-surface) 5%, transparent);
+  border: 1px solid var(--outline);
   padding: 8px 18px;
   border-radius: 12px;
   margin-bottom: 28px;
 }
 
 .inventory-number {
-  color: var(--accent);
+  color: var(--primary);
   font-variant-numeric: tabular-nums;
 }
 
@@ -2091,8 +2089,8 @@ main > picture .main-banner {
 .btn-claim-promo {
   width: 100%;
   max-width: 380px;
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--primary);
+  color: var(--on-primary);
   font-family: inherit;
   font-size: 1.05rem;
   font-weight: 700;
@@ -2105,13 +2103,13 @@ main > picture .main-banner {
   justify-content: center;
   gap: 10px;
   transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease), opacity 0.18s var(--ease);
-  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 35%, transparent);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--primary) 35%, transparent);
   user-select: none;
 }
 
 .btn-claim-promo:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px color-mix(in srgb, var(--accent) 50%, transparent);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--primary) 50%, transparent);
 }
 
 .btn-claim-promo:disabled {
@@ -2119,8 +2117,8 @@ main > picture .main-banner {
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
-  background: var(--muted);
-  color: var(--bg);
+  background: var(--on-surface-variant);
+  color: var(--surface-container);
 }
 
 .btn-claim-promo .spinner {
@@ -2153,8 +2151,8 @@ main > picture .main-banner {
 }
 
 .promo-code-card {
-  background: color-mix(in srgb, var(--text) 4%, transparent);
-  border: 2px dashed color-mix(in srgb, var(--accent) 60%, var(--border));
+  background: color-mix(in srgb, var(--on-surface) 4%, transparent);
+  border: 2px dashed color-mix(in srgb, var(--primary) 60%, var(--outline));
   border-radius: 16px;
   padding: 14px 16px;
   display: flex;
@@ -2171,7 +2169,7 @@ main > picture .main-banner {
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.04em;
-  color: var(--accent);
+  color: var(--primary);
   user-select: all;
   word-break: break-all;
   overflow-wrap: anywhere;
@@ -2180,9 +2178,9 @@ main > picture .main-banner {
 }
 
 .btn-copy-code {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
+  background: var(--surface-container);
+  border: 1px solid var(--outline);
+  color: var(--on-surface);
   font-family: inherit;
   font-size: 0.82rem;
   font-weight: 600;
@@ -2198,8 +2196,8 @@ main > picture .main-banner {
 }
 
 .btn-copy-code:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--primary);
+  border-color: var(--primary);
   color: #000000;
 }
 
@@ -2243,14 +2241,14 @@ main > picture .main-banner {
 
 .claim-note {
   font-size: 0.82rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   margin-top: 8px;
   line-height: 1.4;
 }
 
 /* Skeleton Loading State for Card */
 .skeleton-box {
-  background: linear-gradient(90deg, color-mix(in srgb, var(--text) 6%, transparent) 25%, color-mix(in srgb, var(--text) 14%, transparent) 37%, color-mix(in srgb, var(--text) 6%, transparent) 63%);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--on-surface) 6%, transparent) 25%, color-mix(in srgb, var(--on-surface) 14%, transparent) 37%, color-mix(in srgb, var(--on-surface) 6%, transparent) 63%);
   background-size: 400% 100%;
   animation: skeleton-shimmer 1.4s ease infinite;
   border-radius: 8px;
@@ -2282,8 +2280,8 @@ main > picture .main-banner {
 }
 
 .admin-modal {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--surface-container);
+  border: 1px solid var(--outline);
   border-radius: 20px;
   max-width: 540px;
   width: 100%;
@@ -2314,7 +2312,7 @@ main > picture .main-banner {
 .btn-close-modal {
   background: transparent;
   border: none;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   font-size: 1.2rem;
   cursor: pointer;
   padding: 4px 8px;
@@ -2323,8 +2321,8 @@ main > picture .main-banner {
 }
 
 .btn-close-modal:hover {
-  color: var(--text);
-  background: color-mix(in srgb, var(--text) 10%, transparent);
+  color: var(--on-surface);
+  background: color-mix(in srgb, var(--on-surface) 10%, transparent);
 }
 
 .admin-giveaway-form {
@@ -2346,7 +2344,7 @@ main > picture .main-banner {
 .form-group label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--on-surface);
 }
 
 .form-row {
@@ -2372,13 +2370,13 @@ main > picture .main-banner {
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  background: color-mix(in srgb, var(--text) 4%, transparent);
-  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--on-surface) 4%, transparent);
+  border: 1px solid var(--outline);
   border-radius: 10px;
   padding: 11px 14px;
   font-family: inherit;
   font-size: 0.92rem;
-  color: var(--text);
+  color: var(--on-surface);
   transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
 }
 
@@ -2393,13 +2391,12 @@ main > picture .main-banner {
 }
 
 .form-group select option {
-  background: var(--surface);
-  color: var(--text);
+  background: var(--surface-container);
+  color: var(--on-surface);
   padding: 8px 12px;
 }
 
-:root[data-theme="dark"] .form-group select option,
-:root:not([data-theme="light"]) .form-group select option {
+:root[data-theme="dark"] .form-group select option {
   background: #181a20;
   color: #f3f4f6;
 }
@@ -2413,17 +2410,17 @@ main > picture .main-banner {
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent);
 }
 
 .csv-dropzone {
-  border: 2px dashed color-mix(in srgb, var(--accent) 40%, var(--border));
+  border: 2px dashed color-mix(in srgb, var(--primary) 40%, var(--outline));
   border-radius: 12px;
   padding: 24px 16px;
   text-align: center;
   cursor: pointer;
-  background: color-mix(in srgb, var(--accent) 4%, transparent);
+  background: color-mix(in srgb, var(--primary) 4%, transparent);
   transition: all 0.2s var(--ease);
   display: flex;
   flex-direction: column;
@@ -2433,14 +2430,14 @@ main > picture .main-banner {
 
 .csv-dropzone:hover,
 .csv-dropzone.dragover {
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  border-color: var(--accent);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  border-color: var(--primary);
 }
 
 .csv-dropzone p {
   margin: 0;
   font-size: 0.88rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
 }
 
 .detected-codes-count {
@@ -2448,14 +2445,14 @@ main > picture .main-banner {
   font-size: 0.85rem;
   font-weight: 700;
   color: #000000;
-  background: var(--accent);
+  background: var(--primary);
   padding: 4px 12px;
   border-radius: 9999px;
   margin-top: 4px;
 }
 
 .btn-submit-giveaway {
-  background: var(--accent);
+  background: var(--primary);
   color: #000000;
   font-family: inherit;
   font-size: 1rem;
@@ -2474,7 +2471,7 @@ main > picture .main-banner {
 
 .btn-submit-giveaway:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--primary) 40%, transparent);
 }
 
 .btn-submit-giveaway:disabled {
@@ -2503,7 +2500,7 @@ main > picture .main-banner {
 
 .admin-manage-section {
   margin-top: 28px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--outline);
   padding-top: 20px;
 }
 
@@ -2517,13 +2514,13 @@ main > picture .main-banner {
 .admin-manage-header h3 {
   margin: 0;
   font-size: 1.05rem;
-  color: var(--text);
+  color: var(--on-surface);
 }
 
 .btn-refresh-admin {
   background: transparent;
-  border: 1px solid var(--border);
-  color: var(--muted);
+  border: 1px solid var(--outline);
+  color: var(--on-surface-variant);
   font-family: inherit;
   font-size: 0.8rem;
   padding: 4px 10px;
@@ -2533,8 +2530,8 @@ main > picture .main-banner {
 }
 
 .btn-refresh-admin:hover {
-  color: var(--text);
-  border-color: var(--accent);
+  color: var(--on-surface);
+  border-color: var(--primary);
 }
 
 .admin-giveaways-list {
@@ -2553,8 +2550,8 @@ main > picture .main-banner {
   justify-content: space-between;
   padding: 10px 14px;
   border-radius: 10px;
-  background: color-mix(in srgb, var(--text) 4%, transparent);
-  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--on-surface) 4%, transparent);
+  border: 1px solid var(--outline);
   gap: 12px;
 }
 
@@ -2582,7 +2579,7 @@ main > picture .main-banner {
 .admin-giveaway-item-title {
   font-size: 0.92rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--on-surface);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2590,7 +2587,7 @@ main > picture .main-banner {
 
 .admin-giveaway-item-meta {
   font-size: 0.78rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
 }
 
 .btn-delete-giveaway {
@@ -2667,7 +2664,7 @@ main > picture .main-banner {
 .contact-form-desc {
   margin: 0;
   font-size: 0.95rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   line-height: 1.5;
 }
 
@@ -2683,13 +2680,13 @@ main > picture .main-banner {
 .contact-sidebar-card h3 {
   margin: 0 0 8px;
   font-size: 1.15rem;
-  color: var(--text);
+  color: var(--on-surface);
 }
 
 .contact-sidebar-card p {
   margin: 0 0 16px;
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--on-surface-variant);
   line-height: 1.5;
 }
 
@@ -2708,10 +2705,10 @@ main > picture .main-banner {
   gap: 12px;
   padding: 12px 14px;
   border-radius: 12px;
-  background: color-mix(in srgb, var(--text) 4%, transparent);
-  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--on-surface) 4%, transparent);
+  border: 1px solid var(--outline);
   text-decoration: none;
-  color: var(--text);
+  color: var(--on-surface);
   font-size: 0.92rem;
   font-weight: 600;
   word-break: break-word;
@@ -2722,20 +2719,20 @@ main > picture .main-banner {
 }
 
 .contact-quick-link:hover {
-  border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
   transform: translateX(4px);
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .contact-quick-link svg {
   flex-shrink: 0;
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .btn-submit-contact {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--primary);
+  color: var(--on-primary);
   font-family: inherit;
   font-size: 1rem;
   font-weight: 700;
@@ -2748,7 +2745,7 @@ main > picture .main-banner {
   justify-content: center;
   gap: 8px;
   align-self: flex-start;
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 30%, transparent);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--primary) 30%, transparent);
   transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease), opacity 0.18s var(--ease);
 }
 
@@ -2761,7 +2758,7 @@ main > picture .main-banner {
 
 .btn-submit-contact:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 45%, transparent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--primary) 45%, transparent);
 }
 
 .btn-submit-contact:disabled {
