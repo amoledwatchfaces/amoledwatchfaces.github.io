@@ -1310,11 +1310,11 @@ main > picture .main-banner {
 
 .sale-card-img-wrapper {
   position: relative;
-  width: 136px;
-  height: 136px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   border: 1px solid var(--outline);
-  box-shadow: 0 4px 14px color-mix(in srgb, #000 22%, transparent);
+  box-shadow: 0 8px 24px color-mix(in srgb, #000 24%, transparent);
   overflow: hidden;
   background: var(--background);
   display: block;
@@ -1358,8 +1358,8 @@ main > picture .main-banner {
   border-color: rgba(255, 183, 77, 0.35) !important;
   margin-left: 0 !important;
   font-weight: 700;
-  font-size: 0.72rem !important;
-  padding: 3px 7px !important;
+  font-size: 0.78rem !important;
+  padding: 4px 8px !important;
 }
 
 :root[data-theme="light"] .badge-sale-discount {
@@ -1374,8 +1374,8 @@ main > picture .main-banner {
   border-color: color-mix(in srgb, var(--primary) 40%, transparent) !important;
   margin-left: 0 !important;
   font-weight: 700;
-  font-size: 0.72rem !important;
-  padding: 3px 7px !important;
+  font-size: 0.78rem !important;
+  padding: 4px 8px !important;
   animation: pulse-glow 2.5s infinite ease-in-out;
 }
 
@@ -1388,15 +1388,15 @@ main > picture .main-banner {
 .sale-card-timer {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: 0.76rem;
+  gap: 5px;
+  font-size: 0.88rem;
   color: var(--on-surface-variant);
   white-space: nowrap;
 }
 
 .sale-card-timer svg {
   flex-shrink: 0;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .sale-card-title {

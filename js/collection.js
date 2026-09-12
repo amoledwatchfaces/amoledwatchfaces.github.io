@@ -559,7 +559,7 @@ function initFeaturedSales() {
 
     const timerHtml = item.saleText
       ? `<span class="sale-card-timer" title="${item.saleText}">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="10"></circle>
             <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
@@ -595,13 +595,26 @@ function initFeaturedSales() {
   container.innerHTML = `
     <div class="featured-sales-wrapper">
       <div class="featured-sales-header">
-        <h3 class="featured-sales-heading">Featured Deals</h3>
+        <h3 id="deals" class="featured-sales-heading">Featured Deals</h3>
       </div>
       <div class="featured-sales-grid">
         ${cardsHtml}
       </div>
     </div>
   `;
+
+  // Attach heading anchor link for #deals shortcut
+  if (typeof window.initHeadingAnchors === 'function') {
+    window.initHeadingAnchors();
+  }
+
+  // Handle direct hash navigation if URL was loaded with #deals or #featured-deals
+  if (window.location.hash === '#deals' || window.location.hash === '#featured-deals') {
+    const target = document.getElementById('deals') || container;
+    if (target) {
+      setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 120);
+    }
+  }
 }
 
 // Initialize on DOM ready
