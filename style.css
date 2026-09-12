@@ -1027,9 +1027,9 @@ main > picture .main-banner {
 }
 
 .badge-coming-soon {
-  background-color: rgba(236, 72, 153, 0.15) !important;
-  color: #f472b6 !important;
-  border-color: rgba(236, 72, 153, 0.35) !important;
+  background-color: #100f4e !important;
+  color: #e6e6ff !important;
+  border-color: #7f7eff !important;
   font-weight: 700;
   letter-spacing: 0.04em;
   margin-left: 0 !important;
