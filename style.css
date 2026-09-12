@@ -1310,8 +1310,8 @@ main > picture .main-banner {
 
 .sale-card-img-wrapper {
   position: relative;
-  width: 118px;
-  height: 118px;
+  width: 136px;
+  height: 136px;
   border-radius: 50%;
   border: 1px solid var(--outline);
   box-shadow: 0 4px 14px color-mix(in srgb, #000 22%, transparent);
@@ -1423,11 +1423,11 @@ main > picture .main-banner {
 .sale-card-actions {
   display: flex;
   align-items: center;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .sale-card-actions .play-store-badge img {
-  height: 34px;
+  height: 42px;
   width: auto;
 }
 
@@ -1445,12 +1445,12 @@ main > picture .main-banner {
   }
 
   .sale-card-img-wrapper {
-    width: 94px;
-    height: 94px;
+    width: 108px;
+    height: 108px;
   }
 
   .sale-card-actions .play-store-badge img {
-    height: 32px;
+    height: 38px;
   }
 }
 
