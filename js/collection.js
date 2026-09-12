@@ -330,6 +330,9 @@ async function initCollection() {
   // Render Latest Release featured card
   initLatestRelease();
 
+  // Render Featured Sales cards
+  initFeaturedSales();
+
   // Initial render
   render(false);
 }
@@ -505,6 +508,100 @@ function setupReleaseSlideshow(container) {
   container.addEventListener('mouseleave', startTimer);
 
   startTimer();
+}
+
+// Render smaller cards for 3 random watch faces currently on sale
+function initFeaturedSales() {
+  const container = document.getElementById('featured-sales-container');
+  if (!container) return;
+
+  const items = getPortfolio().filter((i) => i.isWatchFace !== false && i.onSale === true);
+  if (!items || items.length === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  // Filter 100% off promos vs regular discounts
+  const freePromos = items.filter((i) => i.discount === 1.0);
+  const selected = [];
+
+  // If a 100% off promo is available, include at least one
+  if (freePromos.length > 0) {
+    const randomFree = freePromos[Math.floor(Math.random() * freePromos.length)];
+    selected.push(randomFree);
+  }
+
+  // Pool of remaining on-sale items
+  const remaining = items.filter((i) => !selected.some((s) => s.id === i.id));
+  const shuffled = [...remaining].sort(() => Math.random() - 0.5);
+
+  // Pick up to 3 items total
+  while (selected.length < 3 && shuffled.length > 0) {
+    selected.push(shuffled.pop());
+  }
+
+  // Shuffle selected cards so the free promo can appear in any position
+  const finalItems = [...selected].sort(() => Math.random() - 0.5);
+
+  const cardsHtml = finalItems.map((item) => {
+    const isFreePromo = item.discount === 1.0;
+    const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(item.packageName)}`;
+    const iconSrc = `assets/icons/${item.id}.webp`;
+
+    let discountBadgeHtml = '';
+    if (isFreePromo) {
+      discountBadgeHtml = `<span class="badge-pill badge-sale-free">100% OFF</span>`;
+    } else if (typeof item.discount === 'number' && item.discount > 0) {
+      discountBadgeHtml = `<span class="badge-pill badge-sale-discount">-${Math.round(item.discount * 100)}%</span>`;
+    } else {
+      discountBadgeHtml = `<span class="badge-pill badge-sale-discount">Sale</span>`;
+    }
+
+    const timerHtml = item.saleText
+      ? `<span class="sale-card-timer" title="${item.saleText}">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>${item.saleText}</span>
+        </span>`
+      : '';
+
+    return `
+      <div class="featured-sale-card ${isFreePromo ? 'is-free-promo' : ''}">
+        <div class="sale-card-visual">
+          <a href="${playStoreUrl}" target="_blank" rel="noopener" class="sale-card-img-wrapper" aria-label="View ${item.appName} on Google Play">
+            <img src="${iconSrc}" alt="${item.appName} preview" class="sale-card-img" loading="lazy" />
+          </a>
+        </div>
+        <div class="sale-card-content">
+          <div class="sale-card-badge-row">
+            ${discountBadgeHtml}
+            ${timerHtml}
+          </div>
+          <h4 class="sale-card-title">
+            <a href="${playStoreUrl}" target="_blank" rel="noopener" class="sale-card-title-link">${item.appName}</a>
+          </h4>
+          <div class="sale-card-actions">
+            <a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
+              <img src="assets/google-play-badge.svg" alt="Get it on Google Play" />
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="featured-sales-wrapper">
+      <div class="featured-sales-header">
+        <h3 class="featured-sales-heading">Featured Deals</h3>
+      </div>
+      <div class="featured-sales-grid">
+        ${cardsHtml}
+      </div>
+    </div>
+  `;
 }
 
 // Initialize on DOM ready

@@ -1,0 +1,80 @@
+name: Sync Portfolio Sales & Updates
+
+on:
+  schedule:
+    # Run every day at midnight UTC (00:00)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual run from Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run portfolio sync script
+        run: python scripts/update_portfolio.py
+
+      - name: Check for changes
+        id: git-diff
+        run: |
+          if git diff --quiet data/portfolio.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "portfolio.json is up to date."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "portfolio.json has updates to commit!"
+          fi
+
+      - name: Commit and push updates
+        if: steps.git-diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/portfolio.json
+          git commit -m "Auto-sync portfolio sales and dates from Google Play"
+          git push
+
+      - name: Purge Cloudflare CDN Cache for portfolio.json
+        if: steps.git-diff.outputs.changed == 'true'
+        env:
+          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          echo "Purging Cloudflare cache for data/portfolio.json..."
+          python3 -c "
+          import urllib.request, json, os
+          zone_id = os.environ.get('CF_ZONE_ID')
+          token = os.environ.get('CF_API_TOKEN')
+          if zone_id and token:
+              url = f'https://api.cloudflare.com/client/v4/zones/{zone_id}/purge_cache'
+              payload = json.dumps({'files': ['https://amoledwatchfaces.com/data/portfolio.json']}).encode()
+              req = urllib.request.Request(
+                  url,
+                  data=payload,
+                  headers={
+                      'Authorization': f'Bearer {token}',
+                      'Content-Type': 'application/json'
+                  },
+                  method='POST'
+              )
+              try:
+                  with urllib.request.urlopen(req) as resp:
+                      res = json.loads(resp.read().decode())
+                      print('Cloudflare purge success:', res.get('success'))
+                      if not res.get('success'):
+                          print('Purge errors:', res.get('errors'))
+              except Exception as e:
+                  print('Cloudflare purge request failed:', e)
+          else:
+              print('Cloudflare credentials not set in secrets. Skipping CDN purge.')
+          "

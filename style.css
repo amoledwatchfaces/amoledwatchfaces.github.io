@@ -1234,6 +1234,227 @@ main > picture .main-banner {
 
 
 /* ----------------------------------------------------------------------------
+   Featured On-Sale Cards (3 smaller cards below Latest Release)
+---------------------------------------------------------------------------- */
+.featured-sales-wrapper {
+  margin-top: 24px;
+  animation: RunAniFadeInSlow 0.8s ease-out both;
+}
+
+.featured-sales-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.featured-sales-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--on-surface);
+  letter-spacing: -0.015em;
+}
+
+.featured-sales-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.featured-sale-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface-container);
+  border: 1px solid var(--outline);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.featured-sale-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--outline));
+  box-shadow: 0 8px 22px color-mix(in srgb, #000 22%, transparent);
+}
+
+.featured-sale-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, transparent);
+}
+
+.featured-sale-card.is-free-promo::before {
+  background: linear-gradient(90deg, var(--primary), transparent);
+}
+
+.featured-sale-card.is-free-promo {
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--outline));
+}
+
+.sale-card-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.sale-card-img-wrapper {
+  position: relative;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  border: 1px solid var(--outline);
+  box-shadow: 0 4px 14px color-mix(in srgb, #000 22%, transparent);
+  overflow: hidden;
+  background: var(--background);
+  display: block;
+  text-decoration: none;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.sale-card-img-wrapper:hover {
+  transform: scale(1.05);
+  border-color: var(--primary);
+  box-shadow: 0 6px 18px color-mix(in srgb, #000 30%, transparent), 0 0 12px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+.sale-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.sale-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  gap: 3px;
+}
+
+.sale-card-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.badge-sale-discount {
+  background-color: rgba(255, 183, 77, 0.12) !important;
+  color: #ffb74d !important;
+  border-color: rgba(255, 183, 77, 0.35) !important;
+  margin-left: 0 !important;
+  font-weight: 700;
+  font-size: 0.72rem !important;
+  padding: 3px 7px !important;
+}
+
+:root[data-theme="light"] .badge-sale-discount {
+  background-color: rgba(217, 119, 6, 0.1) !important;
+  color: #b45309 !important;
+  border-color: rgba(217, 119, 6, 0.3) !important;
+}
+
+.badge-sale-free {
+  background-color: color-mix(in srgb, var(--primary) 18%, transparent) !important;
+  color: var(--primary) !important;
+  border-color: color-mix(in srgb, var(--primary) 40%, transparent) !important;
+  margin-left: 0 !important;
+  font-weight: 700;
+  font-size: 0.72rem !important;
+  padding: 3px 7px !important;
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+:root[data-theme="light"] .badge-sale-free {
+  background-color: rgba(5, 150, 105, 0.1) !important;
+  color: #047857 !important;
+  border-color: rgba(5, 150, 105, 0.3) !important;
+}
+
+.sale-card-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.76rem;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+}
+
+.sale-card-timer svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.sale-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--on-surface);
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sale-card-title-link {
+  color: var(--on-surface);
+  text-decoration: none;
+  transition: color 0.18s var(--ease);
+}
+
+.sale-card-title-link:hover {
+  color: var(--primary);
+}
+
+.sale-card-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.sale-card-actions .play-store-badge img {
+  height: 34px;
+  width: auto;
+}
+
+@media (max-width: 860px) {
+  .featured-sales-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-sale-card {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .sale-card-img-wrapper {
+    width: 94px;
+    height: 94px;
+  }
+
+  .sale-card-actions .play-store-badge img {
+    height: 32px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
    App Screenshots
 ---------------------------------------------------------------------------- */
 .screenshots-container {
