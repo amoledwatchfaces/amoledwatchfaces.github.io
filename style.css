@@ -338,6 +338,110 @@ nav a:not([aria-current="page"]):hover::after {
   color: var(--primary);
 }
 
+.lang-picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.lang-toggle {
+  margin-left: 0;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 5px 8px;
+}
+
+.lang-toggle svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.lang-toggle .lang-label {
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.lang-toggle[aria-expanded="true"] {
+  color: var(--on-surface);
+  background: color-mix(in srgb, var(--on-surface) 10%, transparent);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 144px;
+  background: var(--surface-container-high);
+  border: 1px solid var(--outline-variant);
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px) scale(0.98);
+  transform-origin: top right;
+  transition: opacity 0.15s var(--ease), transform 0.15s var(--ease), visibility 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.lang-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  color: var(--on-surface-variant);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s var(--ease), color 0.15s var(--ease);
+}
+
+.lang-item:hover,
+.lang-item:focus-visible {
+  background: color-mix(in srgb, var(--on-surface) 8%, transparent);
+  color: var(--on-surface);
+  outline: none;
+}
+
+.lang-item.active {
+  color: var(--primary);
+  font-weight: 600;
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
+.lang-item .lang-check {
+  opacity: 0;
+  transition: opacity 0.15s var(--ease);
+  flex-shrink: 0;
+  color: var(--primary);
+  margin-left: 8px;
+}
+
+.lang-item.active .lang-check {
+  opacity: 1;
+}
+
 .notif-toggle.subscribed svg {
   fill: currentColor;
 }

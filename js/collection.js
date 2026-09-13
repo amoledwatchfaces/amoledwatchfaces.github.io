@@ -121,7 +121,9 @@ function createCardElement(item) {
             ${item.appName}
           </a>
         </h3>
-        ${item.isFree ? '<span class="badge-pill">Free</span>' : '<span class="badge-pill badge-paid">Paid</span>'}
+        ${item.isFree
+          ? `<span class="badge-pill">${window.i18n && window.i18n.getLanguage() === 'sk' ? 'Zadarmo' : 'Free'}</span>`
+          : `<span class="badge-pill badge-paid">${window.i18n && window.i18n.getLanguage() === 'sk' ? 'Platené' : 'Paid'}</span>`}
       </div>
       <p class="collection-desc">${item.shortDescription || ''}</p>
       <div class="links" style="margin-top: auto; padding-top: 14px;">
@@ -168,18 +170,25 @@ function render(isAppend = false) {
   const total = processedList.length;
 
   if (total === 0) {
+    const isSk = window.i18n && window.i18n.getLanguage() === 'sk';
+    const emptyTitle = window.i18n ? window.i18n.t('collection.empty_title', 'No watch faces found') : 'No watch faces found';
+    const emptyDesc = isSk
+      ? `Žiadne výsledky pre výraz "<strong>${escapeHtml(searchQuery)}</strong>". Skúste skontrolovať preklepy alebo vymazať vyhľadávanie.`
+      : `No results matching "<strong>${escapeHtml(searchQuery)}</strong>". Try checking for typos or clear your search.`;
+    const clearBtnText = window.i18n ? window.i18n.t('collection.clear_search', 'Clear search') : 'Clear search';
+
     grid.innerHTML = `
       <div class="collection-empty-state">
         <svg class="empty-icon" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="currentColor">
           <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
         </svg>
-        <h3>No watch faces found</h3>
-        <p>No results matching "<strong>${escapeHtml(searchQuery)}</strong>". Try checking for typos or clear your search.</p>
-        <button type="button" class="btn-clear-search" id="empty-clear-btn">Clear search</button>
+        <h3>${emptyTitle}</h3>
+        <p>${emptyDesc}</p>
+        <button type="button" class="btn-clear-search" id="empty-clear-btn">${clearBtnText}</button>
       </div>
     `;
     if (countEl) {
-      countEl.textContent = `0 watch faces found`;
+      countEl.textContent = isSk ? '0 nájdených ciferníkov' : '0 watch faces found';
     }
     if (actionsContainer) {
       if (loadMoreBtn) loadMoreBtn.style.display = 'none';
@@ -233,7 +242,10 @@ function render(isAppend = false) {
 
   // Update item counter
   if (countEl) {
-    countEl.textContent = `Showing ${targetCount} of ${total} watch faces`;
+    const isSk = window.i18n && window.i18n.getLanguage() === 'sk';
+    countEl.textContent = isSk
+      ? `Zobrazených ${targetCount} z ${total} ciferníkov`
+      : `Showing ${targetCount} of ${total} watch faces`;
   }
 
   // Update button visibility and state
@@ -377,13 +389,15 @@ function initLatestRelease() {
     <button type="button" class="latest-release-dot ${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="Slide ${index + 1}"></button>
   `).join('');
 
+  const isSk = window.i18n && window.i18n.getLanguage() === 'sk';
+
   const badgeStatusHtml = isAvail
-    ? `<span class="badge-pill badge-latest">New Release</span>`
-    : `<span class="badge-pill badge-coming-soon">Coming Soon</span>`;
+    ? `<span class="badge-pill badge-latest">${window.i18n ? window.i18n.t('latest_release.badge', 'New Release') : 'New Release'}</span>`
+    : `<span class="badge-pill badge-coming-soon">${isSk ? 'Čoskoro' : 'Coming Soon'}</span>`;
 
   const badgePriceHtml = latest.isFree
-    ? `<span class="badge-pill">Free</span>`
-    : `<span class="badge-pill badge-paid">Paid</span>`;
+    ? `<span class="badge-pill">${isSk ? 'Zadarmo' : 'Free'}</span>`
+    : `<span class="badge-pill badge-paid">${isSk ? 'Platené' : 'Paid'}</span>`;
 
   const actionHtml = isAvail
     ? `<div class="links" style="margin-top: 0;">
@@ -394,9 +408,9 @@ function initLatestRelease() {
     : `<div class="status-coming-soon">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 14 14"></polyline>
+          <polyline points="12 6 12 14 14"></polyline>
         </svg>
-        <span>Available Soon on Google Play</span>
+        <span>${isSk ? 'Čoskoro k dispozícii v Google Play' : 'Available Soon on Google Play'}</span>
       </div>`;
 
   const titleHtml = isAvail
@@ -411,6 +425,8 @@ function initLatestRelease() {
         ${slidesHtml}
       </div>`;
 
+  const releasePrefix = window.i18n ? window.i18n.t('latest_release.released', 'Released') : 'Released';
+
   container.innerHTML = `
     <div class="latest-release-card">
       <div class="latest-release-visual">
@@ -423,7 +439,7 @@ function initLatestRelease() {
         <div class="latest-release-badge-row">
           ${badgeStatusHtml}
           ${badgePriceHtml}
-          ${latest.releaseDate ? `<span class="latest-release-date">Released: ${latest.releaseDate}</span>` : ''}
+          ${latest.releaseDate ? `<span class="latest-release-date">${releasePrefix}: ${latest.releaseDate}</span>` : ''}
         </div>
         <h3 class="latest-release-title">${titleHtml}</h3>
         <p class="latest-release-desc">${latest.shortDescription || ''}</p>
@@ -516,13 +532,19 @@ function formatSaleEndTime(saleEndTime) {
   const d = new Date(saleEndTime * 1000);
   if (isNaN(d.getTime())) return null;
 
+  const isSk = window.i18n && window.i18n.getLanguage() === 'sk';
+  const prefix = window.i18n ? window.i18n.t('featured_deals.offer_ends', 'Offer ends') : 'Offer ends';
+
   const day = String(d.getDate()).padStart(2, '0');
   const month = String(d.getMonth() + 1).padStart(2, '0');
   const year = d.getFullYear();
   const hours = String(d.getHours()).padStart(2, '0');
   const minutes = String(d.getMinutes()).padStart(2, '0');
 
-  return `Offer ends ${day}/${month}/${year}, ${hours}:${minutes}`;
+  if (isSk) {
+    return `${prefix} ${day}.${month}.${year}, ${hours}:${minutes}`;
+  }
+  return `${prefix} ${day}/${month}/${year}, ${hours}:${minutes}`;
 }
 
 // Render smaller cards for 3 random watch faces currently on sale
@@ -565,11 +587,11 @@ function initFeaturedSales() {
 
     let discountBadgeHtml = '';
     if (isFreePromo) {
-      discountBadgeHtml = `<span class="badge-pill badge-sale-free">100% OFF</span>`;
+      discountBadgeHtml = `<span class="badge-pill badge-sale-free">${window.i18n ? window.i18n.t('featured_deals.badge_free', '100% OFF') : '100% OFF'}</span>`;
     } else if (typeof item.discount === 'number' && item.discount > 0) {
       discountBadgeHtml = `<span class="badge-pill badge-sale-discount">-${Math.round(item.discount * 100)}%</span>`;
     } else {
-      discountBadgeHtml = `<span class="badge-pill badge-sale-discount">Sale</span>`;
+      discountBadgeHtml = `<span class="badge-pill badge-sale-discount">${window.i18n ? window.i18n.t('featured_deals.badge_sale', 'Sale') : 'Sale'}</span>`;
     }
 
     const timerText = formatSaleEndTime(item.saleEndTime) || item.saleText;
@@ -609,10 +631,12 @@ function initFeaturedSales() {
     `;
   }).join('');
 
+  const dealsHeading = window.i18n ? window.i18n.t('featured_deals.heading', 'Featured Deals') : 'Featured Deals';
+
   container.innerHTML = `
     <div class="featured-sales-wrapper">
       <div class="featured-sales-header">
-        <h3 id="deals" class="featured-sales-heading">Featured Deals</h3>
+        <h3 id="deals" class="featured-sales-heading">${dealsHeading}</h3>
       </div>
       <div class="featured-sales-grid">
         ${cardsHtml}
@@ -633,6 +657,13 @@ function initFeaturedSales() {
     }
   }
 }
+
+// Re-render dynamic elements when language changes
+window.addEventListener('languageChanged', () => {
+  render(false);
+  initLatestRelease();
+  initFeaturedSales();
+});
 
 // Initialize on DOM ready
 if (document.readyState === 'loading') {

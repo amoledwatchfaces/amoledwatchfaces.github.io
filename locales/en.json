@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "apps": "Apps",
+    "bogo": "BOGO",
+    "giveaways": "Giveaways",
+    "guide": "Guide",
+    "contact": "Contact",
+    "switch_theme": "Switch theme",
+    "switch_language": "Switch language",
+    "select_language": "Select language",
+    "notifications": "Enable notifications",
+    "snow_animation": "Toggle snow animation"
+  },
+  "hero": {
+    "tagline": "Privacy-respecting watch faces and apps for Wear OS."
+  },
+  "watchfaces": {
+    "heading": "Watch Faces",
+    "desc": "High-resolution, battery-friendly Wear OS watch faces. Built in Android Studio using Watch Face Format.",
+    "catalog_title": "Watch Face Catalog",
+    "catalog_desc": "All AMOLED Watch Faces in one place. Preview and find your perfect watch face.",
+    "developer_profile": "Developer profile",
+    "privacy_policy": "Privacy Policy"
+  },
+  "latest_release": {
+    "heading": "Latest Release",
+    "badge": "NEW RELEASE",
+    "released": "Released"
+  },
+  "featured_deals": {
+    "heading": "Featured Deals",
+    "shortcut_label": "Shortcut: #deals",
+    "offer_ends": "Offer ends",
+    "sale_ends_in": "Sale ends in",
+    "badge_sale": "Sale",
+    "badge_free": "100% OFF"
+  },
+  "collection": {
+    "heading": "Collection",
+    "count_suffix": "watch faces",
+    "count_few": "watch faces",
+    "count_single": "watch face",
+    "search_placeholder": "Search watch faces...",
+    "clear_search": "Clear search",
+    "filter_all": "All",
+    "filter_free": "Free",
+    "filter_analog": "Analog",
+    "filter_digital": "Digital",
+    "filter_weather": "Weather",
+    "filter_sale": "Sale",
+    "sort_label": "Sort by:",
+    "sort_release": "Release Date",
+    "sort_updated": "Last Updated",
+    "sort_alphabetical": "Alphabetical",
+    "load_more": "Load More",
+    "show_all": "Show All",
+    "empty_title": "No watch faces found",
+    "empty_subtitle": "Try adjusting your search or filter",
+    "clear_filters": "Clear filters",
+    "badge_bogo": "BOGO",
+    "badge_weather": "Weather",
+    "badge_trial": "Trial",
+    "badge_analog": "Analog",
+    "free_tag": "FREE",
+    "coming_soon": "Available soon..."
+  },
+  "support": {
+    "heading": "Support the Project",
+    "desc": "amoledwatchfaces is built and maintained by Tomáš Marcinčin, a solo independent developer with a strong focus on privacy. If you enjoy my watch faces and apps, please consider supporting my work!",
+    "sponsor": "Sponsor"
+  },
+  "footer": {
+    "built_with": "Built with privacy in mind for the Wear OS community.",
+    "privacy_policy": "Privacy Policy"
+  },
+  "common": {
+    "get_it_on_google_play": "Get it on Google Play",
+    "privacy_policy": "Privacy Policy"
+  }
+}
