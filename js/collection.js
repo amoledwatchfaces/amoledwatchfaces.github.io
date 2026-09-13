@@ -34,6 +34,43 @@ async function fetchPortfolio() {
   }
 }
 
+let localizedDescriptions = {};
+let currentDescLang = 'en';
+
+async function loadLocalizedDescriptions(lang) {
+  if (!lang || lang === 'en') {
+    localizedDescriptions = {};
+    currentDescLang = 'en';
+    return;
+  }
+  if (currentDescLang === lang && Object.keys(localizedDescriptions).length > 0) {
+    return;
+  }
+  try {
+    const res = await fetch(`locales/descriptions/${lang}.json?v=1.0`);
+    if (res.ok) {
+      localizedDescriptions = await res.json();
+      currentDescLang = lang;
+    } else {
+      localizedDescriptions = {};
+      currentDescLang = lang;
+    }
+  } catch (err) {
+    console.warn(`Could not load locales/descriptions/${lang}.json:`, err);
+    localizedDescriptions = {};
+    currentDescLang = lang;
+  }
+}
+
+function getItemDescription(item) {
+  if (!item) return '';
+  const lang = window.i18n ? window.i18n.getLanguage() : 'en';
+  if (lang !== 'en' && localizedDescriptions && localizedDescriptions[item.id]) {
+    return localizedDescriptions[item.id];
+  }
+  return item.shortDescription || '';
+}
+
 function getPortfolio() {
   return portfolioData.length > 0 ? portfolioData : (window.portfolio || []);
 }
@@ -64,7 +101,7 @@ function getProcessedList() {
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       const nameMatch = (item.appName || '').toLowerCase().includes(q);
-      const descMatch = (item.shortDescription || '').toLowerCase().includes(q);
+      const descMatch = getItemDescription(item).toLowerCase().includes(q);
       if (!nameMatch && !descMatch) return false;
     }
 
@@ -125,7 +162,7 @@ function createCardElement(item) {
           ? `<span class="badge-pill">${window.i18n && window.i18n.getLanguage() === 'sk' ? 'Zadarmo' : 'Free'}</span>`
           : `<span class="badge-pill badge-paid">${window.i18n && window.i18n.getLanguage() === 'sk' ? 'Platené' : 'Paid'}</span>`}
       </div>
-      <p class="collection-desc">${item.shortDescription || ''}</p>
+      <p class="collection-desc">${escapeHtml(getItemDescription(item))}</p>
       <div class="links" style="margin-top: auto; padding-top: 14px;">
         <a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
           <img src="assets/google-play-badge.svg" alt="Get it on Google Play" />
@@ -269,6 +306,10 @@ function render(isAppend = false) {
 
 // Setup event listeners
 async function initCollection() {
+  const currentLang = window.i18n ? window.i18n.getLanguage() : 'en';
+  if (currentLang !== 'en') {
+    await loadLocalizedDescriptions(currentLang);
+  }
   await fetchPortfolio();
 
   // Search input & clear button
@@ -442,7 +483,7 @@ function initLatestRelease() {
           ${latest.releaseDate ? `<span class="latest-release-date">${releasePrefix}: ${latest.releaseDate}</span>` : ''}
         </div>
         <h3 class="latest-release-title">${titleHtml}</h3>
-        <p class="latest-release-desc">${latest.shortDescription || ''}</p>
+        <p class="latest-release-desc">${escapeHtml(getItemDescription(latest))}</p>
         <div class="latest-release-actions">
           ${actionHtml}
         </div>
@@ -659,7 +700,9 @@ function initFeaturedSales() {
 }
 
 // Re-render dynamic elements when language changes
-window.addEventListener('languageChanged', () => {
+window.addEventListener('languageChanged', async (e) => {
+  const lang = (e && e.detail && e.detail.lang) || (window.i18n ? window.i18n.getLanguage() : 'en');
+  await loadLocalizedDescriptions(lang);
   render(false);
   initLatestRelease();
   initFeaturedSales();
