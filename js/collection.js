@@ -295,10 +295,13 @@ function render(isAppend = false) {
         loadMoreBtn.style.display = 'inline-flex';
         const remaining = total - targetCount;
         const nextBatch = Math.min(remaining, LOAD_MORE_STEP);
-        loadMoreBtn.textContent = `Load More (+${nextBatch})`;
+        const loadMoreText = window.i18n ? window.i18n.t('collection.load_more', 'Load More') : 'Load More';
+        loadMoreBtn.textContent = `${loadMoreText} (+${nextBatch})`;
       }
       if (showAllBtn) {
         showAllBtn.style.display = 'inline-flex';
+        const showAllText = window.i18n ? window.i18n.t('collection.show_all', 'Show All') : 'Show All';
+        showAllBtn.textContent = showAllText;
       }
     }
   }
