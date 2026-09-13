@@ -129,17 +129,22 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function renderEmptyState(message) {
     if (!gridElement) return;
+    const badgeText = window.i18n ? window.i18n.t('giveaways.empty_badge', 'No Active Giveaways') : 'No Active Giveaways';
+    const titleText = window.i18n ? window.i18n.t('giveaways.empty_title', 'Stay Tuned!') : 'Stay Tuned!';
+    const descText = message || (window.i18n ? window.i18n.t('giveaways.empty_desc', 'No active giveaways at the moment. Check back soon for new watch face promotions!') : 'No active giveaways at the moment. Check back soon for new watch face promotions!');
+    const exploreText = window.i18n ? window.i18n.t('giveaways.btn_explore', 'Explore Watch Faces') : 'Explore Watch Faces';
+
     gridElement.innerHTML = `
       <section class="giveaway-card" style="max-width: 540px; margin: 0 auto; width: 100%;">
         <div class="giveaway-badge-top out-of-codes">
-          <span class="live-dot" style="background:#ef4444"></span> No Active Giveaways
+          <span class="live-dot" style="background:#ef4444"></span> <span data-i18n="giveaways.empty_badge">${badgeText}</span>
         </div>
         <div class="giveaway-icon-wrap">
           <img src="assets/logo_notification.webp" alt="amoledwatchfaces" class="giveaway-icon" loading="lazy" decoding="async" />
         </div>
-        <h2 class="giveaway-title">Stay Tuned!</h2>
-        <p class="tagline" style="margin-bottom: 24px;">${message}</p>
-        <a href="./" class="btn-claim-promo" style="text-decoration:none;">Explore Watch Faces</a>
+        <h2 class="giveaway-title" data-i18n="giveaways.empty_title">${titleText}</h2>
+        <p class="tagline" style="margin-bottom: 24px;" data-i18n="giveaways.empty_desc">${descText}</p>
+        <a href="./" class="btn-claim-promo" style="text-decoration:none;" data-i18n="giveaways.btn_explore">${exploreText}</a>
       </section>
     `;
   }
@@ -156,10 +161,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const isAvailable = Boolean(giveaway.isActive && giveaway.remainingCodes > 0);
     const savedCode = localStorage.getItem(`awf_giveaway_code_${giveaway.id}`);
 
+    const badgeText = isAvailable
+      ? (window.i18n ? window.i18n.t('giveaways.badge_active', 'Active Giveaway') : 'Active Giveaway')
+      : (window.i18n ? window.i18n.t('giveaways.badge_ended', 'Giveaway Ended') : 'Giveaway Ended');
+    const badgeKey = isAvailable ? 'giveaways.badge_active' : 'giveaways.badge_ended';
+
+    const codesLeftText = window.i18n ? window.i18n.t('giveaways.codes_left', 'Codes Left:') : 'Codes Left:';
+
+    const claimBtnText = isAvailable
+      ? (window.i18n ? window.i18n.t('giveaways.btn_claim', 'Claim Free Promo Code') : 'Claim Free Promo Code')
+      : (window.i18n ? window.i18n.t('giveaways.btn_all_claimed', 'All Promo Codes Claimed') : 'All Promo Codes Claimed');
+    const claimBtnKey = isAvailable ? 'giveaways.btn_claim' : 'giveaways.btn_all_claimed';
+
+    const copyBtnText = window.i18n ? window.i18n.t('giveaways.btn_copy', 'Copy Code') : 'Copy Code';
+    const redeemBtnText = window.i18n ? window.i18n.t('giveaways.btn_redeem', 'Redeem on Google Play') : 'Redeem on Google Play';
+    const claimNoteText = window.i18n ? window.i18n.t('giveaways.claim_note', 'Tap the button above to automatically apply this code on Google Play, or copy and paste it in the Play Store.') : 'Tap the button above to automatically apply this code on Google Play, or copy and paste it in the Play Store.';
+
     card.innerHTML = `
       <div id="badge-${giveaway.id}" class="giveaway-badge-top ${isAvailable ? '' : 'out-of-codes'}">
         <span class="live-dot" style="${isAvailable ? '' : 'background:#ef4444'}"></span>
-        ${isAvailable ? 'Active Giveaway' : 'Giveaway Ended'}
+        <span class="badge-text" data-i18n="${badgeKey}">${badgeText}</span>
       </div>
 
       <div class="giveaway-icon-wrap">
@@ -172,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="giveaway-inventory">
-        <span>Codes Left:</span>
+        <span data-i18n="giveaways.codes_left">${codesLeftText}</span>
         <span id="inventory-${giveaway.id}" class="inventory-number">${giveaway.remainingCodes}</span>
       </div>
 
@@ -186,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
             <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
           </svg>
-          ${isAvailable ? 'Claim Free Promo Code' : 'All Promo Codes Claimed'}
+          <span class="claim-btn-text" data-i18n="${claimBtnKey}">${claimBtnText}</span>
         </button>
       </div>
 
@@ -199,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
               <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
             </svg>
-            Copy Code
+            <span class="copy-text" data-i18n="giveaways.btn_copy">${copyBtnText}</span>
           </button>
         </div>
 
@@ -207,10 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor">
             <path d="M160-280v80h640v-80H160Zm0-440h88q-5-9-6.5-19t-1.5-21q0-50 35-85t85-35q30 0 55.5 15.5T460-826l20 26 20-26q18-24 44-39t56-15q50 0 85 35t35 85q0 11-1.5 21t-6.5 19h88q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720Zm0 320h640v-240H596l84 114-64 46-136-184-136 184-64-46 82-114H160v240Zm228.5-331.5Q400-743 400-760t-11.5-28.5Q377-800 360-800t-28.5 11.5Q320-777 320-760t11.5 28.5Q343-720 360-720t28.5-11.5ZM600-720q17 0 28.5-11.5T640-760q0-17-11.5-28.5T600-800q-17 0-28.5 11.5T560-760q0 17 11.5 28.5T600-720Z"/>
           </svg>
-          Redeem on Google Play
+          <span data-i18n="giveaways.btn_redeem">${redeemBtnText}</span>
         </a>
 
-        <p class="claim-note">Tap the button above to automatically apply this code on Google Play, or copy and paste it in the Play Store.</p>
+        <p class="claim-note" data-i18n="giveaways.claim_note">${claimNoteText}</p>
       </div>
     `;
 
@@ -234,7 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
           await navigator.clipboard.writeText(code);
           const original = copyBtn.innerHTML;
-          copyBtn.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+          const copiedText = window.i18n ? window.i18n.t('giveaways.btn_copied', 'Copied!') : 'Copied!';
+          copyBtn.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="giveaways.btn_copied">${copiedText}</span>`;
           copyBtn.style.background = 'var(--primary)';
           copyBtn.style.color = '#000000';
           setTimeout(() => {
@@ -257,7 +279,8 @@ document.addEventListener('DOMContentLoaded', () => {
     claimBtn.addEventListener('click', async () => {
       if (claimBtn.disabled) return;
       claimBtn.disabled = true;
-      claimBtn.innerHTML = `<div class="spinner"></div> Generating Code...`;
+      const generatingText = window.i18n ? window.i18n.t('common.loading', 'Generating...') : 'Generating...';
+      claimBtn.innerHTML = `<div class="spinner"></div> ${generatingText}`;
 
       try {
         const response = await fetch(`${GIVEAWAY_ENDPOINT}?action=claim`, {
@@ -281,29 +304,36 @@ document.addEventListener('DOMContentLoaded', () => {
           } else {
             alert(data.error || 'You have already claimed a promo code for this giveaway.');
             claimBtn.disabled = false;
-            claimBtn.textContent = 'Claim Free Promo Code';
+            claimBtn.textContent = window.i18n ? window.i18n.t('giveaways.btn_claim', 'Claim Free Promo Code') : 'Claim Free Promo Code';
           }
         } else if (response.status === 410 || data.isOutOfCodes) {
           invCount.textContent = '0';
           badgeEl.className = 'giveaway-badge-top out-of-codes';
-          badgeEl.innerHTML = `<span class="live-dot" style="background:#ef4444"></span> Out of Codes`;
+          const endedText = window.i18n ? window.i18n.t('giveaways.badge_ended', 'Giveaway Ended') : 'Giveaway Ended';
+          badgeEl.innerHTML = `<span class="live-dot" style="background:#ef4444"></span> <span data-i18n="giveaways.badge_ended">${endedText}</span>`;
           claimBtn.disabled = true;
-          claimBtn.textContent = 'All Promo Codes Claimed';
+          claimBtn.textContent = window.i18n ? window.i18n.t('giveaways.btn_all_claimed', 'All Promo Codes Claimed') : 'All Promo Codes Claimed';
         } else {
           alert(data.error || 'Could not claim code. Please try again.');
           claimBtn.disabled = false;
-          claimBtn.textContent = 'Claim Free Promo Code';
+          claimBtn.textContent = window.i18n ? window.i18n.t('giveaways.btn_claim', 'Claim Free Promo Code') : 'Claim Free Promo Code';
         }
       } catch (err) {
         console.error('Claim error:', err);
         alert('Network error while claiming promo code.');
         claimBtn.disabled = false;
-        claimBtn.textContent = 'Claim Free Promo Code';
+        claimBtn.textContent = window.i18n ? window.i18n.t('giveaways.btn_claim', 'Claim Free Promo Code') : 'Claim Free Promo Code';
       }
     });
 
     return card;
   }
+
+  window.addEventListener('languageChanged', () => {
+    if (activeGiveawaysList && activeGiveawaysList.length > 0) {
+      renderGiveawaysGrid(activeGiveawaysList);
+    }
+  });
 
   /* ==========================================================================
      Admin Modal Functionality

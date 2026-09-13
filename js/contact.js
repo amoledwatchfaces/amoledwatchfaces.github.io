@@ -76,19 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const hp = honeypotInput ? honeypotInput.value : '';
 
       if (!name || !email || !message) {
-        showStatus('Please fill in all required fields.', 'error');
+        const errorMsg = window.i18n ? window.i18n.t('contact.error_fill_fields', 'Please fill in all required fields.') : 'Please fill in all required fields.';
+        showStatus(errorMsg, 'error');
         return;
       }
 
       // Check honeypot for bots
       if (hp) {
-        showStatus('Thank you! Your message has been sent.', 'success');
+        const botSuccess = window.i18n ? window.i18n.t('contact.success_msg', 'Thank you! Your message has been sent.') : 'Thank you! Your message has been sent.';
+        showStatus(botSuccess, 'success');
         contactForm.reset();
         return;
       }
 
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<div class="spinner" style="width: 18px; height: 18px; border: 2px solid rgba(0,0,0,0.2); border-top-color: #000; border-radius: 50%; animation: spin-loader 0.8s linear infinite;"></div> Sending Message...`;
+      const sendingText = window.i18n ? window.i18n.t('contact.btn_sending', 'Sending Message...') : 'Sending Message...';
+      submitBtn.innerHTML = `<div class="spinner" style="width: 18px; height: 18px; border: 2px solid rgba(0,0,0,0.2); border-top-color: #000; border-radius: 50%; animation: spin-loader 0.8s linear infinite;"></div> ${sendingText}`;
       statusMessage.style.display = 'none';
 
       // Read custom access key from input if provided, otherwise default
@@ -120,21 +123,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const result = await response.json();
 
         if (response.ok && (result.success || result.status === 200)) {
-          showStatus('🎉 Thank you! Your message has been sent successfully. We will reply to your email soon.', 'success');
+          const successMsg = window.i18n ? window.i18n.t('contact.success_msg', '🎉 Thank you! Your message has been sent successfully. We will reply to your email soon.') : '🎉 Thank you! Your message has been sent successfully. We will reply to your email soon.';
+          showStatus(successMsg, 'success');
           contactForm.reset();
         } else {
-          showStatus(result.message || 'Failed to send message. Please try emailing support@amoledwatchfaces.com directly.', 'error');
+          const failMsg = result.message || (window.i18n ? window.i18n.t('contact.error_send_failed', 'Failed to send message. Please try emailing support@amoledwatchfaces.com directly.') : 'Failed to send message. Please try emailing support@amoledwatchfaces.com directly.');
+          showStatus(failMsg, 'error');
         }
       } catch (err) {
         console.error('Contact submission error:', err);
-        showStatus('Network error while sending your message. Please email support@amoledwatchfaces.com directly.', 'error');
+        const netMsg = window.i18n ? window.i18n.t('contact.error_network', 'Network error while sending your message. Please email support@amoledwatchfaces.com directly.') : 'Network error while sending your message. Please email support@amoledwatchfaces.com directly.';
+        showStatus(netMsg, 'error');
       } finally {
         submitBtn.disabled = false;
+        const sendBtnText = window.i18n ? window.i18n.t('contact.btn_send', 'Send Message') : 'Send Message';
         submitBtn.innerHTML = `
           <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor">
             <path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/>
           </svg>
-          Send Message
+          <span data-i18n="contact.btn_send">${sendBtnText}</span>
         `;
       }
     });

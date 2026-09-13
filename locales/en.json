@@ -72,9 +72,11 @@
   },
   "footer": {
     "built_with": "Built with privacy in mind for the Wear OS community.",
-    "privacy_policy": "Privacy Policy"
+    "privacy_policy": "Privacy Policy",
+    "keep_in_touch": "Keep in Touch"
   },
   "common": {
+    "loading": "Loading...",
     "get_it_on_google_play": "Get it on Google Play",
     "privacy_policy": "Privacy Policy"
   },
@@ -95,7 +97,8 @@
     "favoriteapps_title": "Favorite Apps Tile",
     "favoriteapps_desc": "Launch your most frequently used apps directly from your wrist with a fast, customizable Wear OS Tile.",
     "photo_title": "Photo Complication",
-    "photo_desc": "Display your favorite pictures, memories, and photos directly inside any standard Wear OS complication slot."
+    "photo_desc": "Display your favorite pictures, memories, and photos directly inside any standard Wear OS complication slot.",
+    "privacy_policy": "Privacy Policy"
   },
   "bogo": {
     "title": "Buy One, Get One (BOGO)",
@@ -113,7 +116,8 @@
     "thanks_title": "Thanks for your support!",
     "thanks_desc": "Your support makes it possible to continue developing privacy-respecting, high-performance Wear OS watch faces and utilities.",
     "developer_profile": "Developer profile",
-    "send_email": "Send Email"
+    "send_email": "Send Email",
+    "claim_email": "Claim BOGO via email"
   },
   "giveaways": {
     "title": "Watch Face Giveaways",
@@ -128,7 +132,20 @@
     "step2_title": "Redeem on Google Play",
     "step2_desc": "Tap \"Redeem on Google Play\" or open the Google Play Store app → Tap your profile avatar → Payments & subscriptions → Redeem code.",
     "step3_title": "Install on Your Watch",
-    "step3_desc": "Once redeemed, the watch face is permanently tied to your Google account. Select your Wear OS watch device during install to download it directly to your smartwatch."
+    "step3_desc": "Once redeemed, the watch face is permanently tied to your Google account. Select your Wear OS watch device during install to download it directly to your smartwatch.",
+    "loading_badge": "Loading Giveaways...",
+    "badge_active": "Active Giveaway",
+    "badge_ended": "Giveaway Ended",
+    "btn_claim": "Claim Free Promo Code",
+    "btn_all_claimed": "All Promo Codes Claimed",
+    "btn_copy": "Copy Code",
+    "btn_copied": "Copied!",
+    "btn_redeem": "Redeem on Google Play",
+    "claim_note": "Tap the button above to automatically apply this code on Google Play, or copy and paste it in the Play Store.",
+    "empty_badge": "No Active Giveaways",
+    "empty_title": "Stay Tuned!",
+    "empty_desc": "No active giveaways at the moment. Check back soon for new watch face promotions!",
+    "btn_explore": "Explore Watch Faces"
   },
   "guide": {
     "title": "How to Install Wear OS Watch Faces",
@@ -136,7 +153,7 @@
     "recommended": "Recommended",
     "companion_app": "Companion App",
     "web_browser": "Web Browser",
-    "method1_header": "1st Way (Preferred): Google Play App",
+    "method1_header": "1st Way: Google Play Store on Watch",
     "step_select_device_title": "Select target device:",
     "step_select_device_desc": "In the Google Play Store app on your phone, tap the drop-down arrow next to the Install button, select your watch as the target device, and tap Install.",
     "step_check_watch_title": "Check your watch:",
@@ -170,7 +187,14 @@
     "step_wait_install_title": "Wait for automatic install:",
     "step_wait_install_desc": "Within a few minutes, the watch face installation will start automatically on your smartwatch (make sure your watch has an active Wi-Fi or Bluetooth connection).",
     "step_activate_web_title": "Activate:",
-    "step_activate_web_desc": "Once installation completes, activate the watch face on your watch or through your phone's wearable companion app."
+    "step_activate_web_desc": "Once installation completes, activate the watch face on your watch or through your phone's wearable companion app.",
+    "tip_troubleshooting_p1": "If the Google Play Store on your watch asks you to pay again, it is a temporary synchronization delay between your watch and Google's servers.",
+    "tip_troubleshooting_p2": "To fix this quickly: toggle Airplane Mode on your watch on and off after a few seconds, or temporarily disconnect and reconnect Bluetooth to force a synchronization.",
+    "tip_troubleshooting_p3": "Google only charges once per Google Account for purchased content; any duplicated payment attempt is automatically cancelled or prevented.",
+    "trouble_title": "Need Help or Having Issues?",
+    "trouble_desc1": "Please keep in mind that installation and download mechanisms are handled entirely by Google Play and Wear OS.",
+    "trouble_desc2": "Before you consider leaving a negative review, please review the steps above or contact us directly. We are always glad to assist you:",
+    "btn_contact_support": "Contact Support"
   },
   "contact": {
     "title": "Contact Support",
@@ -181,8 +205,8 @@
     "placeholder_name": "e.g. John Doe",
     "label_email": "Email Address",
     "placeholder_email": "e.g. john@example.com",
-    "label_topic": "Topic",
-    "topic_general": "General Inquiry",
+    "label_topic": "Inquiry Topic",
+    "topic_general": "General Support",
     "topic_watchface": "Watch Face Issue / Support",
     "topic_app": "App Issue / Support",
     "topic_bogo": "BOGO Promotion Claim",
@@ -190,13 +214,13 @@
     "topic_other": "Other",
     "label_watch_model": "Watch Model (Optional)",
     "placeholder_watch_model": "e.g. Galaxy Watch 6, Pixel Watch 2",
-    "label_watch_face": "Watch Face / App (Optional)",
-    "select_watch_face": "Select a watch face or app (optional)...",
-    "label_message": "Message",
-    "placeholder_message": "Please describe your question or issue in detail...",
+    "label_watch_face": "Related Watch Face / App (optional)",
+    "select_watch_face": "-- Select Watch Face (if applicable) --",
+    "label_message": "Your Message",
+    "placeholder_message": "Describe your question, request, or issue in detail...",
     "btn_send": "Send Message",
-    "btn_sending": "Sending...",
-    "success_msg": "Thank you! Your message has been sent successfully.",
+    "btn_sending": "Sending Message...",
+    "success_msg": "🎉 Thank you! Your message has been sent successfully. We will reply to your email soon.",
     "quick_info_heading": "Quick Info",
     "quick_info_desc": "Frequently checked resources and response times.",
     "direct_email": "Direct Email",
@@ -205,7 +229,20 @@
     "developer_location": "Developer Location",
     "developer_location_val": "Slovakia, European Union",
     "faq_note": "Need help installing a watch face? Check out our installation guide first for quick step-by-step instructions!",
-    "read_guide": "Read Installation Guide"
+    "read_guide": "Read Installation Guide",
+    "topic_tech": "Technical Issue / Bug",
+    "privacy_note": "Your name and email are used solely to reply to your inquiry. Read our <a href=\"privacy\" style=\"color: var(--primary); text-decoration: underline;\">Privacy Policy</a>.",
+    "direct_contact_title": "Direct Contact",
+    "direct_contact_desc": "Prefer sending an email from your favorite email client? You can reach us directly anytime.",
+    "join_telegram": "Join Telegram Community",
+    "quick_help_title": "Quick Help",
+    "quick_help_desc": "Looking for installation instructions, promotional codes, or BOGO rewards?",
+    "quick_help_guide": "Installation & Wear OS Guide",
+    "quick_help_bogo": "BOGO Promotion Page",
+    "quick_help_giveaways": "Watch Face Giveaways",
+    "error_fill_fields": "Please fill in all required fields.",
+    "error_send_failed": "Failed to send message. Please try emailing support@amoledwatchfaces.com directly.",
+    "error_network": "Network error while sending your message. Please email support@amoledwatchfaces.com directly."
   },
   "not_found": {
     "title": "Page Not Found",
