@@ -576,7 +576,7 @@ function formatSaleEndTime(saleEndTime) {
   const d = new Date(saleEndTime * 1000);
   if (isNaN(d.getTime())) return null;
 
-  const isSk = window.i18n && window.i18n.getLanguage() === 'sk';
+  const isDotDate = window.i18n && (window.i18n.getLanguage() === 'sk' || window.i18n.getLanguage() === 'de');
   const prefix = window.i18n ? window.i18n.t('featured_deals.offer_ends', 'Offer ends') : 'Offer ends';
 
   const day = String(d.getDate()).padStart(2, '0');
@@ -585,7 +585,7 @@ function formatSaleEndTime(saleEndTime) {
   const hours = String(d.getHours()).padStart(2, '0');
   const minutes = String(d.getMinutes()).padStart(2, '0');
 
-  if (isSk) {
+  if (isDotDate) {
     return `${prefix} ${day}.${month}.${year}, ${hours}:${minutes}`;
   }
   return `${prefix} ${day}/${month}/${year}, ${hours}:${minutes}`;

@@ -51,6 +51,10 @@
         const navLang = (navigator.language || '').toLowerCase();
         if (navLang.startsWith('sk') || navLang.startsWith('cs')) {
           document.documentElement.setAttribute('lang', 'sk');
+        } else if (navLang.startsWith('de')) {
+          document.documentElement.setAttribute('lang', 'de');
+        } else if (navLang.startsWith('es')) {
+          document.documentElement.setAttribute('lang', 'es');
         }
       }
     })();
@@ -123,6 +127,18 @@
           <div id="lang-menu" class="lang-menu" role="listbox" aria-label="Language selection" tabindex="-1">
             <button type="button" class="lang-item active" role="option" data-lang="en" aria-selected="true">
               <span class="lang-name">English</span>
+              <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
+                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
+              </svg>
+            </button>
+            <button type="button" class="lang-item" role="option" data-lang="de" aria-selected="false">
+              <span class="lang-name">Deutsch</span>
+              <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
+                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
+              </svg>
+            </button>
+            <button type="button" class="lang-item" role="option" data-lang="es" aria-selected="false">
+              <span class="lang-name">Español</span>
               <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
                 <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
               </svg>
