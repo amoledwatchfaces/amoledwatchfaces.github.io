@@ -510,6 +510,21 @@ function setupReleaseSlideshow(container) {
   startTimer();
 }
 
+// Format sale end Unix timestamp to localized 'Offer ends DD/MM/YYYY, HH:mm'
+function formatSaleEndTime(saleEndTime) {
+  if (!saleEndTime || typeof saleEndTime !== 'number') return null;
+  const d = new Date(saleEndTime * 1000);
+  if (isNaN(d.getTime())) return null;
+
+  const day = String(d.getDate()).padStart(2, '0');
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const year = d.getFullYear();
+  const hours = String(d.getHours()).padStart(2, '0');
+  const minutes = String(d.getMinutes()).padStart(2, '0');
+
+  return `Offer ends ${day}/${month}/${year}, ${hours}:${minutes}`;
+}
+
 // Render smaller cards for 3 random watch faces currently on sale
 function initFeaturedSales() {
   const container = document.getElementById('featured-sales-container');
@@ -557,13 +572,15 @@ function initFeaturedSales() {
       discountBadgeHtml = `<span class="badge-pill badge-sale-discount">Sale</span>`;
     }
 
-    const timerHtml = item.saleText
-      ? `<span class="sale-card-timer" title="${item.saleText}">
+    const timerText = formatSaleEndTime(item.saleEndTime) || item.saleText;
+
+    const timerHtml = timerText
+      ? `<span class="sale-card-timer" title="${timerText}">
           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="10"></circle>
             <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
-          <span>${item.saleText}</span>
+          <span>${timerText}</span>
         </span>`
       : '';
 
