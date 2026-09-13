@@ -159,8 +159,8 @@ function createCardElement(item) {
           </a>
         </h3>
         ${item.isFree
-          ? `<span class="badge-pill">${window.i18n && window.i18n.getLanguage() === 'sk' ? 'Zadarmo' : 'Free'}</span>`
-          : `<span class="badge-pill badge-paid">${window.i18n && window.i18n.getLanguage() === 'sk' ? 'Platené' : 'Paid'}</span>`}
+          ? `<span class="badge-pill">${window.i18n ? window.i18n.t('apps_page.badge_free', 'Free') : 'Free'}</span>`
+          : `<span class="badge-pill badge-paid">${window.i18n ? window.i18n.t('apps_page.badge_paid', 'Paid') : 'Paid'}</span>`}
       </div>
       <p class="collection-desc">${escapeHtml(getItemDescription(item))}</p>
       <div class="links" style="margin-top: auto; padding-top: 14px;">
@@ -207,11 +207,16 @@ function render(isAppend = false) {
   const total = processedList.length;
 
   if (total === 0) {
-    const isSk = window.i18n && window.i18n.getLanguage() === 'sk';
+    const lang = window.i18n ? window.i18n.getLanguage() : 'en';
     const emptyTitle = window.i18n ? window.i18n.t('collection.empty_title', 'No watch faces found') : 'No watch faces found';
-    const emptyDesc = isSk
-      ? `Žiadne výsledky pre výraz "<strong>${escapeHtml(searchQuery)}</strong>". Skúste skontrolovať preklepy alebo vymazať vyhľadávanie.`
-      : `No results matching "<strong>${escapeHtml(searchQuery)}</strong>". Try checking for typos or clear your search.`;
+    let emptyDesc = `No results matching "<strong>${escapeHtml(searchQuery)}</strong>". Try checking for typos or clear your search.`;
+    if (lang === 'sk') {
+      emptyDesc = `Žiadne výsledky pre výraz "<strong>${escapeHtml(searchQuery)}</strong>". Skúste skontrolovať preklepy alebo vymazať vyhľadávanie.`;
+    } else if (lang === 'de') {
+      emptyDesc = `Keine Ergebnisse für „<strong>${escapeHtml(searchQuery)}</strong>“. Bitte überprüfe die Schreibweise oder setze die Suche zurück.`;
+    } else if (lang === 'es') {
+      emptyDesc = `No hay resultados para «<strong>${escapeHtml(searchQuery)}</strong>». Comprueba la ortografía o restablece la búsqueda.`;
+    }
     const clearBtnText = window.i18n ? window.i18n.t('collection.clear_search', 'Clear search') : 'Clear search';
 
     grid.innerHTML = `
@@ -225,7 +230,10 @@ function render(isAppend = false) {
       </div>
     `;
     if (countEl) {
-      countEl.textContent = isSk ? '0 nájdených ciferníkov' : '0 watch faces found';
+      if (lang === 'sk') countEl.textContent = '0 nájdených ciferníkov';
+      else if (lang === 'de') countEl.textContent = '0 Zifferblätter gefunden';
+      else if (lang === 'es') countEl.textContent = '0 esferas encontradas';
+      else countEl.textContent = '0 watch faces found';
     }
     if (actionsContainer) {
       if (loadMoreBtn) loadMoreBtn.style.display = 'none';
@@ -279,10 +287,16 @@ function render(isAppend = false) {
 
   // Update item counter
   if (countEl) {
-    const isSk = window.i18n && window.i18n.getLanguage() === 'sk';
-    countEl.textContent = isSk
-      ? `Zobrazených ${targetCount} z ${total} ciferníkov`
-      : `Showing ${targetCount} of ${total} watch faces`;
+    const lang = window.i18n ? window.i18n.getLanguage() : 'en';
+    if (lang === 'sk') {
+      countEl.textContent = `Zobrazených ${targetCount} z ${total} ciferníkov`;
+    } else if (lang === 'de') {
+      countEl.textContent = `${targetCount} von ${total} Zifferblättern angezeigt`;
+    } else if (lang === 'es') {
+      countEl.textContent = `Mostrando ${targetCount} de ${total} esferas`;
+    } else {
+      countEl.textContent = `Showing ${targetCount} of ${total} watch faces`;
+    }
   }
 
   // Update button visibility and state
@@ -433,15 +447,28 @@ function initLatestRelease() {
     <button type="button" class="latest-release-dot ${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="Slide ${index + 1}"></button>
   `).join('');
 
-  const isSk = window.i18n && window.i18n.getLanguage() === 'sk';
+  const lang = window.i18n ? window.i18n.getLanguage() : 'en';
+
+  let comingSoonText = 'Coming Soon';
+  let comingSoonAction = 'Available Soon on Google Play';
+  if (lang === 'sk') {
+    comingSoonText = 'Čoskoro';
+    comingSoonAction = 'Čoskoro k dispozícii v Google Play';
+  } else if (lang === 'de') {
+    comingSoonText = 'Demnächst';
+    comingSoonAction = 'Demnächst bei Google Play verfügbar';
+  } else if (lang === 'es') {
+    comingSoonText = 'Próximamente';
+    comingSoonAction = 'Próximamente disponible en Google Play';
+  }
 
   const badgeStatusHtml = isAvail
     ? `<span class="badge-pill badge-latest">${window.i18n ? window.i18n.t('latest_release.badge', 'New Release') : 'New Release'}</span>`
-    : `<span class="badge-pill badge-coming-soon">${isSk ? 'Čoskoro' : 'Coming Soon'}</span>`;
+    : `<span class="badge-pill badge-coming-soon">${comingSoonText}</span>`;
 
   const badgePriceHtml = latest.isFree
-    ? `<span class="badge-pill">${isSk ? 'Zadarmo' : 'Free'}</span>`
-    : `<span class="badge-pill badge-paid">${isSk ? 'Platené' : 'Paid'}</span>`;
+    ? `<span class="badge-pill">${window.i18n ? window.i18n.t('apps_page.badge_free', 'Free') : 'Free'}</span>`
+    : `<span class="badge-pill badge-paid">${window.i18n ? window.i18n.t('apps_page.badge_paid', 'Paid') : 'Paid'}</span>`;
 
   const actionHtml = isAvail
     ? `<div class="links" style="margin-top: 0;">
@@ -454,7 +481,7 @@ function initLatestRelease() {
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 14 14"></polyline>
         </svg>
-        <span>${isSk ? 'Čoskoro k dispozícii v Google Play' : 'Available Soon on Google Play'}</span>
+        <span>${comingSoonAction}</span>
       </div>`;
 
   const titleHtml = isAvail
