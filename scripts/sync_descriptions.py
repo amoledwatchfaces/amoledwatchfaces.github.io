@@ -51,6 +51,7 @@ COMING_SOON_MAP = {
     'cs': 'Již brzy...',
     'de': 'Demnächst verfügbar...',
     'es': 'Próximamente...',
+    'pl': 'Dostępne wkrótce...',
     'fr': 'Bientôt disponible...',
     'en': 'Available soon...',
 }

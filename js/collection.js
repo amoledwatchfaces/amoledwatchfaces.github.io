@@ -216,6 +216,8 @@ function render(isAppend = false) {
       emptyDesc = `Keine Ergebnisse für „<strong>${escapeHtml(searchQuery)}</strong>“. Bitte überprüfe die Schreibweise oder setze die Suche zurück.`;
     } else if (lang === 'es') {
       emptyDesc = `No hay resultados para «<strong>${escapeHtml(searchQuery)}</strong>». Comprueba la ortografía o restablece la búsqueda.`;
+    } else if (lang === 'pl') {
+      emptyDesc = `Brak wyników dla „<strong>${escapeHtml(searchQuery)}</strong>”. Sprawdź pisownię lub zresetuj wyszukiwanie.`;
     }
     const clearBtnText = window.i18n ? window.i18n.t('collection.clear_search', 'Clear search') : 'Clear search';
 
@@ -233,6 +235,7 @@ function render(isAppend = false) {
       if (lang === 'sk') countEl.textContent = '0 nájdených ciferníkov';
       else if (lang === 'de') countEl.textContent = '0 Zifferblätter gefunden';
       else if (lang === 'es') countEl.textContent = '0 esferas encontradas';
+      else if (lang === 'pl') countEl.textContent = '0 znalezionych tarcz';
       else countEl.textContent = '0 watch faces found';
     }
     if (actionsContainer) {
@@ -294,6 +297,8 @@ function render(isAppend = false) {
       countEl.textContent = `${targetCount} von ${total} Zifferblättern angezeigt`;
     } else if (lang === 'es') {
       countEl.textContent = `Mostrando ${targetCount} de ${total} esferas`;
+    } else if (lang === 'pl') {
+      countEl.textContent = `Wyświetlanie ${targetCount} z ${total} tarcz`;
     } else {
       countEl.textContent = `Showing ${targetCount} of ${total} watch faces`;
     }
@@ -460,6 +465,9 @@ function initLatestRelease() {
   } else if (lang === 'es') {
     comingSoonText = 'Próximamente';
     comingSoonAction = 'Próximamente disponible en Google Play';
+  } else if (lang === 'pl') {
+    comingSoonText = 'Wkrótce';
+    comingSoonAction = 'Wkrótce dostępne w Google Play';
   }
 
   const badgeStatusHtml = isAvail
@@ -603,7 +611,7 @@ function formatSaleEndTime(saleEndTime) {
   const d = new Date(saleEndTime * 1000);
   if (isNaN(d.getTime())) return null;
 
-  const isDotDate = window.i18n && (window.i18n.getLanguage() === 'sk' || window.i18n.getLanguage() === 'de');
+  const isDotDate = window.i18n && (window.i18n.getLanguage() === 'sk' || window.i18n.getLanguage() === 'de' || window.i18n.getLanguage() === 'pl');
   const prefix = window.i18n ? window.i18n.t('featured_deals.offer_ends', 'Offer ends') : 'Offer ends';
 
   const day = String(d.getDate()).padStart(2, '0');

@@ -909,6 +909,7 @@ h3:hover .heading-anchor,
 .main-banner {
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius);
   border: 1px solid var(--outline);
   margin-bottom: 32px;
@@ -924,6 +925,12 @@ main > picture {
 
 main > picture .main-banner {
   animation: none;
+}
+
+@media (min-width: 900px) {
+  .hero-banner-picture .main-banner {
+    aspect-ratio: 8 / 3;
+  }
 }
 
 .bottom-banner {

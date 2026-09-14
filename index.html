@@ -46,6 +46,8 @@
   <link rel="apple-touch-icon" href="assets/logo_notification.webp" />
 
   <link rel="stylesheet" href="style.css?v=3.1" />
+  <link rel="preload" as="image" href="assets/banner_mobile.webp" media="(max-width: 899px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/banner_wide.webp" media="(min-width: 900px)" fetchpriority="high" />
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme');
@@ -63,29 +65,11 @@
           document.documentElement.setAttribute('lang', 'de');
         } else if (navLang.startsWith('es')) {
           document.documentElement.setAttribute('lang', 'es');
+        } else if (navLang.startsWith('pl')) {
+          document.documentElement.setAttribute('lang', 'pl');
         }
       }
     })();
-  </script>
-
-  <!-- Sender -->
-  <script>
-    (function (s, e, n, d, er) {
-      s['Sender'] = er;
-      s[er] = s[er] || function () {
-        (s[er].q = s[er].q || []).push(arguments)
-      }, s[er].l = 1 * new Date();
-      s[er].on = function (event, callback) {
-        s[er].listeners = s[er].listeners || {};
-        (s[er].listeners[event] = s[er].listeners[event] || []).push(callback);
-      };
-      var a = e.createElement(n),
-        m = e.getElementsByTagName(n)[0];
-      a.async = 1;
-      a.src = d;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
-    sender('b28e1c9e2a9537')
   </script>
 </head>
 
@@ -160,6 +144,12 @@
                 <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
               </svg>
             </button>
+            <button type="button" class="lang-item" role="option" data-lang="pl" aria-selected="false">
+              <span class="lang-name">Polski</span>
+              <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
+                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
+              </svg>
+            </button>
             <button type="button" class="lang-item" role="option" data-lang="sk" aria-selected="false">
               <span class="lang-name">Slovenčina</span>
               <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
@@ -173,9 +163,10 @@
   </header>
 
   <main>
-    <picture>
-      <source media="(min-width: 900px)" srcset="assets/banner_wide.webp" />
-      <img src="assets/banner.webp" class="main-banner" alt="amoledwatchfaces banner" fetchpriority="high" />
+    <picture class="hero-banner-picture">
+      <source media="(min-width: 900px)" srcset="assets/banner_wide.webp" width="6144" height="2304" />
+      <source media="(max-width: 899px)" srcset="assets/banner_mobile.webp" width="1200" height="675" />
+      <img src="assets/banner_mobile.webp" class="main-banner" alt="amoledwatchfaces banner" width="1200" height="675" fetchpriority="high" />
     </picture>
     <h1>amoledwatchfaces</h1>
     <p class="tagline" data-i18n="hero.tagline">Privacy-respecting watch faces and apps for Wear OS.</p>
@@ -354,6 +345,28 @@
   <script src="js/i18n.js?v=1.0" defer></script>
   <script src="js/collection.js?v=2.1" defer></script>
   <script type="module" src="js/notifications.js"></script>
+
+  <!-- Sender (deferred after page load to prevent main thread blocking) -->
+  <script>
+    window.addEventListener('load', function () {
+      (function (s, e, n, d, er) {
+        s['Sender'] = er;
+        s[er] = s[er] || function () {
+          (s[er].q = s[er].q || []).push(arguments)
+        }, s[er].l = 1 * new Date();
+        s[er].on = function (event, callback) {
+          s[er].listeners = s[er].listeners || {};
+          (s[er].listeners[event] = s[er].listeners[event] || []).push(callback);
+        };
+        var a = e.createElement(n),
+          m = e.getElementsByTagName(n)[0];
+        a.async = 1;
+        a.src = d;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+      sender('b28e1c9e2a9537');
+    });
+  </script>
 </body>
 
 </html>

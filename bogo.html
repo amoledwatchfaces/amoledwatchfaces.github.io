@@ -38,6 +38,7 @@
   <meta name="twitter:image" content="https://amoledwatchfaces.com/assets/banner_bogo.webp" />
 
   <link rel="stylesheet" href="style.css?v=3.1" />
+  <link rel="preload" as="image" href="assets/banner_bogo_mobile.webp" media="(max-width: 899px)" fetchpriority="high" />
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme');
@@ -55,6 +56,8 @@
           document.documentElement.setAttribute('lang', 'de');
         } else if (navLang.startsWith('es')) {
           document.documentElement.setAttribute('lang', 'es');
+        } else if (navLang.startsWith('pl')) {
+          document.documentElement.setAttribute('lang', 'pl');
         }
       }
     })();
@@ -133,6 +136,12 @@
                 <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
               </svg>
             </button>
+            <button type="button" class="lang-item" role="option" data-lang="pl" aria-selected="false">
+              <span class="lang-name">Polski</span>
+              <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
+                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
+              </svg>
+            </button>
             <button type="button" class="lang-item" role="option" data-lang="sk" aria-selected="false">
               <span class="lang-name">Slovenčina</span>
               <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
@@ -146,7 +155,11 @@
   </header>
 
   <main>
-    <img src="assets/banner_bogo.webp" class="main-banner" alt="BOGO Promotion Banner" fetchpriority="high" />
+    <picture>
+      <source media="(min-width: 900px)" srcset="assets/banner_bogo.webp" width="4096" height="2304" />
+      <source media="(max-width: 899px)" srcset="assets/banner_bogo_mobile.webp" width="1200" height="675" />
+      <img src="assets/banner_bogo_mobile.webp" class="main-banner" alt="BOGO Promotion Banner" width="1200" height="675" fetchpriority="high" />
+    </picture>
     <h1 data-i18n="bogo.title">Buy One, Get One (BOGO)</h1>
     <p class="tagline" data-i18n="bogo.tagline">Buy a watch face or app from our portfolio and receive another watch face of your choice for free.</p>
 
