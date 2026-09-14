@@ -1057,8 +1057,9 @@
                 "sec2_title": "2. Política de privacidad del sitio web (amoledwatchfaces.com)",
                 "sec3_title": "3. Tus derechos bajo el RGPD",
                 "sec4_title": "4. Información de contacto"
-        },
-        "pl": {
+        }
+    },
+    "pl": {
         "nav": {
                 "home": "Strona główna",
                 "apps": "Aplikacje",
