@@ -449,7 +449,7 @@ function initLatestRelease() {
   `).join('');
 
   const dotsHtml = candidateImages.map((_, index) => `
-    <button type="button" class="latest-release-dot ${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="Slide ${index + 1}"></button>
+    <span class="latest-release-dot ${index === 0 ? 'active' : ''}" data-index="${index}" aria-hidden="true"></span>
   `).join('');
 
   const lang = window.i18n ? window.i18n.getLanguage() : 'en';
@@ -510,7 +510,7 @@ function initLatestRelease() {
     <div class="latest-release-card">
       <div class="latest-release-visual">
         ${previewWrapperHtml}
-        <div class="latest-release-dots">
+        <div class="latest-release-dots" aria-hidden="true">
           ${dotsHtml}
         </div>
       </div>
@@ -588,16 +588,73 @@ function setupReleaseSlideshow(container) {
     if (timer) clearInterval(timer);
   }
 
-  allDots.forEach((dot, idx) => {
-    dot.addEventListener('click', (e) => {
-      e.preventDefault();
-      const pointer = validIndexes.indexOf(idx);
-      if (pointer !== -1) {
-        showSlideAtPointer(pointer);
-        startTimer();
+  // Touch swipe support on the visual container
+  const visualEl = container.querySelector('.latest-release-visual');
+  if (visualEl) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isSwiping = false;
+    let swipeResetTimeout = null;
+
+    visualEl.addEventListener('touchstart', (e) => {
+      if (!e.touches || e.touches.length === 0) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      isSwiping = false;
+      stopTimer();
+    }, { passive: true });
+
+    visualEl.addEventListener('touchmove', (e) => {
+      if (!e.touches || e.touches.length === 0) return;
+      const diffX = e.touches[0].clientX - touchStartX;
+      const diffY = e.touches[0].clientY - touchStartY;
+      if (Math.abs(diffX) > 10 && Math.abs(diffX) > Math.abs(diffY)) {
+        isSwiping = true;
       }
-    });
-  });
+    }, { passive: true });
+
+    visualEl.addEventListener('touchend', (e) => {
+      if (!e.changedTouches || e.changedTouches.length === 0) {
+        startTimer();
+        return;
+      }
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      // Check if it's a significant horizontal swipe (> 30px)
+      if (Math.abs(diffX) > 30 && Math.abs(diffX) > Math.abs(diffY)) {
+        isSwiping = true;
+        if (swipeResetTimeout) clearTimeout(swipeResetTimeout);
+        swipeResetTimeout = setTimeout(() => {
+          isSwiping = false;
+        }, 400);
+
+        if (diffX < 0) {
+          showSlideAtPointer(currentPointer + 1);
+        } else {
+          showSlideAtPointer(currentPointer - 1);
+        }
+      }
+      startTimer();
+    }, { passive: true });
+
+    visualEl.addEventListener('touchcancel', () => {
+      isSwiping = false;
+      startTimer();
+    }, { passive: true });
+
+    // Prevent following the <a> link if user just performed a swipe gesture
+    visualEl.addEventListener('click', (e) => {
+      if (isSwiping) {
+        e.preventDefault();
+        e.stopPropagation();
+        isSwiping = false;
+        if (swipeResetTimeout) clearTimeout(swipeResetTimeout);
+      }
+    }, true);
+  }
 
   container.addEventListener('mouseenter', stopTimer);
   container.addEventListener('mouseleave', startTimer);
