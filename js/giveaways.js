@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         opt.value = wf.packageName;
         opt.textContent = `${wf.appName} (${wf.packageName})`;
         opt.dataset.title = wf.appName.toLowerCase().includes('watch face') ? wf.appName : `${wf.appName} Watch Face`;
-        opt.dataset.icon = `assets/icons/${wf.id}.webp`;
+        opt.dataset.icon = `/assets/icons/${wf.id}.webp`;
         watchfaceSelect.appendChild(opt);
       });
 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selected && selected.value) {
           packageInput.value = selected.value;
           titleInput.value = selected.dataset.title || '';
-          iconInput.value = selected.dataset.icon || 'assets/logo_notification.webp';
+          iconInput.value = selected.dataset.icon || '/assets/logo_notification.webp';
         }
       });
     }
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const match = localPortfolio.find(p => p.packageName.toLowerCase() === val || p.appName.toLowerCase() === val);
       if (match) {
         titleInput.value = match.appName.toLowerCase().includes('watch face') ? match.appName : `${match.appName} Watch Face`;
-        iconInput.value = `assets/icons/${match.id}.webp`;
+        iconInput.value = `/assets/icons/${match.id}.webp`;
       }
     });
   }
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="live-dot" style="background:#ef4444"></span> <span data-i18n="giveaways.empty_badge">${badgeText}</span>
         </div>
         <div class="giveaway-icon-wrap">
-          <img src="assets/logo_notification.webp" alt="amoledwatchfaces" class="giveaway-icon" loading="lazy" decoding="async" />
+          <img src="/assets/logo_notification.webp" alt="amoledwatchfaces" class="giveaway-icon" loading="lazy" decoding="async" />
         </div>
         <h2 class="giveaway-title" data-i18n="giveaways.empty_title">${titleText}</h2>
         <p class="tagline" style="margin-bottom: 24px;" data-i18n="giveaways.empty_desc">${descText}</p>
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="giveaway-icon-wrap">
-        <img src="${giveaway.iconUrl || 'assets/logo_notification.webp'}" alt="${giveaway.title}" class="giveaway-icon" loading="lazy" decoding="async" />
+        <img src="${giveaway.iconUrl || '/assets/logo_notification.webp'}" alt="${giveaway.title}" class="giveaway-icon" loading="lazy" decoding="async" />
       </div>
 
       <h2 class="giveaway-title">${giveaway.title}</h2>
@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const secret = adminSecretInput.value.trim();
       const title = titleInput.value.trim();
       const packageName = packageInput.value.trim();
-      const iconUrl = iconInput.value.trim() || 'assets/logo_notification.webp';
+      const iconUrl = iconInput.value.trim() || '/assets/logo_notification.webp';
 
       if (parsedCsvCodes.length === 0 && manualPasteInput.value.trim()) {
         parsedCsvCodes = parseCsvString(manualPasteInput.value.trim());
@@ -561,7 +561,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         item.innerHTML = `
           <div class="admin-giveaway-item-info">
-            <img src="${giveaway.iconUrl || 'assets/logo_notification.webp'}" alt="${giveaway.title}" class="admin-giveaway-item-icon" loading="lazy" decoding="async" />
+            <img src="${giveaway.iconUrl || '/assets/logo_notification.webp'}" alt="${giveaway.title}" class="admin-giveaway-item-icon" loading="lazy" decoding="async" />
             <div class="admin-giveaway-item-text">
               <span class="admin-giveaway-item-title">${giveaway.title}</span>
               <span class="admin-giveaway-item-meta">Remaining: <strong>${giveaway.remainingCodes}</strong> / ${giveaway.totalCodes}</span>

@@ -759,7 +759,7 @@ function initFeaturedSales() {
           </h4>
           <div class="sale-card-actions">
             <a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
-              <img src="assets/google-play-badge.svg" alt="Get it on Google Play" />
+              <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
             </a>
           </div>
         </div>

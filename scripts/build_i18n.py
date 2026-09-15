@@ -456,6 +456,7 @@ def translate_html(content, lang, page_name, slug, translations):
     # Images & Preloads
     content = re.sub(r'\bhref="assets/([^"]*)"', r'href="/assets/\1"', content)
     content = re.sub(r'\bsrc="assets/([^"]*)"', r'src="/assets/\1"', content)
+    content = re.sub(r'\bsrcset="assets/([^"]*)"', r'srcset="/assets/\1"', content)
     # Manifest
     content = re.sub(r'\bhref="site\.webmanifest"', r'href="/site.webmanifest"', content)
     content = re.sub(r'\bhref="manifest\.json"', r'href="/manifest.json"', content)
