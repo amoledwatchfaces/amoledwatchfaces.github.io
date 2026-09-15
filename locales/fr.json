@@ -10,7 +10,8 @@
     "switch_language": "Changer de langue",
     "select_language": "Choisir la langue",
     "notifications": "Activer les notifications",
-    "snow_animation": "Activer l'animation de neige"
+    "snow_animation": "Activer l'animation de neige",
+    "google_play": "Google Play"
   },
   "hero": {
     "tagline": "Cadrans et applications respectueux de votre vie privée pour Wear OS.",

@@ -10,7 +10,8 @@
     "switch_language": "언어 전환",
     "select_language": "언어 선택",
     "notifications": "알림 받기",
-    "snow_animation": "눈 애니메이션 켜기/끄기"
+    "snow_animation": "눈 애니메이션 켜기/끄기",
+    "google_play": "Google Play"
   },
   "hero": {
     "tagline": "개인정보를 철저히 보호하는 Wear OS 워치페이스 및 앱.",

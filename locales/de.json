@@ -10,7 +10,8 @@
     "switch_language": "Sprache wechseln",
     "select_language": "Sprache auswählen",
     "notifications": "Benachrichtigungen aktivieren",
-    "snow_animation": "Schneeanimation umschalten"
+    "snow_animation": "Schneeanimation umschalten",
+    "google_play": "Google Play"
   },
   "hero": {
     "tagline": "Datenschutzfreundliche Zifferblätter und Apps für Wear OS.",

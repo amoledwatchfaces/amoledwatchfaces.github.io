@@ -10,7 +10,8 @@
     "switch_language": "Cambiar idioma",
     "select_language": "Seleccionar idioma",
     "notifications": "Activar notificaciones",
-    "snow_animation": "Alternar efecto de nieve"
+    "snow_animation": "Alternar efecto de nieve",
+    "google_play": "Google Play"
   },
   "hero": {
     "tagline": "Esferas y aplicaciones para Wear OS que respetan tu privacidad.",

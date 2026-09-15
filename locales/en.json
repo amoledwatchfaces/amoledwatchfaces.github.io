@@ -10,7 +10,8 @@
     "switch_language": "Switch language",
     "select_language": "Select language",
     "notifications": "Enable notifications",
-    "snow_animation": "Toggle snow animation"
+    "snow_animation": "Toggle snow animation",
+    "google_play": "Google Play"
   },
   "hero": {
     "tagline": "Privacy-respecting watch faces and apps for Wear OS.",

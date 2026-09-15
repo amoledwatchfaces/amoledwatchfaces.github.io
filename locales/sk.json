@@ -10,7 +10,8 @@
     "switch_language": "Prepnúť jazyk",
     "select_language": "Vybrať jazyk",
     "notifications": "Povoliť upozornenia",
-    "snow_animation": "Prepnúť animáciu sneženia"
+    "snow_animation": "Prepnúť animáciu sneženia",
+    "google_play": "Google Play"
   },
   "hero": {
     "tagline": "Ciferníky a aplikácie pre Wear OS rešpektujúce súkromie.",

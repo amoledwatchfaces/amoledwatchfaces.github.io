@@ -10,7 +10,8 @@
     "switch_language": "Mudar idioma",
     "select_language": "Selecionar idioma",
     "notifications": "Ativar notificações",
-    "snow_animation": "Ativar animação de neve"
+    "snow_animation": "Ativar animação de neve",
+    "google_play": "Google Play"
   },
   "hero": {
     "tagline": "Mostradores e aplicativos para Wear OS focados em privacidade e desempenho.",

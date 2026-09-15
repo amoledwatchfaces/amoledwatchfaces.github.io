@@ -330,6 +330,19 @@ nav a:not([aria-current="page"]):hover::after {
   opacity: 0.4;
 }
 
+.play-toggle {
+  margin-left: 4px;
+}
+
+nav a.play-toggle {
+  padding: 6px;
+  line-height: 1;
+}
+
+nav a.play-toggle::after {
+  display: none;
+}
+
 .notif-toggle {
   margin-left: 4px;
 }
@@ -1126,11 +1139,16 @@ main > picture .main-banner {
 .compat-header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--on-surface);
   letter-spacing: 0.01em;
+}
+
+.compat-header .badge-pill {
+  margin-left: 0;
 }
 
 .compat-header svg {
