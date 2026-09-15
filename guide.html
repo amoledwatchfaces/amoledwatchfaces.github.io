@@ -5,26 +5,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Installation Guide — amoledwatchfaces</title>
-  <meta name="description" content="Step-by-step guide to installing and activating Wear OS watch faces by amoledwatchfaces." />
+  <meta name="description" content="Official installation guide for Wear OS watch faces. Step-by-step instructions for Google Play on your watch and phone." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0d0e12" />
 
   <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png" />
-  <link rel="shortcut icon" type="image/png" href="assets/favicon/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png" />
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon/favicon.png" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://amoledwatchfaces.com/guide" />
+  <link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/guide" />
+  <link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/guide" />
+  <link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/guide" />
+  <link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/guide" />
+  <link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/guide" />
+  <link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/guide" />
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Wear OS Installation Guide — amoledwatchfaces™" />
+  <meta property="og:title" content="How to Install Wear OS Watch Faces — amoledwatchfaces™" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://amoledwatchfaces.com/guide" />
   <meta property="og:site_name" content="amoledwatchfaces" />
-  <meta property="og:description"
-    content="How to install and set up Wear OS watch faces on Samsung Galaxy Watch, Google Pixel Watch, and TicWatch." />
+  <meta property="og:description" content="Official installation guide for Wear OS watch faces. Step-by-step instructions for Google Play on your watch and phone." />
   <meta property="og:image" content="https://amoledwatchfaces.com/assets/banner_guide.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -37,7 +42,7 @@
     content="How to install and set up Wear OS watch faces on Samsung Galaxy Watch, Google Pixel Watch, and TicWatch." />
   <meta name="twitter:image" content="https://amoledwatchfaces.com/assets/banner_guide.webp" />
 
-  <link rel="stylesheet" href="style.css?v=3.1" />
+  <link rel="stylesheet" href="/style.css?v=3.1" />
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme');
@@ -70,8 +75,8 @@
     <div class="bar">
       <div class="crumbs">
         <a class="brand" href="./">
-          <img src="assets/logo_light.svg" class="logo-light" alt="amoledwatchfaces logo" />
-          <img src="assets/logo_dark.svg" class="logo-dark" alt="amoledwatchfaces logo" />
+          <img src="/assets/logo_light.svg" class="logo-light" alt="amoledwatchfaces logo" />
+          <img src="/assets/logo_dark.svg" class="logo-dark" alt="amoledwatchfaces logo" />
           <span>amoledwatchfaces</span>
         </a>
         <span class="sep">›</span>
@@ -117,36 +122,36 @@
             <span class="lang-label">EN</span>
           </button>
           <div id="lang-menu" class="lang-menu" role="listbox" aria-label="Language selection" tabindex="-1">
-            <button type="button" class="lang-item active" role="option" data-lang="en" aria-selected="true">
+            <a href="/guide" class="lang-item active" role="option" data-lang="en" aria-selected="true">
               <span class="lang-name">English</span>
               <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
                 <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
               </svg>
-            </button>
-            <button type="button" class="lang-item" role="option" data-lang="de" aria-selected="false">
+            </a>
+            <a href="/de/guide" class="lang-item" role="option" data-lang="de" aria-selected="false">
               <span class="lang-name">Deutsch</span>
               <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
                 <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
               </svg>
-            </button>
-            <button type="button" class="lang-item" role="option" data-lang="es" aria-selected="false">
+            </a>
+            <a href="/es/guide" class="lang-item" role="option" data-lang="es" aria-selected="false">
               <span class="lang-name">Español</span>
               <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
                 <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
               </svg>
-            </button>
-            <button type="button" class="lang-item" role="option" data-lang="pl" aria-selected="false">
+            </a>
+            <a href="/pl/guide" class="lang-item" role="option" data-lang="pl" aria-selected="false">
               <span class="lang-name">Polski</span>
               <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
                 <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
               </svg>
-            </button>
-            <button type="button" class="lang-item" role="option" data-lang="sk" aria-selected="false">
+            </a>
+            <a href="/sk/guide" class="lang-item" role="option" data-lang="sk" aria-selected="false">
               <span class="lang-name">Slovenčina</span>
               <svg class="lang-check" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor">
                 <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
               </svg>
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -160,7 +165,7 @@
     <!-- 1ST METHOD -->
     <section class="guide-method" id="play-store-app">
       <div class="guide-method-header">
-        <h2 data-i18n="guide.method1_header">1st Way (Preferred): Google Play App</h2>
+        <h2 data-i18n="guide.method1_header">1st Way: Google Play Store on Watch</h2>
         <span class="badge-pill" data-i18n="guide.recommended">Recommended</span>
       </div>
       <ol class="guide-steps-list">
@@ -175,7 +180,7 @@
         </li>
       </ol>
       <div class="guide-note">
-        <strong data-i18n="guide.tip_verification_title">Verification Tip:</strong> <span data-i18n="guide.tip_verification_desc">You can verify that the watch face is installed on your watch by opening the Google Play Store app on your watch &gt; My Apps section.</span>
+        <strong data-i18n="guide.tip_verification_title">Verification Tip:</strong> <span data-i18n="guide.tip_verification_desc">You can verify that the watch face is installed on your watch by opening the Google Play Store app on your watch > My Apps section.</span>
       </div>
     </section>
 
@@ -217,12 +222,8 @@
     <!-- SUPPORT & FINAL NOTE -->
     <section class="card" id="troubleshooting" style="margin-top: 32px;">
       <h3 style="margin-top: 0; color: var(--primary);" data-i18n="guide.trouble_title">Need Help or Having Issues?</h3>
-      <p data-i18n="guide.trouble_desc1">
-        Please keep in mind that installation and download mechanisms are handled entirely by Google Play and Wear OS.
-      </p>
-      <p data-i18n="guide.trouble_desc2">
-        Before you consider leaving a negative review, please review the steps above or contact us directly. We are always glad to assist you:
-      </p>
+      <p data-i18n="guide.trouble_desc1">Please keep in mind that installation and download mechanisms are handled entirely by Google Play and Wear OS.</p>
+      <p data-i18n="guide.trouble_desc2">Before you consider leaving a negative review, please review the steps above or contact us directly. We are always glad to assist you:</p>
       <div class="links" style="margin-top: 16px;">
         <a href="mailto:support@amoledwatchfaces.com?subject=Watch%20Face%20Installation%20Help">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -238,7 +239,7 @@
     <picture>
       <source media="(min-width: 900px)" srcset="assets/banner_guide.webp" width="4096" height="2304" />
       <source media="(max-width: 899px)" srcset="assets/banner_guide_mobile.webp" width="1200" height="675" />
-      <img src="assets/banner_guide_mobile.webp" class="main-banner bottom-banner" alt="amoledwatchfaces Wear OS watch face" width="1200" height="675" loading="lazy" />
+      <img src="/assets/banner_guide_mobile.webp" class="main-banner bottom-banner" alt="amoledwatchfaces Wear OS watch face" width="1200" height="675" loading="lazy" />
     </picture>
   </main>
 
@@ -276,10 +277,10 @@
     <p class="footer-links"><a href="privacy" class="footer-privacy-link" data-i18n="footer.privacy_policy">Privacy Policy</a></p>
   </footer>
 
-  <script src="js/particles.js?v=1.8" defer></script>
-  <script src="theme.js" defer></script>
-  <script src="js/i18n.js?v=1.0" defer></script>
-  <script type="module" src="js/notifications.js"></script>
+  <script src="/js/particles.js?v=1.8" defer></script>
+  <script src="/theme.js" defer></script>
+  <script src="/js/i18n.js?v=1.1" defer></script>
+  <script type="module" src="/js/notifications.js"></script>
 </body>
 
 </html>

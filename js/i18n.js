@@ -1327,6 +1327,20 @@
   const DEFAULT_LANG = 'en';
 
   function resolveInitialLanguage() {
+    // 1. Check URL path prefix first (subdirectories: /de/, /es/, /pl/, /sk/)
+    const path = window.location.pathname;
+    for (const lang of SUPPORTED_LANGS) {
+      if (lang === DEFAULT_LANG) continue;
+      if (path === `/${lang}` || path === `/${lang}/` || path.startsWith(`/${lang}/`)) {
+        return lang;
+      }
+    }
+    // 2. Check HTML lang attribute set at build time
+    const htmlLang = document.documentElement.getAttribute('lang');
+    if (htmlLang && SUPPORTED_LANGS.includes(htmlLang)) {
+      return htmlLang;
+    }
+    // 3. Fall back to saved preference or browser language for root English page
     const saved = localStorage.getItem('lang');
     if (saved && SUPPORTED_LANGS.includes(saved)) {
       return saved;
@@ -1477,10 +1491,11 @@
 
   function setLanguage(lang) {
     if (!SUPPORTED_LANGS.includes(lang) || lang === currentLang) return;
-    currentLang = lang;
-    localStorage.setItem('lang', currentLang);
-    applyTranslations();
-    window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: currentLang } }));
+    localStorage.setItem('lang', lang);
+    const path = window.location.pathname;
+    const slug = path.replace(/^\/(?:de|es|pl|sk)\/?/, '').replace(/^\//, '');
+    const targetUrl = lang === 'en' ? (slug ? `/${slug}` : '/') : (slug ? `/${lang}/${slug}` : `/${lang}/`);
+    window.location.href = targetUrl;
   }
 
   function initLangPicker() {
@@ -1494,14 +1509,11 @@
     });
 
     menu.querySelectorAll('.lang-item').forEach((item) => {
-      item.addEventListener('click', (e) => {
-        e.stopPropagation();
+      item.addEventListener('click', () => {
         const selectedLang = item.getAttribute('data-lang');
         if (selectedLang) {
-          setLanguage(selectedLang);
+          localStorage.setItem('lang', selectedLang);
         }
-        toggleLangMenu(false);
-        btn.focus();
       });
     });
 

@@ -414,6 +414,7 @@ nav a:not([aria-current="page"]):hover::after {
   border-radius: 8px;
   cursor: pointer;
   text-align: left;
+  text-decoration: none;
   transition: background-color 0.15s var(--ease), color 0.15s var(--ease);
 }
 

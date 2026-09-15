@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let list = window.portfolio;
     if (!list || !Array.isArray(list) || list.length === 0) {
       try {
-        const res = await fetch('data/portfolio.json');
+        const res = await fetch('/data/portfolio.json');
         if (res.ok) list = await res.json();
       } catch (e) {
         console.warn('Failed to load portfolio:', e);

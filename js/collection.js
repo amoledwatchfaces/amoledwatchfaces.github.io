@@ -23,7 +23,7 @@ async function fetchPortfolio() {
     return portfolioData;
   }
   try {
-    const res = await fetch('data/portfolio.json');
+    const res = await fetch('/data/portfolio.json');
     if (!res.ok) throw new Error(`HTTP error ${res.status}`);
     portfolioData = await res.json();
     window.portfolio = portfolioData;
@@ -47,7 +47,7 @@ async function loadLocalizedDescriptions(lang) {
     return;
   }
   try {
-    const res = await fetch(`locales/descriptions/${lang}.json?v=1.0`);
+    const res = await fetch(`/locales/descriptions/${lang}.json?v=1.0`);
     if (res.ok) {
       localizedDescriptions = await res.json();
       currentDescLang = lang;
@@ -134,8 +134,8 @@ function createCardElement(item) {
 
   const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(item.packageName)}`;
 
-  const iconSrc = `assets/icons/${item.id}.webp`;
-  const icon2Src = `assets/icons/${item.id}_1.webp`;
+  const iconSrc = `/assets/icons/${item.id}.webp`;
+  const icon2Src = `/assets/icons/${item.id}_1.webp`;
   const hasIcon2 = Boolean(item.hasAltImages);
 
   const iconsHtml = hasIcon2
@@ -165,7 +165,7 @@ function createCardElement(item) {
       <p class="collection-desc">${escapeHtml(getItemDescription(item))}</p>
       <div class="links" style="margin-top: auto; padding-top: 14px;">
         <a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
-          <img src="assets/google-play-badge.svg" alt="Get it on Google Play" />
+          <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
         </a>
       </div>
     </div>
@@ -434,7 +434,7 @@ function initLatestRelease() {
   const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(latest.packageName)}`;
 
   // Build candidate images: id.webp, id_1.webp, id_2.webp, id_3.webp
-  const iconBase = `assets/icons/${latest.id}`;
+  const iconBase = `/assets/icons/${latest.id}`;
   const candidateImages = latest.hasAltImages
     ? [
         `${iconBase}.webp`,
@@ -481,7 +481,7 @@ function initLatestRelease() {
   const actionHtml = isAvail
     ? `<div class="links" style="margin-top: 0;">
         <a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
-          <img src="assets/google-play-badge.svg" alt="Get it on Google Play" />
+          <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
         </a>
       </div>`
     : `<div class="status-coming-soon">
@@ -719,7 +719,7 @@ function initFeaturedSales() {
   const cardsHtml = finalItems.map((item) => {
     const isFreePromo = item.discount === 1.0;
     const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(item.packageName)}`;
-    const iconSrc = `assets/icons/${item.id}.webp`;
+    const iconSrc = `/assets/icons/${item.id}.webp`;
 
     let discountBadgeHtml = '';
     if (isFreePromo) {
