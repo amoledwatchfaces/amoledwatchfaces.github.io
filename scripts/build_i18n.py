@@ -1007,8 +1007,8 @@ def generate_prerendered_catalog(lang, translations):
     return (
         '      <div id="collection-grid" class="collection-grid">\n'
         f'{cards_joined}\n'
-        '      </div>\n'
-        f'{noscript_block}'
+        f'{noscript_block}\n'
+        '      </div>'
     )
 
 def load_translations():
@@ -1227,11 +1227,9 @@ def translate_html(content, lang, page_name, slug, translations):
     if slug == "":
         catalog_html = generate_prerendered_catalog(lang, translations)
         if catalog_html:
-            content = re.sub(
-                r'<div id="collection-grid" class="collection-grid">[\s\S]*?</div>(\s*<noscript>[\s\S]*?</noscript>)?',
-                catalog_html,
-                content
-            )
+            marker_pattern = r'<!--\s*COLLECTION_GRID_START\s*-->[\s\S]*?<!--\s*COLLECTION_GRID_END\s*-->'
+            replacement_block = f'<!-- COLLECTION_GRID_START -->\n{catalog_html}\n      <!-- COLLECTION_GRID_END -->'
+            content = re.sub(marker_pattern, lambda m: replacement_block, content)
 
     # Schema.org JSON-LD structured data
     content = re.sub(r'[ \t]*<script\s+type="application/ld\+json">[\s\S]*?</script>\n?', '', content)
