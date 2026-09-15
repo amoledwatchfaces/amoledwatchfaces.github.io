@@ -1,4 +1,9 @@
-{
+"""
+scripts/descriptions_fr.py
+Clean, idiomatic, professional French short descriptions for all 226 watch faces and apps.
+"""
+
+DESCRIPTIONS_FR = {
     "adventurer2": "Bientôt disponible...",
     "ultra2": "Cadran élégant et hautement personnalisable, inspiré du style analogique de la Galaxy Watch Ultra 2.",
     "matte": "Cadran simple et élégant avec grande horloge numérique et complications personnalisées.",

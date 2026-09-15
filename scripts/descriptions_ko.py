@@ -1,4 +1,9 @@
-{
+"""
+scripts/descriptions_ko.py
+Clean, idiomatic, professional Korean short descriptions for all 226 watch faces and apps.
+"""
+
+DESCRIPTIONS_KO = {
     "adventurer2": "곧 출시 예정...",
     "ultra2": "갤럭시 워치 울트라 2 아날로그 스타일에서 영감을 받은 세련되고 맞춤 설정이 가능한 워치 페이스.",
     "matte": "큰 디지털 시계와 맞춤형 컴플리케이션을 갖춘 심플하고 스타일리시한 워치 페이스.",

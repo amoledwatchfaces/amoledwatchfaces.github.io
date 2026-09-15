@@ -1,4 +1,9 @@
-{
+"""
+scripts/descriptions_pt.py
+Clean, idiomatic, professional Portuguese short descriptions for all 226 watch faces and apps.
+"""
+
+DESCRIPTIONS_PT = {
     "adventurer2": "Disponível em breve...",
     "ultra2": "Mostrador elegante e altamente personalizável, inspirado no estilo analógico do Galaxy Watch Ultra 2.",
     "matte": "Mostrador simples e estiloso com grande relógio digital e complicações personalizadas.",

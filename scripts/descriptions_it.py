@@ -1,4 +1,9 @@
-{
+"""
+scripts/descriptions_it.py
+Clean, idiomatic, professional Italian short descriptions for all 226 watch faces and apps.
+"""
+
+DESCRIPTIONS_IT = {
     "adventurer2": "Disponibile a breve...",
     "ultra2": "Quadrante elegante e altamente personalizzabile, ispirato allo stile analogico del Galaxy Watch Ultra 2.",
     "matte": "Quadrante semplice e raffinato con grande orologio digitale e complicazioni personalizzabili.",
