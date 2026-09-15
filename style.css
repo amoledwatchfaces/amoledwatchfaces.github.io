@@ -1088,10 +1088,21 @@ main > picture .main-banner {
   flex-grow: 1;
 }
 
+.sub-card-content h3,
 .sub-card-content h4 {
   font-size: 1.05rem;
   margin: 0 0 6px;
   color: var(--on-surface);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sub-card-content h3 .badge-pill,
+.sub-card-content h4 .badge-pill {
+  margin-left: 0;
+  text-transform: none;
 }
 
 .sub-card-content p {
