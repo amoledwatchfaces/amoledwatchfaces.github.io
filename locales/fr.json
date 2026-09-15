@@ -13,7 +13,8 @@
     "snow_animation": "Activer l'animation de neige"
   },
   "hero": {
-    "tagline": "Cadrans et applications respectueux de votre vie privée pour Wear OS."
+    "tagline": "Cadrans et applications respectueux de votre vie privée pour Wear OS.",
+    "title_suffix": " — Cadrans de montre et complications Wear OS"
   },
   "watchfaces": {
     "heading": "Cadrans de montre",
@@ -21,7 +22,8 @@
     "catalog_title": "Catalogue de cadrans",
     "catalog_desc": "Tous les cadrans AMOLED Watch Faces au même endroit. Prévisualisez et trouvez le cadran idéal.",
     "developer_profile": "Profil développeur",
-    "privacy_policy": "Politique de confidentialité"
+    "privacy_policy": "Politique de confidentialité",
+    "compat_title": "Montres connectées compatibles et plateformes Wear OS"
   },
   "latest_release": {
     "heading": "Dernière sortie",

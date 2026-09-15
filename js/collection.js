@@ -132,7 +132,7 @@ function createCardElement(item) {
   const card = document.createElement('div');
   card.className = 'card collection-card';
 
-  const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(item.packageName)}`;
+  const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(item.packageName)}&utm_source=website&utm_medium=catalog&utm_campaign=collection`;
 
   const iconSrc = `/assets/icons/${item.id}.webp`;
   const icon2Src = `/assets/icons/${item.id}_1.webp`;
@@ -140,22 +140,22 @@ function createCardElement(item) {
 
   const iconsHtml = hasIcon2
     ? `<div class="watch-icons-wrapper dual-icons">
-        <img src="${iconSrc}" alt="${item.appName}" class="watch-icon-preview primary-icon" />
-        <img src="${icon2Src}" alt="${item.appName} variation" class="watch-icon-preview secondary-icon" />
+        <img src="${iconSrc}" alt="${escapeHtml(item.appName)} Wear OS Watch Face" class="watch-icon-preview primary-icon" width="140" height="140" loading="lazy" decoding="async" />
+        <img src="${icon2Src}" alt="${escapeHtml(item.appName)} variation" class="watch-icon-preview secondary-icon" width="140" height="140" loading="lazy" decoding="async" />
       </div>`
     : `<div class="watch-icons-wrapper single-icon">
-        <img src="${iconSrc}" alt="${item.appName}" class="watch-icon-preview" />
+        <img src="${iconSrc}" alt="${escapeHtml(item.appName)} Wear OS Watch Face" class="watch-icon-preview" width="140" height="140" loading="lazy" decoding="async" />
       </div>`;
 
   card.innerHTML = `
-    <a href="${playStoreUrl}" target="_blank" rel="noopener" class="watch-preview-link" aria-label="${item.appName} on Google Play">
+    <a href="${playStoreUrl}" target="_blank" rel="noopener" class="watch-preview-link" aria-label="${escapeHtml(item.appName)} on Google Play">
       ${iconsHtml}
     </a>
     <div class="collection-info">
       <div class="collection-header">
         <h3>
           <a href="${playStoreUrl}" target="_blank" rel="noopener" class="collection-title-link">
-            ${item.appName}
+            ${escapeHtml(item.appName)}
           </a>
         </h3>
         ${item.isFree
@@ -165,7 +165,7 @@ function createCardElement(item) {
       <p class="collection-desc">${escapeHtml(getItemDescription(item))}</p>
       <div class="links" style="margin-top: auto; padding-top: 14px;">
         <a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
-          <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
+          <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
         </a>
       </div>
     </div>

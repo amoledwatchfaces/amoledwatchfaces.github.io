@@ -13,7 +13,8 @@
     "snow_animation": "눈 애니메이션 켜기/끄기"
   },
   "hero": {
-    "tagline": "개인정보를 철저히 보호하는 Wear OS 워치페이스 및 앱."
+    "tagline": "개인정보를 철저히 보호하는 Wear OS 워치페이스 및 앱.",
+    "title_suffix": " — Wear OS 워치 페이스 및 컴플리케이션"
   },
   "watchfaces": {
     "heading": "워치페이스",
@@ -21,7 +22,8 @@
     "catalog_title": "워치페이스 카탈로그",
     "catalog_desc": "모든 AMOLED Watch Faces를 한곳에서 확인하세요. 당신에게 꼭 맞는 완벽한 워치페이스를 미리보고 찾아보세요.",
     "developer_profile": "개발자 프로필",
-    "privacy_policy": "개인정보처리방침"
+    "privacy_policy": "개인정보처리방침",
+    "compat_title": "지원하는 스마트워치 및 Wear OS 플랫폼"
   },
   "latest_release": {
     "heading": "최신 출시작",

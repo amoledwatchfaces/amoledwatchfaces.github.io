@@ -13,7 +13,8 @@
     "snow_animation": "Prepnúť animáciu sneženia"
   },
   "hero": {
-    "tagline": "Ciferníky a aplikácie pre Wear OS rešpektujúce súkromie."
+    "tagline": "Ciferníky a aplikácie pre Wear OS rešpektujúce súkromie.",
+    "title_suffix": " — Wear OS ciferníky a komplikácie"
   },
   "watchfaces": {
     "heading": "Ciferníky",
@@ -21,7 +22,8 @@
     "catalog_title": "Katalóg ciferníkov",
     "catalog_desc": "Všetky AMOLED ciferníky na jednom mieste. Prehliadajte a nájdite svoj dokonalý ciferník.",
     "developer_profile": "Profil vývojára",
-    "privacy_policy": "Zásady ochrany osobných údajov"
+    "privacy_policy": "Zásady ochrany osobných údajov",
+    "compat_title": "Kompatibilné smart hodinky a Wear OS platformy"
   },
   "latest_release": {
     "heading": "Najnovšie vydanie",

@@ -13,7 +13,8 @@
     "snow_animation": "Toggle snow animation"
   },
   "hero": {
-    "tagline": "Privacy-respecting watch faces and apps for Wear OS."
+    "tagline": "Privacy-respecting watch faces and apps for Wear OS.",
+    "title_suffix": " — Wear OS Watch Faces & Complications"
   },
   "watchfaces": {
     "heading": "Watch Faces",
@@ -21,7 +22,8 @@
     "catalog_title": "Watch Face Catalog",
     "catalog_desc": "All AMOLED Watch Faces in one place. Preview and find your perfect watch face.",
     "developer_profile": "Developer profile",
-    "privacy_policy": "Privacy Policy"
+    "privacy_policy": "Privacy Policy",
+    "compat_title": "Compatible Smartwatches & Wear OS Platforms"
   },
   "latest_release": {
     "heading": "Latest Release",

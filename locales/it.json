@@ -13,7 +13,8 @@
     "snow_animation": "Attiva animazione neve"
   },
   "hero": {
-    "tagline": "Quadranti e applicazioni per Wear OS che rispettano la tua privacy."
+    "tagline": "Quadranti e applicazioni per Wear OS che rispettano la tua privacy.",
+    "title_suffix": " — Quadranti e complicazioni per Wear OS"
   },
   "watchfaces": {
     "heading": "Quadranti",
@@ -21,7 +22,8 @@
     "catalog_title": "Catalogo quadranti",
     "catalog_desc": "Tutti i quadranti AMOLED Watch Faces in un unico posto. Scopri e trova il quadrante ideale per te.",
     "developer_profile": "Profilo sviluppatore",
-    "privacy_policy": "Informativa sulla privacy"
+    "privacy_policy": "Informativa sulla privacy",
+    "compat_title": "Smartwatch compatibili e piattaforme Wear OS"
   },
   "latest_release": {
     "heading": "Ultima uscita",

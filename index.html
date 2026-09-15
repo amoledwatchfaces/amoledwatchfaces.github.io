@@ -99,6 +99,36 @@
       }
     })();
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://amoledwatchfaces.com/#website",
+      "url": "https://amoledwatchfaces.com/",
+      "name": "amoledwatchfaces",
+      "inLanguage": "en",
+      "description": "Discover high-resolution, battery-friendly Wear OS watch faces. Built in Android Studio using Watch Face Format with customizable complications."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://amoledwatchfaces.com/#organization",
+      "name": "amoledwatchfaces",
+      "url": "https://amoledwatchfaces.com",
+      "logo": "https://amoledwatchfaces.com/assets/favicon/favicon-96x96.png",
+      "sameAs": [
+        "https://play.google.com/store/apps/dev?id=5591589606735981545",
+        "https://twitter.com/amoledwatchface",
+        "https://www.instagram.com/amoledwatchfaces/",
+        "https://www.facebook.com/amoledwatchfaces",
+        "https://www.reddit.com/r/amoledwatchfaces/",
+        "https://github.com/amoledwatchfaces"
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 
 <body>
@@ -220,7 +250,7 @@
       <source media="(max-width: 899px)" srcset="/assets/banner_mobile.webp" width="1200" height="675" />
       <img src="/assets/banner_mobile.webp" class="main-banner" alt="amoledwatchfaces banner" width="1200" height="675" fetchpriority="high" />
     </picture>
-    <h1>amoledwatchfaces</h1>
+    <h1 class="brand-title">amoledwatchfaces<span class="brand-subtitle" data-i18n="hero.title_suffix"> — Wear OS Watch Faces & Complications</span></h1>
     <p class="tagline" data-i18n="hero.tagline">Privacy-respecting watch faces and apps for Wear OS.</p>
 
     <section id="watchfaces">
@@ -228,21 +258,37 @@
       <div class="card">
         <p data-i18n="watchfaces.desc">High-resolution, battery-friendly Wear OS watch faces. Built in Android Studio using Watch Face Format.</p>
         <div class="sub-card">
-          <img src="/assets/appIcons/catalog.webp" class="sub-card-icon" alt="Watch Face Catalog Icon" />
+          <img src="/assets/appIcons/catalog.webp" class="sub-card-icon" alt="Watch Face Catalog Icon" width="48" height="48" loading="lazy" decoding="async" />
           <div class="sub-card-content">
             <h3 data-i18n="watchfaces.catalog_title">Watch Face Catalog</h3>
             <p data-i18n="watchfaces.catalog_desc">All AMOLED Watch Faces in one place. Preview and find your perfect watch face.</p>
             <div class="links">
-              <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.catalog" target="_blank"
+              <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.catalog&amp;utm_source=website&amp;utm_medium=catalog_banner&amp;utm_campaign=catalog_app" target="_blank"
                 rel="noopener" class="play-store-badge">
-                <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
+                <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
         </div>
 
+        <div class="compat-banner">
+          <div class="compat-header">
+            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor" aria-hidden="true">
+              <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54-54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+            </svg>
+            <span data-i18n="watchfaces.compat_title">Compatible Smartwatches & Wear OS Platforms</span>
+          </div>
+          <div class="compat-chips">
+            <span class="compat-chip">Galaxy Watch 4 · 5 · 6 · 7 · Ultra · 8 · 9+</span>
+            <span class="compat-chip">Pixel Watch 1 · 2 · 3 · 4 · 5+</span>
+            <span class="compat-chip">OnePlus Watch</span>
+            <span class="compat-chip">Xiaomi Watch</span>
+            <span class="compat-chip highlight">Wear OS 4 · 5 · 6 · 7+ (WFF)</span>
+          </div>
+        </div>
+
         <div class="links">
-          <a href="https://play.google.com/store/apps/dev?id=5591589606735981545" target="_blank" rel="noopener">
+          <a href="https://play.google.com/store/apps/dev?id=5591589606735981545&amp;utm_source=website&amp;utm_medium=dev_link&amp;utm_campaign=developer_profile" target="_blank" rel="noopener">
             <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
               <path
                 d="m8.306 6.987 2.449-2.449L2.999.257a2.032 2.032 0 0 0-1.983.005l7.29 6.725zM.287.95c-.178.291-.28.624-.28.977v12.146c0 .342.093.668.261.953l7.331-7.331L.287.95zM14.002 6.33l-2.336-1.289-2.625 2.624 3.217 2.967 1.745-.963c.628-.348 1.004-.972 1.004-1.67a1.894 1.894 0 0 0-1.005-1.669zM8.334 8.373.983 15.724a2.06 2.06 0 0 0 1.021.278c.34 0 .682-.086.995-.259l8.337-4.601-3.002-2.769z" />
@@ -309,9 +355,189 @@
         </div>
       </div>
 
-      <div id="collection-grid" class="collection-grid">
-        <!-- Watch face cards dynamically rendered by js/collection.js -->
+            <div id="collection-grid" class="collection-grid">
+      <div class="card collection-card">
+        <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.adventurer2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="watch-preview-link" aria-label="Adventurer 2 on Google Play">
+          <div class="watch-icons-wrapper dual-icons">
+        <img src="/assets/icons/adventurer2.webp" alt="Adventurer 2 Wear OS Watch Face" class="watch-icon-preview primary-icon" width="140" height="140" loading="lazy" decoding="async" />
+        <img src="/assets/icons/adventurer2_1.webp" alt="Adventurer 2 variation" class="watch-icon-preview secondary-icon" width="140" height="140" loading="lazy" decoding="async" />
       </div>
+        </a>
+        <div class="collection-info">
+          <div class="collection-header">
+            <h3>
+              <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.adventurer2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="collection-title-link">
+                Adventurer 2
+              </a>
+            </h3>
+            <span class="badge-pill badge-paid">Paid</span>
+          </div>
+          <p class="collection-desc">Available soon...</p>
+          <div class="links" style="margin-top: auto; padding-top: 14px;">
+            <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.adventurer2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="play-store-badge">
+              <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card collection-card">
+        <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.ultra2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="watch-preview-link" aria-label="Ultra 2 on Google Play">
+          <div class="watch-icons-wrapper dual-icons">
+        <img src="/assets/icons/ultra2.webp" alt="Ultra 2 Wear OS Watch Face" class="watch-icon-preview primary-icon" width="140" height="140" loading="lazy" decoding="async" />
+        <img src="/assets/icons/ultra2_1.webp" alt="Ultra 2 variation" class="watch-icon-preview secondary-icon" width="140" height="140" loading="lazy" decoding="async" />
+      </div>
+        </a>
+        <div class="collection-info">
+          <div class="collection-header">
+            <h3>
+              <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.ultra2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="collection-title-link">
+                Ultra 2
+              </a>
+            </h3>
+            <span class="badge-pill badge-paid">Paid</span>
+          </div>
+          <p class="collection-desc">Sleek, highly customizable watch face. Inspired by Galaxy Watch Ultra 2 Analog.</p>
+          <div class="links" style="margin-top: auto; padding-top: 14px;">
+            <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.ultra2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="play-store-badge">
+              <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card collection-card">
+        <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.matte&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="watch-preview-link" aria-label="Matte on Google Play">
+          <div class="watch-icons-wrapper dual-icons">
+        <img src="/assets/icons/matte.webp" alt="Matte Wear OS Watch Face" class="watch-icon-preview primary-icon" width="140" height="140" loading="lazy" decoding="async" />
+        <img src="/assets/icons/matte_1.webp" alt="Matte variation" class="watch-icon-preview secondary-icon" width="140" height="140" loading="lazy" decoding="async" />
+      </div>
+        </a>
+        <div class="collection-info">
+          <div class="collection-header">
+            <h3>
+              <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.matte&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="collection-title-link">
+                Matte
+              </a>
+            </h3>
+            <span class="badge-pill badge-paid">Paid</span>
+          </div>
+          <p class="collection-desc">Simple and stylish watch face with large digital clock and custom complications.</p>
+          <div class="links" style="margin-top: auto; padding-top: 14px;">
+            <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.matte&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="play-store-badge">
+              <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card collection-card">
+        <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.military2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="watch-preview-link" aria-label="Military 2 on Google Play">
+          <div class="watch-icons-wrapper dual-icons">
+        <img src="/assets/icons/military2.webp" alt="Military 2 Wear OS Watch Face" class="watch-icon-preview primary-icon" width="140" height="140" loading="lazy" decoding="async" />
+        <img src="/assets/icons/military2_1.webp" alt="Military 2 variation" class="watch-icon-preview secondary-icon" width="140" height="140" loading="lazy" decoding="async" />
+      </div>
+        </a>
+        <div class="collection-info">
+          <div class="collection-header">
+            <h3>
+              <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.military2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="collection-title-link">
+                Military 2
+              </a>
+            </h3>
+            <span class="badge-pill badge-paid">Paid</span>
+          </div>
+          <p class="collection-desc">Tactical aesthetics, an improved LCD digital font, and extensive customization.</p>
+          <div class="links" style="margin-top: auto; padding-top: 14px;">
+            <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.military2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="play-store-badge">
+              <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card collection-card">
+        <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.vertex&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="watch-preview-link" aria-label="Vertex on Google Play">
+          <div class="watch-icons-wrapper dual-icons">
+        <img src="/assets/icons/vertex.webp" alt="Vertex Wear OS Watch Face" class="watch-icon-preview primary-icon" width="140" height="140" loading="lazy" decoding="async" />
+        <img src="/assets/icons/vertex_1.webp" alt="Vertex variation" class="watch-icon-preview secondary-icon" width="140" height="140" loading="lazy" decoding="async" />
+      </div>
+        </a>
+        <div class="collection-info">
+          <div class="collection-header">
+            <h3>
+              <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.vertex&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="collection-title-link">
+                Vertex
+              </a>
+            </h3>
+            <span class="badge-pill badge-paid">Paid</span>
+          </div>
+          <p class="collection-desc">Circular layout with 8 customizable complications. Simple, clean, and effective.</p>
+          <div class="links" style="margin-top: auto; padding-top: 14px;">
+            <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.vertex&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="play-store-badge">
+              <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card collection-card">
+        <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.zenith&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="watch-preview-link" aria-label="Zenith on Google Play">
+          <div class="watch-icons-wrapper dual-icons">
+        <img src="/assets/icons/zenith.webp" alt="Zenith Wear OS Watch Face" class="watch-icon-preview primary-icon" width="140" height="140" loading="lazy" decoding="async" />
+        <img src="/assets/icons/zenith_1.webp" alt="Zenith variation" class="watch-icon-preview secondary-icon" width="140" height="140" loading="lazy" decoding="async" />
+      </div>
+        </a>
+        <div class="collection-info">
+          <div class="collection-header">
+            <h3>
+              <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.zenith&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="collection-title-link">
+                Zenith
+              </a>
+            </h3>
+            <span class="badge-pill badge-paid">Paid</span>
+          </div>
+          <p class="collection-desc">7 custom complication slots, weather, gradient progress bars and more.</p>
+          <div class="links" style="margin-top: auto; padding-top: 14px;">
+            <a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.zenith&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection" target="_blank" rel="noopener" class="play-store-badge">
+              <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+      <noscript>
+        <div class="collection-noscript card" style="margin-top: 24px; padding: 20px;">
+          <h3 style="margin-top:0;">Complete AMOLED Watch Faces Portfolio for Wear OS</h3>
+          <ul style="line-height: 1.8; margin: 0; padding-left: 20px;">
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.adventurer2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Adventurer 2</strong></a> — Available soon...</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.ultra2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Ultra 2</strong></a> — Sleek, highly customizable watch face. Inspired by Galaxy Watch Ultra 2 Analog.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.matte&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Matte</strong></a> — Simple and stylish watch face with large digital clock and custom complications.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.military2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Military 2</strong></a> — Tactical aesthetics, an improved LCD digital font, and extensive customization.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.vertex&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Vertex</strong></a> — Circular layout with 8 customizable complications. Simple, clean, and effective.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.zenith&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Zenith</strong></a> — 7 custom complication slots, weather, gradient progress bars and more.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.gravity&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Gravity</strong></a> — Designed with a native Wear OS aesthetic. Customizable &amp; battery friendly.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.epoch&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Epoch</strong></a> — Sleek analog watch face featuring dynamic date rings and custom complications.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.grid&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Grid</strong></a> — Only custom complications, that&#x27;s it.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.digest&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Digest</strong></a> — Two large custom complication slots for maximum information at a glance.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.expedition&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Expedition</strong></a> — A highly informative watch face featuring 8 customizable complication slots.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.utility&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Utility</strong></a> — Highly customizable material design watch face with 8 custom complications.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.rugged2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Rugged 2.0</strong></a> — Built for rough conditions with rugged, bold time and custom complications.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.weatherDashboard&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Weather Dashboard</strong></a> — Current weather, forecast, UV, rain probability and custom complications.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.pixelAnalog2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Pixel Analog 2</strong></a> — Highly customizable watch face featuring a compact analog clock.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.wayfarer&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Wayfarer</strong></a> — Highly customizable, power efficient analog watch face design. Make it your own.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.vibe&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Vibe</strong></a> — Compact, battery friendly watch face with radial complication slots layout.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.circleDashboard&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Circle Dashboard</strong></a> — Sleek, highly customizable watch face inspired by Galaxy Watch Circle Dashboard.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.everyday&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Everyday</strong></a> — Simple, minimal, and highly customizable material 3 expressive watch face.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.eccentric&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Eccentric</strong></a> — Modern, highly customizable watch face with distinctive digital clock fonts.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.adaptive&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Adaptive</strong></a> — Highly customizable digital watch face. Power efficient, sleek, modern design.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.pilot&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Pilot</strong></a> — Highly customizable hybrid watch face with dashed-arc progress bars.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.expressive&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Expressive</strong></a> — Material Expressive design watch face with many configurations and theme colors.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.auroraAnalog&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Aurora Analog</strong></a> — Highly customizable analog watch face with wrist-reactive aurora lights.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.nova&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Nova</strong></a> — Futuristic, highly customizable watch face with unlimited theme combinations.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.trackMate&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>TrackMate</strong></a> — Sporty, clean, and highly customizable with key data at a glance.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.haze&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Haze</strong></a> — Light. Minimal. Effortless. Drift through hazy summer days in style.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.peakShadow&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Peak Shadow</strong></a> — Inspired by Nature. A unique, colorful, and customizable watch face.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.apex2&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>Apex 2.0</strong></a> — 2nd version of the Apex design. Enhanced with hourly-daily weather forecast.</li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.amoledwatchfaces.tact5&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript" target="_blank" rel="noopener"><strong>TACT 5</strong></a> — Modern, tactical watch face with 8 custom complication slots and unique themes.</li>
+          </ul>
+        </div>
+      </noscript>
 
       <div id="collection-actions" class="collection-actions">
         <button id="load-more-btn" class="collection-btn btn-load-more" type="button" data-i18n="collection.load_more">Load More</button>

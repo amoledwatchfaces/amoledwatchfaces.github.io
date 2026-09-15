@@ -13,7 +13,8 @@
     "snow_animation": "Alternar efecto de nieve"
   },
   "hero": {
-    "tagline": "Esferas y aplicaciones para Wear OS que respetan tu privacidad."
+    "tagline": "Esferas y aplicaciones para Wear OS que respetan tu privacidad.",
+    "title_suffix": " — Esferas de reloj y complicaciones Wear OS"
   },
   "watchfaces": {
     "heading": "Esferas de reloj",
@@ -21,7 +22,8 @@
     "catalog_title": "Catálogo de esferas",
     "catalog_desc": "Todas las esferas AMOLED en un solo lugar. Explora y encuentra tu esfera ideal.",
     "developer_profile": "Perfil de desarrollador",
-    "privacy_policy": "Política de privacidad"
+    "privacy_policy": "Política de privacidad",
+    "compat_title": "Smartwatches compatibles y plataformas Wear OS"
   },
   "latest_release": {
     "heading": "Último lanzamiento",

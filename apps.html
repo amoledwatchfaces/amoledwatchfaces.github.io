@@ -87,6 +87,114 @@
       }
     })();
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://amoledwatchfaces.com/apps#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://amoledwatchfaces.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Apps",
+          "item": "https://amoledwatchfaces.com/apps"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://amoledwatchfaces.com/apps#itemlist",
+      "name": "Wear OS Companion Apps & Complications",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Weather Complications",
+            "operatingSystem": "Wear OS",
+            "applicationCategory": "UtilityApplication",
+            "url": "https://play.google.com/store/apps/details?id=com.weartools.weathercomplications&utm_source=website&utm_medium=apps_page&utm_campaign=weathercomplications"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Phone Battery Complication",
+            "operatingSystem": "Wear OS",
+            "applicationCategory": "UtilityApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "url": "https://play.google.com/store/apps/details?id=com.weartools.phonebattcomp&utm_source=website&utm_medium=apps_page&utm_campaign=phonebattcomp"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Complications Suite",
+            "operatingSystem": "Wear OS",
+            "applicationCategory": "UtilityApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "url": "https://play.google.com/store/apps/details?id=com.weartools.weekdayutccomp&utm_source=website&utm_medium=apps_page&utm_campaign=weekdayutccomp"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Favorite Apps Tile",
+            "operatingSystem": "Wear OS",
+            "applicationCategory": "UtilityApplication",
+            "url": "https://play.google.com/store/apps/details?id=com.weartools.favoriteappstile&utm_source=website&utm_medium=apps_page&utm_campaign=favoriteappstile"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Health Services Plugin",
+            "operatingSystem": "Wear OS",
+            "applicationCategory": "UtilityApplication",
+            "url": "https://play.google.com/store/apps/details?id=com.weartools.hscomplications&utm_source=website&utm_medium=apps_page&utm_campaign=hscomplications"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Photo Complication",
+            "operatingSystem": "Wear OS",
+            "applicationCategory": "UtilityApplication",
+            "url": "https://play.google.com/store/apps/details?id=com.weartools.photocomplication&utm_source=website&utm_medium=apps_page&utm_campaign=photocomplication"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 
 <body>
@@ -217,40 +325,56 @@
     <h1 data-i18n="apps_page.title">Wear OS Apps</h1>
     <p class="section-subtitle" data-i18n="apps_page.subtitle">Enhance your watch (faces). I created these apps to give you more options for customizing watch faces. Since app development takes time, not all wearable apps are free.</p>
 
+    <div class="compat-banner" style="margin: 0 auto 32px; max-width: 960px;">
+      <div class="compat-header">
+        <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="currentColor" aria-hidden="true">
+          <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54-54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+        </svg>
+        <span data-i18n="watchfaces.compat_title">Compatible Smartwatches & Wear OS Platforms</span>
+      </div>
+      <div class="compat-chips">
+        <span class="compat-chip">Galaxy Watch 4 · 5 · 6 · 7 · Ultra · 8 · 9+</span>
+        <span class="compat-chip">Pixel Watch 1 · 2 · 3 · 4 · 5+</span>
+        <span class="compat-chip">OnePlus Watch</span>
+        <span class="compat-chip">Xiaomi Watch</span>
+        <span class="compat-chip highlight">Wear OS 4 · 5 · 6 · 7+ (WFF)</span>
+      </div>
+    </div>
+
     <div class="apps-grid">
       <div class="card" id="weather-complications">
-        <img src="/assets/appIcons/weathercomplications.webp" class="app-icon" alt="Weather Complications Icon" />
+        <img src="/assets/appIcons/weathercomplications.webp" class="app-icon" alt="Weather Complications for Wear OS" width="72" height="72" loading="lazy" decoding="async" />
         <h3><span data-i18n="apps_page.weather_title">Weather Complications</span> <span class="badge-pill badge-paid" data-i18n="apps_page.badge_paid">Paid</span></h3>
         <p data-i18n="apps_page.weather_desc">Standalone Weather & Astro Data for Wear OS. Everything runs directly on your device — no accounts, no tracking, and direct access to trusted forecast providers.</p>
         <div class="screenshots-container">
-          <img src="/assets/appIcons/weathercomplications_1.webp" alt="Weather Complications Screenshot 1"
-            class="app-screenshot" />
-          <img src="/assets/appIcons/weathercomplications_2.webp" alt="Weather Complications Screenshot 2"
-            class="app-screenshot" />
+          <img src="/assets/appIcons/weathercomplications_1.webp" alt="Weather Complications Wear OS Screenshot 1"
+            class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
+          <img src="/assets/appIcons/weathercomplications_2.webp" alt="Weather Complications Wear OS Screenshot 2"
+            class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
         </div>
         <div class="links">
-          <a href="https://play.google.com/store/apps/details?id=com.weartools.weathercomplications" target="_blank"
+          <a href="https://play.google.com/store/apps/details?id=com.weartools.weathercomplications&amp;utm_source=website&amp;utm_medium=apps_page&amp;utm_campaign=weathercomplications" target="_blank"
             rel="noopener" class="play-store-badge">
-            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
+            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
           </a>
           <a href="apps/privacy/weathercomplications" class="btn-secondary" data-i18n="apps_page.privacy_policy">Privacy Policy</a>
         </div>
       </div>
 
       <div class="card" id="phone-battery-complication">
-        <img src="/assets/appIcons/phonebattcomp.webp" class="app-icon" alt="Phone Battery Complication Icon" />
+        <img src="/assets/appIcons/phonebattcomp.webp" class="app-icon" alt="Phone Battery Complication for Wear OS" width="72" height="72" loading="lazy" decoding="async" />
         <h3><span data-i18n="apps_page.phonebatt_title">Phone Battery Complication</span> <span class="badge-pill" data-i18n="apps_page.badge_opensource">Open Source</span> <span class="badge-pill" data-i18n="apps_page.badge_free">Free</span></h3>
         <p data-i18n="apps_page.phonebatt_desc">Sync and display your phone's battery percentage and charging state directly on your watch face. Everything communicates locally and directly between your devices — no accounts, no tracking, and no cloud servers involved.</p>
         <div class="screenshots-container">
           <img src="/assets/appIcons/phonebattcomp_1.webp" alt="Phone Battery Complication Screenshot 1"
-            class="app-screenshot" />
+            class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
           <img src="/assets/appIcons/phonebattcomp_2.webp" alt="Phone Battery Complication Screenshot 2"
-            class="app-screenshot" />
+            class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
         </div>
         <div class="links">
-          <a href="https://play.google.com/store/apps/details?id=com.weartools.phonebattcomp" target="_blank"
+          <a href="https://play.google.com/store/apps/details?id=com.weartools.phonebattcomp&amp;utm_source=website&amp;utm_medium=apps_page&amp;utm_campaign=phonebattcomp" target="_blank"
             rel="noopener" class="play-store-badge">
-            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
+            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
           </a>
           <a href="apps/privacy/phonebatterycomplication" class="btn-secondary" data-i18n="apps_page.privacy_policy">Privacy Policy</a>
           <a href="https://github.com/amoledwatchfaces/Phone-Battery-Complication-Wear-OS" target="_blank"
@@ -265,19 +389,19 @@
       </div>
 
       <div class="card" id="complications-suite">
-        <img src="/assets/appIcons/weekdayutccomp.webp" class="app-icon" alt="Complications Suite Icon" />
+        <img src="/assets/appIcons/weekdayutccomp.webp" class="app-icon" alt="Complications Suite for Wear OS" width="72" height="72" loading="lazy" decoding="async" />
         <h3><span data-i18n="apps_page.complications_title">Complications Suite</span> <span class="badge-pill" data-i18n="apps_page.badge_opensource">Open Source</span> <span class="badge-pill" data-i18n="apps_page.badge_free">Free</span></h3>
         <p data-i18n="apps_page.complications_desc">A comprehensive collection of useful Wear OS complications. Includes week numbers, countdowns, world clocks, custom text, and more.</p>
         <div class="screenshots-container">
           <img src="/assets/appIcons/weekdayutccomp_1.webp" alt="Complications Suite Screenshot 1"
-            class="app-screenshot" />
+            class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
           <img src="/assets/appIcons/weekdayutccomp_2.webp" alt="Complications Suite Screenshot 2"
-            class="app-screenshot" />
+            class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
         </div>
         <div class="links">
-          <a href="https://play.google.com/store/apps/details?id=com.weartools.weekdayutccomp" target="_blank"
+          <a href="https://play.google.com/store/apps/details?id=com.weartools.weekdayutccomp&amp;utm_source=website&amp;utm_medium=apps_page&amp;utm_campaign=weekdayutccomp" target="_blank"
             rel="noopener" class="play-store-badge">
-            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
+            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
           </a>
           <a href="apps/privacy/complicationssuite" class="btn-secondary" data-i18n="apps_page.privacy_policy">Privacy Policy</a>
           <a href="https://github.com/amoledwatchfaces/Complications-Suite-Wear-OS/" target="_blank" rel="noopener">
@@ -291,55 +415,55 @@
       </div>
 
       <div class="card" id="favorite-apps-tile">
-        <img src="/assets/appIcons/favoriteappstile.webp" class="app-icon" alt="Favorite Apps Tile Icon" />
+        <img src="/assets/appIcons/favoriteappstile.webp" class="app-icon" alt="Favorite Apps Tile for Wear OS" width="72" height="72" loading="lazy" decoding="async" />
         <h3><span data-i18n="apps_page.favoriteapps_title">Favorite Apps Tile</span> <span class="badge-pill badge-paid" data-i18n="apps_page.badge_paid">Paid</span></h3>
         <p data-i18n="apps_page.favoriteapps_desc">Launch your most frequently used apps directly from your wrist with a fast, customizable Wear OS Tile.</p>
         <div class="screenshots-container">
           <img src="/assets/appIcons/favoriteappstile_3.webp" alt="Favorite Apps Tile Screenshot 1"
-            class="app-screenshot" />
+            class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
           <img src="/assets/appIcons/favoriteappstile_4.webp" alt="Favorite Apps Tile Screenshot 2"
-            class="app-screenshot" />
+            class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
         </div>
         <div class="links">
-          <a href="https://play.google.com/store/apps/details?id=com.weartools.favoriteappstile" target="_blank"
+          <a href="https://play.google.com/store/apps/details?id=com.weartools.favoriteappstile&amp;utm_source=website&amp;utm_medium=apps_page&amp;utm_campaign=favoriteappstile" target="_blank"
             rel="noopener" class="play-store-badge">
-            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
+            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
           </a>
           <a href="apps/privacy/favoriteappstile" class="btn-secondary" data-i18n="apps_page.privacy_policy">Privacy Policy</a>
         </div>
       </div>
 
       <div class="card" id="health-plugin">
-        <img src="/assets/appIcons/hscomplications.webp" class="app-icon" alt="Health Plugin Icon" />
+        <img src="/assets/appIcons/hscomplications.webp" class="app-icon" alt="Health Plugin for Wear OS" width="72" height="72" loading="lazy" decoding="async" />
         <h3><span data-i18n="apps_page.health_title">Health Services Plugin</span> <span class="badge-pill badge-paid" data-i18n="apps_page.badge_paid">Paid</span></h3>
         <p data-i18n="apps_page.health_desc">Unlock real-time Distance, Floors Climbed, and Calories complications on modern Wear OS watch faces without relying on battery-draining background services.</p>
         <div class="screenshots-container">
-          <img src="/assets/appIcons/hscomplications_1.webp" alt="Health Plugin Screenshot 1" class="app-screenshot" />
-          <img src="/assets/appIcons/hscomplications_2.webp" alt="Health Plugin Screenshot 2" class="app-screenshot" />
+          <img src="/assets/appIcons/hscomplications_1.webp" alt="Health Plugin Screenshot 1" class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
+          <img src="/assets/appIcons/hscomplications_2.webp" alt="Health Plugin Screenshot 2" class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
         </div>
         <div class="links">
-          <a href="https://play.google.com/store/apps/details?id=com.weartools.hscomplications" target="_blank"
+          <a href="https://play.google.com/store/apps/details?id=com.weartools.hscomplications&amp;utm_source=website&amp;utm_medium=apps_page&amp;utm_campaign=hscomplications" target="_blank"
             rel="noopener" class="play-store-badge">
-            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
+            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
           </a>
           <a href="apps/privacy/healthplugin" class="btn-secondary" data-i18n="apps_page.privacy_policy">Privacy Policy</a>
         </div>
       </div>
 
       <div class="card" id="photo-complication">
-        <img src="/assets/appIcons/photocomplication.webp" class="app-icon" alt="Photo Complication Icon" />
+        <img src="/assets/appIcons/photocomplication.webp" class="app-icon" alt="Photo Complication for Wear OS" width="72" height="72" loading="lazy" decoding="async" />
         <h3><span data-i18n="apps_page.photo_title">Photo Complication</span> <span class="badge-pill badge-paid" data-i18n="apps_page.badge_paid">Paid</span></h3>
         <p data-i18n="apps_page.photo_desc">Display your favorite pictures, memories, and photos directly inside any standard Wear OS complication slot.</p>
         <div class="screenshots-container">
           <img src="/assets/appIcons/photocomplication_1.webp" alt="Photo Complication Screenshot 1"
-            class="app-screenshot" />
+            class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
           <img src="/assets/appIcons/photocomplication_2.webp" alt="Photo Complication Screenshot 2"
-            class="app-screenshot" />
+            class="app-screenshot" width="160" height="160" loading="lazy" decoding="async" />
         </div>
         <div class="links">
-          <a href="https://play.google.com/store/apps/details?id=com.weartools.photocomplication" target="_blank"
+          <a href="https://play.google.com/store/apps/details?id=com.weartools.photocomplication&amp;utm_source=website&amp;utm_medium=apps_page&amp;utm_campaign=photocomplication" target="_blank"
             rel="noopener" class="play-store-badge">
-            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
+            <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
           </a>
           <a href="apps/privacy/photocomplication" class="btn-secondary" data-i18n="apps_page.privacy_policy">Privacy Policy</a>
         </div>

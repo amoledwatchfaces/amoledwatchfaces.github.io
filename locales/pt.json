@@ -13,7 +13,8 @@
     "snow_animation": "Ativar animação de neve"
   },
   "hero": {
-    "tagline": "Mostradores e aplicativos para Wear OS focados em privacidade e desempenho."
+    "tagline": "Mostradores e aplicativos para Wear OS focados em privacidade e desempenho.",
+    "title_suffix": " — Mostradores de relógio e complicações para Wear OS"
   },
   "watchfaces": {
     "heading": "Mostradores de Relógio",
@@ -21,7 +22,8 @@
     "catalog_title": "Catálogo de Mostradores",
     "catalog_desc": "Todos os mostradores AMOLED Watch Faces em um só lugar. Visualize e encontre o mostrador perfeito.",
     "developer_profile": "Perfil do desenvolvedor",
-    "privacy_policy": "Política de Privacidade"
+    "privacy_policy": "Política de Privacidade",
+    "compat_title": "Smartwatches compatíveis e plataformas Wear OS"
   },
   "latest_release": {
     "heading": "Último Lançamento",

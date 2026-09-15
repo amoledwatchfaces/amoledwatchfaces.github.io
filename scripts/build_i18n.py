@@ -10,6 +10,8 @@ and updates root English pages with SEO hreflang and metadata tags.
 import os
 import re
 import json
+import html
+import urllib.parse
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -583,6 +585,432 @@ PAGE_KEYWORDS = {
     }
 }
 
+
+FAQ_ITEMS = {
+    "en": [
+        {
+            "q": "How to install Wear OS watch faces from Google Play Store on your watch?",
+            "a": "In the Google Play Store app on your smartphone, tap the drop-down arrow next to the Install button, select your smartwatch as the target device, and tap Install. Once installed, touch and hold your current watch face on your smartwatch, swipe to Add watch face, and select your new watch face."
+        },
+        {
+            "q": "How to install Wear OS watch faces using the phone companion app?",
+            "a": "Open the companion app installed on your smartphone, ensure your watch is connected via Bluetooth, and tap 'Install on Watch'. On your watch, the Google Play Store listing will open automatically. Tap Install to complete."
+        },
+        {
+            "q": "How to install Wear OS watch faces from the Google Play Store website on PC or Mac?",
+            "a": "Open the watch face link in any desktop web browser while logged into the same Google account as your smartwatch. Click the 'Install on more devices' button, select your watch model from the device dropdown list, and click Install."
+        }
+    ],
+    "de": [
+        {
+            "q": "Wie installiere ich Wear OS Zifferblätter über den Google Play Store auf der Uhr?",
+            "a": "Tippe in der Google Play Store App auf deinem Smartphone auf den Dropdown-Pfeil neben der Schaltfläche Installieren, wähle deine Smartwatch aus und tippe auf Installieren. Halte nach Abschluss der Installation dein aktuelles Zifferblatt auf der Uhr gedrückt, wische zu Zifferblatt hinzufügen und wähle dein neues Zifferblatt aus."
+        },
+        {
+            "q": "Wie installiere ich Wear OS Zifferblätter über die Smartphone-Begleit-App?",
+            "a": "Öffne die auf deinem Telefon installierte Begleit-App, stelle sicher, dass deine Uhr über Bluetooth verbunden ist, und tippe auf 'Auf Uhr installieren'. Auf deiner Smartwatch öffnet sich der Play Store-Eintrag automatisch zum Installieren."
+        },
+        {
+            "q": "Wie installiere ich Wear OS Zifferblätter über die Play Store Website am PC oder Mac?",
+            "a": "Öffne den Link zum Zifferblatt in einem Desktop-Webbrowser, während du mit demselben Google-Konto wie auf der Uhr angemeldet bist. Klicke auf 'Auf weiteren Geräten installieren', wähle deine Smartwatch aus und klicke auf Installieren."
+        }
+    ],
+    "es": [
+        {
+            "q": "¿Cómo instalar esferas de reloj Wear OS desde Google Play Store en el reloj?",
+            "a": "En la aplicación Google Play Store de tu teléfono, toca la flecha desplegable junto al botón Instalar, selecciona tu smartwatch como dispositivo de destino y pulsa Instalar. Una vez instalada, mantén pulsada la pantalla de tu reloj, desliza para añadir esfera y selecciona tu nueva esfera."
+        },
+        {
+            "q": "¿Cómo instalar esferas de reloj mediante la aplicación complementaria del teléfono?",
+            "a": "Abre la aplicación complementaria descargada en tu teléfono, asegúrate de que el reloj esté conectado por Bluetooth y toca 'Instalar en el reloj'. En tu smartwatch se abrirá automáticamente Google Play Store para completar la instalación."
+        },
+        {
+            "q": "¿Cómo instalar esferas de reloj desde el sitio web de Google Play Store en PC o Mac?",
+            "a": "Abre el enlace de la esfera en cualquier navegador web de ordenador con la misma cuenta de Google que tu reloj. Haz clic en 'Instalar en más dispositivos', selecciona tu smartwatch y confirma la instalación."
+        }
+    ],
+    "fr": [
+        {
+            "q": "Comment installer des cadrans Wear OS depuis le Google Play Store sur votre montre ?",
+            "a": "Dans l'application Google Play Store de votre smartphone, appuyez sur la flèche déroulante à côté du bouton Installer, sélectionnez votre montre connectée et appuyez sur Installer. Une fois l'installation terminée, maintenez votre cadran actuel enfoncé, balayez pour ajouter un cadran et sélectionnez votre nouveau cadran."
+        },
+        {
+            "q": "Comment installer un cadran Wear OS via l'application compagnon pour smartphone ?",
+            "a": "Ouvrez l'application compagnon téléchargée sur votre téléphone, vérifiez que votre montre est connectée en Bluetooth, puis appuyez sur 'Installer sur la montre'. La fiche Google Play s'ouvrira automatiquement sur votre montre."
+        },
+        {
+            "q": "Comment installer des cadrans Wear OS depuis le site Google Play Store sur PC ou Mac ?",
+            "a": "Ouvrez le lien du cadran dans un navigateur Web sur votre ordinateur en étant connecté au même compte Google que votre montre. Cliquez sur 'Installer sur plus d'appareils', choisissez votre montre dans la liste et cliquez sur Installer."
+        }
+    ],
+    "it": [
+        {
+            "q": "Come installare quadranti Wear OS da Google Play Store sull'orologio?",
+            "a": "Nell'app Google Play Store sullo smartphone, tocca la freccia a discesa accanto a Installa, seleziona il tuo smartwatch e tocca Installa. Al termine, tieni premuto il quadrante corrente sull'orologio, scorri per aggiungere un nuovo quadrante e selezionalo."
+        },
+        {
+            "q": "Come installare quadranti Wear OS tramite l'app complementare del telefono?",
+            "a": "Apri l'app complementare scaricata sul tuo telefono, assicurati che l'orologio sia connesso tramite Bluetooth e tocca 'Installa sull'orologio'. L'elenco del Google Play Store si aprirà automaticamente sullo smartwatch."
+        },
+        {
+            "q": "Come installare quadranti Wear OS dal sito web Google Play Store su PC o Mac?",
+            "a": "Apri il link del quadrante in qualsiasi browser web per computer con lo stesso account Google dell'orologio. Fai clic su 'Installa su più dispositivi', seleziona il tuo smartwatch e procedi con l'installazione."
+        }
+    ],
+    "ko": [
+        {
+            "q": "스마트워치의 Google Play 스토어에서 Wear OS 워치 페이스를 설치하는 방법은 무엇인가요?",
+            "a": "스마트폰의 Google Play 스토어 앱에서 설치 버튼 옆의 드롭다운 화살표를 탭하고 스마트워치를 대상 기기로 선택한 다음 설치를 누릅니다. 설치가 완료되면 워치 화면을 길게 누르고 워치 페이스 추가로 스와이프하여 새 워치 페이스를 선택합니다."
+        },
+        {
+            "q": "스마트폰 컴패니언 앱을 통해 워치 페이스를 설치하는 방법은 무엇인가요?",
+            "a": "스마트폰에 다운로드된 컴패니언 앱을 열고 블루투스로 워치가 연결되어 있는지 확인한 후 '시계에 설치' 버튼을 누릅니다. 스마트워치에서 Google Play 스토어가 자동으로 열리면 설치를 완료합니다."
+        },
+        {
+            "q": "PC 또는 Mac의 Google Play 스토어 웹사이트에서 워치 페이스를 설치하는 방법은 무엇인가요?",
+            "a": "워치와 동일한 Google 계정으로 로그인한 컴퓨터 웹 브라우저에서 워치 페이스 링크를 엽니다. '다른 기기에 설치' 버튼을 클릭하고 기기 목록에서 스마트워치를 선택한 후 설치를 클릭합니다."
+        }
+    ],
+    "pl": [
+        {
+            "q": "Jak zainstalować tarcze Wear OS ze sklepu Google Play na zegarku?",
+            "a": "W aplikacji Google Play Store na smartfonie dotknij strzałki obok przycisku Zainstaluj, wybierz smartwatch jako urządzenie docelowe i dotknij Zainstaluj. Po zakończeniu instalacji przytrzymaj palec na tarczy zegarka, przesuń, aby dodać tarczę, i wybierz nowo zainstalowaną tarczę."
+        },
+        {
+            "q": "Jak zainstalować tarcze za pomocą aplikacji towarzyszącej na telefonie?",
+            "a": "Otwórz aplikację towarzyszącą pobraną na telefon, upewnij się, że zegarek jest połączony przez Bluetooth, i dotknij 'Zainstaluj na zegarku'. Na smartwatchu automatycznie otworzy się sklep Google Play, aby dokończyć instalację."
+        },
+        {
+            "q": "Jak zainstalować tarcze Wear OS ze strony sklepu Google Play na komputerze PC lub Mac?",
+            "a": "Otwórz stronę tarczy w przeglądarce internetowej na komputerze, będąc zalogowanym na to samo konto Google co na zegarku. Kliknij 'Zainstaluj na dodatkowych urządzeniach', wybierz swój smartwatch i kliknij Zainstaluj."
+        }
+    ],
+    "pt": [
+        {
+            "q": "Como instalar mostradores Wear OS a partir da Google Play Store no relógio?",
+            "a": "Na aplicação Google Play Store no smartphone, toque na seta ao lado do botão Instalar, selecione o seu smartwatch e toque em Instalar. Após a instalação, mantenha premido o mostrador atual no relógio, deslize para adicionar mostrador e escolha o seu novo mostrador."
+        },
+        {
+            "q": "Como instalar mostradores através da aplicação complementar no telemóvel?",
+            "a": "Abra a aplicação complementar no seu telemóvel, confirme a ligação Bluetooth ao relógio e toque em 'Instalar no relógio'. No smartwatch, a listagem do Google Play Store abrirá automaticamente para concluir a instalação."
+        },
+        {
+            "q": "Como instalar mostradores a partir do site da Google Play Store no computador PC ou Mac?",
+            "a": "Abra a ligação do mostrador num navegador de computador com a mesma conta Google do relógio. Clique em 'Instalar em mais dispositivos', selecione o seu smartwatch e clique em Instalar."
+        }
+    ],
+    "sk": [
+        {
+            "q": "Ako nainštalovať Wear OS ciferníky z obchodu Google Play priamo do hodiniek?",
+            "a": "V aplikácii Obchod Google Play vo vašom telefóne klepnite na rozbaľovaciu šípku vedľa tlačidla Inštalovať, vyberte svoje smart hodinky ako cieľové zariadenie a klepnite na Inštalovať. Po dokončení inštalácie podržte prst na aktuálnom ciferníku na hodinkách, potiahnite pre pridanie ciferníka a vyberte nový ciferník."
+        },
+        {
+            "q": "Ako nainštalovať ciferník prostredníctvom sprievodnej aplikácie v telefóne?",
+            "a": "Otvorte sprievodnú aplikáciu nainštalovanú v telefóne, uistite sa, že sú hodinky pripojené cez Bluetooth a klepnite na 'Inštalovať na hodinkách'. Na smart hodinkách sa automaticky otvorí Obchod Google Play pre dokončenie inštalácie."
+        },
+        {
+            "q": "Ako nainštalovať Wear OS ciferníky z webovej stránky Google Play na počítači (PC / Mac)?",
+            "a": "Otvorte odkaz na ciferník v ľubovoľnom webovom prehliadači na počítači prihlásení do rovnakého Google účtu ako na hodinkách. Kliknite na 'Inštalovať do viacerých zariadení', zvoľte svoje smart hodinky a potvrďte inštaláciu."
+        }
+    ]
+}
+
+BREADCRUMB_NAMES = {
+    "apps": {
+        "en": "Apps", "de": "Apps", "es": "Aplicaciones", "fr": "Applications",
+        "it": "Applicazioni", "ko": "애플리케이션", "pl": "Aplikacje", "pt": "Aplicações", "sk": "Aplikácie"
+    },
+    "bogo": {
+        "en": "BOGO Promotion", "de": "BOGO-Aktion", "es": "Promoción BOGO", "fr": "Promotion BOGO",
+        "it": "Promozione BOGO", "ko": "BOGO 프로모션", "pl": "Promocja BOGO", "pt": "Promoção BOGO", "sk": "BOGO akcia"
+    },
+    "giveaways": {
+        "en": "Giveaways", "de": "Giveaways", "es": "Sorteos", "fr": "Concours",
+        "it": "Giveaway", "ko": "무료 나눔", "pl": "Rozdania", "pt": "Passatempos", "sk": "Súťaže a kupóny"
+    },
+    "guide": {
+        "en": "Installation Guide", "de": "Installationsanleitung", "es": "Guía de instalación", "fr": "Guide d'installation",
+        "it": "Guida all'installazione", "ko": "설치 가이드", "pl": "Instrukcja instalacji", "pt": "Guia de instalação", "sk": "Inštalačný návod"
+    },
+    "contact": {
+        "en": "Contact Support", "de": "Support kontaktieren", "es": "Contacto y soporte", "fr": "Contacter le support",
+        "it": "Contatta l'assistenza", "ko": "고객 지원 문의", "pl": "Kontakt z pomocą", "pt": "Contactar suporte", "sk": "Kontakt a podpora"
+    },
+    "privacy": {
+        "en": "Privacy Policy", "de": "Datenschutzerklärung", "es": "Política de privacidad", "fr": "Politique de confidentialité",
+        "it": "Informativa sulla privacy", "ko": "개인정보 처리방침", "pl": "Polityka prywatności", "pt": "Política de privacidade", "sk": "Zásady ochrany osobných údajov"
+    }
+}
+
+def generate_jsonld(slug, lang):
+    domain = "https://amoledwatchfaces.com"
+    base_url = f"{domain}/{lang}" if lang != "en" else domain
+    curr_url = f"{base_url}/{slug}" if slug else (f"{domain}/{lang}/" if lang != "en" else f"{domain}/")
+    home_url = f"{domain}/{lang}/" if lang != "en" else f"{domain}/"
+
+    graph = []
+
+    if slug == "":
+        graph.append({
+            "@type": "WebSite",
+            "@id": f"{domain}/#website",
+            "url": home_url,
+            "name": "amoledwatchfaces",
+            "inLanguage": lang,
+            "description": PAGE_METADATA.get("index.html", {}).get(lang, {}).get("desc", "Privacy-respecting watch faces and apps for Wear OS.")
+        })
+        graph.append({
+            "@type": "Organization",
+            "@id": f"{domain}/#organization",
+            "name": "amoledwatchfaces",
+            "url": domain,
+            "logo": f"{domain}/assets/favicon/favicon-96x96.png",
+            "sameAs": [
+                "https://play.google.com/store/apps/dev?id=5591589606735981545",
+                "https://twitter.com/amoledwatchface",
+                "https://www.instagram.com/amoledwatchfaces/",
+                "https://www.facebook.com/amoledwatchfaces",
+                "https://www.reddit.com/r/amoledwatchfaces/",
+                "https://github.com/amoledwatchfaces"
+            ]
+        })
+    else:
+        page_title = BREADCRUMB_NAMES.get(slug, {}).get(lang, slug.capitalize())
+        home_title = "Home" if lang == "en" else ("Domov" if lang == "sk" else ("Startseite" if lang == "de" else "Home"))
+        graph.append({
+            "@type": "BreadcrumbList",
+            "@id": f"{curr_url}#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": home_title,
+                    "item": home_url
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": page_title,
+                    "item": curr_url
+                }
+            ]
+        })
+
+    if slug == "guide":
+        faqs = FAQ_ITEMS.get(lang, FAQ_ITEMS["en"])
+        faq_entities = []
+        for item in faqs:
+            faq_entities.append({
+                "@type": "Question",
+                "name": item["q"],
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item["a"]
+                }
+            })
+        graph.append({
+            "@type": "FAQPage",
+            "@id": f"{curr_url}#faq",
+            "mainEntity": faq_entities
+        })
+    elif slug == "apps":
+        apps_items = [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Weather Complications",
+                    "operatingSystem": "Wear OS",
+                    "applicationCategory": "UtilityApplication",
+                    "url": "https://play.google.com/store/apps/details?id=com.weartools.weathercomplications&utm_source=website&utm_medium=apps_page&utm_campaign=weathercomplications"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Phone Battery Complication",
+                    "operatingSystem": "Wear OS",
+                    "applicationCategory": "UtilityApplication",
+                    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                    "url": "https://play.google.com/store/apps/details?id=com.weartools.phonebattcomp&utm_source=website&utm_medium=apps_page&utm_campaign=phonebattcomp"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Complications Suite",
+                    "operatingSystem": "Wear OS",
+                    "applicationCategory": "UtilityApplication",
+                    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                    "url": "https://play.google.com/store/apps/details?id=com.weartools.weekdayutccomp&utm_source=website&utm_medium=apps_page&utm_campaign=weekdayutccomp"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Favorite Apps Tile",
+                    "operatingSystem": "Wear OS",
+                    "applicationCategory": "UtilityApplication",
+                    "url": "https://play.google.com/store/apps/details?id=com.weartools.favoriteappstile&utm_source=website&utm_medium=apps_page&utm_campaign=favoriteappstile"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Health Services Plugin",
+                    "operatingSystem": "Wear OS",
+                    "applicationCategory": "UtilityApplication",
+                    "url": "https://play.google.com/store/apps/details?id=com.weartools.hscomplications&utm_source=website&utm_medium=apps_page&utm_campaign=hscomplications"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Photo Complication",
+                    "operatingSystem": "Wear OS",
+                    "applicationCategory": "UtilityApplication",
+                    "url": "https://play.google.com/store/apps/details?id=com.weartools.photocomplication&utm_source=website&utm_medium=apps_page&utm_campaign=photocomplication"
+                }
+            }
+        ]
+        graph.append({
+            "@type": "ItemList",
+            "@id": f"{curr_url}#itemlist",
+            "name": "Wear OS Companion Apps & Complications",
+            "itemListElement": apps_items
+        })
+    elif slug == "contact":
+        graph.append({
+            "@type": "ContactPage",
+            "@id": f"{curr_url}#contact",
+            "url": curr_url,
+            "name": "Contact Support — amoledwatchfaces"
+        })
+
+    if not graph:
+        return ""
+
+    schema_data = {
+        "@context": "https://schema.org",
+        "@graph": graph
+    }
+    json_text = json.dumps(schema_data, ensure_ascii=False, indent=2)
+    return '  <script type="application/ld+json">\n' + json_text + '\n  </script>'
+
+def generate_prerendered_catalog(lang, translations):
+    portfolio_path = BASE_DIR / "data" / "portfolio.json"
+    if not portfolio_path.exists():
+        return ""
+    with open(portfolio_path, "r", encoding="utf-8") as f:
+        portfolio = json.load(f)
+
+    loc_desc = {}
+    desc_path = BASE_DIR / "locales" / "descriptions" / f"{lang}.json"
+    if desc_path.exists():
+        try:
+            with open(desc_path, "r", encoding="utf-8") as f:
+                loc_desc = json.load(f)
+        except Exception:
+            pass
+
+    badge_free = translations.get(lang, {}).get("apps_page", {}).get("badge_free", "Free")
+    badge_paid = translations.get(lang, {}).get("apps_page", {}).get("badge_paid", "Paid")
+
+    items = portfolio[:6]
+    cards_html = []
+
+    for item in items:
+        app_name = html.escape(item.get("appName", ""))
+        pkg = urllib.parse.quote(item.get("packageName", ""))
+        item_id = item.get("id", "")
+        desc = loc_desc.get(item_id, item.get("shortDescription", ""))
+        desc_escaped = html.escape(desc)
+        is_free = item.get("isFree", False)
+        badge_text = badge_free if is_free else badge_paid
+        badge_class = "badge-pill" if is_free else "badge-pill badge-paid"
+
+        play_url = f"https://play.google.com/store/apps/details?id={pkg}&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection"
+
+        has_alt = item.get("hasAltImages", False)
+        if has_alt:
+            icons = (
+                '<div class="watch-icons-wrapper dual-icons">\n'
+                f'        <img src="/assets/icons/{item_id}.webp" alt="{app_name} Wear OS Watch Face" class="watch-icon-preview primary-icon" width="140" height="140" loading="lazy" decoding="async" />\n'
+                f'        <img src="/assets/icons/{item_id}_1.webp" alt="{app_name} variation" class="watch-icon-preview secondary-icon" width="140" height="140" loading="lazy" decoding="async" />\n'
+                '      </div>'
+            )
+        else:
+            icons = (
+                '<div class="watch-icons-wrapper single-icon">\n'
+                f'        <img src="/assets/icons/{item_id}.webp" alt="{app_name} Wear OS Watch Face" class="watch-icon-preview" width="140" height="140" loading="lazy" decoding="async" />\n'
+                '      </div>'
+            )
+
+        card = (
+            '      <div class="card collection-card">\n'
+            f'        <a href="{play_url}" target="_blank" rel="noopener" class="watch-preview-link" aria-label="{app_name} on Google Play">\n'
+            f'          {icons}\n'
+            '        </a>\n'
+            '        <div class="collection-info">\n'
+            '          <div class="collection-header">\n'
+            '            <h3>\n'
+            f'              <a href="{play_url}" target="_blank" rel="noopener" class="collection-title-link">\n'
+            f'                {app_name}\n'
+            '              </a>\n'
+            '            </h3>\n'
+            f'            <span class="{badge_class}">{badge_text}</span>\n'
+            '          </div>\n'
+            f'          <p class="collection-desc">{desc_escaped}</p>\n'
+            '          <div class="links" style="margin-top: auto; padding-top: 14px;">\n'
+            f'            <a href="{play_url}" target="_blank" rel="noopener" class="play-store-badge">\n'
+            '              <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />\n'
+            '            </a>\n'
+            '          </div>\n'
+            '        </div>\n'
+            '      </div>'
+        )
+        cards_html.append(card)
+
+    cards_joined = "\n".join(cards_html)
+
+    noscript_links = []
+    for item in portfolio[:30]:
+        name = html.escape(item.get("appName", ""))
+        pkg = urllib.parse.quote(item.get("packageName", ""))
+        item_desc = html.escape(loc_desc.get(item.get("id", ""), item.get("shortDescription", "")))
+        p_url = f"https://play.google.com/store/apps/details?id={pkg}&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript"
+        noscript_links.append(f'          <li><a href="{p_url}" target="_blank" rel="noopener"><strong>{name}</strong></a> — {item_desc}</li>')
+
+    noscript_joined = "\n".join(noscript_links)
+    noscript_block = (
+        '      <noscript>\n'
+        '        <div class="collection-noscript card" style="margin-top: 24px; padding: 20px;">\n'
+        '          <h3 style="margin-top:0;">Complete AMOLED Watch Faces Portfolio for Wear OS</h3>\n'
+        '          <ul style="line-height: 1.8; margin: 0; padding-left: 20px;">\n'
+        f'{noscript_joined}\n'
+        '          </ul>\n'
+        '        </div>\n'
+        '      </noscript>'
+    )
+
+    return (
+        '      <div id="collection-grid" class="collection-grid">\n'
+        f'{cards_joined}\n'
+        '      </div>\n'
+        f'{noscript_block}'
+    )
+
 def load_translations():
     translations = {}
     for lang in LANGUAGES:
@@ -793,6 +1221,23 @@ def translate_html(content, lang, page_name, slug, translations):
     # Manifest
     content = re.sub(r'\bhref="site\.webmanifest"', r'href="/site.webmanifest"', content)
     content = re.sub(r'\bhref="manifest\.json"', r'href="/manifest.json"', content)
+
+
+    # Pre-render watch face collection grid on index.html
+    if slug == "":
+        catalog_html = generate_prerendered_catalog(lang, translations)
+        if catalog_html:
+            content = re.sub(
+                r'<div id="collection-grid" class="collection-grid">[\s\S]*?</div>(\s*<noscript>[\s\S]*?</noscript>)?',
+                catalog_html,
+                content
+            )
+
+    # Schema.org JSON-LD structured data
+    content = re.sub(r'[ \t]*<script\s+type="application/ld\+json">[\s\S]*?</script>\n?', '', content)
+    jsonld_script = generate_jsonld(slug, lang)
+    if jsonld_script:
+        content = content.replace("</head>", f"{jsonld_script}\n</head>")
 
     return content
 
