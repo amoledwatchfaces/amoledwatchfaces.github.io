@@ -423,7 +423,16 @@ def translate_html(content, lang, page_name, slug, translations):
         return f'{before}aria-label="{val}"'
     content = re.sub(r'(\bdata-i18n-aria-label="([^"]+)"[^>]*?)\baria-label="[^"]*"', replace_aria, content)
 
-    # 10. Language picker menu
+    # 10. Localize internal page and navigation links for target language
+    if lang != "en":
+        # Brand link & Home
+        content = re.sub(r'<a\s+class="brand"\s+href="[^"]*"', f'<a class="brand" href="/{lang}/"', content)
+        content = re.sub(r'\bhref="(?:\./|/)"', f'href="/{lang}/"', content)
+        # Main nav & page links
+        for p in ["apps", "bogo", "giveaways", "guide", "contact", "privacy"]:
+            content = re.sub(rf'\bhref="(?:/?){p}"', f'href="/{lang}/{p}"', content)
+
+    # 11. Language picker menu
     content = re.sub(r'<span class="lang-label">[^<]*</span>', f'<span class="lang-label">{lang.upper()}</span>', content)
 
     sel_lang_title = get_trans(d, "nav.select_language", get_trans(en_d, "nav.select_language", "Select language"))

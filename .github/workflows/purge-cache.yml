@@ -17,8 +17,8 @@ jobs:
 
       - name: Wait for GitHub Pages deployment
         run: |
-          echo "Waiting 45s for GitHub Pages deployment to finish before purging CDN cache..."
-          sleep 45
+          echo "Waiting 60s for GitHub Pages deployment to finish before purging CDN cache..."
+          sleep 60
 
       - name: Identify changed URLs and purge Cloudflare cache
         run: |
@@ -53,6 +53,7 @@ jobs:
 
           ignored_prefixes = ('.github/', '.git', 'README.md', '.gitignore', '.gitattributes', '_config.yml')
           urls = set()
+          target_langs = ['de', 'es', 'pl', 'sk']
 
           # Scan all HTML files in repo to detect query-string versioned references (e.g. style.css?v=2.5)
           html_files = []
@@ -80,10 +81,17 @@ jobs:
               if f == 'index.html':
                   urls.add(f'{domain}/')
                   urls.add(f'{domain}/index.html')
+                  for l in target_langs:
+                      urls.add(f'{domain}/{l}/')
+                      urls.add(f'{domain}/{l}')
+                      urls.add(f'{domain}/{l}/index.html')
               elif f.endswith('.html'):
                   base = f[:-5]
                   urls.add(f'{domain}/{base}')
                   urls.add(f'{domain}/{f}')
+                  for l in target_langs:
+                      urls.add(f'{domain}/{l}/{base}')
+                      urls.add(f'{domain}/{l}/{f}')
               else:
                   urls.add(f'{domain}/{f}')
                   # Find any query string references across HTML pages (e.g., style.css?v=2.5)
@@ -98,10 +106,27 @@ jobs:
                           else:
                               urls.add(f'{domain}/{clean_match}')
 
-          # If global assets changed, ensure home index is also purged
-          if any(f in changed_files for f in ['style.css', 'theme.js']):
-              urls.add(f'{domain}/')
-              urls.add(f'{domain}/index.html')
+          # If global assets, locales, or build workflow changed, purge all pages and language subdirectories
+          i18n_affected = any(
+              f in changed_files for f in ['style.css', 'theme.js', 'scripts/build_i18n.py', '.github/workflows/deploy-pages.yml']
+          ) or any(f.startswith('locales/') or f.startswith('js/i18n') for f in changed_files)
+
+          if i18n_affected:
+              all_pages = ['', 'apps', 'bogo', 'giveaways', 'guide', 'contact', 'privacy', '404.html']
+              for p in all_pages:
+                  if p == '':
+                      urls.add(f'{domain}/')
+                      urls.add(f'{domain}/index.html')
+                      for l in target_langs:
+                          urls.add(f'{domain}/{l}/')
+                          urls.add(f'{domain}/{l}')
+                          urls.add(f'{domain}/{l}/index.html')
+                  else:
+                      urls.add(f'{domain}/{p}')
+                      urls.add(f'{domain}/{p}.html')
+                      for l in target_langs:
+                          urls.add(f'{domain}/{l}/{p}')
+                          urls.add(f'{domain}/{l}/{p}.html')
 
           url_list = list(urls)
           print('URLs to purge:', url_list)
