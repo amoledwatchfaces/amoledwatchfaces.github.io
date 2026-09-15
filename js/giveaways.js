@@ -2,6 +2,23 @@
 const GIVEAWAY_ENDPOINT = "https://giveawayapi-66490687416.europe-west1.run.app";
 
 document.addEventListener('DOMContentLoaded', () => {
+  function escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function getSafeIconUrl(url) {
+    if (!url) return '/assets/logo_notification.webp';
+    const trimmed = String(url).trim();
+    if (trimmed.startsWith('http://') || trimmed.startsWith('https://') || trimmed.startsWith('/')) {
+      return trimmed;
+    }
+    return '/' + trimmed;
+  }
+
   const gridElement = document.getElementById('giveaways-grid');
 
   // Admin Modal Elements
@@ -184,10 +201,10 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="giveaway-icon-wrap">
-        <img src="${giveaway.iconUrl || '/assets/logo_notification.webp'}" alt="${giveaway.title}" class="giveaway-icon" loading="lazy" decoding="async" />
+        <img src="${getSafeIconUrl(giveaway.iconUrl)}" alt="${escapeHtml(giveaway.title)}" class="giveaway-icon" width="140" height="140" loading="lazy" decoding="async" />
       </div>
 
-      <h2 class="giveaway-title">${giveaway.title}</h2>
+      <h2 class="giveaway-title">${escapeHtml(giveaway.title)}</h2>
       <div class="giveaway-author">
         by <a href="${giveaway.playStoreUrl || 'https://play.google.com/store/apps/dev?id=5591589606735981545'}" target="_blank" rel="noopener">amoledwatchfaces™</a>
       </div>
@@ -457,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const secret = adminSecretInput.value.trim();
       const title = titleInput.value.trim();
       const packageName = packageInput.value.trim();
-      const iconUrl = iconInput.value.trim() || '/assets/logo_notification.webp';
+      const iconUrl = getSafeIconUrl(iconInput.value.trim());
 
       if (parsedCsvCodes.length === 0 && manualPasteInput.value.trim()) {
         parsedCsvCodes = parseCsvString(manualPasteInput.value.trim());
@@ -561,9 +578,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         item.innerHTML = `
           <div class="admin-giveaway-item-info">
-            <img src="${giveaway.iconUrl || '/assets/logo_notification.webp'}" alt="${giveaway.title}" class="admin-giveaway-item-icon" loading="lazy" decoding="async" />
+            <img src="${getSafeIconUrl(giveaway.iconUrl)}" alt="${escapeHtml(giveaway.title)}" class="admin-giveaway-item-icon" width="48" height="48" loading="lazy" decoding="async" />
             <div class="admin-giveaway-item-text">
-              <span class="admin-giveaway-item-title">${giveaway.title}</span>
+              <span class="admin-giveaway-item-title">${escapeHtml(giveaway.title)}</span>
               <span class="admin-giveaway-item-meta">Remaining: <strong>${giveaway.remainingCodes}</strong> / ${giveaway.totalCodes}</span>
             </div>
           </div>
