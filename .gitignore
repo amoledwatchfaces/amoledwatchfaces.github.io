@@ -18,3 +18,9 @@ Thumbs.db
 .idea/
 jsconfig.json
 .venv/
+
+# Generated multilingual subdirectories (built dynamically in GitHub Actions)
+/de/
+/es/
+/pl/
+/sk/

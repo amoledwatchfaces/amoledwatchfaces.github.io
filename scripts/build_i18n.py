@@ -388,13 +388,13 @@ def translate_html(content, lang, page_name, slug, translations):
     # 6. Translate text inside data-i18n
     def replace_data_i18n(match):
         open_tag = match.group(1)
-        key = match.group(2)
-        close_tag = match.group(4)
-        val = get_trans(d, key, get_trans(en_d, key, match.group(3)))
+        key = match.group(3)
+        close_tag = match.group(5)
+        val = get_trans(d, key, get_trans(en_d, key, match.group(4)))
         return f"{open_tag}>{val}{close_tag}"
 
     content = re.sub(
-        r'(<[a-zA-Z0-9]+\b[^>]*\bdata-i18n="([^"]+)"[^>]*)>([\s\S]*?)(</[a-zA-Z0-9]+>)',
+        r'(<([a-zA-Z0-9]+)\b[^>]*\bdata-i18n="([^"]+)"[^>]*)>([\s\S]*?)(</\2>)',
         replace_data_i18n,
         content
     )
