@@ -412,6 +412,12 @@ nav a.play-toggle::after {
   transform: translateY(0) scale(1);
 }
 
+.lang-menu.align-left {
+  right: auto;
+  left: 0;
+  transform-origin: top left;
+}
+
 .lang-item {
   display: flex;
   align-items: center;

@@ -2539,6 +2539,18 @@
     if (!btn || !menu) return;
 
     const isOpen = open !== undefined ? open : !menu.classList.contains('open');
+
+    if (isOpen) {
+      const btnRect = btn.getBoundingClientRect();
+      const menuWidth = menu.offsetWidth || 144;
+      // If opening right-aligned (extending leftwards) would clip off-screen (< 12px from left)
+      if (btnRect.right - menuWidth < 12) {
+        menu.classList.add('align-left');
+      } else {
+        menu.classList.remove('align-left');
+      }
+    }
+
     menu.classList.toggle('open', isOpen);
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
