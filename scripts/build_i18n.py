@@ -463,6 +463,85 @@ def translate_html(content, lang, page_name, slug, translations):
 
     return content
 
+def build_sitemap():
+    sitemap_path = BASE_DIR / "sitemap.xml"
+
+    core_pages = [
+        {"slug": "", "changefreq": "daily", "priority_en": "1.0", "priority_i18n": "0.9"},
+        {"slug": "apps", "changefreq": "weekly", "priority_en": "0.9", "priority_i18n": "0.8"},
+        {"slug": "bogo", "changefreq": "weekly", "priority_en": "0.8", "priority_i18n": "0.7"},
+        {"slug": "giveaways", "changefreq": "daily", "priority_en": "0.9", "priority_i18n": "0.8"},
+        {"slug": "guide", "changefreq": "monthly", "priority_en": "0.7", "priority_i18n": "0.6"},
+        {"slug": "contact", "changefreq": "monthly", "priority_en": "0.7", "priority_i18n": "0.6"},
+        {"slug": "privacy", "changefreq": "monthly", "priority_en": "0.5", "priority_i18n": "0.4"},
+    ]
+
+    app_privacy_pages = [
+        "catalogapp",
+        "complicationssuite",
+        "favoriteappstile",
+        "healthplugin",
+        "phonebatterycomplication",
+        "photocomplication",
+        "weathercomplications",
+    ]
+
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:xhtml="http://www.w3.org/1999/xhtml">'
+    ]
+
+    for p in core_pages:
+        slug = p["slug"]
+        cf = p["changefreq"]
+        p_en = p["priority_en"]
+        p_i18n = p["priority_i18n"]
+
+        # 1. English (root) entry
+        en_loc = f"https://amoledwatchfaces.com/{slug}" if slug else "https://amoledwatchfaces.com/"
+        x_def = en_loc
+        lines.append('  <url>')
+        lines.append(f'    <loc>{en_loc}</loc>')
+        lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{x_def}" />')
+        lines.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{en_loc}" />')
+        for l in TARGET_LANGUAGES:
+            l_href = f"https://amoledwatchfaces.com/{l}/{slug}" if slug else f"https://amoledwatchfaces.com/{l}/"
+            lines.append(f'    <xhtml:link rel="alternate" hreflang="{l}" href="{l_href}" />')
+        lines.append(f'    <changefreq>{cf}</changefreq>')
+        lines.append(f'    <priority>{p_en}</priority>')
+        lines.append('  </url>')
+
+        # 2. Localized entries
+        for lang in TARGET_LANGUAGES:
+            loc = f"https://amoledwatchfaces.com/{lang}/{slug}" if slug else f"https://amoledwatchfaces.com/{lang}/"
+            lines.append('  <url>')
+            lines.append(f'    <loc>{loc}</loc>')
+            lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{x_def}" />')
+            lines.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{en_loc}" />')
+            for l in TARGET_LANGUAGES:
+                l_href = f"https://amoledwatchfaces.com/{l}/{slug}" if slug else f"https://amoledwatchfaces.com/{l}/"
+                lines.append(f'    <xhtml:link rel="alternate" hreflang="{l}" href="{l_href}" />')
+            lines.append(f'    <changefreq>{cf}</changefreq>')
+            lines.append(f'    <priority>{p_i18n}</priority>')
+            lines.append('  </url>')
+
+    # Standalone App Privacy Pages
+    for app in app_privacy_pages:
+        lines.append('  <url>')
+        lines.append(f'    <loc>https://amoledwatchfaces.com/apps/privacy/{app}</loc>')
+        lines.append('    <changefreq>monthly</changefreq>')
+        lines.append('    <priority>0.4</priority>')
+        lines.append('  </url>')
+
+    lines.append('</urlset>')
+    lines.append('')
+
+    content = "\n".join(lines)
+    with open(sitemap_path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(content)
+    print("  [sitemap] Updated sitemap.xml with all multilingual entries and hreflang annotations")
+
 def build():
     translations = load_translations()
     print(f"Loaded translations for: {', '.join(LANGUAGES)}")
@@ -495,6 +574,9 @@ def build():
             with open(out_file, "w", encoding="utf-8", newline="\n") as f:
                 f.write(translated_html)
             print(f"  [{lang}] Generated {lang}/{file_name}")
+
+    # 3. Update sitemap.xml
+    build_sitemap()
 
     print("\nMultilingual build complete! All pages generated successfully with LF line endings.")
 

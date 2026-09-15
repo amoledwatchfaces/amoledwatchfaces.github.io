@@ -1,39 +1,390 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://amoledwatchfaces.com/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/" />
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://amoledwatchfaces.com/apps</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://amoledwatchfaces.com/bogo</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://amoledwatchfaces.com/giveaways</loc>
+    <loc>https://amoledwatchfaces.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/" />
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://amoledwatchfaces.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/" />
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/" />
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/sk/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/" />
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/apps</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/apps" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/apps" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/apps" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/apps" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/apps" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/apps" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/de/apps</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/apps" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/apps" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/apps" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/apps" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/apps" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/apps" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/es/apps</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/apps" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/apps" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/apps" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/apps" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/apps" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/apps" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/pl/apps</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/apps" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/apps" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/apps" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/apps" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/apps" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/apps" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/sk/apps</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/apps" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/apps" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/apps" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/apps" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/apps" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/apps" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/bogo</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/bogo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/bogo" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/bogo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/bogo" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/bogo" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/bogo" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/de/bogo</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/bogo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/bogo" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/bogo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/bogo" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/bogo" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/bogo" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/es/bogo</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/bogo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/bogo" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/bogo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/bogo" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/bogo" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/bogo" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/pl/bogo</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/bogo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/bogo" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/bogo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/bogo" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/bogo" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/bogo" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/sk/bogo</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/bogo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/bogo" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/bogo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/bogo" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/bogo" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/bogo" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/giveaways</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/giveaways" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/giveaways" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/giveaways" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/giveaways" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/giveaways" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/giveaways" />
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/de/giveaways</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/giveaways" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/giveaways" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/giveaways" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/giveaways" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/giveaways" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/giveaways" />
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/es/giveaways</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/giveaways" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/giveaways" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/giveaways" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/giveaways" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/giveaways" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/giveaways" />
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/pl/giveaways</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/giveaways" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/giveaways" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/giveaways" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/giveaways" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/giveaways" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/giveaways" />
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/sk/giveaways</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/giveaways" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/giveaways" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/giveaways" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/giveaways" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/giveaways" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/giveaways" />
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://amoledwatchfaces.com/guide</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/guide" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/guide" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/guide" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/guide" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/de/guide</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/guide" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/guide" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/guide" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/guide" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/es/guide</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/guide" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/guide" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/guide" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/guide" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/pl/guide</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/guide" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/guide" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/guide" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/guide" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/sk/guide</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/guide" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/guide" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/guide" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/guide" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://amoledwatchfaces.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/contact" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/contact" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://amoledwatchfaces.com/de/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/contact" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/contact" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/pl/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/contact" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/sk/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/contact" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://amoledwatchfaces.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/privacy" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/privacy" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/de/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/privacy" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/es/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/privacy" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/pl/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/privacy" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://amoledwatchfaces.com/sk/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amoledwatchfaces.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://amoledwatchfaces.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://amoledwatchfaces.com/de/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://amoledwatchfaces.com/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://amoledwatchfaces.com/pl/privacy" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://amoledwatchfaces.com/sk/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://amoledwatchfaces.com/apps/privacy/catalogapp</loc>
