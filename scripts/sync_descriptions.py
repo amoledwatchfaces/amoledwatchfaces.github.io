@@ -42,7 +42,9 @@ GL_MAP = {
     'es': 'ES',
     'fr': 'FR',
     'it': 'IT',
+    'ko': 'KR',
     'pl': 'PL',
+    'pt': 'BR',
     'en': 'US',
 }
 
@@ -51,8 +53,11 @@ COMING_SOON_MAP = {
     'cs': 'Již brzy...',
     'de': 'Demnächst verfügbar...',
     'es': 'Próximamente...',
-    'pl': 'Dostępne wkrótce...',
     'fr': 'Bientôt disponible...',
+    'it': 'Disponibile a breve...',
+    'ko': '곧 출시 예정...',
+    'pl': 'Dostępne wkrótce...',
+    'pt': 'Disponível em breve...',
     'en': 'Available soon...',
 }
 

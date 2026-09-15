@@ -53,7 +53,7 @@ jobs:
 
           ignored_prefixes = ('.github/', '.git', 'README.md', '.gitignore', '.gitattributes', '_config.yml')
           urls = set()
-          target_langs = ['de', 'es', 'pl', 'sk']
+          target_langs = ['de', 'es', 'fr', 'it', 'ko', 'pl', 'pt', 'sk']
 
           # Scan all HTML files in repo to detect query-string versioned references (e.g. style.css?v=2.5)
           html_files = []

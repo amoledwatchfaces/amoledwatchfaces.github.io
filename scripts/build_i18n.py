@@ -15,8 +15,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 LOCALES_DIR = BASE_DIR / "locales"
 
-LANGUAGES = ["en", "de", "es", "pl", "sk"]
-TARGET_LANGUAGES = ["de", "es", "pl", "sk"]
+LANGUAGES = ["en", "de", "es", "fr", "it", "ko", "pl", "pt", "sk"]
+TARGET_LANGUAGES = ["de", "es", "fr", "it", "ko", "pl", "pt", "sk"]
 
 PAGES = [
     {"file": "index.html", "slug": ""},
@@ -49,11 +49,35 @@ PAGE_METADATA = {
             "og_title": "amoledwatchfaces™ | Esferas de reloj para Wear OS",
             "og_desc": "Esferas de reloj de alta resolución y bajo consumo de batería para Wear OS. Creadas en Android Studio usando el Watch Face Format con complicaciones personalizables."
         },
+        "fr": {
+            "title": "amoledwatchfaces™ | Cadrans de montre pour Wear OS",
+            "desc": "Découvrez des cadrans de montre Wear OS haute résolution et économes en batterie. Créés dans Android Studio avec le Watch Face Format et des complications personnalisables.",
+            "og_title": "amoledwatchfaces™ | Cadrans de montre pour Wear OS",
+            "og_desc": "Découvrez des cadrans de montre Wear OS haute résolution et économes en batterie. Créés dans Android Studio avec le Watch Face Format et des complications personnalisables."
+        },
+        "it": {
+            "title": "amoledwatchfaces™ | Quadranti per Wear OS",
+            "desc": "Scopri quadranti Wear OS ad alta risoluzione e a basso consumo di batteria. Creati in Android Studio usando Watch Face Format con complicazioni personalizzabili.",
+            "og_title": "amoledwatchfaces™ | Quadranti per Wear OS",
+            "og_desc": "Scopri quadranti Wear OS ad alta risoluzione e a basso consumo di batteria. Creati in Android Studio usando Watch Face Format con complicazioni personalizzabili."
+        },
+        "ko": {
+            "title": "amoledwatchfaces™ | Wear OS 워치 페이스",
+            "desc": "고해상도 및 배터리 친화적인 Wear OS 워치 페이스를 만나보세요. 맞춤형 컴플리케이션과 함께 Watch Face Format을 사용하여 Android Studio에서 제작되었습니다.",
+            "og_title": "amoledwatchfaces™ | Wear OS 워치 페이스",
+            "og_desc": "고해상도 및 배터리 친화적인 Wear OS 워치 페이스를 만나보세요. 맞춤형 컴플리케이션과 함께 Watch Face Format을 사용하여 Android Studio에서 제작되었습니다."
+        },
         "pl": {
             "title": "amoledwatchfaces™ | Tarcze zegarka dla Wear OS",
             "desc": "Tarcze zegarka Wear OS o wysokiej rozdzielczości i niskim zużyciu baterii. Zbudowane w Android Studio z użyciem Watch Face Format z konfigurowalnymi komplikacjami.",
             "og_title": "amoledwatchfaces™ | Tarcze zegarka dla Wear OS",
             "og_desc": "Tarcze zegarka Wear OS o wysokiej rozdzielczości i niskim zużyciu baterii. Zbudowane w Android Studio z użyciem Watch Face Format z konfigurowalnymi komplikacjami."
+        },
+        "pt": {
+            "title": "amoledwatchfaces™ | Mostradores de relógio para Wear OS",
+            "desc": "Descubra mostradores de relógio para Wear OS em alta resolução e com economia de bateria. Criados no Android Studio com o Watch Face Format e complicações personalizáveis.",
+            "og_title": "amoledwatchfaces™ | Mostradores de relógio para Wear OS",
+            "og_desc": "Descubra mostradores de relógio para Wear OS em alta resolução e com economia de bateria. Criados no Android Studio com o Watch Face Format e complicações personalizáveis."
         },
         "sk": {
             "title": "amoledwatchfaces™ | Ciferníky pre Wear OS",
@@ -81,11 +105,35 @@ PAGE_METADATA = {
             "og_title": "Aplicaciones Wear OS — amoledwatchfaces™",
             "og_desc": "Descubre complicaciones y aplicaciones complementarias para Wear OS de amoledwatchfaces™."
         },
+        "fr": {
+            "title": "Applications Wear OS — amoledwatchfaces",
+            "desc": "Applications et complications Wear OS créées par amoledwatchfaces™.",
+            "og_title": "Applications Wear OS — amoledwatchfaces™",
+            "og_desc": "Découvrez les complications et applications compagnons Wear OS d'amoledwatchfaces™."
+        },
+        "it": {
+            "title": "App Wear OS — amoledwatchfaces",
+            "desc": "App e complicazioni Wear OS create da amoledwatchfaces™.",
+            "og_title": "Applicazioni Wear OS — amoledwatchfaces™",
+            "og_desc": "Esplora le complicazioni e le app complementari per Wear OS di amoledwatchfaces™."
+        },
+        "ko": {
+            "title": "Wear OS 앱 — amoledwatchfaces",
+            "desc": "amoledwatchfaces™에서 제작한 Wear OS 앱 및 컴플리케이션.",
+            "og_title": "Wear OS 애플리케이션 — amoledwatchfaces™",
+            "og_desc": "amoledwatchfaces™의 Wear OS 컴플리케이션 및 도우미 앱을 만나보세요."
+        },
         "pl": {
             "title": "Aplikacje Wear OS — amoledwatchfaces",
             "desc": "Aplikacje i komplikacje Wear OS stworzone przez amoledwatchfaces™.",
             "og_title": "Aplikacje Wear OS — amoledwatchfaces™",
             "og_desc": "Odkryj komplikacje i aplikacje pomocnicze Wear OS od amoledwatchfaces™."
+        },
+        "pt": {
+            "title": "Aplicativos Wear OS — amoledwatchfaces",
+            "desc": "Aplicativos e complicações para Wear OS criados por amoledwatchfaces™.",
+            "og_title": "Aplicações Wear OS — amoledwatchfaces™",
+            "og_desc": "Explore complicações e aplicativos complementares para Wear OS da amoledwatchfaces™."
         },
         "sk": {
             "title": "Aplikácie Wear OS — amoledwatchfaces",
@@ -113,11 +161,35 @@ PAGE_METADATA = {
             "og_title": "BOGO (Compra Uno, Llévate Otro) — amoledwatchfaces™",
             "og_desc": "Compra una esfera de reloj o aplicación de nuestro catálogo y recibe otra esfera gratis a tu elección."
         },
+        "fr": {
+            "title": "BOGO — amoledwatchfaces",
+            "desc": "Achetez un cadran ou une application de notre catalogue et recevez gratuitement un autre cadran de votre choix.",
+            "og_title": "BOGO (Un acheté, un offert) — amoledwatchfaces™",
+            "og_desc": "Achetez un cadran ou une application de notre catalogue et recevez gratuitement un autre cadran de votre choix."
+        },
+        "it": {
+            "title": "BOGO — amoledwatchfaces",
+            "desc": "Acquista un quadrante o un'app dal nostro catalogo e ricevi gratuitamente un altro quadrante a tua scelta.",
+            "og_title": "BOGO (Prendi due, paghi uno) — amoledwatchfaces™",
+            "og_desc": "Acquista un quadrante o un'app dal nostro catalogo e ricevi gratuitamente un altro quadrante a tua scelta."
+        },
+        "ko": {
+            "title": "BOGO — amoledwatchfaces",
+            "desc": "포트폴리오에서 워치 페이스 또는 앱을 구매하고 원하는 워치 페이스 하나를 무료로 받아보세요.",
+            "og_title": "BOGO (1+1 이벤트) — amoledwatchfaces™",
+            "og_desc": "포트폴리오에서 워치 페이스 또는 앱을 구매하고 원하는 워치 페이스 하나를 무료로 받아보세요."
+        },
         "pl": {
             "title": "BOGO — amoledwatchfaces",
             "desc": "Kup tarczę zegarka lub aplikację z naszego portfolio i odbierz drugą wybraną tarczę za darmo.",
             "og_title": "BOGO (Kup jedną, drugą odbierz gratis) — amoledwatchfaces™",
             "og_desc": "Kup tarczę zegarka lub aplikację z naszego portfolio i odbierz drugą wybraną tarczę za darmo."
+        },
+        "pt": {
+            "title": "BOGO — amoledwatchfaces",
+            "desc": "Compre um mostrador de relógio ou aplicativo do nosso catálogo e ganhe outro mostrador à sua escolha gratuitamente.",
+            "og_title": "BOGO (Compre Um, Leve Outro) — amoledwatchfaces™",
+            "og_desc": "Compre um mostrador de relógio ou aplicativo do nosso catálogo e ganhe outro mostrador à sua escolha gratuitamente."
         },
         "sk": {
             "title": "BOGO — amoledwatchfaces",
@@ -145,11 +217,35 @@ PAGE_METADATA = {
             "og_title": "Sorteos de esferas de reloj — amoledwatchfaces™",
             "og_desc": "Consigue códigos promocionales gratuitos del 100% para esferas de reloj premium de Wear OS en Google Play."
         },
+        "fr": {
+            "title": "Cadeaux & Codes promos — amoledwatchfaces",
+            "desc": "Obtenez des codes promotionnels Google Play 100% gratuits pour des cadrans Wear OS premium.",
+            "og_title": "Codes promos pour cadrans — amoledwatchfaces™",
+            "og_desc": "Obtenez des codes promotionnels Google Play 100% gratuits pour des cadrans Wear OS premium."
+        },
+        "it": {
+            "title": "Giveaway — amoledwatchfaces",
+            "desc": "Richiedi codici promozionali gratuiti al 100% su Google Play per quadranti Wear OS premium.",
+            "og_title": "Giveaway di quadranti — amoledwatchfaces™",
+            "og_desc": "Richiedi codici promozionali gratuiti al 100% su Google Play per quadranti Wear OS premium."
+        },
+        "ko": {
+            "title": "무료 배포 — amoledwatchfaces",
+            "desc": "프리미엄 Wear OS 워치 페이스용 100% 할인 Google Play 프로모션 코드를 받아보세요.",
+            "og_title": "워치 페이스 무료 배포 — amoledwatchfaces™",
+            "og_desc": "프리미엄 Wear OS 워치 페이스용 100% 할인 Google Play 프로모션 코드를 받아보세요."
+        },
         "pl": {
             "title": "Rozdania kodów — amoledwatchfaces",
             "desc": "Odbierz darmowe kody promocyjne 100% zniżki w Google Play na tarcze zegarka Wear OS.",
             "og_title": "Rozdania tarcz zegarka — amoledwatchfaces™",
             "og_desc": "Odbierz darmowe kody promocyjne 100% zniżki w Google Play na tarcze zegarka Wear OS."
+        },
+        "pt": {
+            "title": "Sorteios — amoledwatchfaces",
+            "desc": "Resgate códigos promocionais gratuitos com 100% de desconto no Google Play para mostradores Wear OS premium.",
+            "og_title": "Sorteios de mostradores — amoledwatchfaces™",
+            "og_desc": "Resgate códigos promocionais gratuitos com 100% de desconto no Google Play para mostradores Wear OS premium."
         },
         "sk": {
             "title": "Rozdávanie kupónov — amoledwatchfaces",
@@ -177,11 +273,35 @@ PAGE_METADATA = {
             "og_title": "Cómo instalar esferas de reloj Wear OS — amoledwatchfaces™",
             "og_desc": "Guía oficial de instalación para esferas de reloj Wear OS. Instrucciones paso a paso para Google Play en tu reloj y teléfono."
         },
+        "fr": {
+            "title": "Guide d'installation — amoledwatchfaces",
+            "desc": "Guide officiel d'installation pour les cadrans Wear OS. Instructions détaillées pour Google Play sur montre et téléphone.",
+            "og_title": "Comment installer des cadrans Wear OS — amoledwatchfaces™",
+            "og_desc": "Guide officiel d'installation pour les cadrans Wear OS. Instructions détaillées pour Google Play sur montre et téléphone."
+        },
+        "it": {
+            "title": "Guida all'installazione — amoledwatchfaces",
+            "desc": "Guida ufficiale all'installazione dei quadranti Wear OS. Istruzioni dettagliate per Google Play su orologio e telefono.",
+            "og_title": "Come installare i quadranti Wear OS — amoledwatchfaces™",
+            "og_desc": "Guida ufficiale all'installazione dei quadranti Wear OS. Istruzioni dettagliate per Google Play su orologio e telefono."
+        },
+        "ko": {
+            "title": "설치 가이드 — amoledwatchfaces",
+            "desc": "Wear OS 워치 페이스 공식 설치 가이드. 시계 및 스마트폰의 Google Play 단계별 지침 안내.",
+            "og_title": "Wear OS 워치 페이스 설치 방법 — amoledwatchfaces™",
+            "og_desc": "Wear OS 워치 페이스 공식 설치 가이드. 시계 및 스마트폰의 Google Play 단계별 지침 안내."
+        },
         "pl": {
             "title": "Instrukcja instalacji — amoledwatchfaces",
             "desc": "Oficjalna instrukcja instalacji tarcz zegarka Wear OS. Wskazówki krok po kroku dla Google Play na zegarku i telefonie.",
             "og_title": "Jak zainstalować tarcze zegarka Wear OS — amoledwatchfaces™",
             "og_desc": "Oficjalna instrukcja instalacji tarcz zegarka Wear OS. Wskazówki krok po kroku dla Google Play na zegarku i telefonie."
+        },
+        "pt": {
+            "title": "Guia de instalação — amoledwatchfaces",
+            "desc": "Guia oficial de instalação para mostradores Wear OS. Instruções passo a passo para a Google Play no relógio e no celular.",
+            "og_title": "Como instalar mostradores Wear OS — amoledwatchfaces™",
+            "og_desc": "Guia oficial de instalação para mostradores Wear OS. Instruções passo a passo para a Google Play no relógio e no celular."
         },
         "sk": {
             "title": "Návod na inštaláciu — amoledwatchfaces",
@@ -209,11 +329,35 @@ PAGE_METADATA = {
             "og_title": "Contacto y soporte — amoledwatchfaces™",
             "og_desc": "Contacta con el soporte de amoledwatchfaces™. Envíanos tus comentarios, consultas o informes de errores."
         },
+        "fr": {
+            "title": "Contact — amoledwatchfaces",
+            "desc": "Contactez l'assistance d'amoledwatchfaces™. Envoyez-nous vos retours, questions ou signalements de bugs.",
+            "og_title": "Contact et support — amoledwatchfaces™",
+            "og_desc": "Contactez l'assistance d'amoledwatchfaces™. Envoyez-nous vos retours, questions ou signalements de bugs."
+        },
+        "it": {
+            "title": "Contatti — amoledwatchfaces",
+            "desc": "Contatta il supporto di amoledwatchfaces™. Inviaci feedback, domande o segnalazioni di bug.",
+            "og_title": "Contatto e supporto — amoledwatchfaces™",
+            "og_desc": "Contatta il supporto di amoledwatchfaces™. Inviaci feedback, domande o segnalazioni di bug."
+        },
+        "ko": {
+            "title": "문의하기 — amoledwatchfaces",
+            "desc": "amoledwatchfaces™ 고객 지원에 문의하세요. 의견, 문의 사항 또는 버그 신고를 보내주세요.",
+            "og_title": "고객 지원 문의 — amoledwatchfaces™",
+            "og_desc": "amoledwatchfaces™ 고객 지원에 문의하세요. 의견, 문의 사항 또는 버그 신고를 보내주세요."
+        },
         "pl": {
             "title": "Kontakt — amoledwatchfaces",
             "desc": "Skontaktuj się ze wsparciem amoledwatchfaces™. Prześlij nam swoją opinię, pytania lub zgłoszenia błędów.",
             "og_title": "Kontakt ze wsparciem — amoledwatchfaces™",
             "og_desc": "Skontaktuj się ze wsparciem amoledwatchfaces™. Prześlij nam swoją opinię, pytania lub zgłoszenia błędów."
+        },
+        "pt": {
+            "title": "Contato — amoledwatchfaces",
+            "desc": "Entre em contato com o suporte da amoledwatchfaces™. Envie seu feedback, dúvidas ou relatórios de bugs.",
+            "og_title": "Contato e suporte — amoledwatchfaces™",
+            "og_desc": "Entre em contato com o suporte da amoledwatchfaces™. Envie seu feedback, dúvidas ou relatórios de bugs."
         },
         "sk": {
             "title": "Kontakt — amoledwatchfaces",
@@ -241,11 +385,35 @@ PAGE_METADATA = {
             "og_title": "Política de privacidad — amoledwatchfaces™",
             "og_desc": "Política de privacidad de las aplicaciones Wear OS y el sitio web de amoledwatchfaces™."
         },
+        "fr": {
+            "title": "Politique de confidentialité — amoledwatchfaces",
+            "desc": "Politique de confidentialité pour les applications Wear OS et le site amoledwatchfaces™.",
+            "og_title": "Politique de confidentialité — amoledwatchfaces™",
+            "og_desc": "Politique de confidentialité pour les applications Wear OS et le site amoledwatchfaces™."
+        },
+        "it": {
+            "title": "Informativa sulla privacy — amoledwatchfaces",
+            "desc": "Informativa sulla privacy per le applicazioni Wear OS e il sito web amoledwatchfaces™.",
+            "og_title": "Informativa sulla privacy — amoledwatchfaces™",
+            "og_desc": "Informativa sulla privacy per le applicazioni Wear OS e il sito web amoledwatchfaces™."
+        },
+        "ko": {
+            "title": "개인정보처리방침 — amoledwatchfaces",
+            "desc": "amoledwatchfaces™ Wear OS 앱 및 웹사이트 개인정보처리방침.",
+            "og_title": "개인정보처리방침 — amoledwatchfaces™",
+            "og_desc": "amoledwatchfaces™ Wear OS 앱 및 웹사이트 개인정보처리방침."
+        },
         "pl": {
             "title": "Polityka prywatności — amoledwatchfaces",
             "desc": "Polityka prywatności dla aplikacji Wear OS oraz strony internetowej amoledwatchfaces™.",
             "og_title": "Polityka prywatności — amoledwatchfaces™",
             "og_desc": "Polityka prywatności dla aplikacji Wear OS oraz strony internetowej amoledwatchfaces™."
+        },
+        "pt": {
+            "title": "Política de privacidade — amoledwatchfaces",
+            "desc": "Política de privacidade para aplicativos Wear OS e site amoledwatchfaces™.",
+            "og_title": "Política de privacidade — amoledwatchfaces™",
+            "og_desc": "Política de privacidade para aplicativos Wear OS e site amoledwatchfaces™."
         },
         "sk": {
             "title": "Zásady ochrany osobných údajov — amoledwatchfaces",
@@ -273,11 +441,35 @@ PAGE_METADATA = {
             "og_title": "404 - Página no encontrada — amoledwatchfaces",
             "og_desc": "La página que buscas no existe o ha sido movida."
         },
+        "fr": {
+            "title": "404 - Page non trouvée — amoledwatchfaces",
+            "desc": "La page que vous recherchez n'existe pas ou a été déplacée.",
+            "og_title": "404 - Page non trouvée — amoledwatchfaces",
+            "og_desc": "La page que vous recherchez n'existe pas ou a été déplacée."
+        },
+        "it": {
+            "title": "404 - Pagina non trovata — amoledwatchfaces",
+            "desc": "La pagina che stai cercando non esiste o è stata spostata.",
+            "og_title": "404 - Pagina non trovata — amoledwatchfaces",
+            "og_desc": "La pagina che stai cercando non esiste o è stata spostata."
+        },
+        "ko": {
+            "title": "404 - 페이지를 찾을 수 없습니다 — amoledwatchfaces",
+            "desc": "찾으시는 페이지가 존재하지 않거나 이동되었습니다.",
+            "og_title": "404 - 페이지를 찾을 수 없습니다 — amoledwatchfaces",
+            "og_desc": "찾으시는 페이지가 존재하지 않거나 이동되었습니다."
+        },
         "pl": {
             "title": "404 - Nie znaleziono strony — amoledwatchfaces",
             "desc": "Strona, której szukasz, nie istnieje lub została przeniesiona.",
             "og_title": "404 - Nie znaleziono strony — amoledwatchfaces",
             "og_desc": "Strona, której szukasz, nie istnieje lub została przeniesiona."
+        },
+        "pt": {
+            "title": "404 - Página não encontrada — amoledwatchfaces",
+            "desc": "A página que você está procurando não existe ou foi movida.",
+            "og_title": "404 - Página não encontrada — amoledwatchfaces",
+            "og_desc": "A página que você está procurando não existe ou foi movida."
         },
         "sk": {
             "title": "404 - Stránka nenájdená — amoledwatchfaces",
@@ -327,7 +519,11 @@ def make_lang_items(active_lang, slug):
         "en": "English",
         "de": "Deutsch",
         "es": "Español",
+        "fr": "Français",
+        "it": "Italiano",
+        "ko": "한국어",
         "pl": "Polski",
+        "pt": "Português",
         "sk": "Slovenčina"
     }
     for l in LANGUAGES:
@@ -425,6 +621,12 @@ def translate_html(content, lang, page_name, slug, translations):
 
     # 10. Localize internal page and navigation links for target language
     if lang != "en":
+        # Remove lang override from inline theme script on translated pages
+        content = re.sub(
+            r'[ \t]*const savedLang = localStorage\.getItem\([\'"]lang[\'"]\);[\s\S]*?}\s*}\n?',
+            '',
+            content
+        )
         # Brand link & Home
         content = re.sub(r'<a\s+class="brand"\s+href="[^"]*"', f'<a class="brand" href="/{lang}/"', content)
         content = re.sub(r'\bhref="(?:\./|/)"', f'href="/{lang}/"', content)
