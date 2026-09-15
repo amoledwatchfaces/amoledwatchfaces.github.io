@@ -480,6 +480,109 @@ PAGE_METADATA = {
     }
 }
 
+OG_LOCALES = {
+    "en": "en_US",
+    "de": "de_DE",
+    "es": "es_ES",
+    "fr": "fr_FR",
+    "it": "it_IT",
+    "ko": "ko_KR",
+    "pl": "pl_PL",
+    "pt": "pt_BR",
+    "sk": "sk_SK",
+}
+
+PAGE_KEYWORDS = {
+    "index.html": {
+        "en": "watch face, watchface, wear os, amoled watch faces, pixel watch, galaxy watch",
+        "de": "zifferblatt, watchface, wear os, amoled zifferblätter, pixel watch, galaxy watch",
+        "es": "esfera de reloj, watchface, wear os, esferas amoled, pixel watch, galaxy watch",
+        "fr": "cadran de montre, watchface, wear os, cadrans amoled, pixel watch, galaxy watch",
+        "it": "quadrante, watchface, wear os, quadranti amoled, pixel watch, galaxy watch",
+        "ko": "워치 페이스, 워치페이스, wear os, amoled 워치페이스, 픽셀 워치, 갤럭시 워치",
+        "pl": "tarcza zegarka, watchface, wear os, tarcze amoled, pixel watch, galaxy watch",
+        "pt": "mostrador de relógio, watchface, wear os, mostradores amoled, pixel watch, galaxy watch",
+        "sk": "ciferník, watchface, wear os, amoled ciferníky, pixel watch, galaxy watch",
+    },
+    "apps.html": {
+        "en": "wear os apps, wear os complications, watch face complications, weather complications, phone battery complication, favorite apps tile",
+        "de": "wear os apps, wear os komplikationen, zifferblatt komplikationen, wetter komplikationen, handy akku komplikation, lieblings apps kachel",
+        "es": "aplicaciones wear os, complicaciones wear os, complicaciones de esferas, complicaciones del tiempo, batería del teléfono, mosaico de aplicaciones",
+        "fr": "applications wear os, complications wear os, complications cadran, complications météo, batterie du téléphone, tuile applications favorites",
+        "it": "app wear os, complicazioni wear os, complicazioni quadrante, complicazioni meteo, batteria telefono, riquadro app preferite",
+        "ko": "wear os 앱, wear os 컴플리케이션, 워치 페이스 컴플리케이션, 날씨 컴플리케이션, 스마트폰 배터리 컴플리케이션, 즐겨찾기 앱 타일",
+        "pl": "aplikacje wear os, komplikacje wear os, komplikacje tarczy zegarka, komplikacje pogodowe, bateria telefonu, kafelek ulubionych aplikacji",
+        "pt": "aplicativos wear os, complicações wear os, complicações de mostradores, complicações de clima, bateria do celular, bloco de aplicativos favoritos",
+        "sk": "aplikácie wear os, komplikácie wear os, komplikácie ciferníka, meteorologické komplikácie, batéria telefónu, dlaždica obľúbených aplikácií",
+    },
+    "bogo.html": {
+        "en": "bogo, buy one get one, wear os promotion, free watch face, amoledwatchfaces bogo",
+        "de": "bogo, 1 kaufen 1 gratis, wear os aktion, kostenloses zifferblatt, amoledwatchfaces bogo",
+        "es": "bogo, compra uno llévate otro, promoción wear os, esfera gratis, amoledwatchfaces bogo",
+        "fr": "bogo, un acheté un offert, promotion wear os, cadran gratuit, amoledwatchfaces bogo",
+        "it": "bogo, prendi due paghi uno, promozione wear os, quadrante gratis, amoledwatchfaces bogo",
+        "ko": "bogo, 1+1 이벤트, wear os 프로모션, 무료 워치 페이스, amoledwatchfaces bogo",
+        "pl": "bogo, kup jedną drugą odbierz gratis, promocja wear os, darmowa tarcza, amoledwatchfaces bogo",
+        "pt": "bogo, compre um leve outro, promoção wear os, mostrador grátis, amoledwatchfaces bogo",
+        "sk": "bogo, kúp jeden druhý máš zadarmo, akcia wear os, ciferník zadarmo, amoledwatchfaces bogo",
+    },
+    "giveaways.html": {
+        "en": "wear os promo codes, watch face coupons, google play promo codes, free wear os watch faces",
+        "de": "wear os gutscheincodes, zifferblatt coupons, google play promo codes, kostenlose wear os zifferblätter",
+        "es": "códigos promocionales wear os, cupones para esferas, códigos google play, esferas wear os gratis",
+        "fr": "codes promo wear os, coupons pour cadrans, codes promo google play, cadrans wear os gratuits",
+        "it": "codici promozionali wear os, coupon per quadranti, codici promo google play, quadranti wear os gratis",
+        "ko": "wear os 프로모션 코드, 워치 페이스 쿠폰, 구글 플레이 프로모션 코드, 무료 wear os 워치 페이스",
+        "pl": "kody promocyjne wear os, kupony na tarcze zegarka, kody google play, darmowe tarcze wear os",
+        "pt": "códigos promocionais wear os, cupons de mostradores, códigos google play, mostradores wear os grátis",
+        "sk": "promo kódy wear os, kupóny na ciferníky, google play promo kódy, bezplatné ciferníky wear os",
+    },
+    "guide.html": {
+        "en": "how to install wear os watch face, wear os installation guide, install watch face galaxy watch, pixel watch setup",
+        "de": "wear os zifferblatt installieren anleitung, zifferblatt installationsanleitung, galaxy watch zifferblatt, pixel watch einrichten",
+        "es": "cómo instalar esfera wear os, guía de instalación wear os, instalar esfera galaxy watch, configurar pixel watch",
+        "fr": "comment installer un cadran wear os, guide installation wear os, installer cadran galaxy watch, configuration pixel watch",
+        "it": "come installare quadrante wear os, guida installazione wear os, installare quadrante galaxy watch, configurazione pixel watch",
+        "ko": "wear os 워치 페이스 설치 방법, wear os 설치 가이드, 갤럭시 워치 워치페이스 설치, 픽셀 워치 설정",
+        "pl": "jak zainstalować tarczę wear os, instrukcja instalacji wear os, instalacja tarczy galaxy watch, konfiguracja pixel watch",
+        "pt": "como instalar mostrador wear os, guia de instalação wear os, instalar mostrador galaxy watch, configuração pixel watch",
+        "sk": "ako nainštalovať ciferník wear os, návod na inštaláciu wear os, inštalácia ciferníka galaxy watch, nastavenie pixel watch",
+    },
+    "contact.html": {
+        "en": "contact amoledwatchfaces, wear os support, watch face developer contact",
+        "de": "kontakt amoledwatchfaces, wear os support, zifferblatt entwickler kontakt",
+        "es": "contacto amoledwatchfaces, soporte wear os, contacto desarrollador esferas",
+        "fr": "contact amoledwatchfaces, support wear os, contact développeur cadrans",
+        "it": "contatto amoledwatchfaces, supporto wear os, contatto sviluppatore quadranti",
+        "ko": "amoledwatchfaces 문의, wear os 고객 지원, 워치 페이스 개발자 연락처",
+        "pl": "kontakt amoledwatchfaces, wsparcie wear os, kontakt z twórcą tarcz",
+        "pt": "contato amoledwatchfaces, suporte wear os, contato desenvolvedor mostradores",
+        "sk": "kontakt amoledwatchfaces, podpora wear os, kontakt na vývojára ciferníkov",
+    },
+    "privacy.html": {
+        "en": "privacy policy, amoledwatchfaces privacy, wear os privacy policy",
+        "de": "datenschutzerklärung, amoledwatchfaces datenschutz, wear os datenschutz",
+        "es": "política de privacidad, privacidad amoledwatchfaces, política de privacidad wear os",
+        "fr": "politique de confidentialité, confidentialité amoledwatchfaces, politique de confidentialité wear os",
+        "it": "informativa sulla privacy, privacy amoledwatchfaces, informativa privacy wear os",
+        "ko": "개인정보처리방침, amoledwatchfaces 개인정보, wear os 개인정보처리방침",
+        "pl": "polityka prywatności, prywatność amoledwatchfaces, polityka prywatności wear os",
+        "pt": "política de privacidade, privacidade amoledwatchfaces, política de privacidade wear os",
+        "sk": "zásady ochrany osobných údajov, súkromie amoledwatchfaces, ochrana osobných údajov wear os",
+    },
+    "404.html": {
+        "en": "404, page not found, amoledwatchfaces",
+        "de": "404, seite nicht gefunden, amoledwatchfaces",
+        "es": "404, página no encontrada, amoledwatchfaces",
+        "fr": "404, page non trouvée, amoledwatchfaces",
+        "it": "404, pagina non trovata, amoledwatchfaces",
+        "ko": "404, 페이지를 찾을 수 없습니다, amoledwatchfaces",
+        "pl": "404, nie znaleziono strony, amoledwatchfaces",
+        "pt": "404, página não encontrada, amoledwatchfaces",
+        "sk": "404, stránka nenájdená, amoledwatchfaces",
+    }
+}
+
 def load_translations():
     translations = {}
     for lang in LANGUAGES:
@@ -570,7 +673,7 @@ def translate_html(content, lang, page_name, slug, translations):
         content
     )
 
-    # 5. Localized Page Metadata (Title, Meta Description, OG tags)
+    # 5. Localized Page Metadata (Title, Meta Description, OG tags, Twitter tags)
     page_meta = PAGE_METADATA.get(page_name, {}).get(lang)
     if page_meta:
         # Title
@@ -580,6 +683,34 @@ def translate_html(content, lang, page_name, slug, translations):
         # OG Title & Desc
         content = re.sub(r'<meta\s+property="og:title"\s+content="[^"]*"\s*/?>', f'<meta property="og:title" content="{page_meta["og_title"]}" />', content)
         content = re.sub(r'<meta\s+property="og:description"\s+content="[^"]*"\s*/?>', f'<meta property="og:description" content="{page_meta["og_desc"]}" />', content)
+        # Twitter Title & Desc
+        content = re.sub(r'<meta\s+name="twitter:title"\s+content="[^"]*"\s*/?>', f'<meta name="twitter:title" content="{page_meta["og_title"]}" />', content)
+        content = re.sub(r'<meta\s+name="twitter:description"\s+content="[^"]*"\s*/?>', f'<meta name="twitter:description" content="{page_meta["og_desc"]}" />', content)
+
+    # 5b. Localized Meta Keywords
+    kw = PAGE_KEYWORDS.get(page_name, {}).get(lang)
+    if kw:
+        if '<meta name="keywords"' in content:
+            content = re.sub(r'<meta\s+name="keywords"\s+content="[^"]*"\s*/?>', f'<meta name="keywords" content="{kw}" />', content)
+        elif '<meta name="description"' in content:
+            content = re.sub(r'(<meta\s+name="description"\s+content="[^"]*"\s*/?>)', rf'\1\n  <meta name="keywords" content="{kw}" />', content)
+
+    # 5c. Open Graph Locale & Alternates
+    content = re.sub(r'[ \t]*<meta\s+property="og:locale(?::alternate)?"\s+content="[^"]*"\s*/?>\n?', '', content)
+    curr_loc = OG_LOCALES.get(lang, "en_US")
+    loc_lines = [f'  <meta property="og:locale" content="{curr_loc}" />']
+    for l in LANGUAGES:
+        if l != lang:
+            alt_loc = OG_LOCALES.get(l)
+            if alt_loc:
+                loc_lines.append(f'  <meta property="og:locale:alternate" content="{alt_loc}" />')
+    loc_block = "\n".join(loc_lines)
+    if 'property="og:site_name"' in content:
+        content = re.sub(r'(<meta\s+property="og:site_name"\s+content="[^"]*"\s*/?>)', rf'\1\n{loc_block}', content)
+    elif 'property="og:url"' in content:
+        content = re.sub(r'(<meta\s+property="og:url"\s+content="[^"]*"\s*/?>)', rf'\1\n{loc_block}', content)
+    elif 'property="og:type"' in content:
+        content = re.sub(r'(<meta\s+property="og:type"\s+content="[^"]*"\s*/?>)', rf'\1\n{loc_block}', content)
 
     # 6. Translate text inside data-i18n
     def replace_data_i18n(match):
