@@ -15,7 +15,9 @@
   },
   "hero": {
     "tagline": "Quadranti e applicazioni per Wear OS che rispettano la tua privacy.",
-    "title_suffix": " — Quadranti e complicazioni per Wear OS"
+    "title_suffix": " — Quadranti e complicazioni per Wear OS",
+    "featured_by_google": "In evidenza da Google",
+    "google_case_study_text": "Leggi la nostra storia ufficiale Wear OS su Android Developers Blog"
   },
   "watchfaces": {
     "heading": "Quadranti",
@@ -24,7 +26,8 @@
     "catalog_desc": "Tutti i quadranti AMOLED Watch Faces in un unico posto. Scopri e trova il quadrante ideale per te.",
     "developer_profile": "Profilo sviluppatore",
     "privacy_policy": "Informativa sulla privacy",
-    "compat_title": "Smartwatch compatibili e versioni di Wear OS"
+    "compat_title": "Smartwatch compatibili e versioni di Wear OS",
+    "google_case_study": "Caso di studio Google"
   },
   "latest_release": {
     "heading": "Ultima uscita",

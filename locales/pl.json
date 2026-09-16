@@ -15,7 +15,9 @@
   },
   "hero": {
     "tagline": "Tarcze i aplikacje Wear OS tworzone z myślą o prywatności.",
-    "title_suffix": " — Tarcze zegarka i komplikacje dla Wear OS"
+    "title_suffix": " — Tarcze zegarka i komplikacje dla Wear OS",
+    "featured_by_google": "Wyróżniony przez Google",
+    "google_case_study_text": "Przeczytaj naszą oficjalną historię Wear OS na blogu Android Developers"
   },
   "watchfaces": {
     "heading": "Tarcze zegarka",
@@ -24,7 +26,8 @@
     "catalog_desc": "Wszystkie tarcze AMOLED w jednym miejscu. Przeglądaj i znajdź idealną tarczę dla siebie.",
     "developer_profile": "Profil programisty",
     "privacy_policy": "Polityka prywatności",
-    "compat_title": "Kompatybilne smartwatche i wersje Wear OS"
+    "compat_title": "Kompatybilne smartwatche i wersje Wear OS",
+    "google_case_study": "Case study Google"
   },
   "latest_release": {
     "heading": "Najnowsze wydanie",

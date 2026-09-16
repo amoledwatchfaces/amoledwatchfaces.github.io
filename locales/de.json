@@ -15,7 +15,9 @@
   },
   "hero": {
     "tagline": "Datenschutzfreundliche Zifferblätter und Apps für Wear OS.",
-    "title_suffix": " — Wear OS Zifferblätter & Komplikationen"
+    "title_suffix": " — Wear OS Zifferblätter & Komplikationen",
+    "featured_by_google": "Von Google vorgestellt",
+    "google_case_study_text": "Lies unsere offizielle Wear OS Story im Android Developers Blog"
   },
   "watchfaces": {
     "heading": "Zifferblätter",
@@ -24,7 +26,8 @@
     "catalog_desc": "Alle AMOLED Zifferblätter an einem Ort. Entdecke und finde dein perfektes Zifferblatt.",
     "developer_profile": "Entwicklerprofil",
     "privacy_policy": "Datenschutzerklärung",
-    "compat_title": "Kompatible Smartwatches & Wear OS Versionen"
+    "compat_title": "Kompatible Smartwatches & Wear OS Versionen",
+    "google_case_study": "Google Fallstudie"
   },
   "latest_release": {
     "heading": "Neueste Veröffentlichung",

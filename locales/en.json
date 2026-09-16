@@ -15,7 +15,9 @@
   },
   "hero": {
     "tagline": "Privacy-respecting watch faces and apps for Wear OS.",
-    "title_suffix": " — Wear OS Watch Faces & Complications"
+    "title_suffix": " — Wear OS Watch Faces & Complications",
+    "featured_by_google": "Featured by Google",
+    "google_case_study_text": "Read our official Wear OS story on Android Developers Blog"
   },
   "watchfaces": {
     "heading": "Watch Faces",
@@ -24,7 +26,8 @@
     "catalog_desc": "All AMOLED Watch Faces in one place. Preview and find your perfect watch face.",
     "developer_profile": "Developer profile",
     "privacy_policy": "Privacy Policy",
-    "compat_title": "Compatible Smartwatches & Wear OS versions"
+    "compat_title": "Compatible Smartwatches & Wear OS versions",
+    "google_case_study": "Google Case Study"
   },
   "latest_release": {
     "heading": "Latest Release",

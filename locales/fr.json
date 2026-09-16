@@ -15,7 +15,9 @@
   },
   "hero": {
     "tagline": "Cadrans et applications respectueux de votre vie privée pour Wear OS.",
-    "title_suffix": " — Cadrans de montre et complications Wear OS"
+    "title_suffix": " — Cadrans de montre et complications Wear OS",
+    "featured_by_google": "Mis en avant par Google",
+    "google_case_study_text": "Découvrez notre histoire officielle Wear OS sur Android Developers Blog"
   },
   "watchfaces": {
     "heading": "Cadrans de montre",
@@ -24,7 +26,8 @@
     "catalog_desc": "Tous les cadrans AMOLED Watch Faces au même endroit. Prévisualisez et trouvez le cadran idéal.",
     "developer_profile": "Profil développeur",
     "privacy_policy": "Politique de confidentialité",
-    "compat_title": "Montres connectées compatibles et versions de Wear OS"
+    "compat_title": "Montres connectées compatibles et versions de Wear OS",
+    "google_case_study": "Étude de cas Google"
   },
   "latest_release": {
     "heading": "Dernière sortie",

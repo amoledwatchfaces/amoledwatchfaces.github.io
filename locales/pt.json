@@ -15,7 +15,9 @@
   },
   "hero": {
     "tagline": "Mostradores e aplicativos para Wear OS focados em privacidade e desempenho.",
-    "title_suffix": " — Mostradores de relógio e complicações para Wear OS"
+    "title_suffix": " — Mostradores de relógio e complicações para Wear OS",
+    "featured_by_google": "Destaque do Google",
+    "google_case_study_text": "Leia nossa história oficial do Wear OS no Android Developers Blog"
   },
   "watchfaces": {
     "heading": "Mostradores de Relógio",
@@ -24,7 +26,8 @@
     "catalog_desc": "Todos os mostradores AMOLED Watch Faces em um só lugar. Visualize e encontre o mostrador perfeito.",
     "developer_profile": "Perfil do desenvolvedor",
     "privacy_policy": "Política de Privacidade",
-    "compat_title": "Smartwatches compatíveis e versões do Wear OS"
+    "compat_title": "Smartwatches compatíveis e versões do Wear OS",
+    "google_case_study": "Estudo de caso do Google"
   },
   "latest_release": {
     "heading": "Último Lançamento",
