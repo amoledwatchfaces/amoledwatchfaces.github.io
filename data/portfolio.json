@@ -28,7 +28,7 @@
         "hasAltImages": true,
         "pushToken": "K0EBGKkTaGZ5VayhQ9nmstFzN+av3ZlRSvjT79z9EMo=:MS4wLjA=",
         "releaseDate": "Aug 26, 2026",
-        "lastUpdated": "Sep 2, 2026",
+        "lastUpdated": "Sep 1, 2026",
         "shortDescription": "Sleek, highly customizable watch face. Inspired by Galaxy Watch Ultra 2 Analog.",
         "onSale": false
     },
@@ -98,7 +98,7 @@
         "shortDescription": "7 custom complication slots, weather, gradient progress bars and more.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -114,7 +114,7 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 9, 2026",
+        "lastUpdated": "Aug 8, 2026",
         "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly."
     },
     {
@@ -150,7 +150,7 @@
         "shortDescription": "Only custom complications, that's it.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -170,7 +170,7 @@
         "shortDescription": "Two large custom complication slots for maximum information at a glance.",
         "onSale": true,
         "discount": 0.7,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -190,7 +190,7 @@
         "shortDescription": "A highly informative watch face featuring 8 customizable complication slots.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -227,7 +227,7 @@
         "shortDescription": "Built for rough conditions with rugged, bold time and custom complications.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -280,7 +280,7 @@
         "shortDescription": "Highly customizable, power efficient analog watch face design. Make it your own.",
         "onSale": true,
         "discount": 0.3,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -313,7 +313,7 @@
         "hasAltImages": false,
         "pushToken": "VsG29QxwoDQ0mKLNbSG5xyzPpijBuR5/iIeoC67PGX8=:MS4wLjA=",
         "releaseDate": "Oct 13, 2025",
-        "lastUpdated": "Aug 20, 2026",
+        "lastUpdated": "Aug 19, 2026",
         "shortDescription": "Sleek, highly customizable watch face inspired by Galaxy Watch Circle Dashboard.",
         "onSale": false
     },
@@ -495,7 +495,7 @@
         "shortDescription": "2nd version of the Apex design. Enhanced with hourly-daily weather forecast.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -628,7 +628,7 @@
         "shortDescription": "Big & bold digital clock, custom complications, active and modern design.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -728,7 +728,7 @@
         "shortDescription": "Stylish, dynamic watch face with themes, custom complications, and dark mode.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -959,7 +959,7 @@
         "shortDescription": "Current weather, conditions, forecast, chance of rain, UV & two complications.",
         "onSale": true,
         "discount": 1.0,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -1122,7 +1122,11 @@
         "pushToken": "VFFVC0mLo/LhVecAfl2N+d2EMVmFLYtcem91KY0im6g=:MS4wLjA=",
         "releaseDate": "Apr 9, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Inspired by Pixel Watch \"Classic\" watch face. Optimized & fully customizable."
+        "shortDescription": "Inspired by Pixel Watch \"Classic\" watch face. Optimized & fully customizable.",
+        "onSale": true,
+        "discount": 0.5,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1790207999
     },
     {
         "id": "nomad",
@@ -1411,7 +1415,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Oct 29, 2023",
-        "lastUpdated": "Jul 13, 2026",
+        "lastUpdated": "Jul 12, 2026",
         "shortDescription": "Enough scrolling through the list of apps. Use Tile to launch favorite apps!"
     },
     {
@@ -1443,7 +1447,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Oct 15, 2023",
-        "lastUpdated": "Aug 28, 2026",
+        "lastUpdated": "Sep 10, 2026",
         "shortDescription": "Weather related custom complications for Wear OS. UV, Hi-Lo, AQI and more!"
     },
     {
@@ -2188,7 +2192,7 @@
         "shortDescription": "Created for Wear OS. Material You design. Battery Friendly. Customizable.",
         "onSale": true,
         "discount": 1.0,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -2368,7 +2372,7 @@
         "shortDescription": "Ported from Tizen OS. Premium design. Many customization options. High res",
         "onSale": true,
         "discount": 0.3,
-        "saleText": "Sale ends in 6 days",
+        "saleText": "Sale ends in 5 days",
         "saleEndTime": 1790035199
     },
     {
@@ -2564,7 +2568,7 @@
         "shortDescription": "Premium feel digital Watch face. Glow effect. Battery friendly & pixel perfect.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 7 days",
+        "saleText": "Sale ends in 6 days",
         "saleEndTime": 1790121599
     },
     {
@@ -2777,7 +2781,7 @@
         "shortDescription": "Pear Analog. Watch face with many customization options. For Wear OS 3,4, & 5.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -2877,7 +2881,7 @@
         "shortDescription": "High quality digital Wear OS Watch face with many styles and color options.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -2945,7 +2949,7 @@
         "shortDescription": "True black background watch face for Wear OS. LCD display font. Pixel perfect.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -3045,7 +3049,7 @@
         "shortDescription": "True black background Infograph digital Watch face for Wear OS",
         "onSale": true,
         "discount": 1.0,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -3177,7 +3181,7 @@
         "shortDescription": "True black background watch face for Wear OS.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     },
     {
@@ -3517,7 +3521,7 @@
         "shortDescription": "True black background & battery friendly health focused Watch face for Wear OS",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 5 days",
+        "saleText": "Sale ends in 4 days",
         "saleEndTime": 1789948799
     },
     {
@@ -3713,7 +3717,7 @@
         "shortDescription": "True black background & battery friendly Watch face for Wear OS",
         "onSale": true,
         "discount": 0.7,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1789862399
     }
 ]
