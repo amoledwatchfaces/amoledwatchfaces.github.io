@@ -88,13 +88,12 @@ jobs:
               elif f.endswith('.html'):
                   base = f[:-5]
                   urls.add(f'{domain}/{base}')
+                  urls.add(f'{domain}/{base}/')
                   urls.add(f'{domain}/{f}')
                   if f.endswith('/index.html'):
                       parent_dir = f[:-11]
                       urls.add(f'{domain}/{parent_dir}')
                       urls.add(f'{domain}/{parent_dir}/')
-                  elif '/' not in f:
-                      urls.add(f'{domain}/{base}/')
                   for l in target_langs:
                       urls.add(f'{domain}/{l}/{base}')
                       urls.add(f'{domain}/{l}/{f}')
