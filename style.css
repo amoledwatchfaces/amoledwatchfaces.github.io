@@ -564,12 +564,13 @@ li {
   display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 8px 10px;
   background: color-mix(in srgb, var(--surface-container-high) 70%, transparent);
   border: 1px solid var(--outline);
-  border-radius: 9999px;
-  padding: 4px 14px 4px 6px;
+  border-radius: var(--radius);
+  padding: 7px 12px;
   font-size: 0.85rem;
+  line-height: 1.45;
   color: var(--on-surface);
   text-decoration: none;
   transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
@@ -588,14 +589,15 @@ li {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 3px 10px;
-  border-radius: 9999px;
+  padding: 3px 8px;
+  border-radius: 8px;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   background: color-mix(in srgb, var(--primary) 15%, transparent);
   color: var(--primary);
   border: 1px solid color-mix(in srgb, var(--primary) 32%, transparent);
+  flex-shrink: 0;
 }
 
 :root[data-theme="light"] .hero-trust-pill .trust-badge {
