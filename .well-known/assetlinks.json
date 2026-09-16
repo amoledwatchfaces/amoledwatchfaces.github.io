@@ -11,5 +11,17 @@
         "9A:28:EB:91:49:A6:2A:B1:FF:DA:DC:CE:32:7B:CA:C4:D7:0A:17:22:54:DE:48:91:5B:C4:F3:7E:D7:DE:ED:9E"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.weartools.phonebattcomp",
+      "sha256_cert_fingerprints": [
+        "94:D3:A3:77:FC:2B:C4:73:DD:69:C5:05:5A:CB:8A:34:2A:19:B2:1F:02:D1:04:DA:FD:D5:75:32:92:0F:78:36"
+      ]
+    }
   }
 ]
