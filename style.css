@@ -569,7 +569,7 @@ li {
   border: 1px solid var(--outline);
   border-radius: var(--radius);
   padding: 7px 12px;
-  font-size: 0.85rem;
+  font-size: 0.90rem;
   line-height: 1.45;
   color: var(--on-surface);
   text-decoration: none;
@@ -591,7 +591,7 @@ li {
   gap: 5px;
   padding: 3px 8px;
   border-radius: 8px;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   background: color-mix(in srgb, var(--primary) 15%, transparent);
@@ -1244,7 +1244,7 @@ main > picture .main-banner {
   display: inline-flex;
   align-items: center;
   padding: 4px 10px;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 500;
   background: color-mix(in srgb, var(--surface-container-high) 60%, transparent);
   border: 1px solid var(--outline);
@@ -1272,7 +1272,7 @@ main > picture .main-banner {
   align-items: center;
   justify-content: center;
   line-height: 1;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 700;
   padding: 4px 9px;
   border-radius: 99px;
@@ -1650,7 +1650,7 @@ main > picture .main-banner {
   border-color: rgba(255, 183, 77, 0.35) !important;
   margin-left: 0 !important;
   font-weight: 700;
-  font-size: 0.78rem !important;
+  font-size: 0.82rem !important;
   padding: 4px 8px !important;
 }
 
@@ -1666,7 +1666,7 @@ main > picture .main-banner {
   border-color: color-mix(in srgb, var(--primary) 40%, transparent) !important;
   margin-left: 0 !important;
   font-weight: 700;
-  font-size: 0.78rem !important;
+  font-size: 0.82rem !important;
   padding: 4px 8px !important;
   animation: pulse-glow 2.5s infinite ease-in-out;
 }
