@@ -47,7 +47,7 @@ async function loadLocalizedDescriptions(lang) {
     return;
   }
   try {
-    const res = await fetch(`/locales/descriptions/${lang}.json?v=1.0`);
+    const res = await fetch(`/locales/descriptions/${lang}.json?v=1.1`);
     if (res.ok) {
       localizedDescriptions = await res.json();
       currentDescLang = lang;

@@ -55,20 +55,20 @@ jobs:
           urls = set()
           target_langs = ['de', 'es', 'fr', 'it', 'ko', 'pl', 'pt', 'sk']
 
-          # Scan all HTML files in repo to detect query-string versioned references (e.g. style.css?v=2.5)
-          html_files = []
+          # Scan all HTML and JS files in repo to detect query-string versioned references (e.g. style.css?v=2.5)
+          scanned_files = []
           for root, _, files in os.walk('.'):
               if any(root.startswith(p) for p in ('.git', '.github')):
                   continue
               for name in files:
-                  if name.endswith('.html'):
-                      html_files.append(os.path.join(root, name))
+                  if name.endswith('.html') or name.endswith('.js'):
+                      scanned_files.append(os.path.join(root, name))
 
-          html_contents = []
-          for hf in html_files:
+          scanned_contents = []
+          for sf in scanned_files:
               try:
-                  with open(hf, 'r', encoding='utf-8') as fp:
-                      html_contents.append(fp.read())
+                  with open(sf, 'r', encoding='utf-8') as fp:
+                      scanned_contents.append(fp.read())
               except Exception:
                   pass
 
@@ -99,10 +99,10 @@ jobs:
                       urls.add(f'{domain}/{l}/{f}')
               else:
                   urls.add(f'{domain}/{f}')
-                  # Find any query string references across HTML pages (e.g., style.css?v=2.5)
+                  # Find any query string references across HTML and JS pages (e.g., style.css?v=2.5)
                   basename = f.split('/')[-1]
                   pattern = re.compile(r'[\"\'](?:[^\"\']*/)?(' + re.escape(basename) + r'\?[^\"\']*)[\"\']')
-                  for content in html_contents:
+                  for content in scanned_contents:
                       for match in pattern.findall(content):
                           clean_match = re.sub(r'^\.+/', '', match)
                           if '/' in f:
@@ -111,9 +111,31 @@ jobs:
                           else:
                               urls.add(f'{domain}/{clean_match}')
 
+          # Also explicitly handle description and locale versioning
+          collection_js_path = 'js/collection.js'
+          desc_qs = ''
+          if os.path.exists(collection_js_path):
+              try:
+                  with open(collection_js_path, 'r', encoding='utf-8') as cfp:
+                      ccontent = cfp.read()
+                      m = re.search(r'/locales/descriptions/[^"\']*?\?([^"\'\s]+)', ccontent)
+                      if m:
+                          desc_qs = f"?{m.group(1)}"
+              except Exception:
+                  pass
+
+          descriptions_affected = any(
+              f.startswith('locales/descriptions/') or f == 'js/collection.js' for f in changed_files
+          )
+          if descriptions_affected:
+              for l in target_langs:
+                  urls.add(f'{domain}/locales/descriptions/{l}.json')
+                  if desc_qs:
+                      urls.add(f'{domain}/locales/descriptions/{l}.json{desc_qs}')
+
           # If global assets, locales, or build workflow changed, purge all pages and language subdirectories
           i18n_affected = any(
-              f in changed_files for f in ['style.css', 'theme.js', 'scripts/build_i18n.py', '.github/workflows/deploy-pages.yml']
+              f in changed_files for f in ['style.css', 'theme.js', 'scripts/build_i18n.py', '.github/workflows/deploy-pages.yml', 'data/portfolio.json']
           ) or any(f.startswith('locales/') or f.startswith('js/i18n') for f in changed_files)
 
           if i18n_affected:
