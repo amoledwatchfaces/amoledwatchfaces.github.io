@@ -8,7 +8,7 @@
         "isFree": false,
         "isAnalog": false,
         "hasWeather": true,
-        "isTrialEnabled": false,
+        "isTrialEnabled": true,
         "hasAltImages": true,
         "pushToken": "7eDjnsBUmRpD5i0jW+Gu3CuU9tgndBmrWvDFYKbvHxE=:MS4wLjA=",
         "releaseDate": "Sep 18, 2026",
