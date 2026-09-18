@@ -4,7 +4,7 @@ Clean, idiomatic, professional French short descriptions for all 226 watch faces
 """
 
 DESCRIPTIONS_FR = {
-    "adventurer2": "Bientôt disponible...",
+    "adventurer2": "Le cadran original de la montre Adventurer, repensé avec Material 3 Expressive.",
     "ultra2": "Cadran élégant et hautement personnalisable, inspiré du style analogique de la Galaxy Watch Ultra 2.",
     "matte": "Cadran simple et élégant avec grande horloge numérique et complications personnalisées.",
     "military2": "Esthétique tactique, police numérique LCD améliorée et nombreuses options de personnalisation.",

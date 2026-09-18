@@ -18,6 +18,8 @@ Thumbs.db
 .idea/
 jsconfig.json
 .venv/
+__pycache__/
+*.pyc
 
 # Generated multilingual subdirectories (built dynamically in GitHub Actions)
 /de/

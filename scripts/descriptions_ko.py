@@ -4,7 +4,7 @@ Clean, idiomatic, professional Korean short descriptions for all 226 watch faces
 """
 
 DESCRIPTIONS_KO = {
-    "adventurer2": "곧 출시 예정...",
+    "adventurer2": "오리지널 어드벤처 워치 페이스가 Material 3 Expressive로 새롭게 디자인되었습니다.",
     "ultra2": "갤럭시 워치 울트라 2 아날로그 스타일에서 영감을 받은 세련되고 맞춤 설정이 가능한 워치 페이스.",
     "matte": "큰 디지털 시계와 맞춤형 컴플리케이션을 갖춘 심플하고 스타일리시한 워치 페이스.",
     "military2": "택티컬 감성과 개선된 LCD 디지털 폰트, 폭넓은 맞춤 설정을 제공하는 워치 페이스.",

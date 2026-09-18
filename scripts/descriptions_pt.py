@@ -4,7 +4,7 @@ Clean, idiomatic, professional Portuguese short descriptions for all 226 watch f
 """
 
 DESCRIPTIONS_PT = {
-    "adventurer2": "Disponível em breve...",
+    "adventurer2": "O mostrador original do relógio Adventurer, redesenhado com o Material 3 Expressive.",
     "ultra2": "Mostrador elegante e altamente personalizável, inspirado no estilo analógico do Galaxy Watch Ultra 2.",
     "matte": "Mostrador simples e estiloso com grande relógio digital e complicações personalizadas.",
     "military2": "Estética tática, fonte digital LCD aprimorada e amplas opções de personalização.",
