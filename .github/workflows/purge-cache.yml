@@ -27,3 +27,4 @@ jobs:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           COMMIT_BEFORE: ${{ github.event.before }}
           COMMIT_AFTER: ${{ github.event.after }}
+          EVENT_NAME: ${{ github.event_name }}

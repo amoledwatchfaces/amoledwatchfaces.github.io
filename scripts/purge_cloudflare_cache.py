@@ -116,22 +116,26 @@ def main():
         except Exception:
             pass
 
-    descriptions_affected = any(
+    event_name = os.environ.get('EVENT_NAME', '').strip()
+    is_dispatch = (event_name == 'workflow_dispatch')
+
+    descriptions_affected = is_dispatch or any(
         f.startswith('locales/descriptions/') or f == 'js/collection.js' for f in changed_files
     )
-    if descriptions_affected:
+
+    # If global assets, locales, portfolio data, or build workflow changed, purge all pages and language subdirectories
+    i18n_affected = is_dispatch or any(
+        f in changed_files for f in [
+            'style.css', 'theme.js', 'scripts/build_i18n.py', '.github/workflows/deploy-pages.yml',
+            'data/portfolio.json', 'index.html', 'js/collection.js', 'scripts/purge_cloudflare_cache.py'
+        ]
+    ) or any(f.startswith('locales/') or f.startswith('js/i18n') for f in changed_files)
+
+    if descriptions_affected or i18n_affected:
         for l in target_langs:
             urls.add(f'{domain}/locales/descriptions/{l}.json')
             if desc_qs:
                 urls.add(f'{domain}/locales/descriptions/{l}.json{desc_qs}')
-
-    # If global assets, locales, portfolio data, or build workflow changed, purge all pages and language subdirectories
-    i18n_affected = any(
-        f in changed_files for f in [
-            'style.css', 'theme.js', 'scripts/build_i18n.py', '.github/workflows/deploy-pages.yml',
-            'data/portfolio.json', 'index.html', 'js/collection.js'
-        ]
-    ) or any(f.startswith('locales/') or f.startswith('js/i18n') for f in changed_files)
 
     if i18n_affected:
         all_pages = ['', 'apps', 'bogo', 'giveaways', 'guide', 'contact', 'privacy', '404.html']
