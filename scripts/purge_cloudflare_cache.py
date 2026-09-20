@@ -138,6 +138,7 @@ def main():
                 urls.add(f'{domain}/locales/descriptions/{l}.json{desc_qs}')
 
     if i18n_affected:
+        urls.add(f'{domain}/data/portfolio.json')
         all_pages = ['', 'apps', 'bogo', 'giveaways', 'guide', 'contact', 'privacy', '404.html']
         for p in all_pages:
             if p == '':
