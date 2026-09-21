@@ -16,7 +16,7 @@
         "shortDescription": "The original Adventurer watch face, redesigned with Material 3 Expressive.",
         "onSale": true,
         "discount": 0.3,
-        "saleText": "Sale ends in 5 days",
+        "saleText": "Sale ends in 4 days",
         "saleEndTime": 1790380799
     },
     {
@@ -32,7 +32,7 @@
         "hasAltImages": true,
         "pushToken": "K0EBGKkTaGZ5VayhQ9nmstFzN+av3ZlRSvjT79z9EMo=:MS4wLjA=",
         "releaseDate": "Aug 26, 2026",
-        "lastUpdated": "Sep 1, 2026",
+        "lastUpdated": "Sep 2, 2026",
         "shortDescription": "Sleek, highly customizable watch face. Inspired by Galaxy Watch Ultra 2 Analog.",
         "onSale": false
     },
@@ -115,7 +115,7 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 8, 2026",
+        "lastUpdated": "Aug 9, 2026",
         "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly."
     },
     {
@@ -234,7 +234,10 @@
         "releaseDate": "Feb 9, 2026",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Current weather, forecast, UV, rain probability and custom complications.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1790639999
     },
     {
         "id": "pixelAnalog2",
@@ -250,7 +253,11 @@
         "pushToken": "PlY7IMfUrRecWyvSdSKNuW79KrtqdS8jOD3btv4uwsY=:MS4wLjA=",
         "releaseDate": "Jan 20, 2026",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Highly customizable watch face featuring a compact analog clock."
+        "shortDescription": "Highly customizable watch face featuring a compact analog clock.",
+        "onSale": true,
+        "discount": 0.5,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1790639999
     },
     {
         "id": "wayfarer",
@@ -284,7 +291,10 @@
         "releaseDate": "Nov 12, 2025",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Compact, battery friendly watch face with radial complication slots layout.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1790639999
     },
     {
         "id": "circleDashboard",
@@ -417,7 +427,7 @@
         "shortDescription": "Futuristic, highly customizable watch face with unlimited theme combinations.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 5 days",
+        "saleText": "Sale ends in 4 days",
         "saleEndTime": 1790380799
     },
     {
@@ -905,7 +915,11 @@
         "pushToken": "eO8n5y7LUhkVk2kw7DgKuk8HpFJVwKdB+CTNoxVckqY=:MS4wLjA=",
         "releaseDate": "Aug 11, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Simple, stylish & fresh watch face. Customize colors, gradients & complications."
+        "shortDescription": "Simple, stylish & fresh watch face. Customize colors, gradients & complications.",
+        "onSale": true,
+        "discount": 1.0,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1790639999
     },
     {
         "id": "symmetrical",
@@ -1103,7 +1117,7 @@
         "shortDescription": "Inspired by Pixel Watch \"Classic\" watch face. Optimized & fully customizable.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 3 days",
+        "saleText": "Sale ends in 2 days",
         "saleEndTime": 1790207999
     },
     {
@@ -2347,7 +2361,7 @@
         "shortDescription": "Ported from Tizen OS. Premium design. Many customization options. High res",
         "onSale": true,
         "discount": 0.3,
-        "saleText": "Sale ends in 1 day",
+        "saleText": "Sale ends in 23 hours",
         "saleEndTime": 1790035199
     },
     {
@@ -2444,7 +2458,11 @@
         "pushToken": "W5RFZ/VVjxBXZAp7FBy3zIMS1oOKhZjulpXG1QWFPo0=:MS4wLjA=",
         "releaseDate": "May 17, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Fitness digital watch face for Wear OS. Gradient colors. Battery friendly."
+        "shortDescription": "Fitness digital watch face for Wear OS. Gradient colors. Battery friendly.",
+        "onSale": true,
+        "discount": 0.5,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1790639999
     },
     {
         "id": "esport",
@@ -2543,7 +2561,7 @@
         "shortDescription": "Premium feel digital Watch face. Glow effect. Battery friendly & pixel perfect.",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 2 days",
+        "saleText": "Sale ends in 1 day",
         "saleEndTime": 1790121599
     },
     {
@@ -2560,7 +2578,11 @@
         "pushToken": "h9FA6Eo18f1AoLbGX4OAToJCVrI6BSZttTovuQRPa+I=:MS4wLjA=",
         "releaseDate": "Apr 8, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Classic Watch face with 4 custom complications. Customizable. Battery friendly."
+        "shortDescription": "Classic Watch face with 4 custom complications. Customizable. Battery friendly.",
+        "onSale": true,
+        "discount": 0.5,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1790639999
     },
     {
         "id": "awfoledanalog",
@@ -2641,7 +2663,11 @@
         "pushToken": "AWHjToWl27YYNIoAuVX3kvB6OU+NYbz0mHtZueJKbtk=:MS4wLjA=",
         "releaseDate": "Mar 29, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Unique digital watch face for fitness, sport. Battery friendly & pixel perfect."
+        "shortDescription": "Unique digital watch face for fitness, sport. Battery friendly & pixel perfect.",
+        "onSale": true,
+        "discount": 0.5,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1790639999
     },
     {
         "id": "rushe",
@@ -2705,7 +2731,11 @@
         "pushToken": "az1Tgu5SJarqguc5ZzZnjm3dwxI7EziDg5dT9BUeDwg=:MS4wLjA=",
         "releaseDate": "Feb 22, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Informer X digital watch face. True black background. Pixel perfect design."
+        "shortDescription": "Informer X digital watch face. True black background. Pixel perfect design.",
+        "onSale": true,
+        "discount": 0.3,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1790639999
     },
     {
         "id": "awfpixelanalog",
@@ -2724,7 +2754,7 @@
         "shortDescription": "True black analog watch face with pixel perfect design for Wear OS",
         "onSale": true,
         "discount": 0.5,
-        "saleText": "Sale ends in 6 days",
+        "saleText": "Sale ends in 5 days",
         "saleEndTime": 1790467199
     },
     {
@@ -2806,7 +2836,11 @@
         "pushToken": "EGUbN1HUcpTOp6DAcah3YWM2es3K9XhpSZQs1tYcOnM=:MS4wLjA=",
         "releaseDate": "Jan 26, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Pixel perfect analog Watch face with many customization options for Wear OS"
+        "shortDescription": "Pixel perfect analog Watch face with many customization options for Wear OS",
+        "onSale": true,
+        "discount": 0.5,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1790639999
     },
     {
         "id": "awfpace2",
@@ -2874,7 +2908,7 @@
         "shortDescription": "True black background, pixel perfect, fitness digital watch face for Wear OS.",
         "onSale": true,
         "discount": 0.7,
-        "saleText": "Sale ends in 4 days",
+        "saleText": "Sale ends in 3 days",
         "saleEndTime": 1790294399
     },
     {
@@ -3487,10 +3521,7 @@
         "releaseDate": "Sep 13, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background & battery friendly health focused Watch face for Wear OS",
-        "onSale": true,
-        "discount": 0.5,
-        "saleText": "Sale ends in 19 hours",
-        "saleEndTime": 1789948799
+        "onSale": false
     },
     {
         "id": "awfpolaranalog",
