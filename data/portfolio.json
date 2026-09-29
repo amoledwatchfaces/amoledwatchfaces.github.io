@@ -1,5 +1,22 @@
 [
     {
+        "id": "omni",
+        "appName": "Omni",
+        "packageName": "com.amoledwatchfaces.omni",
+        "isWatchFace": true,
+        "isAvailable": false,
+        "isFree": false,
+        "isAnalog": true,
+        "hasWeather": false,
+        "isTrialEnabled": false,
+        "hasAltImages": true,
+        "pushToken": "",
+        "releaseDate": "Oct 2, 2026",
+        "lastUpdated": "Oct 2, 2026",
+        "shortDescription": "Simple, modern, material 3 analog watch face with animated ambient mode.",
+        "onSale": false
+    },
+    {
         "id": "adventurer2",
         "appName": "Adventurer 2",
         "packageName": "com.amoledwatchfaces.adventurer2",
