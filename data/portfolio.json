@@ -4,17 +4,20 @@
         "appName": "Omni",
         "packageName": "com.amoledwatchfaces.omni",
         "isWatchFace": true,
-        "isAvailable": false,
+        "isAvailable": true,
         "isFree": false,
         "isAnalog": true,
         "hasWeather": false,
-        "isTrialEnabled": false,
+        "isTrialEnabled": true,
         "hasAltImages": true,
         "pushToken": "wwLpeQXD9GJJ4XBFsGyKXr06ATFmLFDbj4LQINRyrAM=:MS4wLjA=",
         "releaseDate": "Oct 2, 2026",
         "lastUpdated": "Sep 29, 2026",
         "shortDescription": "Simple, modern, material 3 analog watch face with animated ambient mode.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.2,
+        "saleText": "Sale ends in 7 days",
+        "saleEndTime": 1791590399
     },
     {
         "id": "adventurer2",
