@@ -222,18 +222,11 @@ def update_portfolio(dry_run=False):
             else:
                 sales_count += 1
         else:
-            # Not on sale: clean up any stale sale fields
-            if prev_on_sale is True or 'discount' in item or 'saleText' in item or 'saleEndTime' in item:
-                print(f"[{app_name}] Sale ended. Reverting to standard price.")
+            # Not on sale: only set onSale = False, leave other fields unaffected
+            if item.get('onSale') is not False:
+                print(f"[{app_name}] Sale ended. Setting onSale = False.")
                 item['onSale'] = False
-                item.pop('discount', None)
-                item.pop('saleText', None)
-                item.pop('saleEndTime', None)
                 changes_detected = True
-            else:
-                if 'onSale' in item and item['onSale'] is not False:
-                    item['onSale'] = False
-                    changes_detected = True
 
     print('=' * 50)
     print(f'Summary: {sales_count} app(s) on active sale | {updated_count} date(s) updated.')
