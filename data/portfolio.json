@@ -47,9 +47,9 @@
         "hasWeather": true,
         "isTrialEnabled": true,
         "hasAltImages": true,
-        "pushToken": "QEvdmhCGxBE3NOB9HMC5eojH4tTX4Q1QqKSIReqN/Cs=:MS4wLjA=",
+        "pushToken": "Kv6HBukgkfKZl2D2ONv7A0bsDe0aFnX6R/7fz7Z/NSE=:MS4wLjA=",
         "releaseDate": "Aug 26, 2026",
-        "lastUpdated": "Sep 30, 2026",
+        "lastUpdated": "Oct 4, 2026",
         "shortDescription": "Sleek, highly customizable watch face. Inspired by Galaxy Watch Ultra 2 Analog.",
         "onSale": false
     },
@@ -1974,7 +1974,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Info Brick inspired watch face. Battery friendly & Customizable.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleText": "Sale ends in 2 days",
         "saleEndTime": 1791331199
     },
@@ -2384,7 +2384,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Premium Wear OS watch face. Customizable, hi-res and battery friendly.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleText": "Sale ends in 3 days",
         "saleEndTime": 1791417599
     },
@@ -3050,7 +3050,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background TRON inspired digital watch face for Wear OS",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleText": "Sale ends in 7 days",
         "saleEndTime": 1791763199
     },
@@ -3155,7 +3155,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, health oriented digital watch face for Wear OS.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleText": "Sale ends in 2 days",
         "saleEndTime": 1791331199
     },
@@ -3565,7 +3565,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background and battery friendly digital watch face for Wear OS.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleText": "Sale ends in 5 days",
         "saleEndTime": 1791590399
     },
