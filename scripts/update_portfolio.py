@@ -6,7 +6,6 @@ Fetches Google Play Store metadata for all active packages in data/portfolio.jso
 - Syncs latest 'lastUpdated' date.
 - Detects active sales / promotions.
 - Computes rounded 'discount' (0.1 - 1.0, where 1.0 = 100% off).
-- Extracts 'saleText' (e.g., 'Sale ends in 3 days').
 - Extracts 'saleEndTime' (Unix timestamp in seconds).
 - Only writes to data/portfolio.json if changes are detected.
 """
@@ -67,7 +66,6 @@ def fetch_play_store_data(package_name):
     # matching "Similar Apps" or "More by developer" sales on the page.
     on_sale = False
     discount = None
-    sale_text = None
     sale_end_time = None
 
     btn_pattern = rf'<button[^>]*aria-label=[\"\\\']([^\"\\\']+)[\"\\\'][^>]*>(?:(?!</button>).)*?id={re.escape(package_name)}(?:(?!</button>).)*?</button>'
@@ -97,13 +95,6 @@ def fetch_play_store_data(package_name):
             m_banner = re.search(r'\[\[(\d{10})\],\"(Sale ends[^\"]+)\"', html)
             if m_banner:
                 sale_end_time = int(m_banner.group(1))
-                sale_text = m_banner.group(2).strip().replace('\u202f', ' ').replace('\\u003d', '=')
-            else:
-                m_banner = re.search(r'\"(Sale ends[^\"]+)\"', html)
-                if m_banner:
-                    sale_text = m_banner.group(1).strip().replace('\u202f', ' ').replace('\\u003d', '=')
-                else:
-                    sale_text = 'On sale'
 
     return {
         'status': 'ok',
@@ -112,8 +103,7 @@ def fetch_play_store_data(package_name):
         'last_updated': last_updated,
         'on_sale': on_sale,
         'discount': discount,
-        'sale_text': sale_text,
-        'sale_end_time': sale_end_time,
+        'sale_end_time': sale_end_time
     }
 
 
@@ -197,22 +187,16 @@ def update_portfolio(dry_run=False):
 
         if is_on_sale:
             new_discount = res.get('discount')
-            new_sale_text = res.get('sale_text')
             new_sale_end_time = res.get('sale_end_time')
 
             if (
                 item.get('onSale') is not True
                 or item.get('discount') != new_discount
-                or item.get('saleText') != new_sale_text
                 or item.get('saleEndTime') != new_sale_end_time
             ):
-                print(f"[{app_name}] ON SALE! Discount: {new_discount}, Text: '{new_sale_text}', EndTime: {new_sale_end_time}")
+                print(f"[{app_name}] ON SALE! Discount: {new_discount}, EndTime: {new_sale_end_time}")
                 item['onSale'] = True
                 item['discount'] = new_discount
-                if new_sale_text:
-                    item['saleText'] = new_sale_text
-                elif 'saleText' in item:
-                    del item['saleText']
                 if new_sale_end_time:
                     item['saleEndTime'] = new_sale_end_time
                 elif 'saleEndTime' in item:

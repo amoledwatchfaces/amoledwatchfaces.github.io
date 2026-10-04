@@ -730,7 +730,7 @@ function initFeaturedSales() {
       discountBadgeHtml = `<span class="badge-pill badge-sale-discount">${window.i18n ? window.i18n.t('featured_deals.badge_sale', 'Sale') : 'Sale'}</span>`;
     }
 
-    const timerText = formatSaleEndTime(item.saleEndTime) || item.saleText;
+    const timerText = formatSaleEndTime(item.saleEndTime);
 
     const timerHtml = timerText
       ? `<span class="sale-card-timer" title="${timerText}">
