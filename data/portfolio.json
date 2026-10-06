@@ -12,7 +12,7 @@
         "hasAltImages": true,
         "pushToken": "wwLpeQXD9GJJ4XBFsGyKXr06ATFmLFDbj4LQINRyrAM=:MS4wLjA=",
         "releaseDate": "Oct 2, 2026",
-        "lastUpdated": "Oct 2, 2026",
+        "lastUpdated": "Oct 1, 2026",
         "shortDescription": "Simple, modern, material 3 analog watch face with animated ambient mode.",
         "onSale": true,
         "discount": 0.2,
@@ -67,7 +67,9 @@
         "releaseDate": "Aug 7, 2026",
         "lastUpdated": "Aug 31, 2026",
         "shortDescription": "Simple and stylish watch face with large digital clock and custom complications.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1791935999
     },
     {
         "id": "military2",
@@ -133,7 +135,7 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 9, 2026",
+        "lastUpdated": "Aug 8, 2026",
         "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly.",
         "onSale": false
     },
@@ -320,7 +322,7 @@
         "hasAltImages": false,
         "pushToken": "VsG29QxwoDQ0mKLNbSG5xyzPpijBuR5/iIeoC67PGX8=:MS4wLjA=",
         "releaseDate": "Oct 13, 2025",
-        "lastUpdated": "Aug 20, 2026",
+        "lastUpdated": "Aug 19, 2026",
         "shortDescription": "Sleek, highly customizable watch face inspired by Galaxy Watch Circle Dashboard.",
         "onSale": false
     },
@@ -392,7 +394,7 @@
         "releaseDate": "Aug 23, 2025",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Highly customizable hybrid watch face with dashed-arc progress bars.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.4,
         "saleEndTime": 1791244799
     },
@@ -899,7 +901,7 @@
         "hasAltImages": false,
         "pushToken": "PzVdF3KBC6F0oA0lRgdU6BKNT5anCSc4TrrGf1oa68Q=:MS4wLjA=",
         "releaseDate": "Sep 29, 2024",
-        "lastUpdated": "Oct 5, 2026",
+        "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Boo! Meet Spooky, a Halloween watch face with a lot of features. Happy haunting!",
         "onSale": false
     },
@@ -1362,7 +1364,9 @@
         "releaseDate": "Jan 15, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Boost productivity with this sleek, battery-friendly & customizable watch face.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1791935999
     },
     {
         "id": "active2",
