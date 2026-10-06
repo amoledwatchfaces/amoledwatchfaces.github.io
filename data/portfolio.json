@@ -12,7 +12,7 @@
         "hasAltImages": true,
         "pushToken": "wwLpeQXD9GJJ4XBFsGyKXr06ATFmLFDbj4LQINRyrAM=:MS4wLjA=",
         "releaseDate": "Oct 2, 2026",
-        "lastUpdated": "Sep 29, 2026",
+        "lastUpdated": "Oct 1, 2026",
         "shortDescription": "Simple, modern, material 3 analog watch face with animated ambient mode.",
         "onSale": true,
         "discount": 0.2,
@@ -48,7 +48,7 @@
         "hasAltImages": true,
         "pushToken": "z6LsqNUXsLbqnxPN3w4VkF5i084cj+eJ9NXdd7/KdqQ=:MS4wLjA=",
         "releaseDate": "Aug 26, 2026",
-        "lastUpdated": "Oct 4, 2026",
+        "lastUpdated": "Sep 30, 2026",
         "shortDescription": "Sleek, highly customizable watch face. Inspired by Galaxy Watch Ultra 2 Analog.",
         "onSale": false
     },
@@ -66,7 +66,10 @@
         "pushToken": "+riRFh5gdbESm2A6s8yVBQNo6o9PQN7TknBjrBDFwks=:MS4wLjA=",
         "releaseDate": "Aug 7, 2026",
         "lastUpdated": "Aug 31, 2026",
-        "shortDescription": "Simple and stylish watch face with large digital clock and custom complications."
+        "shortDescription": "Simple and stylish watch face with large digital clock and custom complications.",
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1791935999
     },
     {
         "id": "military2",
@@ -99,7 +102,8 @@
         "pushToken": "Q82xMRemERgErubg+9CBrcT64Jebosex4Rur5s4l1DE=:MS4wLjA=",
         "releaseDate": "Jul 3, 2026",
         "lastUpdated": "Aug 31, 2026",
-        "shortDescription": "Circular layout with 8 customizable complications. Simple, clean, and effective."
+        "shortDescription": "Circular layout with 8 customizable complications. Simple, clean, and effective.",
+        "onSale": false
     },
     {
         "id": "zenith",
@@ -131,8 +135,9 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 9, 2026",
-        "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly."
+        "lastUpdated": "Aug 8, 2026",
+        "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly.",
+        "onSale": false
     },
     {
         "id": "epoch",
@@ -148,7 +153,8 @@
         "pushToken": "xZmBYvUNop9LNsw7URrq7Ln0seXLLLXTRyjMpqss/eA=:MS4wLjA=",
         "releaseDate": "May 11, 2026",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Sleek analog watch face featuring dynamic date rings and custom complications."
+        "shortDescription": "Sleek analog watch face featuring dynamic date rings and custom complications.",
+        "onSale": false
     },
     {
         "id": "grid",
@@ -316,7 +322,7 @@
         "hasAltImages": false,
         "pushToken": "VsG29QxwoDQ0mKLNbSG5xyzPpijBuR5/iIeoC67PGX8=:MS4wLjA=",
         "releaseDate": "Oct 13, 2025",
-        "lastUpdated": "Aug 20, 2026",
+        "lastUpdated": "Aug 19, 2026",
         "shortDescription": "Sleek, highly customizable watch face inspired by Galaxy Watch Circle Dashboard.",
         "onSale": false
     },
@@ -334,7 +340,8 @@
         "pushToken": "",
         "releaseDate": "Sep 29, 2025",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Simple, minimal, and highly customizable material 3 expressive watch face."
+        "shortDescription": "Simple, minimal, and highly customizable material 3 expressive watch face.",
+        "onSale": false
     },
     {
         "id": "eccentric",
@@ -351,7 +358,7 @@
         "releaseDate": "Sep 22, 2025",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Modern, highly customizable watch face with distinctive digital clock fonts.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1791158399
     },
@@ -369,7 +376,8 @@
         "pushToken": "XVNnk/diSppMTSPBJ8b3+awETHa5xPHYbLfw3w8bV/A=:MS4wLjA=",
         "releaseDate": "Sep 11, 2025",
         "lastUpdated": "Sep 7, 2026",
-        "shortDescription": "Highly customizable digital watch face. Power efficient, sleek, modern design."
+        "shortDescription": "Highly customizable digital watch face. Power efficient, sleek, modern design.",
+        "onSale": false
     },
     {
         "id": "pilot",
@@ -386,7 +394,7 @@
         "releaseDate": "Aug 23, 2025",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Highly customizable hybrid watch face with dashed-arc progress bars.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.4,
         "saleEndTime": 1791244799
     },
@@ -423,7 +431,8 @@
         "pushToken": "x7SNqnKyI6/04Tea4IKb11YEQZHabSomZ6TuI8R+6F0=:MS4wLjA=",
         "releaseDate": "Jul 24, 2025",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Highly customizable analog watch face with wrist-reactive aurora lights."
+        "shortDescription": "Highly customizable analog watch face with wrist-reactive aurora lights.",
+        "onSale": false
     },
     {
         "id": "nova",
@@ -494,7 +503,8 @@
         "pushToken": "Fs17siIxbIYWRI8gNQ4pnswDYTboN33tzY4wGumNYAs=:MS4wLjA=",
         "releaseDate": "Jun 8, 2025",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Inspired by Nature. A unique, colorful, and customizable watch face."
+        "shortDescription": "Inspired by Nature. A unique, colorful, and customizable watch face.",
+        "onSale": false
     },
     {
         "id": "apex2",
@@ -618,7 +628,8 @@
         "pushToken": "YO6WKu52tdFNKItZWD9pwqBMz6PZ+45rKvumtNyM2Kk=:MS4wLjA=",
         "releaseDate": "Apr 2, 2025",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "A unique and customizable watch face which rotates its layout every minute."
+        "shortDescription": "A unique and customizable watch face which rotates its layout every minute.",
+        "onSale": false
     },
     {
         "id": "outdoor",
@@ -634,7 +645,8 @@
         "pushToken": "VgwB0es5hvK3TCZYbNCk3p46N0/j40j6mAS0M2DQblo=:MS4wLjA=",
         "releaseDate": "Mar 19, 2025",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Highly customizable, colorful, & informative watch face for outdoor adventures."
+        "shortDescription": "Highly customizable, colorful, & informative watch face for outdoor adventures.",
+        "onSale": false
     },
     {
         "id": "glide",
@@ -667,7 +679,8 @@
         "pushToken": "Dt9w46pKI7gJFTkXLUJ4GrITP8zncVpeAYzE2Eprwe4=:MS4wLjA=",
         "releaseDate": "Mar 4, 2025",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Sleek, modern watch face with 8 custom complications, optional fonts and themes."
+        "shortDescription": "Sleek, modern watch face with 8 custom complications, optional fonts and themes.",
+        "onSale": false
     },
     {
         "id": "soft",
@@ -683,7 +696,8 @@
         "pushToken": "",
         "releaseDate": "Feb 24, 2025",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Highly readable, minimal watch face with a few custom complication slots."
+        "shortDescription": "Highly readable, minimal watch face with a few custom complication slots.",
+        "onSale": false
     },
     {
         "id": "ultra",
@@ -699,7 +713,8 @@
         "pushToken": "a7WEocRumulPDVe4v31DgLAZbarBpbxn0g1TlwhfjZg=:MS4wLjA=",
         "releaseDate": "Feb 17, 2025",
         "lastUpdated": "Sep 17, 2026",
-        "shortDescription": "Modern & highly customizable watch face, inspired by Galaxy Watch Ultra Analog."
+        "shortDescription": "Modern & highly customizable watch face, inspired by Galaxy Watch Ultra Analog.",
+        "onSale": false
     },
     {
         "id": "maverick",
@@ -715,7 +730,8 @@
         "pushToken": "4noCla9FHVkqZsOs7D00WkfzZ+vLG9XM0kCKfV8c0j8=:MS4wLjA=",
         "releaseDate": "Feb 5, 2025",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Time redefined. Maverick is your customizable watch face for everyday adventure."
+        "shortDescription": "Time redefined. Maverick is your customizable watch face for everyday adventure.",
+        "onSale": false
     },
     {
         "id": "radial",
@@ -731,7 +747,8 @@
         "pushToken": "RYoyBkwrULLMSBqCsYe2XWp/Kh8FwJ5H5Us1LTnDisA=:MS4wLjA=",
         "releaseDate": "Jan 27, 2025",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Digital clock with optional fonts, encircled by 8 custom complications."
+        "shortDescription": "Digital clock with optional fonts, encircled by 8 custom complications.",
+        "onSale": false
     },
     {
         "id": "kinetic",
@@ -746,7 +763,7 @@
         "hasAltImages": false,
         "pushToken": "ijNtu6v4Hsl0+nFvM27OJWPtOZXpuHsrLwpcmGR+6IM=:MS4wLjA=",
         "releaseDate": "Jan 9, 2025",
-        "lastUpdated": "Oct 4, 2026",
+        "lastUpdated": "Sep 9, 2026",
         "shortDescription": "Stylish, dynamic watch face with themes, custom complications, and dark mode.",
         "onSale": false
     },
@@ -781,7 +798,8 @@
         "pushToken": "gVV+CKGNtvpd3s7t8rea5+H/AnBymJmCPyAGkQespZw=:MS4wLjA=",
         "releaseDate": "Dec 16, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Track current weather and 10-hour forecasts in a minimal analog design."
+        "shortDescription": "Track current weather and 10-hour forecasts in a minimal analog design.",
+        "onSale": false
     },
     {
         "id": "forecast",
@@ -797,7 +815,8 @@
         "pushToken": "G7lEE3GA/sy2N+w20FriecmwagiFgif23pW+XnlF9R8=:MS4wLjA=",
         "releaseDate": "Dec 3, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Hourly and daily weather forecast, current condition, temperature, UV and more!"
+        "shortDescription": "Hourly and daily weather forecast, current condition, temperature, UV and more!",
+        "onSale": false
     },
     {
         "id": "summit",
@@ -832,7 +851,8 @@
         "pushToken": "P0LkuBZMdPY88Se90rNGkO0dpQzthwQA9sUC2ldLtA4=:MS4wLjA=",
         "releaseDate": "Nov 8, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Packed with material themes, clock fonts & 8 complication slots for flexibility!"
+        "shortDescription": "Packed with material themes, clock fonts & 8 complication slots for flexibility!",
+        "onSale": false
     },
     {
         "id": "pathfinder",
@@ -848,7 +868,8 @@
         "pushToken": "8bsFzNTtGE8ZARZgqTWX3qt+M1cxDGEW/W3m7vmeQCQ=:MS4wLjA=",
         "releaseDate": "Oct 27, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Analog watch face with customizable themes, watch hands, and complications."
+        "shortDescription": "Analog watch face with customizable themes, watch hands, and complications.",
+        "onSale": false
     },
     {
         "id": "halo",
@@ -864,7 +885,8 @@
         "pushToken": "yqk2b7IV2k0Pny3c1jq0zD+O7XNnkxWRtxdZWBgOjTQ=:MS4wLjA=",
         "releaseDate": "Oct 10, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Sleek, modern, and feature packed watch face. Mix colors, fonts & complications!"
+        "shortDescription": "Sleek, modern, and feature packed watch face. Mix colors, fonts & complications!",
+        "onSale": false
     },
     {
         "id": "spooky",
@@ -877,7 +899,7 @@
         "hasWeather": false,
         "isTrialEnabled": true,
         "hasAltImages": false,
-        "pushToken": "P8eDSLAMRAzu7YTpc1KAyxnWegoSD2cXnxAzVZ9kY3I=:MS4wLjA=",
+        "pushToken": "PzVdF3KBC6F0oA0lRgdU6BKNT5anCSc4TrrGf1oa68Q=:MS4wLjA=",
         "releaseDate": "Sep 29, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Boo! Meet Spooky, a Halloween watch face with a lot of features. Happy haunting!",
@@ -897,7 +919,8 @@
         "pushToken": "VqfDYrSknHGSGh+I7trQOyLQrs2nZfm9bpKqaZ9mKy4=:MS4wLjA=",
         "releaseDate": "Sep 15, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Your personal information hub with 6 customizable complications & many themes."
+        "shortDescription": "Your personal information hub with 6 customizable complications & many themes.",
+        "onSale": false
     },
     {
         "id": "textTime",
@@ -930,7 +953,8 @@
         "pushToken": "e1+TvxLwbf6P5jrrr/dwEY+9aWM3mAp57Ceztsh23/g=:MS4wLjA=",
         "releaseDate": "Aug 20, 2024",
         "lastUpdated": "Aug 12, 2026",
-        "shortDescription": "Complex & highly customizable watch face. Inspired by Active from Pixel Watch 3."
+        "shortDescription": "Complex & highly customizable watch face. Inspired by Active from Pixel Watch 3.",
+        "onSale": false
     },
     {
         "id": "breezy",
@@ -963,7 +987,8 @@
         "pushToken": "G5CJGcb4IF1OmEx72xLpjsABirBDQIhVjA8WU6+uMCc=:MS4wLjA=",
         "releaseDate": "Aug 4, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Mix and match complication slots, fonts, and themes to create a unique look."
+        "shortDescription": "Mix and match complication slots, fonts, and themes to create a unique look.",
+        "onSale": false
     },
     {
         "id": "weather",
@@ -996,7 +1021,8 @@
         "pushToken": "j7Ja3zcLOPsC7tOFTfYLDUt50Dlbq+1k6ASibM7EtyM=:MS4wLjA=",
         "releaseDate": "Jul 23, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Goal-focused design. Optional fonts, material themes, & custom complications."
+        "shortDescription": "Goal-focused design. Optional fonts, material themes, & custom complications.",
+        "onSale": false
     },
     {
         "id": "analogm4",
@@ -1012,7 +1038,8 @@
         "pushToken": "p3h9Aok9LfxiklzDW7nNiyO0eGiausEUBrQXTxw1VRE=:MS4wLjA=",
         "releaseDate": "Jul 16, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Customizable Material You watch face. 8 complications, watch hand styles & more!"
+        "shortDescription": "Customizable Material You watch face. 8 complications, watch hand styles & more!",
+        "onSale": false
     },
     {
         "id": "binary2",
@@ -1028,7 +1055,8 @@
         "pushToken": "",
         "releaseDate": "Jul 2, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Binary-coded sexagesimal watch face design. Tap to reveal digital clock!"
+        "shortDescription": "Binary-coded sexagesimal watch face design. Tap to reveal digital clock!",
+        "onSale": false
     },
     {
         "id": "apex",
@@ -1044,7 +1072,8 @@
         "pushToken": "k/aVd9mzQXoFeWnYKZTfyYQ/jwNStN1ouKh18/MoDJU=:MS4wLjA=",
         "releaseDate": "Jun 21, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Highly customizable watch face. Optional fonts, gradients, custom complications."
+        "shortDescription": "Highly customizable watch face. Optional fonts, gradients, custom complications.",
+        "onSale": false
     },
     {
         "id": "inverted",
@@ -1060,7 +1089,8 @@
         "pushToken": "ckwCOymbVUdZan/kTpA/KrbtEL2jD55Libx5LElrLk0=:MS4wLjA=",
         "releaseDate": "May 30, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Watch time come alive as digital clock fills with each passing second."
+        "shortDescription": "Watch time come alive as digital clock fills with each passing second.",
+        "onSale": false
     },
     {
         "id": "classicm5",
@@ -1076,7 +1106,8 @@
         "pushToken": "Ld/0TC3r8Gx7nmxZ1txWvnqTNrylU9fKLg4KLWzTpXw=:MS4wLjA=",
         "releaseDate": "May 19, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Don't settle, create your perfect classic watch face. Use 60+ colors & themes."
+        "shortDescription": "Don't settle, create your perfect classic watch face. Use 60+ colors & themes.",
+        "onSale": false
     },
     {
         "id": "streamlined",
@@ -1109,7 +1140,8 @@
         "pushToken": "KYyRoy6d16Ee/MbAwoietrt498YTz/ErE8Ztzk+dW/M=:MS4wLjA=",
         "releaseDate": "May 3, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Battery friendly digital design. Customizable & powered by Watch Face Format."
+        "shortDescription": "Battery friendly digital design. Customizable & powered by Watch Face Format.",
+        "onSale": false
     },
     {
         "id": "outlined",
@@ -1161,7 +1193,8 @@
         "pushToken": "e5uUvCbR/af5HKBvNwFzLGc94m6twlQPz+tEx93hk58=:MS4wLjA=",
         "releaseDate": "Apr 4, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Be a Digital Nomad with this visually appealing & customizable watch face."
+        "shortDescription": "Be a Digital Nomad with this visually appealing & customizable watch face.",
+        "onSale": false
     },
     {
         "id": "timeMode",
@@ -1177,7 +1210,8 @@
         "pushToken": "kQ+qpYS7qCkyqYlz8W0uH1fVmGB7DEmxZilbujG+At4=:MS4wLjA=",
         "releaseDate": "Mar 26, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "4 Time Modes. 8 custom complications. Battery friendly & customizable."
+        "shortDescription": "4 Time Modes. 8 custom complications. Battery friendly & customizable.",
+        "onSale": false
     },
     {
         "id": "timeFlow",
@@ -1193,7 +1227,8 @@
         "pushToken": "Ly4ZfARqvPQ/lsH7rRIX/LrQjwa1AuvdMLc7MDwauTI=:MS4wLjA=",
         "releaseDate": "Mar 18, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Unique watch face design. Watch Face Format. Battery friendly. True Black BG."
+        "shortDescription": "Unique watch face design. Watch Face Format. Battery friendly. True Black BG.",
+        "onSale": false
     },
     {
         "id": "arcsd5",
@@ -1209,7 +1244,8 @@
         "pushToken": "PpzU+9649hoWnsGBwWW/HMujbnSvSZl/uukw6gC7n2E=:MS4wLjA=",
         "releaseDate": "Mar 12, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Arcs digital version with customizable time fonts and 8 custom complications."
+        "shortDescription": "Arcs digital version with customizable time fonts and 8 custom complications.",
+        "onSale": false
     },
     {
         "id": "basicAnalog",
@@ -1242,7 +1278,8 @@
         "pushToken": "H7toD0s4VTe84Xh0cPurzrXJkWhZsr/+psSTqQMRKoQ=:MS4wLjA=",
         "releaseDate": "Feb 29, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Analog Watch Face Format watch face. Clean & Customizable design. Gradient Arcs."
+        "shortDescription": "Analog Watch Face Format watch face. Clean & Customizable design. Gradient Arcs.",
+        "onSale": false
     },
     {
         "id": "widgets2",
@@ -1258,7 +1295,8 @@
         "pushToken": "G4uQkWm9DwXGc4k2ZDnRHvRiT8u4umE5wmhRHNTYdJc=:MS4wLjA=",
         "releaseDate": "Feb 26, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "8 custom complications. Custom Time Fonts. Beautiful color schemes. A++ Design."
+        "shortDescription": "8 custom complications. Custom Time Fonts. Beautiful color schemes. A++ Design.",
+        "onSale": false
     },
     {
         "id": "horizon9",
@@ -1274,7 +1312,8 @@
         "pushToken": "n/fneCGNTsnxmVwgqNJ7k5ExypGJoZOX4xW9PFDVZoU=:MS4wLjA=",
         "releaseDate": "Feb 12, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Digital OLED watch face. 7 segment font. 6 custom complications. Optimized."
+        "shortDescription": "Digital OLED watch face. 7 segment font. 6 custom complications. Optimized.",
+        "onSale": false
     },
     {
         "id": "nord",
@@ -1290,7 +1329,8 @@
         "pushToken": "OCE/vfcoP2uu7AJnWAxgbbY5lZ3Ts7OZTt5WEpFG2vA=:MS4wLjA=",
         "releaseDate": "Feb 5, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Watch Face Format 2. Unlimited customizations. 8 Custom complications."
+        "shortDescription": "Watch Face Format 2. Unlimited customizations. 8 Custom complications.",
+        "onSale": false
     },
     {
         "id": "gamerv1",
@@ -1306,7 +1346,8 @@
         "pushToken": "qVzNTq1e4MW1jDos6l81rpF46nFY4S7HfNE6XMfTXq0=:MS4wLjA=",
         "releaseDate": "Jan 21, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "For gaming enthusiasts. Hi-res, gaming font, game creatures and unique look."
+        "shortDescription": "For gaming enthusiasts. Hi-res, gaming font, game creatures and unique look.",
+        "onSale": false
     },
     {
         "id": "manager",
@@ -1322,7 +1363,10 @@
         "pushToken": "LOP5x8yPVsL4S+Bw22NPc+O18icLwEiHa+N/b8pPL8M=:MS4wLjA=",
         "releaseDate": "Jan 15, 2024",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Boost productivity with this sleek, battery-friendly & customizable watch face."
+        "shortDescription": "Boost productivity with this sleek, battery-friendly & customizable watch face.",
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1791935999
     },
     {
         "id": "active2",
@@ -1355,7 +1399,8 @@
         "pushToken": "mYdxVpGGN1T8hFyHo7+cUX22tnuFjUbTcuC72uDzu1M=:MS4wLjA=",
         "releaseDate": "Dec 19, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Unique dual tone color themes and digital clock glow effect. Make it your own!"
+        "shortDescription": "Unique dual tone color themes and digital clock glow effect. Make it your own!",
+        "onSale": false
     },
     {
         "id": "infograph2",
@@ -1390,7 +1435,8 @@
         "pushToken": "cbCRNap53zB0an5ou35M8JUwe9ARyo5XzQsTMoWYl+g=:MS4wLjA=",
         "releaseDate": "Nov 30, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Gradient progress bars. 8 custom complications. Battery friendly. InfoBlock v2"
+        "shortDescription": "Gradient progress bars. 8 custom complications. Battery friendly. InfoBlock v2",
+        "onSale": false
     },
     {
         "id": "analogm3",
@@ -1406,7 +1452,8 @@
         "pushToken": "Ih5oZ4yK8kcSaYUy+eHz4IaRsN/WAMjUdIvVEPRTgP0=:MS4wLjA=",
         "releaseDate": "Nov 16, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Unique material 3 design analog watch face. Customizable themes and watch hands."
+        "shortDescription": "Unique material 3 design analog watch face. Customizable themes and watch hands.",
+        "onSale": false
     },
     {
         "id": "glancex",
@@ -1441,7 +1488,8 @@
         "pushToken": "",
         "releaseDate": "Oct 29, 2023",
         "lastUpdated": "Jul 13, 2026",
-        "shortDescription": "Enough scrolling through the list of apps. Use Tile to launch favorite apps!"
+        "shortDescription": "Enough scrolling through the list of apps. Use Tile to launch favorite apps!",
+        "onSale": false
     },
     {
         "id": "lucid",
@@ -1457,7 +1505,8 @@
         "pushToken": "ncUIG/6gBso5Ml7ECy0eI1AcRwqLgTtkA98eobMyClE=:MS4wLjA=",
         "releaseDate": "Oct 23, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Highly readable design. Material design. Watch Face Format. Battery friendly."
+        "shortDescription": "Highly readable design. Material design. Watch Face Format. Battery friendly.",
+        "onSale": false
     },
     {
         "id": "weathercomplications",
@@ -1473,7 +1522,8 @@
         "pushToken": "",
         "releaseDate": "Oct 15, 2023",
         "lastUpdated": "Sep 24, 2026",
-        "shortDescription": "Weather related custom complications for Wear OS. UV, Hi-Lo, AQI and more!"
+        "shortDescription": "Weather related custom complications for Wear OS. UV, Hi-Lo, AQI and more!",
+        "onSale": false
     },
     {
         "id": "chrono",
@@ -1489,7 +1539,8 @@
         "pushToken": "GbQKSGlyLVcuRiVtXCCO5M+VCzw751DQc4gglCTGsJQ=:MS4wLjA=",
         "releaseDate": "Oct 11, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "7 custom complications. Battery Friendly. Hybrid design. Multiple themes."
+        "shortDescription": "7 custom complications. Battery Friendly. Hybrid design. Multiple themes.",
+        "onSale": false
     },
     {
         "id": "react2",
@@ -1505,7 +1556,8 @@
         "pushToken": "rVHYBmqvJkb0AMavqRBcQxjwqVmtD/FpeELEjwUMV5U=:MS4wLjA=",
         "releaseDate": "Oct 3, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "2nd edition of our React design. Modern, battery friendly and customizable!"
+        "shortDescription": "2nd edition of our React design. Modern, battery friendly and customizable!",
+        "onSale": false
     },
     {
         "id": "modular",
@@ -1521,7 +1573,8 @@
         "pushToken": "kJli0cOkCgguOYsVnCvFEWdTeR15uf1nLAqDsOShc4w=:MS4wLjA=",
         "releaseDate": "Sep 24, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Modular design. Optional time font settings. Battery friendly & pixel perfect."
+        "shortDescription": "Modular design. Optional time font settings. Battery friendly & pixel perfect.",
+        "onSale": false
     },
     {
         "id": "sprint",
@@ -1537,7 +1590,8 @@
         "pushToken": "/4E7X+TodIKJNa0XBQmZ/4WVNlS58PwNWUMtD3eVx0o=:MS4wLjA=",
         "releaseDate": "Sep 11, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Sporty watch face made in Watch Face Format. Battery friendly and customizable."
+        "shortDescription": "Sporty watch face made in Watch Face Format. Battery friendly and customizable.",
+        "onSale": false
     },
     {
         "id": "hugetime",
@@ -1570,7 +1624,8 @@
         "pushToken": "V6sUT4zls6jv15bwYASaPxRJRKCe4dV61ZMm1qcW/G8=:MS4wLjA=",
         "releaseDate": "Aug 16, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Productivity watch face with 6 custom complications & pure black background."
+        "shortDescription": "Productivity watch face with 6 custom complications & pure black background.",
+        "onSale": false
     },
     {
         "id": "angular",
@@ -1603,7 +1658,8 @@
         "pushToken": "TbSsXl3EQmaybQesp5qdhQjBz3LTACEscr96HLD6MKk=:MS4wLjA=",
         "releaseDate": "Aug 2, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Health & Fitness oriented digital watch face. Four Complication slots & Black BG"
+        "shortDescription": "Health & Fitness oriented digital watch face. Four Complication slots & Black BG",
+        "onSale": false
     },
     {
         "id": "rugged",
@@ -1619,7 +1675,8 @@
         "pushToken": "4Jni14rKHf1AD20PbS8E7/PTq8KggthC2+kr/LmcsG0=:MS4wLjA=",
         "releaseDate": "Jul 29, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Rugged & rough, BIG digital watch face with many custom complications slots."
+        "shortDescription": "Rugged & rough, BIG digital watch face with many custom complications slots.",
+        "onSale": false
     },
     {
         "id": "pride",
@@ -1635,7 +1692,8 @@
         "pushToken": "b6nbYpujCjDccvuxXJ8BHU8PEsZpNLqNxMfCSUizlx0=:MS4wLjA=",
         "releaseDate": "Jul 2, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Pride Month watch face. With LGBTQ+ Rainbow Flags and Symbols. Battery friendly."
+        "shortDescription": "Pride Month watch face. With LGBTQ+ Rainbow Flags and Symbols. Battery friendly.",
+        "onSale": false
     },
     {
         "id": "tactthree",
@@ -1651,7 +1709,8 @@
         "pushToken": "woovq92IwE/LRZWwaQ81P/Zbp3NLMkXhbQs5dzWQw7A=:MS4wLjA=",
         "releaseDate": "Jun 18, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Tactical watch face for Wear OS 4 & 3(API 30+). Battery friendly & customizable."
+        "shortDescription": "Tactical watch face for Wear OS 4 & 3(API 30+). Battery friendly & customizable.",
+        "onSale": false
     },
     {
         "id": "materialyou2",
@@ -1667,7 +1726,8 @@
         "pushToken": "HZWuIPcU3J0c9HePCR3wvRckrxe58gFAaoI8OHQGOSk=:MS4wLjA=",
         "releaseDate": "Jun 5, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "2nd edition of Material You watch face. /W two progress bars & mesh backgrounds."
+        "shortDescription": "2nd edition of Material You watch face. /W two progress bars & mesh backgrounds.",
+        "onSale": false
     },
     {
         "id": "material4",
@@ -1683,7 +1743,8 @@
         "pushToken": "+QEuk4cwyjv/RGcyJZmgvwEu7W5JREVZS2RPm/y5+tE=:MS4wLjA=",
         "releaseDate": "May 31, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Digital watch face design. Modern looking, hi-res & battery friendly."
+        "shortDescription": "Digital watch face design. Modern looking, hi-res & battery friendly.",
+        "onSale": false
     },
     {
         "id": "pacifice",
@@ -1699,7 +1760,8 @@
         "pushToken": "",
         "releaseDate": "May 25, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Enhanced version of Pixel Pacific face. Works on any Wear OS API 28+ device."
+        "shortDescription": "Enhanced version of Pixel Pacific face. Works on any Wear OS API 28+ device.",
+        "onSale": false
     },
     {
         "id": "engine",
@@ -1715,7 +1777,8 @@
         "pushToken": "cRwTtRCUFBVyViMRFHVwfGU1QiE3N0Bfe7yPMGfEMLM=:MS4wLjA=",
         "releaseDate": "May 19, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Premium digital watch face. Customizable. Unique & hi-res design."
+        "shortDescription": "Premium digital watch face. Customizable. Unique & hi-res design.",
+        "onSale": false
     },
     {
         "id": "concentric1",
@@ -1731,7 +1794,8 @@
         "pushToken": "6vXW4X61YSj+AnHxPpaG+C5IN9e9dBqsMMv8UsoagfE=:MS4wLjA=",
         "releaseDate": "May 16, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Clean digital watch face. Battery & OLED friendly. True Black BG & customizable."
+        "shortDescription": "Clean digital watch face. Battery & OLED friendly. True Black BG & customizable.",
+        "onSale": false
     },
     {
         "id": "nanox1",
@@ -1747,7 +1811,8 @@
         "pushToken": "MUNEwpi6XWQuH5G5bfTu43y9ieOVSzJAct297nINsl4=:MS4wLjA=",
         "releaseDate": "May 5, 2023",
         "lastUpdated": "Dec 3, 2025",
-        "shortDescription": "Analog & Digital Wear OS design. Battery friendly, customizable & colorful."
+        "shortDescription": "Analog & Digital Wear OS design. Battery friendly, customizable & colorful.",
+        "onSale": false
     },
     {
         "id": "digitalinformer",
@@ -1780,7 +1845,8 @@
         "pushToken": "2w51OJvSr2i0Mp49EH9Z8R1Q6Cf3A39qEXau7rqzrJU=:MS4wLjA=",
         "releaseDate": "Apr 24, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Sporty watch face with custom complications & unlimited color styles"
+        "shortDescription": "Sporty watch face with custom complications & unlimited color styles",
+        "onSale": false
     },
     {
         "id": "alpine",
@@ -1813,7 +1879,8 @@
         "pushToken": "",
         "releaseDate": "Apr 12, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Photo Image watch face! Choose one of 10 photos or use a photo complication."
+        "shortDescription": "Photo Image watch face! Choose one of 10 photos or use a photo complication.",
+        "onSale": false
     },
     {
         "id": "photocomplication",
@@ -1829,7 +1896,8 @@
         "pushToken": "",
         "releaseDate": "Apr 10, 2023",
         "lastUpdated": "Jul 14, 2026",
-        "shortDescription": "Photo Image Complication for watch faces. Choose any image from Gallery."
+        "shortDescription": "Photo Image Complication for watch faces. Choose any image from Gallery.",
+        "onSale": false
     },
     {
         "id": "nitrous",
@@ -1845,7 +1913,8 @@
         "pushToken": "8ht9AFfI0bCIQiqHwFDgGirO1buZWghNFmCk7BmCLn8=:MS4wLjA=",
         "releaseDate": "Apr 8, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Customizable Analog design. Many custom complications. Battery friendly."
+        "shortDescription": "Customizable Analog design. Many custom complications. Battery friendly.",
+        "onSale": false
     },
     {
         "id": "react",
@@ -1878,7 +1947,8 @@
         "pushToken": "tViX2XNTXlBnfmO4Fj5kDOk+uzY+WVYlV2kmbs67dhM=:MS4wLjA=",
         "releaseDate": "Mar 21, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Digital watch face for Wear OS. Customizable. Battery Friendly. Pixel Perfect."
+        "shortDescription": "Digital watch face for Wear OS. Customizable. Battery Friendly. Pixel Perfect.",
+        "onSale": false
     },
     {
         "id": "marine",
@@ -1894,7 +1964,8 @@
         "pushToken": "4PnJNaSoap426Iu+2u2oW9CXNgjH/sI5ZvCtBtfAyy8=:MS4wLjA=",
         "releaseDate": "Feb 28, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "High quality Wear OS Watch face. Pixel perfect design & battery friendly."
+        "shortDescription": "High quality Wear OS Watch face. Pixel perfect design & battery friendly.",
+        "onSale": false
     },
     {
         "id": "mnmlanalog",
@@ -1927,7 +1998,8 @@
         "pushToken": "rJuH9KkpT+O/2iII2eC8epbRn9l8gPKm5DU0dT38pJI=:MS4wLjA=",
         "releaseDate": "Feb 13, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Track your heart rate in real time."
+        "shortDescription": "Track your heart rate in real time.",
+        "onSale": false
     },
     {
         "id": "tacttwo",
@@ -1943,7 +2015,8 @@
         "pushToken": "dvW8A/mI2JD7cWKyFzJzpP5F3dvEx22JWv9XBvFgmTI=:MS4wLjA=",
         "releaseDate": "Feb 6, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Tactical Wear OS Watch face. Customizable & low power consumption. Pixel perfect"
+        "shortDescription": "Tactical Wear OS Watch face. Customizable & low power consumption. Pixel perfect",
+        "onSale": false
     },
     {
         "id": "infoblock",
@@ -1978,7 +2051,8 @@
         "pushToken": "GAJY6T7Gm6lWOWAGBexon6PCzFAXgEImQK8ewwTq/d0=:MS4wLjA=",
         "releaseDate": "Jan 23, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background watch face. 7x custom complications & 30 color themes"
+        "shortDescription": "True black background watch face. 7x custom complications & 30 color themes",
+        "onSale": false
     },
     {
         "id": "progress",
@@ -1994,7 +2068,8 @@
         "pushToken": "9pFJi1AGG2RUxNdDhf4rOWPU49Sv7a/o3ygrE/a6gEM=:MS4wLjA=",
         "releaseDate": "Jan 13, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "A unique Wear OS watch face with time represented by progress bars."
+        "shortDescription": "A unique Wear OS watch face with time represented by progress bars.",
+        "onSale": false
     },
     {
         "id": "analogpro",
@@ -2010,7 +2085,8 @@
         "pushToken": "05nmmnFf7yb5ld9OPKjZn3tFA9f/EqwH4MgXdmphZdY=:MS4wLjA=",
         "releaseDate": "Jan 3, 2023",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Premium Wear OS watch face. Analog & modern design. Fully customizable."
+        "shortDescription": "Premium Wear OS watch face. Analog & modern design. Fully customizable.",
+        "onSale": false
     },
     {
         "id": "athlete2lite",
@@ -2026,7 +2102,8 @@
         "pushToken": "",
         "releaseDate": "Dec 17, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Lite version of our Athlete 2 watch face. Gradient bars & custom complications."
+        "shortDescription": "Lite version of our Athlete 2 watch face. Gradient bars & custom complications.",
+        "onSale": false
     },
     {
         "id": "athlete2",
@@ -2042,7 +2119,8 @@
         "pushToken": "T7ggonMywDXjwHqnG1cqdwGJXst7Mr0I9KCRj80V7Ys=:MS4wLjA=",
         "releaseDate": "Dec 13, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Health & Fitness oriented Watch face for Wear OS 3+. Optimized & customizable."
+        "shortDescription": "Health & Fitness oriented Watch face for Wear OS 3+. Optimized & customizable.",
+        "onSale": false
     },
     {
         "id": "pulse",
@@ -2058,7 +2136,8 @@
         "pushToken": "SGEuD3IsXm9nX8KnxOkA7gPHLWUuk1jjbUO1BJvpDD0=:MS4wLjA=",
         "releaseDate": "Dec 2, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Many custom complications. Gradient bars. True blacks = Battery friendly."
+        "shortDescription": "Many custom complications. Gradient bars. True blacks = Battery friendly.",
+        "onSale": false
     },
     {
         "id": "pixeloled",
@@ -2074,7 +2153,8 @@
         "pushToken": "iRSHFJYOqPnvcPRW74dLPUJchuguj0cKmv92NNJRBPM=:MS4wLjA=",
         "releaseDate": "Nov 25, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Material You (Pixel style) Watch face for Wear OS with custom complications"
+        "shortDescription": "Material You (Pixel style) Watch face for Wear OS with custom complications",
+        "onSale": false
     },
     {
         "id": "hyb",
@@ -2090,7 +2170,8 @@
         "pushToken": "zF5feZrLX9MT7ma4vk+6XY/KiiV1qiHGtDLmu9WtupQ=:MS4wLjA=",
         "releaseDate": "Nov 18, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Big gradient digital hours. Progress bar minutes & seconds. Premium feel."
+        "shortDescription": "Big gradient digital hours. Progress bar minutes & seconds. Premium feel.",
+        "onSale": false
     },
     {
         "id": "analogxt",
@@ -2106,7 +2187,8 @@
         "pushToken": "",
         "releaseDate": "Nov 15, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Simple, analog Wear OS watch face."
+        "shortDescription": "Simple, analog Wear OS watch face.",
+        "onSale": false
     },
     {
         "id": "fitx",
@@ -2122,7 +2204,8 @@
         "pushToken": "gTYnkl5CZNSYq8kWu/edi7y0qavnk6/nzoaI1CMNciM=:MS4wLjA=",
         "releaseDate": "Nov 8, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Health & Fitness related Watch face. Customizable # Battery friendly."
+        "shortDescription": "Health & Fitness related Watch face. Customizable # Battery friendly.",
+        "onSale": false
     },
     {
         "id": "slimdigital",
@@ -2157,7 +2240,8 @@
         "pushToken": "aXvO9t853NY3CN8h+GWMu8vZs1DZL4l9a1BVd1hU2zQ=:MS4wLjA=",
         "releaseDate": "Oct 25, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Simple analog Wear OS watch face. Material style. True black BG. Customizable."
+        "shortDescription": "Simple analog Wear OS watch face. Material style. True black BG. Customizable.",
+        "onSale": false
     },
     {
         "id": "widgets1",
@@ -2173,7 +2257,8 @@
         "pushToken": "g40/NfQHnPLhc8Qct5/Z4vapYlqvCLQDm9fg18MvoiM=:MS4wLjA=",
         "releaseDate": "Oct 16, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "8x custom complication. Battery friendly and customizable Wear OS watch face."
+        "shortDescription": "8x custom complication. Battery friendly and customizable Wear OS watch face.",
+        "onSale": false
     },
     {
         "id": "bigdigital",
@@ -2189,7 +2274,8 @@
         "pushToken": "oyC9HqCSUsmkmpdDaKyv7U/KEBNVY9PeEgtnW5kt87I=:MS4wLjA=",
         "releaseDate": "Oct 14, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Wear OS watch face with big digital time. Battery friendly. Small app size."
+        "shortDescription": "Wear OS watch face with big digital time. Battery friendly. Small app size.",
+        "onSale": false
     },
     {
         "id": "weatherdigital",
@@ -2239,7 +2325,8 @@
         "pushToken": "HulYtvBMsO5y6kVSnEHD9OvAyiGzmTHgNvHg9/IojZU=:MS4wLjA=",
         "releaseDate": "Aug 28, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Fitness oriented watch face for wearable devices with Wear OS. Battery friendly."
+        "shortDescription": "Fitness oriented watch face for wearable devices with Wear OS. Battery friendly.",
+        "onSale": false
     },
     {
         "id": "xviper",
@@ -2255,7 +2342,8 @@
         "pushToken": "A1AlnhY/d2ruUe81X4kJEHY8yY5A9F/TzM8TzUxY+uo=:MS4wLjA=",
         "releaseDate": "Aug 21, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Modern & unique analog Wear OS watch face. Battery friendly & customizable."
+        "shortDescription": "Modern & unique analog Wear OS watch face. Battery friendly & customizable.",
+        "onSale": false
     },
     {
         "id": "pace3",
@@ -2271,7 +2359,8 @@
         "pushToken": "LKaoBPWND8eSjRn62jb0727Dfkb0/Vdw1gguKVmrpGc=:MS4wLjA=",
         "releaseDate": "Aug 15, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Fitness Watch face with two RANGED_VALUE custom complications. Battery friendly."
+        "shortDescription": "Fitness Watch face with two RANGED_VALUE custom complications. Battery friendly.",
+        "onSale": false
     },
     {
         "id": "gradient",
@@ -2287,7 +2376,8 @@
         "pushToken": "nnRiu2sqwgJ+cVsu0tQ+DfSiXPwodXN9j4HVSVMOqc0=:MS4wLjA=",
         "releaseDate": "Aug 10, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Gradient animated Wear OS watch face with big digital font & true black BG"
+        "shortDescription": "Gradient animated Wear OS watch face with big digital font & true black BG",
+        "onSale": false
     },
     {
         "id": "material3",
@@ -2303,7 +2393,8 @@
         "pushToken": "Yf2f5IPUxZUBxU2Bxz8+wi2t1WMa6hjivZcmDiIS1DU=:MS4wLjA=",
         "releaseDate": "Aug 3, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Material 3 design (Material You) Watch face for Wear OS /w custom complications"
+        "shortDescription": "Material 3 design (Material You) Watch face for Wear OS /w custom complications",
+        "onSale": false
     },
     {
         "id": "tactq",
@@ -2319,7 +2410,8 @@
         "pushToken": "tWI4g/k8ABFpLaApZtYm0rQCIDcH3nc8A2bEmOCLV6s=:MS4wLjA=",
         "releaseDate": "Jul 28, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Customizable Wear OS Watch face with tactical look & camouflage backgrounds"
+        "shortDescription": "Customizable Wear OS Watch face with tactical look & camouflage backgrounds",
+        "onSale": false
     },
     {
         "id": "retro",
@@ -2335,7 +2427,8 @@
         "pushToken": "furRo0Fz9qmST4kLYPHSeWRiXJRRj/9/+Vnz5Y2uKdI=:MS4wLjA=",
         "releaseDate": "Jul 14, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "\"Casio\" style Wear OS retro digital battery friendly and customizable watch face"
+        "shortDescription": "\"Casio\" style Wear OS retro digital battery friendly and customizable watch face",
+        "onSale": false
     },
     {
         "id": "edge",
@@ -2351,7 +2444,10 @@
         "pushToken": "4wU6rvb2yftWESyDgV2oWZW9hWwQqB0epU7DpO436o8=:MS4wLjA=",
         "releaseDate": "Jul 6, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Simple Wear OS watch face with custom complications. Battery and OLED friendly."
+        "shortDescription": "Simple Wear OS watch face with custom complications. Battery and OLED friendly.",
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1791849599
     },
     {
         "id": "sportive",
@@ -2386,7 +2482,8 @@
         "pushToken": "",
         "releaseDate": "Jun 26, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Battery friendly, digital Wear OS watch face with custom complications."
+        "shortDescription": "Battery friendly, digital Wear OS watch face with custom complications.",
+        "onSale": false
     },
     {
         "id": "catalyst",
@@ -2419,7 +2516,8 @@
         "pushToken": "ZC56kfG1x9vu0+HAAJWk3AKDu9GUKyjz9XaDkjOxNag=:MS4wLjA=",
         "releaseDate": "Jun 14, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Health oriented Wear OS watch face for athletes and fitness enthusiasts."
+        "shortDescription": "Health oriented Wear OS watch face for athletes and fitness enthusiasts.",
+        "onSale": false
     },
     {
         "id": "hscomplications",
@@ -2435,7 +2533,8 @@
         "pushToken": "",
         "releaseDate": "Jun 12, 2022",
         "lastUpdated": "Sep 5, 2026",
-        "shortDescription": "Distance, Floors, Calories, Steps & Heart Rate custom complications."
+        "shortDescription": "Distance, Floors, Calories, Steps & Heart Rate custom complications.",
+        "onSale": false
     },
     {
         "id": "weekdayutccomp",
@@ -2451,7 +2550,8 @@
         "pushToken": "",
         "releaseDate": "Jun 8, 2022",
         "lastUpdated": "Aug 26, 2026",
-        "shortDescription": "A set of useful custom complications for Wear OS watch faces."
+        "shortDescription": "A set of useful custom complications for Wear OS watch faces.",
+        "onSale": false
     },
     {
         "id": "tactone",
@@ -2520,7 +2620,8 @@
         "pushToken": "btFFA2+kv5ToxwJRjLBy8oBo39+thBRg2lNRC1XNaWw=:MS4wLjA=",
         "releaseDate": "May 13, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Sport oriented Wear OS watch face with bold digital time. Battery friendly."
+        "shortDescription": "Sport oriented Wear OS watch face with bold digital time. Battery friendly.",
+        "onSale": false
     },
     {
         "id": "run4",
@@ -2536,7 +2637,8 @@
         "pushToken": "JkIesSC6my6XQNMftJB/Y3bQWyocvY1NYsgAoZipG9M=:MS4wLjA=",
         "releaseDate": "May 6, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "RUN series watch face. Big & Bold font, not OLED but optimized for all day use."
+        "shortDescription": "RUN series watch face. Big & Bold font, not OLED but optimized for all day use.",
+        "onSale": false
     },
     {
         "id": "frontier2",
@@ -2552,7 +2654,8 @@
         "pushToken": "gfYV9EtZOCc4giKYL9kVBBFcWW5ksyOSAeNoWak/3us=:MS4wLjA=",
         "releaseDate": "May 4, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Analog Wear OS Watch face with massive watch hands. Tactical look. True blacks."
+        "shortDescription": "Analog Wear OS Watch face with massive watch hands. Tactical look. True blacks.",
+        "onSale": false
     },
     {
         "id": "leandigital",
@@ -2568,7 +2671,8 @@
         "pushToken": "brSl918sZB+Ym6ut+Os3maTxyNCIvU754bdvogzDqnw=:MS4wLjA=",
         "releaseDate": "Apr 28, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Unique LCD digital display Wear OS watch face. Sporty look. Polished graphics."
+        "shortDescription": "Unique LCD digital display Wear OS watch face. Sporty look. Polished graphics.",
+        "onSale": false
     },
     {
         "id": "talon",
@@ -2584,7 +2688,8 @@
         "pushToken": "T3k4sFwob3yUuJyRRH8fZaGDXGCbiafX2nNWW+0NdJE=:MS4wLjA=",
         "releaseDate": "Apr 14, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Premium hybrid design. Choose between analog & digital. Many customizations."
+        "shortDescription": "Premium hybrid design. Choose between analog & digital. Many customizations.",
+        "onSale": false
     },
     {
         "id": "glow",
@@ -2634,7 +2739,8 @@
         "pushToken": "LRk9LVAWCwHUffPFqd8ab9ELdbQE/QbmM8kn2Vag7xA=:MS4wLjA=",
         "releaseDate": "Apr 6, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "OLED Studios analog watch face. Many customization options. Power efficient."
+        "shortDescription": "OLED Studios analog watch face. Many customization options. Power efficient.",
+        "onSale": false
     },
     {
         "id": "os3digital",
@@ -2650,7 +2756,8 @@
         "pushToken": "OE+vEXdGbrMI4M7A6HIohKtBG3QujAdvFEKocrE8fbI=:MS4wLjA=",
         "releaseDate": "Apr 4, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Wear OS 3+ watch face. Custom complications. App shortcuts. Multiple colors."
+        "shortDescription": "Wear OS 3+ watch face. Custom complications. App shortcuts. Multiple colors.",
+        "onSale": false
     },
     {
         "id": "hive",
@@ -2683,7 +2790,8 @@
         "pushToken": "fuhKYdWI0HIZzXC+LZY6YoSFrSeaTWKNPpPbDGgZg5s=:MS4wLjA=",
         "releaseDate": "Mar 29, 2022",
         "lastUpdated": "Aug 5, 2026",
-        "shortDescription": "Binary Watch face. Time interpreted in binary format. For geeks & techy people."
+        "shortDescription": "Binary Watch face. Time interpreted in binary format. For geeks & techy people.",
+        "onSale": false
     },
     {
         "id": "fit3",
@@ -2716,7 +2824,8 @@
         "pushToken": "dV9ys5vqWghTfzXEeb1V3ILKHmDsm8z2LpX04y582g0=:MS4wLjA=",
         "releaseDate": "Mar 29, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Sporty digital watch face for Wear OS devices. Battery efficient and High-res."
+        "shortDescription": "Sporty digital watch face for Wear OS devices. Battery efficient and High-res.",
+        "onSale": false
     },
     {
         "id": "fitoled",
@@ -2732,7 +2841,8 @@
         "pushToken": "TyLEFQ4af4mHU5Ilx+Pcjhi9SaqPTZthBv+RL5IfM74=:MS4wLjA=",
         "releaseDate": "Mar 29, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Special OLED edition watch face. Fit series variant. 30 colors. Customizable."
+        "shortDescription": "Special OLED edition watch face. Fit series variant. 30 colors. Customizable.",
+        "onSale": false
     },
     {
         "id": "awffit5",
@@ -2748,7 +2858,8 @@
         "pushToken": "5BleRdlxnWbfNUtc48SR1JufMhJu+GtE1IQo1sF/Ltc=:MS4wLjA=",
         "releaseDate": "Mar 28, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Fitness oriented digital watch face for Wear OS. Colorful and customizable."
+        "shortDescription": "Fitness oriented digital watch face for Wear OS. Colorful and customizable.",
+        "onSale": false
     },
     {
         "id": "awfinformerx",
@@ -2798,7 +2909,8 @@
         "pushToken": "",
         "releaseDate": "Feb 15, 2022",
         "lastUpdated": "Sep 1, 2026",
-        "shortDescription": "Simple and minimal digital watch face with a thin, modern font for Wear OS."
+        "shortDescription": "Simple and minimal digital watch face with a thin, modern font for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awftrueanalog",
@@ -2831,7 +2943,8 @@
         "pushToken": "",
         "releaseDate": "Feb 7, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Simple, black background digital watch face with a wave seconds hand for Wear OS"
+        "shortDescription": "Simple, black background digital watch face with a wave seconds hand for Wear OS",
+        "onSale": false
     },
     {
         "id": "awfdashboardA",
@@ -2847,7 +2960,8 @@
         "pushToken": "gZzTSh46tBJIbgWxpolRAKm2JVcvjjY1nCbZGzf1gnY=:MS4wLjA=",
         "releaseDate": "Feb 3, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background fitness watch face for Wear OS, customizable, premium feel"
+        "shortDescription": "True black background fitness watch face for Wear OS, customizable, premium feel",
+        "onSale": false
     },
     {
         "id": "awfuxanalog",
@@ -2880,7 +2994,8 @@
         "pushToken": "w940Y/AomsIlUCgHKUk/+F/z6VAnBT7aBrJlXiOffiM=:MS4wLjA=",
         "releaseDate": "Jan 19, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Sport & fitness oriented, true black background digital Watch face for Wear OS"
+        "shortDescription": "Sport & fitness oriented, true black background digital Watch face for Wear OS",
+        "onSale": false
     },
     {
         "id": "awfmodernminimal",
@@ -2896,7 +3011,8 @@
         "pushToken": "+7UzSTcF8p6moH1ix/ZDWo4SQPHk+FRTlk8h0e4C0r4=:MS4wLjA=",
         "releaseDate": "Jan 17, 2022",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background analog / minimal PRO watch face for Wear OS."
+        "shortDescription": "True black background analog / minimal PRO watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfdigitalxr",
@@ -2946,7 +3062,8 @@
         "pushToken": "CW3HH2cqJWqGNHmEaZ0RWWT0eFadacxky4UJaX1oeJ0=:MS4wLjA=",
         "releaseDate": "Jan 1, 2022",
         "lastUpdated": "Sep 8, 2026",
-        "shortDescription": "Fitness and sporty digital watch face with true black background for Wear OS."
+        "shortDescription": "Fitness and sporty digital watch face with true black background for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfrun3",
@@ -2962,7 +3079,8 @@
         "pushToken": "BdNESjeGnhuzfR+tdVk9KYe8RQS12ve23YrIR3K1ibc=:MS4wLjA=",
         "releaseDate": "Dec 20, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Digital, sporty and battery friendly watch face with true black background."
+        "shortDescription": "Digital, sporty and battery friendly watch face with true black background.",
+        "onSale": false
     },
     {
         "id": "awflcddigital",
@@ -2995,7 +3113,8 @@
         "pushToken": "HIFQhpifTI5ivn3M89exj3MBhzbO94wU05roTe+S2mc=:MS4wLjA=",
         "releaseDate": "Dec 13, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background, big and bold font watch face for Wear OS"
+        "shortDescription": "True black background, big and bold font watch face for Wear OS",
+        "onSale": false
     },
     {
         "id": "awfsportydigital",
@@ -3049,7 +3168,8 @@
         "pushToken": "GtLPbcR6bKAS4tSiYVAgmuNvJjxhwsO1MfP1tP/ScQA=:MS4wLjA=",
         "releaseDate": "Dec 5, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Tactical & military - army, black BG digital Watch face for Wear OS."
+        "shortDescription": "Tactical & military - army, black BG digital Watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfactivexv",
@@ -3065,7 +3185,8 @@
         "pushToken": "jvCAfLEasjRoufqZZItfUTP2pz1qoam7W9387wX1o3M=:MS4wLjA=",
         "releaseDate": "Dec 1, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background digital watch face with high readable font for Wear OS"
+        "shortDescription": "True black background digital watch face with high readable font for Wear OS",
+        "onSale": false
     },
     {
         "id": "awfinfograph",
@@ -3117,7 +3238,8 @@
         "pushToken": "+IWheishvmpNp13U7j/r8uDpQaN16AxXUX7EnOB7bNg=:MS4wLjA=",
         "releaseDate": "Nov 23, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Hoot Hoot! Unique, artistic & customizable watch face with a sleek owl look"
+        "shortDescription": "Hoot Hoot! Unique, artistic & customizable watch face with a sleek owl look",
+        "onSale": false
     },
     {
         "id": "awfhealthface",
@@ -3152,7 +3274,8 @@
         "pushToken": "YXxP50G4TTbJD+dEjbfMpZq6BiX3YM9NrvgoiZINcFw=:MS4wLjA=",
         "releaseDate": "Nov 16, 2021",
         "lastUpdated": "Sep 2, 2026",
-        "shortDescription": "True black background, terminal, geek - programmer watch face for Wear OS."
+        "shortDescription": "True black background, terminal, geek - programmer watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfdashdigital",
@@ -3168,7 +3291,8 @@
         "pushToken": "SJ9VIJrk6FAWsILQDCAISLIy7SNs47YW/Kt3XwHiBX0=:MS4wLjA=",
         "releaseDate": "Nov 15, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background multicolor, digital fitness Watch face for Wear OS"
+        "shortDescription": "True black background multicolor, digital fitness Watch face for Wear OS",
+        "onSale": false
     },
     {
         "id": "awfdashanalog",
@@ -3184,7 +3308,8 @@
         "pushToken": "dlcHBRiFKRi+ubtCEeIJamPu7f6SkoSxcZt9qtVb/IY=:MS4wLjA=",
         "releaseDate": "Nov 12, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background fitness analog Watch face with gradient color bars"
+        "shortDescription": "True black background fitness analog Watch face with gradient color bars",
+        "onSale": false
     },
     {
         "id": "awfparts",
@@ -3200,7 +3325,8 @@
         "pushToken": "awVbjr4vvdwRTnzFbpjjoMIlhjXxClzrzhXC6KIlJhg=:MS4wLjA=",
         "releaseDate": "Nov 10, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Digital, true black background and customizable watch face for Wear OS."
+        "shortDescription": "Digital, true black background and customizable watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfcasual",
@@ -3233,7 +3359,8 @@
         "pushToken": "8m8LSKt7WrujfdAfrrz1nESQw2SW4x475x7sk4gJVmM=:MS4wLjA=",
         "releaseDate": "Nov 3, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background sportive lifestyle analog watch face for Wear OS."
+        "shortDescription": "True black background sportive lifestyle analog watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfmnmlglow",
@@ -3249,7 +3376,8 @@
         "pushToken": "K+x0yTwz9AhRAvjAELTUPuRqhF1Vk/B8jsmBaBqEylQ=:MS4wLjA=",
         "releaseDate": "Nov 1, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background minimal glowing effect digital Watch face for Wear OS"
+        "shortDescription": "True black background minimal glowing effect digital Watch face for Wear OS",
+        "onSale": false
     },
     {
         "id": "awfdashboard",
@@ -3265,7 +3393,8 @@
         "pushToken": "sfvXNetVxkSwhDkFhQeWO4+LwgBwI9AsqXf12SdzjWs=:MS4wLjA=",
         "releaseDate": "Oct 28, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black BG, fitness oriented & battery friendly Watch face for Wear OS"
+        "shortDescription": "True black BG, fitness oriented & battery friendly Watch face for Wear OS",
+        "onSale": false
     },
     {
         "id": "awfladiesanalog2",
@@ -3281,7 +3410,8 @@
         "pushToken": "CjozyTbUx2JBYly4Xl/bzYzx0HJ72TM0rvr/XhrK5uA=:MS4wLjA=",
         "releaseDate": "Oct 25, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Premium and customizable battery friendly analog watch face for Wear OS."
+        "shortDescription": "Premium and customizable battery friendly analog watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfminimal",
@@ -3297,7 +3427,8 @@
         "pushToken": "RHqBDtiKH4mjzriLZ/bI1xRKgNFCvZwSomKzHoLQiMc=:MS4wLjA=",
         "releaseDate": "Oct 23, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background, minimal and battery friendly watch face for Wear OS."
+        "shortDescription": "True black background, minimal and battery friendly watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfclassicface",
@@ -3313,7 +3444,8 @@
         "pushToken": "SlKuZ9R5aYRcXa7R3kZaNt7z7VwcxkAfFqoWeHNvkfM=:MS4wLjA=",
         "releaseDate": "Oct 20, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background classic and customizable analog watch face for Wear OS."
+        "shortDescription": "True black background classic and customizable analog watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awftic",
@@ -3346,7 +3478,8 @@
         "pushToken": "EwPuiyAmOWaQYWOrp4hQ2tCM1MSsgnhrl0vtQ+xz3R4=:MS4wLjA=",
         "releaseDate": "Oct 12, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background and sporty digital watch face for Wear OS."
+        "shortDescription": "True black background and sporty digital watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfdigital1",
@@ -3362,7 +3495,8 @@
         "pushToken": "i1O0rVlNjMKptqkDpn113Ae2r/OCbscn8Ah7W+4Ze/w=:MS4wLjA=",
         "releaseDate": "Oct 11, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background, Wear OS watch face with big digital numbers."
+        "shortDescription": "True black background, Wear OS watch face with big digital numbers.",
+        "onSale": false
     },
     {
         "id": "awfanjuna",
@@ -3397,7 +3531,8 @@
         "pushToken": "",
         "releaseDate": "Oct 10, 2021",
         "lastUpdated": "Sep 16, 2026",
-        "shortDescription": "Wear OS custom complication for Phone Battery level (%). Add to any Watch face!"
+        "shortDescription": "Wear OS custom complication for Phone Battery level (%). Add to any Watch face!",
+        "onSale": false
     },
     {
         "id": "awfladiesrun",
@@ -3413,7 +3548,8 @@
         "pushToken": "hRefjfRanESrcu5ppyHBv3z5hHqdTYOz3R8TZXpA4CU=:MS4wLjA=",
         "releaseDate": "Oct 6, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "RUN - sporty Wear OS watch face variant - made especially for ladies and women!"
+        "shortDescription": "RUN - sporty Wear OS watch face variant - made especially for ladies and women!",
+        "onSale": false
     },
     {
         "id": "awfpolarevent",
@@ -3429,7 +3565,8 @@
         "pushToken": "VTBwVvR5cpT/nmYZRIUoxKgTKwpctl7l8db79yvFUWM=:MS4wLjA=",
         "releaseDate": "Oct 4, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Battery friendly watch face with the Next Event / Schedule complication."
+        "shortDescription": "Battery friendly watch face with the Next Event / Schedule complication.",
+        "onSale": false
     },
     {
         "id": "awfone",
@@ -3445,7 +3582,8 @@
         "pushToken": "",
         "releaseDate": "Oct 1, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background & battery friendly Watch face for Wear OS"
+        "shortDescription": "True black background & battery friendly Watch face for Wear OS",
+        "onSale": false
     },
     {
         "id": "awflines",
@@ -3461,7 +3599,8 @@
         "pushToken": "f+Lj9+kP4avgAUCakkS/zc1L5mJ/BOdgN80EYlD3FKg=:MS4wLjA=",
         "releaseDate": "Sep 30, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Unique Text Time watch face with beautiful colors. Read time without numbers."
+        "shortDescription": "Unique Text Time watch face with beautiful colors. Read time without numbers.",
+        "onSale": false
     },
     {
         "id": "awfactiveanalog",
@@ -3477,7 +3616,8 @@
         "pushToken": "dloAOQ7VstEEtgg2UuDwf6a1evW/t58NHrqSjDbQGAQ=:MS4wLjA=",
         "releaseDate": "Sep 29, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background and battery friendly watch face for Wear OS."
+        "shortDescription": "True black background and battery friendly watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awflmoderna",
@@ -3493,7 +3633,8 @@
         "pushToken": "nCLqbl4Bc2+q+4qZgWkT3y6LsPCkxeo4NrYlHG+FiaQ=:MS4wLjA=",
         "releaseDate": "Sep 24, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Modern stylish and unique analog watch face. Made especially for ladies."
+        "shortDescription": "Modern stylish and unique analog watch face. Made especially for ladies.",
+        "onSale": false
     },
     {
         "id": "awfrun2",
@@ -3509,7 +3650,8 @@
         "pushToken": "lsBcKg7VhD1P+vnWl0a5+jfaMFZD2iV5t4WdELBdPWQ=:MS4wLjA=",
         "releaseDate": "Sep 21, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background, sporty & battery friendly #watchface for Wear OS"
+        "shortDescription": "True black background, sporty & battery friendly #watchface for Wear OS",
+        "onSale": false
     },
     {
         "id": "awfsportyanalog",
@@ -3525,7 +3667,8 @@
         "pushToken": "Z90Kp0g1cNdy3pCBrxNefvAJ+DfxtxeQhcp4S+CNMec=:MS4wLjA=",
         "releaseDate": "Sep 20, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background, sporty and battery friendly analog watch face for Wear OS"
+        "shortDescription": "True black background, sporty and battery friendly analog watch face for Wear OS",
+        "onSale": false
     },
     {
         "id": "awfmohawk",
@@ -3596,7 +3739,8 @@
         "pushToken": "vLFdz6wYu8HKRxf3CvarU62V5F7L/mjz1VgPyTQTLww=:MS4wLjA=",
         "releaseDate": "Sep 7, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "Minimal, customizable & battery friendly pixel style watch face for Wear OS."
+        "shortDescription": "Minimal, customizable & battery friendly pixel style watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfrun",
@@ -3612,7 +3756,8 @@
         "pushToken": "D1Fs7Dwl1lDHzGYO2mtsxLzL83lnJyV3Om2m+8D4g9o=:MS4wLjA=",
         "releaseDate": "Sep 7, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background, fitness and battery friendly watch face for Wear OS."
+        "shortDescription": "True black background, fitness and battery friendly watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfoutback",
@@ -3646,7 +3791,7 @@
         "releaseDate": "Sep 1, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, battery friendly digital watch face with gradient colors.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1791158399
     },
@@ -3664,7 +3809,8 @@
         "pushToken": "66hH5F23T1CM643px3UU4XMvHq1FBgL8iIYT47OPra8=:MS4wLjA=",
         "releaseDate": "Aug 30, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background & battery friendly digital watch face for Wear OS."
+        "shortDescription": "True black background & battery friendly digital watch face for Wear OS.",
+        "onSale": false
     },
     {
         "id": "awfmovehyb",
@@ -3733,7 +3879,8 @@
         "pushToken": "Lo5rRBAGlcBtxoDS5CdpRpp58GGOEjRQsF/0y+akDy8=:MS4wLjA=",
         "releaseDate": "Aug 23, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background, battery friendly analog Watch face for Wear OS"
+        "shortDescription": "True black background, battery friendly analog Watch face for Wear OS",
+        "onSale": false
     },
     {
         "id": "sportxdark",
@@ -3749,7 +3896,10 @@
         "pushToken": "tqaJD9V33lLdA1Hq9jZPr/BoqwAXIAApjznxdVlEzSM=:MS4wLjA=",
         "releaseDate": "Aug 19, 2021",
         "lastUpdated": "Aug 4, 2026",
-        "shortDescription": "True black background, sporty and battery friendly watch face for Wear OS."
+        "shortDescription": "True black background, sporty and battery friendly watch face for Wear OS.",
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1791849599
     },
     {
         "id": "awfnewdigital",
