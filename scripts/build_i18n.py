@@ -926,6 +926,7 @@ def generate_prerendered_catalog(lang, translations):
 
     badge_free = translations.get(lang, {}).get("apps_page", {}).get("badge_free", "Free")
     badge_paid = translations.get(lang, {}).get("apps_page", {}).get("badge_paid", "Paid")
+    badge_opensource = translations.get(lang, {}).get("apps_page", {}).get("badge_opensource", "Open Source")
 
     valid_items = [
         item for item in portfolio
@@ -943,6 +944,9 @@ def generate_prerendered_catalog(lang, translations):
         is_free = item.get("isFree", False)
         badge_text = badge_free if is_free else badge_paid
         badge_class = "badge-pill" if is_free else "badge-pill badge-paid"
+
+        is_opensource = item.get("isOpenSource", False)
+        opensource_html = f'              <span class="badge-pill badge-opensource">{badge_opensource}</span>\n' if is_opensource else ''
 
         is_avail = item.get("isAvailable") is not False
         is_github = bool(item.get("isAvailableOnGithub") and item.get("githubLink"))
@@ -994,7 +998,10 @@ def generate_prerendered_catalog(lang, translations):
             f'                {app_name}\n'
             '              </a>\n'
             '            </h3>\n'
-            f'            <span class="{badge_class}">{badge_text}</span>\n'
+            '            <div class="collection-badges">\n'
+            f'{opensource_html}'
+            f'              <span class="{badge_class}">{badge_text}</span>\n'
+            '            </div>\n'
             '          </div>\n'
             f'          <p class="collection-desc">{desc_escaped}</p>\n'
             '          <div class="links" style="margin-top: auto; padding-top: 14px;">\n'

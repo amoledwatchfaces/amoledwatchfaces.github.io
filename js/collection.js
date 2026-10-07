@@ -168,6 +168,10 @@ function createCardElement(item) {
         </a>`.trim());
   }
 
+  const openSourceHtml = item.isOpenSource
+    ? `<span class="badge-pill badge-opensource">${window.i18n ? window.i18n.t('apps_page.badge_opensource', 'Open Source') : 'Open Source'}</span>`
+    : '';
+
   card.innerHTML = `
     <a href="${primaryUrl}" target="_blank" rel="noopener" class="watch-preview-link" aria-label="${primaryAria}">
       ${iconsHtml}
@@ -179,9 +183,12 @@ function createCardElement(item) {
             ${escapeHtml(item.appName)}
           </a>
         </h3>
-        ${item.isFree
-          ? `<span class="badge-pill">${window.i18n ? window.i18n.t('apps_page.badge_free', 'Free') : 'Free'}</span>`
-          : `<span class="badge-pill badge-paid">${window.i18n ? window.i18n.t('apps_page.badge_paid', 'Paid') : 'Paid'}</span>`}
+        <div class="collection-badges">
+          ${openSourceHtml}
+          ${item.isFree
+            ? `<span class="badge-pill">${window.i18n ? window.i18n.t('apps_page.badge_free', 'Free') : 'Free'}</span>`
+            : `<span class="badge-pill badge-paid">${window.i18n ? window.i18n.t('apps_page.badge_paid', 'Paid') : 'Paid'}</span>`}
+        </div>
       </div>
       <p class="collection-desc">${escapeHtml(getItemDescription(item))}</p>
       <div class="links" style="margin-top: auto; padding-top: 14px;">
@@ -501,6 +508,10 @@ function initLatestRelease() {
     ? `<span class="badge-pill">${window.i18n ? window.i18n.t('apps_page.badge_free', 'Free') : 'Free'}</span>`
     : `<span class="badge-pill badge-paid">${window.i18n ? window.i18n.t('apps_page.badge_paid', 'Paid') : 'Paid'}</span>`;
 
+  const badgeOpenSourceHtml = latest.isOpenSource
+    ? `<span class="badge-pill badge-opensource">${window.i18n ? window.i18n.t('apps_page.badge_opensource', 'Open Source') : 'Open Source'}</span>`
+    : '';
+
   const playBadgeHtml = isAvail
     ? `<a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
         <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
@@ -545,6 +556,7 @@ function initLatestRelease() {
         <div class="latest-release-badge-row">
           ${badgeStatusHtml}
           ${badgePriceHtml}
+          ${badgeOpenSourceHtml}
           ${latest.releaseDate ? `<span class="latest-release-date">${releasePrefix}: ${latest.releaseDate}</span>` : ''}
         </div>
         <h3 class="latest-release-title">${titleHtml}</h3>

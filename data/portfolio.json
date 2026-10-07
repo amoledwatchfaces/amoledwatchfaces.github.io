@@ -6,6 +6,7 @@
         "isWatchFace": true,
         "isAvailable": false,
         "isAvailableOnGithub": true,
+        "isOpenSource": true,
         "githubLink": "https://github.com/amoledwatchfaces/Solar-Path-Watch-Face-Wear-OS",
         "isFree": false,
         "isAnalog": true,
