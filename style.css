@@ -1327,15 +1327,15 @@ main > picture .main-banner {
 }
 
 .badge-opensource {
-  background-color: rgba(56, 189, 248, 0.1) !important;
-  color: #38bdf8 !important;
-  border-color: rgba(56, 189, 248, 0.28) !important;
+  background-color: rgba(104, 255, 183, 0.08) !important;
+  color: var(--primary) !important;
+  border-color: rgba(104, 255, 183, 0.25) !important;
 }
 
 :root[data-theme="light"] .badge-opensource {
-  background-color: rgba(2, 132, 199, 0.08) !important;
-  color: #0284c7 !important;
-  border-color: rgba(2, 132, 199, 0.25) !important;
+  background-color: rgba(5, 150, 105, 0.08) !important;
+  color: var(--primary) !important;
+  border-color: rgba(5, 150, 105, 0.25) !important;
 }
 
 @keyframes pulse-glow {
