@@ -40,7 +40,9 @@
     "offer_ends": "A oferta termina",
     "sale_ends_in": "A promoção termina em",
     "badge_sale": "Em promoção",
-    "badge_free": "100% GRÁTIS"
+    "badge_free": "100% GRÁTIS",
+    "active_deals": "{count} ofertas ativas",
+    "active_deals_single": "1 oferta ativa"
   },
   "collection": {
     "heading": "Coleção",

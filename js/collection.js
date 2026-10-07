@@ -723,7 +723,44 @@ function formatSaleEndTime(saleEndTime) {
   return `${prefix} ${day}/${month}/${year}, ${hours}:${minutes}`;
 }
 
-// Render smaller cards for 3 random watch faces currently on sale
+// Localized count string for active deals
+function formatActiveDealsCount(count, lang) {
+  if (lang === 'sk') {
+    if (count === 1) return '1 aktívna zľava';
+    if (count >= 2 && count <= 4) return `${count} aktívne zľavy`;
+    return `${count} aktívnych zliav`;
+  }
+  if (lang === 'de') {
+    return count === 1 ? '1 aktives Angebot' : `${count} aktive Angebote`;
+  }
+  if (lang === 'es') {
+    return count === 1 ? '1 oferta activa' : `${count} ofertas activas`;
+  }
+  if (lang === 'fr') {
+    return count === 1 ? '1 offre active' : `${count} offres actives`;
+  }
+  if (lang === 'it') {
+    return count === 1 ? '1 offerta attiva' : `${count} offerte attive`;
+  }
+  if (lang === 'pl') {
+    if (count === 1) return '1 aktywna promocja';
+    const mod10 = count % 10;
+    const mod100 = count % 100;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return `${count} aktywne promocje`;
+    }
+    return `${count} aktywnych promocji`;
+  }
+  if (lang === 'pt') {
+    return count === 1 ? '1 oferta ativa' : `${count} ofertas ativas`;
+  }
+  if (lang === 'ko') {
+    return `${count}개의 할인 진행 중`;
+  }
+  return count === 1 ? '1 active deal' : `${count} active deals`;
+}
+
+// Render Featured Deals cards with rotation pagination and active deals count
 function initFeaturedSales() {
   const container = document.getElementById('featured-sales-container');
   if (!container) return;
@@ -736,27 +773,35 @@ function initFeaturedSales() {
 
   // Filter 100% off promos vs regular discounts
   const freePromos = items.filter((i) => i.discount === 1.0);
-  const selected = [];
+  const regularDeals = items.filter((i) => i.discount !== 1.0);
 
-  // If a 100% off promo is available, include at least one
-  if (freePromos.length > 0) {
-    const randomFree = freePromos[Math.floor(Math.random() * freePromos.length)];
-    selected.push(randomFree);
+  // Shuffle sets
+  const shuffledFree = [...freePromos].sort(() => Math.random() - 0.5);
+  const shuffledRegular = [...regularDeals].sort(() => Math.random() - 0.5);
+
+  // If a 100% off promo is available, ensure one appears in the first batch
+  const allDeals = [];
+  if (shuffledFree.length > 0) {
+    allDeals.push(shuffledFree.shift());
+  }
+  const rest = [...shuffledFree, ...shuffledRegular].sort(() => Math.random() - 0.5);
+  allDeals.push(...rest);
+
+  const DEALS_PER_PAGE = 3;
+  const totalPages = Math.ceil(allDeals.length / DEALS_PER_PAGE);
+
+  function getDealsForPage(pageIndex) {
+    const start = pageIndex * DEALS_PER_PAGE;
+    if (start + DEALS_PER_PAGE <= allDeals.length) {
+      return allDeals.slice(start, start + DEALS_PER_PAGE);
+    }
+    if (allDeals.length >= DEALS_PER_PAGE) {
+      return allDeals.slice(allDeals.length - DEALS_PER_PAGE);
+    }
+    return allDeals.slice(start);
   }
 
-  // Pool of remaining on-sale items
-  const remaining = items.filter((i) => !selected.some((s) => s.id === i.id));
-  const shuffled = [...remaining].sort(() => Math.random() - 0.5);
-
-  // Pick up to 3 items total
-  while (selected.length < 3 && shuffled.length > 0) {
-    selected.push(shuffled.pop());
-  }
-
-  // Shuffle selected cards so the free promo can appear in any position
-  const finalItems = [...selected].sort(() => Math.random() - 0.5);
-
-  const cardsHtml = finalItems.map((item) => {
+  function renderDealCard(item) {
     const isFreePromo = item.discount === 1.0;
     const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(item.packageName)}`;
     const iconSrc = `/assets/icons/${item.id}.webp`;
@@ -805,17 +850,33 @@ function initFeaturedSales() {
         </div>
       </div>
     `;
-  }).join('');
+  }
 
+  const lang = window.i18n ? window.i18n.getLanguage() : 'en';
   const dealsHeading = window.i18n ? window.i18n.t('featured_deals.heading', 'Featured Deals') : 'Featured Deals';
+  const countText = formatActiveDealsCount(allDeals.length, lang);
+
+  const dotsHtml = totalPages > 1
+    ? Array.from({ length: totalPages }, (_, i) => `
+        <button type="button" class="featured-sales-dot ${i === 0 ? 'active' : ''}" data-page="${i}" aria-label="Deals page ${i + 1} of ${totalPages}"></button>
+      `).join('')
+    : '';
+
+  const controlsHtml = `
+    <div class="featured-sales-controls">
+      ${totalPages > 1 ? `<div class="featured-sales-dots" role="tablist" aria-label="Featured deals pagination">${dotsHtml}</div>` : ''}
+      <span class="featured-sales-count">${countText}</span>
+    </div>
+  `;
 
   container.innerHTML = `
     <div class="featured-sales-wrapper">
       <div class="featured-sales-header">
         <h3 id="deals" class="featured-sales-heading">${dealsHeading}</h3>
+        ${controlsHtml}
       </div>
-      <div class="featured-sales-grid">
-        ${cardsHtml}
+      <div class="featured-sales-grid" id="featured-sales-grid">
+        ${getDealsForPage(0).map(renderDealCard).join('')}
       </div>
     </div>
   `;
@@ -830,6 +891,116 @@ function initFeaturedSales() {
     const target = document.getElementById('deals') || container;
     if (target) {
       setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 120);
+    }
+  }
+
+  // Interactive page rotation via dots & touch swipe
+  if (totalPages > 1) {
+    let currentPage = 0;
+    const gridEl = container.querySelector('#featured-sales-grid');
+    const dotBtns = Array.from(container.querySelectorAll('.featured-sales-dot'));
+
+    function goToPage(pageIndex) {
+      if (pageIndex < 0 || pageIndex >= totalPages) return;
+      if (pageIndex === currentPage) return;
+      currentPage = pageIndex;
+
+      dotBtns.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentPage);
+      });
+
+      if (gridEl) {
+        gridEl.innerHTML = getDealsForPage(currentPage).map(renderDealCard).join('');
+        const cards = gridEl.querySelectorAll('.featured-sale-card');
+        cards.forEach((card, idx) => {
+          if (typeof card.animate === 'function') {
+            card.animate(
+              [
+                { opacity: 0, transform: 'translateY(-12px)' },
+                { opacity: 1, transform: 'translateY(0)' }
+              ],
+              {
+                duration: 320,
+                delay: idx * 40,
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                fill: 'both'
+              }
+            );
+          }
+        });
+      }
+    }
+
+    dotBtns.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const p = parseInt(dot.getAttribute('data-page'), 10);
+        if (!isNaN(p)) {
+          if (p === currentPage) {
+            goToPage((currentPage + 1) % totalPages);
+          } else {
+            goToPage(p);
+          }
+        }
+      });
+    });
+
+    // Touch swipe support on featured-sales-grid
+    if (gridEl) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let isSwiping = false;
+      let swipeResetTimeout = null;
+
+      gridEl.addEventListener('touchstart', (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isSwiping = false;
+      }, { passive: true });
+
+      gridEl.addEventListener('touchmove', (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+        const diffX = e.touches[0].clientX - touchStartX;
+        const diffY = e.touches[0].clientY - touchStartY;
+        if (Math.abs(diffX) > 10 && Math.abs(diffX) > Math.abs(diffY)) {
+          isSwiping = true;
+        }
+      }, { passive: true });
+
+      gridEl.addEventListener('touchend', (e) => {
+        if (!e.changedTouches || e.changedTouches.length === 0) return;
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+          isSwiping = true;
+          if (swipeResetTimeout) clearTimeout(swipeResetTimeout);
+          swipeResetTimeout = setTimeout(() => {
+            isSwiping = false;
+          }, 400);
+
+          if (diffX < 0) {
+            goToPage((currentPage + 1) % totalPages);
+          } else {
+            goToPage((currentPage - 1 + totalPages) % totalPages);
+          }
+        }
+      }, { passive: true });
+
+      gridEl.addEventListener('touchcancel', () => {
+        isSwiping = false;
+      }, { passive: true });
+
+      gridEl.addEventListener('click', (e) => {
+        if (isSwiping) {
+          e.preventDefault();
+          e.stopPropagation();
+          isSwiping = false;
+          if (swipeResetTimeout) clearTimeout(swipeResetTimeout);
+        }
+      }, true);
     }
   }
 }

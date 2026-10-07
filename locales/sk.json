@@ -40,7 +40,10 @@
     "offer_ends": "Ponuka končí",
     "sale_ends_in": "Zľava končí o",
     "badge_sale": "Zľava",
-    "badge_free": "100% ZĽAVA"
+    "badge_free": "100% ZĽAVA",
+    "active_deals": "{count} aktívnych zliav",
+    "active_deals_few": "{count} aktívne zľavy",
+    "active_deals_single": "1 aktívna zľava"
   },
   "collection": {
     "heading": "Kolekcia",

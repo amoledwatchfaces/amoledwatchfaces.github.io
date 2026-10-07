@@ -40,7 +40,9 @@
     "offer_ends": "Offer ends",
     "sale_ends_in": "Sale ends in",
     "badge_sale": "Sale",
-    "badge_free": "100% OFF"
+    "badge_free": "100% OFF",
+    "active_deals": "{count} active deals",
+    "active_deals_single": "1 active deal"
   },
   "collection": {
     "heading": "Collection",

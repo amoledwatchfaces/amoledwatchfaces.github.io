@@ -40,7 +40,9 @@
     "offer_ends": "할인 종료",
     "sale_ends_in": "할인 종료까지",
     "badge_sale": "세일",
-    "badge_free": "100% 무료"
+    "badge_free": "100% 무료",
+    "active_deals": "{count}개의 할인 진행 중",
+    "active_deals_single": "1개의 할인 진행 중"
   },
   "collection": {
     "heading": "컬렉션",

@@ -40,7 +40,10 @@
     "offer_ends": "Oferta kończy się",
     "sale_ends_in": "Promocja kończy się za",
     "badge_sale": "Promocja",
-    "badge_free": "100% TANIEJ"
+    "badge_free": "100% TANIEJ",
+    "active_deals": "{count} aktywnych promocji",
+    "active_deals_few": "{count} aktywne promocje",
+    "active_deals_single": "1 aktywna promocja"
   },
   "collection": {
     "heading": "Kolekcja",
