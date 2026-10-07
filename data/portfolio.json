@@ -1,5 +1,21 @@
 [
     {
+        "id": "solarpath",
+        "appName": "Solar Path",
+        "packageName": "com.amoledwatchfaces.solarpath",
+        "isWatchFace": true,
+        "isAvailable": false,
+        "isFree": false,
+        "isAnalog": true,
+        "hasWeather": false,
+        "isTrialEnabled": false,
+        "hasAltImages": true,
+        "pushToken": "",
+        "releaseDate": "Oct 7, 2026",
+        "lastUpdated": "Oct 7, 2026",
+        "shortDescription": "Astronomical 24-hour solar watch face tracking sun and twilight phases."
+    },
+    {
         "id": "omni",
         "appName": "Omni",
         "packageName": "com.amoledwatchfaces.omni",
