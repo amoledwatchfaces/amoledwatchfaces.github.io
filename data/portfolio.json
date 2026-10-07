@@ -5,6 +5,8 @@
         "packageName": "com.amoledwatchfaces.solarpath",
         "isWatchFace": true,
         "isAvailable": false,
+        "isAvailableOnGithub": true,
+        "githubLink": "https://github.com/amoledwatchfaces/Solar-Path-Watch-Face-Wear-OS",
         "isFree": false,
         "isAnalog": true,
         "hasWeather": false,

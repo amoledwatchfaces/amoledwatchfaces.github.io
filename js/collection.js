@@ -90,8 +90,8 @@ function getProcessedList() {
     // Only show watch faces (not standalone utility apps)
     if (item.isWatchFace === false) return false;
 
-    // Only show available items if isAvailable is defined
-    if (item.isAvailable === false) return false;
+    // Only show available items if isAvailable is defined (or available on GitHub)
+    if (item.isAvailable === false && !item.isAvailableOnGithub) return false;
 
     if (currentFilter === 'free' && !item.isFree) return false;
     if (currentFilter === 'analog' && !item.isAnalog) return false;
@@ -132,7 +132,14 @@ function createCardElement(item) {
   const card = document.createElement('div');
   card.className = 'card collection-card';
 
+  const isAvail = item.isAvailable !== false;
+  const isGithub = Boolean(item.isAvailableOnGithub && item.githubLink);
+
   const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(item.packageName)}&utm_source=website&utm_medium=catalog&utm_campaign=collection`;
+  const primaryUrl = isAvail ? playStoreUrl : (isGithub ? item.githubLink : playStoreUrl);
+  const primaryAria = isAvail
+    ? `${escapeHtml(item.appName)} on Google Play`
+    : (isGithub ? `${escapeHtml(item.appName)} on GitHub` : `${escapeHtml(item.appName)}`);
 
   const iconSrc = `/assets/icons/${item.id}.webp`;
   const icon2Src = `/assets/icons/${item.id}_1.webp`;
@@ -147,14 +154,28 @@ function createCardElement(item) {
         <img src="${iconSrc}" alt="${escapeHtml(item.appName)} Wear OS Watch Face" class="watch-icon-preview" width="140" height="140" loading="lazy" decoding="async" />
       </div>`;
 
+  const badgesList = [];
+  if (isAvail) {
+    badgesList.push(`
+        <a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
+          <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
+        </a>`.trim());
+  }
+  if (isGithub) {
+    badgesList.push(`
+        <a href="${escapeHtml(item.githubLink)}" target="_blank" rel="noopener" class="github-badge">
+          <img src="/assets/github-badge.png" alt="Get it on GitHub" width="135" height="40" loading="lazy" decoding="async" />
+        </a>`.trim());
+  }
+
   card.innerHTML = `
-    <a href="${playStoreUrl}" target="_blank" rel="noopener" class="watch-preview-link" aria-label="${escapeHtml(item.appName)} on Google Play">
+    <a href="${primaryUrl}" target="_blank" rel="noopener" class="watch-preview-link" aria-label="${primaryAria}">
       ${iconsHtml}
     </a>
     <div class="collection-info">
       <div class="collection-header">
         <h3>
-          <a href="${playStoreUrl}" target="_blank" rel="noopener" class="collection-title-link">
+          <a href="${primaryUrl}" target="_blank" rel="noopener" class="collection-title-link">
             ${escapeHtml(item.appName)}
           </a>
         </h3>
@@ -164,9 +185,7 @@ function createCardElement(item) {
       </div>
       <p class="collection-desc">${escapeHtml(getItemDescription(item))}</p>
       <div class="links" style="margin-top: auto; padding-top: 14px;">
-        <a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
-          <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />
-        </a>
+        ${badgesList.join('\n        ')}
       </div>
     </div>
   `;
@@ -431,7 +450,12 @@ function initLatestRelease() {
   if (!latest) return;
 
   const isAvail = latest.isAvailable !== false;
+  const isGithub = Boolean(latest.isAvailableOnGithub && latest.githubLink);
   const playStoreUrl = `https://play.google.com/store/apps/details?id=${encodeURIComponent(latest.packageName)}`;
+  const primaryUrl = isAvail ? playStoreUrl : (isGithub ? latest.githubLink : playStoreUrl);
+  const primaryAria = isAvail
+    ? `View ${latest.appName} on Google Play`
+    : (isGithub ? `View ${latest.appName} on GitHub` : `View ${latest.appName}`);
 
   // Build candidate images: id.webp, id_1.webp, id_2.webp, id_3.webp
   const iconBase = `/assets/icons/${latest.id}`;
@@ -453,7 +477,6 @@ function initLatestRelease() {
   `).join('');
 
   const lang = window.i18n ? window.i18n.getLanguage() : 'en';
-
   let comingSoonText = 'Coming Soon';
   let comingSoonAction = 'Available Soon on Google Play';
   if (lang === 'sk') {
@@ -478,12 +501,10 @@ function initLatestRelease() {
     ? `<span class="badge-pill">${window.i18n ? window.i18n.t('apps_page.badge_free', 'Free') : 'Free'}</span>`
     : `<span class="badge-pill badge-paid">${window.i18n ? window.i18n.t('apps_page.badge_paid', 'Paid') : 'Paid'}</span>`;
 
-  const actionHtml = isAvail
-    ? `<div class="links" style="margin-top: 0;">
-        <a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
-          <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
-        </a>
-      </div>`
+  const playBadgeHtml = isAvail
+    ? `<a href="${playStoreUrl}" target="_blank" rel="noopener" class="play-store-badge">
+        <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" />
+      </a>`
     : `<div class="status-coming-soon">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
@@ -492,12 +513,18 @@ function initLatestRelease() {
         <span>${comingSoonAction}</span>
       </div>`;
 
-  const titleHtml = isAvail
-    ? `<a href="${playStoreUrl}" target="_blank" rel="noopener" class="latest-release-title-link">${latest.appName}</a>`
+  const githubBadgeHtml = isGithub
+    ? `<a href="${escapeHtml(latest.githubLink)}" target="_blank" rel="noopener" class="github-badge" aria-label="Get it on GitHub">
+        <img src="/assets/github-badge.png" alt="Get it on GitHub" />
+      </a>`
+    : '';
+
+  const titleHtml = (isAvail || isGithub)
+    ? `<a href="${primaryUrl}" target="_blank" rel="noopener" class="latest-release-title-link">${latest.appName}</a>`
     : latest.appName;
 
-  const previewWrapperHtml = isAvail
-    ? `<a href="${playStoreUrl}" target="_blank" rel="noopener" class="latest-release-slides-wrapper" aria-label="View ${latest.appName} on Google Play">
+  const previewWrapperHtml = (isAvail || isGithub)
+    ? `<a href="${primaryUrl}" target="_blank" rel="noopener" class="latest-release-slides-wrapper" aria-label="${primaryAria}">
         ${slidesHtml}
       </a>`
     : `<div class="latest-release-slides-wrapper">
@@ -523,7 +550,8 @@ function initLatestRelease() {
         <h3 class="latest-release-title">${titleHtml}</h3>
         <p class="latest-release-desc">${escapeHtml(getItemDescription(latest))}</p>
         <div class="latest-release-actions">
-          ${actionHtml}
+          ${playBadgeHtml}
+          ${githubBadgeHtml}
         </div>
       </div>
     </div>

@@ -927,7 +927,11 @@ def generate_prerendered_catalog(lang, translations):
     badge_free = translations.get(lang, {}).get("apps_page", {}).get("badge_free", "Free")
     badge_paid = translations.get(lang, {}).get("apps_page", {}).get("badge_paid", "Paid")
 
-    items = portfolio[:6]
+    valid_items = [
+        item for item in portfolio
+        if item.get("isWatchFace", True) and (item.get("isAvailable") is not False or item.get("isAvailableOnGithub"))
+    ]
+    items = valid_items[:6]
     cards_html = []
 
     for item in items:
@@ -940,7 +944,13 @@ def generate_prerendered_catalog(lang, translations):
         badge_text = badge_free if is_free else badge_paid
         badge_class = "badge-pill" if is_free else "badge-pill badge-paid"
 
+        is_avail = item.get("isAvailable") is not False
+        is_github = bool(item.get("isAvailableOnGithub") and item.get("githubLink"))
+        github_url = html.escape(item.get("githubLink", ""))
+
         play_url = f"https://play.google.com/store/apps/details?id={pkg}&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=collection"
+        primary_url = play_url if is_avail else (github_url if is_github else play_url)
+        primary_aria = f"{app_name} on Google Play" if is_avail else (f"{app_name} on GitHub" if is_github else app_name)
 
         has_alt = item.get("hasAltImages", False)
         if has_alt:
@@ -957,15 +967,30 @@ def generate_prerendered_catalog(lang, translations):
                 '      </div>'
             )
 
+        badges_html = []
+        if is_avail:
+            badges_html.append(
+                f'            <a href="{play_url}" target="_blank" rel="noopener" class="play-store-badge">\n'
+                '              <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />\n'
+                '            </a>'
+            )
+        if is_github:
+            badges_html.append(
+                f'            <a href="{github_url}" target="_blank" rel="noopener" class="github-badge">\n'
+                '              <img src="/assets/github-badge.png" alt="Get it on GitHub" width="135" height="40" loading="lazy" decoding="async" />\n'
+                '            </a>'
+            )
+        badges_joined = "\n".join(badges_html)
+
         card = (
             '      <div class="card collection-card">\n'
-            f'        <a href="{play_url}" target="_blank" rel="noopener" class="watch-preview-link" aria-label="{app_name} on Google Play">\n'
+            f'        <a href="{primary_url}" target="_blank" rel="noopener" class="watch-preview-link" aria-label="{primary_aria}">\n'
             f'          {icons}\n'
             '        </a>\n'
             '        <div class="collection-info">\n'
             '          <div class="collection-header">\n'
             '            <h3>\n'
-            f'              <a href="{play_url}" target="_blank" rel="noopener" class="collection-title-link">\n'
+            f'              <a href="{primary_url}" target="_blank" rel="noopener" class="collection-title-link">\n'
             f'                {app_name}\n'
             '              </a>\n'
             '            </h3>\n'
@@ -973,9 +998,7 @@ def generate_prerendered_catalog(lang, translations):
             '          </div>\n'
             f'          <p class="collection-desc">{desc_escaped}</p>\n'
             '          <div class="links" style="margin-top: auto; padding-top: 14px;">\n'
-            f'            <a href="{play_url}" target="_blank" rel="noopener" class="play-store-badge">\n'
-            '              <img src="/assets/google-play-badge.svg" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async" />\n'
-            '            </a>\n'
+            f'{badges_joined}\n'
             '          </div>\n'
             '        </div>\n'
             '      </div>'
@@ -989,7 +1012,14 @@ def generate_prerendered_catalog(lang, translations):
         name = html.escape(item.get("appName", ""))
         pkg = urllib.parse.quote(item.get("packageName", ""))
         item_desc = html.escape(loc_desc.get(item.get("id", ""), item.get("shortDescription", "")))
-        p_url = f"https://play.google.com/store/apps/details?id={pkg}&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript"
+        is_avail = item.get("isAvailable") is not False
+        is_github = bool(item.get("isAvailableOnGithub") and item.get("githubLink"))
+        if is_avail:
+            p_url = f"https://play.google.com/store/apps/details?id={pkg}&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript"
+        elif is_github:
+            p_url = html.escape(item.get("githubLink", ""))
+        else:
+            p_url = f"https://play.google.com/store/apps/details?id={pkg}&amp;utm_source=website&amp;utm_medium=catalog&amp;utm_campaign=noscript"
         noscript_links.append(f'          <li><a href="{p_url}" target="_blank" rel="noopener"><strong>{name}</strong></a> — {item_desc}</li>')
 
     noscript_joined = "\n".join(noscript_links)

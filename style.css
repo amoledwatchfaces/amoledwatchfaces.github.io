@@ -1057,6 +1057,7 @@ main > picture .main-banner {
 }
 
 .play-store-badge,
+.github-badge,
 .kofi-badge,
 .bmc-badge,
 .paypal-badge {
@@ -1069,6 +1070,7 @@ main > picture .main-banner {
 }
 
 .play-store-badge:hover,
+.github-badge:hover,
 .kofi-badge:hover,
 .bmc-badge:hover,
 .paypal-badge:hover {
@@ -1077,7 +1079,8 @@ main > picture .main-banner {
   transform: translateY(-2px) scale(1.02) !important;
 }
 
-.play-store-badge img {
+.play-store-badge img,
+.github-badge img {
   height: 50px;
   width: auto;
   display: block;
@@ -1493,7 +1496,9 @@ main > picture .main-banner {
   color: var(--on-surface-variant);
   font-size: 0.92rem;
   font-weight: 500;
-  padding: 8px 14px;
+  padding: 0 16px;
+  min-height: 50px;
+  box-sizing: border-box;
   border-radius: 8px;
 }
 
@@ -2389,6 +2394,19 @@ main > picture .main-banner {
   color: var(--on-surface-variant);
   margin: 0 0 16px;
   flex-grow: 1;
+}
+
+.collection-card .links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.collection-card .links .play-store-badge img,
+.collection-card .links .github-badge img {
+  height: 40px;
+  width: auto;
 }
 
 .collection-actions {
