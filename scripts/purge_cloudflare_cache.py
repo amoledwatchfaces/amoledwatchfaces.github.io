@@ -88,6 +88,7 @@ def main():
                 urls.add(f'{domain}/{parent_dir}/')
             for l in target_langs:
                 urls.add(f'{domain}/{l}/{base}')
+                urls.add(f'{domain}/{l}/{base}/')
                 urls.add(f'{domain}/{l}/{f}')
         else:
             urls.add(f'{domain}/{f}')
