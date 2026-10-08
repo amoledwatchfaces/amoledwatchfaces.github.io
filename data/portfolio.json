@@ -557,7 +557,7 @@
         "releaseDate": "May 21, 2025",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Modern, tactical watch face with 8 custom complication slots and unique themes.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1791417599
     },
@@ -631,7 +631,9 @@
         "releaseDate": "Apr 9, 2025",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Own-designed LCD digital clock font plus many color and style customizations.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1792108799
     },
     {
         "id": "roto",
@@ -818,7 +820,9 @@
         "releaseDate": "Dec 16, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Track current weather and 10-hour forecasts in a minimal analog design.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1792108799
     },
     {
         "id": "forecast",
@@ -890,7 +894,9 @@
         "releaseDate": "Oct 27, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Analog watch face with customizable themes, watch hands, and complications.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1792108799
     },
     {
         "id": "halo",
@@ -922,7 +928,7 @@
         "hasAltImages": false,
         "pushToken": "PzVdF3KBC6F0oA0lRgdU6BKNT5anCSc4TrrGf1oa68Q=:MS4wLjA=",
         "releaseDate": "Sep 29, 2024",
-        "lastUpdated": "Aug 4, 2026",
+        "lastUpdated": "Oct 5, 2026",
         "shortDescription": "Boo! Meet Spooky, a Halloween watch face with a lot of features. Happy haunting!",
         "onSale": false
     },
@@ -941,7 +947,9 @@
         "releaseDate": "Sep 15, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Your personal information hub with 6 customizable complications & many themes.",
-        "onSale": false
+        "onSale": true,
+        "discount": 1.0,
+        "saleEndTime": 1792108799
     },
     {
         "id": "textTime",
@@ -1179,7 +1187,7 @@
         "releaseDate": "Apr 22, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Customizable Outlined Fonts. Watch Face Format. Battery friendly Digital Clock.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1791417599
     },
@@ -1580,7 +1588,9 @@
         "releaseDate": "Oct 3, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "2nd edition of our React design. Modern, battery friendly and customizable!",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1792108799
     },
     {
         "id": "modular",
@@ -1716,7 +1726,9 @@
         "releaseDate": "Jul 2, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Pride Month watch face. With LGBTQ+ Rainbow Flags and Symbols. Battery friendly.",
-        "onSale": false
+        "onSale": true,
+        "discount": 1.0,
+        "saleEndTime": 1792108799
     },
     {
         "id": "tactthree",
@@ -2451,7 +2463,9 @@
         "releaseDate": "Jul 14, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "\"Casio\" style Wear OS retro digital battery friendly and customizable watch face",
-        "onSale": false
+        "onSale": true,
+        "discount": 1.0,
+        "saleEndTime": 1792108799
     },
     {
         "id": "edge",
@@ -2487,7 +2501,7 @@
         "releaseDate": "Jun 29, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Premium Wear OS watch face. Customizable, hi-res and battery friendly.",
-        "onSale": true,
+        "onSale": false,
         "discount": 1,
         "saleEndTime": 1791417599
     },
@@ -3349,7 +3363,9 @@
         "releaseDate": "Nov 10, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Digital, true black background and customizable watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1792108799
     },
     {
         "id": "awfcasual",
@@ -3468,7 +3484,9 @@
         "releaseDate": "Oct 20, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background classic and customizable analog watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1792108799
     },
     {
         "id": "awftic",
@@ -3502,7 +3520,9 @@
         "releaseDate": "Oct 12, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background and sporty digital watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1792108799
     },
     {
         "id": "awfdigital1",
