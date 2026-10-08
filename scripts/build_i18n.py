@@ -981,7 +981,7 @@ def generate_prerendered_catalog(lang, translations):
         if is_github:
             badges_html.append(
                 f'            <a href="{github_url}" target="_blank" rel="noopener" class="github-badge">\n'
-                '              <img src="/assets/github-badge.png" alt="Get it on GitHub" width="135" height="40" loading="lazy" decoding="async" />\n'
+                '              <img src="/assets/github-badge.svg" alt="Get it on GitHub" width="135" height="40" loading="lazy" decoding="async" />\n'
                 '            </a>'
             )
         badges_joined = "\n".join(badges_html)

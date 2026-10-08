@@ -164,7 +164,7 @@ function createCardElement(item) {
   if (isGithub) {
     badgesList.push(`
         <a href="${escapeHtml(item.githubLink)}" target="_blank" rel="noopener" class="github-badge">
-          <img src="/assets/github-badge.png" alt="Get it on GitHub" width="135" height="40" loading="lazy" decoding="async" />
+          <img src="/assets/github-badge.svg" alt="Get it on GitHub" width="135" height="40" loading="lazy" decoding="async" />
         </a>`.trim());
   }
 
@@ -526,7 +526,7 @@ function initLatestRelease() {
 
   const githubBadgeHtml = isGithub
     ? `<a href="${escapeHtml(latest.githubLink)}" target="_blank" rel="noopener" class="github-badge" aria-label="Get it on GitHub">
-        <img src="/assets/github-badge.png" alt="Get it on GitHub" />
+        <img src="/assets/github-badge.svg" alt="Get it on GitHub" />
       </a>`
     : '';
 
