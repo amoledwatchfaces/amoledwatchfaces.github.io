@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } catch (err) {
       console.warn('Could not load active giveaways:', err);
-      renderEmptyState("Stay tuned! New watch face giveaways are coming soon.");
+      renderEmptyState();
     }
   }
 
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gridElement.innerHTML = '';
 
     if (!giveaways || giveaways.length === 0) {
-      renderEmptyState("No active giveaways at the moment. Check back soon for new watch face promotions!");
+      renderEmptyState();
       return;
     }
 
@@ -349,6 +349,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('languageChanged', () => {
     if (activeGiveawaysList && activeGiveawaysList.length > 0) {
       renderGiveawaysGrid(activeGiveawaysList);
+    } else {
+      renderEmptyState();
     }
   });
 
