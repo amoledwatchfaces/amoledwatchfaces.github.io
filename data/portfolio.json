@@ -33,7 +33,7 @@
         "releaseDate": "Oct 2, 2026",
         "lastUpdated": "Oct 5, 2026",
         "shortDescription": "Simple, modern, material 3 analog watch face with animated ambient mode.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.2,
         "saleEndTime": 1791590399
     },
@@ -341,7 +341,7 @@
         "hasAltImages": false,
         "pushToken": "VsG29QxwoDQ0mKLNbSG5xyzPpijBuR5/iIeoC67PGX8=:MS4wLjA=",
         "releaseDate": "Oct 13, 2025",
-        "lastUpdated": "Aug 20, 2026",
+        "lastUpdated": "Aug 19, 2026",
         "shortDescription": "Sleek, highly customizable watch face inspired by Galaxy Watch Circle Dashboard.",
         "onSale": false
     },
@@ -733,7 +733,7 @@
         "hasAltImages": false,
         "pushToken": "a7WEocRumulPDVe4v31DgLAZbarBpbxn0g1TlwhfjZg=:MS4wLjA=",
         "releaseDate": "Feb 17, 2025",
-        "lastUpdated": "Sep 17, 2026",
+        "lastUpdated": "Sep 16, 2026",
         "shortDescription": "Modern & highly customizable watch face, inspired by Galaxy Watch Ultra Analog.",
         "onSale": false
     },
@@ -858,7 +858,7 @@
         "releaseDate": "Nov 23, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Custom complications, sleek design, time modes and endless style options.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1791590399
     },
@@ -1520,7 +1520,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Oct 29, 2023",
-        "lastUpdated": "Jul 13, 2026",
+        "lastUpdated": "Jul 12, 2026",
         "shortDescription": "Enough scrolling through the list of apps. Use Tile to launch favorite apps!",
         "onSale": false
     },
@@ -1660,7 +1660,9 @@
         "releaseDate": "Aug 16, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Productivity watch face with 6 custom complications & pure black background.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1792281599
     },
     {
         "id": "angular",
@@ -3730,7 +3732,7 @@
         "releaseDate": "Sep 18, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background and battery friendly digital watch face for Wear OS.",
-        "onSale": true,
+        "onSale": false,
         "discount": 1,
         "saleEndTime": 1791590399
     },
@@ -3766,7 +3768,7 @@
         "releaseDate": "Sep 9, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background and battery friendly analog watch face for Wear OS.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1791590399
     },
