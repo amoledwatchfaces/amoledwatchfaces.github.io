@@ -1070,7 +1070,9 @@
         "releaseDate": "Jul 16, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Customizable Material You watch face. 8 complications, watch hand styles & more!",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1792454399
     },
     {
         "id": "binary2",
@@ -3199,7 +3201,7 @@
         "releaseDate": "Dec 7, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background TRON inspired digital watch face for Wear OS",
-        "onSale": true,
+        "onSale": false,
         "discount": 1,
         "saleEndTime": 1791763199
     },
@@ -3269,7 +3271,7 @@
         "releaseDate": "Nov 25, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Sport & fitness digital watch face designed for active lifestyles.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1791763199
     },
@@ -3568,7 +3570,7 @@
         "releaseDate": "Oct 11, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background hybrid and customizable watch face for Wear OS watches.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1791763199
     },
