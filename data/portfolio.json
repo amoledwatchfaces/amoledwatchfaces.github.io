@@ -15,8 +15,9 @@
         "hasAltImages": true,
         "pushToken": "",
         "releaseDate": "Oct 7, 2026",
-        "lastUpdated": "Oct 7, 2026",
-        "shortDescription": "Astronomical 24-hour solar watch face tracking sun and twilight phases."
+        "lastUpdated": "Oct 11, 2026",
+        "shortDescription": "Astronomical 24-hour solar watch face tracking sun and twilight phases.",
+        "onSale": false
     },
     {
         "id": "omni",
@@ -341,7 +342,7 @@
         "hasAltImages": false,
         "pushToken": "VsG29QxwoDQ0mKLNbSG5xyzPpijBuR5/iIeoC67PGX8=:MS4wLjA=",
         "releaseDate": "Oct 13, 2025",
-        "lastUpdated": "Aug 19, 2026",
+        "lastUpdated": "Aug 20, 2026",
         "shortDescription": "Sleek, highly customizable watch face inspired by Galaxy Watch Circle Dashboard.",
         "onSale": false
     },
@@ -733,7 +734,7 @@
         "hasAltImages": false,
         "pushToken": "a7WEocRumulPDVe4v31DgLAZbarBpbxn0g1TlwhfjZg=:MS4wLjA=",
         "releaseDate": "Feb 17, 2025",
-        "lastUpdated": "Sep 16, 2026",
+        "lastUpdated": "Sep 17, 2026",
         "shortDescription": "Modern & highly customizable watch face, inspired by Galaxy Watch Ultra Analog.",
         "onSale": false
     },
@@ -1140,7 +1141,9 @@
         "releaseDate": "May 19, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Don't settle, create your perfect classic watch face. Use 60+ colors & themes.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1792540799
     },
     {
         "id": "streamlined",
@@ -1522,7 +1525,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Oct 29, 2023",
-        "lastUpdated": "Jul 12, 2026",
+        "lastUpdated": "Jul 13, 2026",
         "shortDescription": "Enough scrolling through the list of apps. Use Tile to launch favorite apps!",
         "onSale": false
     },
@@ -2197,7 +2200,7 @@
         "shortDescription": "Material You (Pixel style) Watch face for Wear OS with custom complications",
         "onSale": true,
         "discount": 0.5,
-        "saleEndTime": 1792367999
+        "saleEndTime": 1792108799
     },
     {
         "id": "hyb",
@@ -2322,7 +2325,9 @@
         "releaseDate": "Oct 14, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Wear OS watch face with big digital time. Battery friendly. Small app size.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1792540799
     },
     {
         "id": "weatherdigital",
@@ -2390,7 +2395,9 @@
         "releaseDate": "Aug 21, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Modern & unique analog Wear OS watch face. Battery friendly & customizable.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1792540799
     },
     {
         "id": "pace3",
@@ -2407,7 +2414,9 @@
         "releaseDate": "Aug 15, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Fitness Watch face with two RANGED_VALUE custom complications. Battery friendly.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1792540799
     },
     {
         "id": "gradient",
@@ -2496,7 +2505,7 @@
         "releaseDate": "Jul 6, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Simple Wear OS watch face with custom complications. Battery and OLED friendly.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1791849599
     },
@@ -3954,7 +3963,7 @@
         "releaseDate": "Aug 19, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, sporty and battery friendly watch face for Wear OS.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1791849599
     },
