@@ -155,7 +155,7 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 9, 2026",
+        "lastUpdated": "Aug 8, 2026",
         "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly.",
         "onSale": false
     },
@@ -840,7 +840,7 @@
         "releaseDate": "Dec 3, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Hourly and daily weather forecast, current condition, temperature, UV and more!",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1792022399
     },
@@ -1351,7 +1351,7 @@
         "releaseDate": "Feb 12, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Digital OLED watch face. 7 segment font. 6 custom complications. Optimized.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1792022399
     },
@@ -2329,7 +2329,7 @@
         "shortDescription": "Wear OS watch face with big digital time. Battery friendly. Small app size.",
         "onSale": true,
         "discount": 0.5,
-        "saleEndTime": 1792540799
+        "saleEndTime": 1792108799
     },
     {
         "id": "weatherdigital",
@@ -2346,7 +2346,9 @@
         "releaseDate": "Sep 30, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Wear OS watch face with a large weather complication and big digital clock.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1792108799
     },
     {
         "id": "materialyou",
@@ -3810,7 +3812,9 @@
         "releaseDate": "Sep 7, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Minimal, customizable & battery friendly pixel style watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1792713599
     },
     {
         "id": "awfrun",
