@@ -1681,7 +1681,7 @@
         "releaseDate": "Aug 16, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Productivity watch face with 6 custom complications & pure black background.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1792281599
     },
@@ -1719,7 +1719,9 @@
         "releaseDate": "Aug 2, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Health & Fitness oriented digital watch face. Four Complication slots & Black BG",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1792972799
     },
     {
         "id": "rugged",
