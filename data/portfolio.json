@@ -159,7 +159,7 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 9, 2026",
+        "lastUpdated": "Aug 8, 2026",
         "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly.",
         "onSale": false
     },
@@ -1738,7 +1738,9 @@
         "releaseDate": "Jul 29, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Rugged & rough, BIG digital watch face with many custom complications slots.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1793059199
     },
     {
         "id": "pride",
@@ -2220,7 +2222,7 @@
         "releaseDate": "Nov 25, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Material You (Pixel style) Watch face for Wear OS with custom complications",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1792367999
     },
@@ -2239,7 +2241,7 @@
         "releaseDate": "Nov 18, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Big gradient digital hours. Progress bar minutes & seconds. Premium feel.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1792367999
     },
@@ -2275,7 +2277,7 @@
         "releaseDate": "Nov 8, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Health & Fitness related Watch face. Customizable # Battery friendly.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1792367999
     },
@@ -2459,7 +2461,7 @@
         "releaseDate": "Aug 10, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Gradient animated Wear OS watch face with big digital font & true black BG",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1792367999
     },
@@ -3030,7 +3032,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Feb 7, 2022",
-        "lastUpdated": "Aug 4, 2026",
+        "lastUpdated": "Oct 14, 2026",
         "shortDescription": "Simple, black background digital watch face with a wave seconds hand for Wear OS",
         "onSale": false
     },
@@ -3730,7 +3732,9 @@
         "releaseDate": "Sep 24, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Modern stylish and unique analog watch face. Made especially for ladies.",
-        "onSale": false
+        "onSale": true,
+        "discount": 1.0,
+        "saleEndTime": 1793059199
     },
     {
         "id": "awfrun2",
@@ -3747,7 +3751,9 @@
         "releaseDate": "Sep 21, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, sporty & battery friendly #watchface for Wear OS",
-        "onSale": false
+        "onSale": true,
+        "discount": 1.0,
+        "saleEndTime": 1793059199
     },
     {
         "id": "awfsportyanalog",
@@ -3855,7 +3861,9 @@
         "releaseDate": "Sep 7, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, fitness and battery friendly watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1793059199
     },
     {
         "id": "awfoutback",
