@@ -159,7 +159,7 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 8, 2026",
+        "lastUpdated": "Aug 9, 2026",
         "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly.",
         "onSale": false
     },
@@ -1081,7 +1081,7 @@
         "releaseDate": "Jul 16, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Customizable Material You watch face. 8 complications, watch hand styles & more!",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1792454399
     },
@@ -1863,7 +1863,9 @@
         "releaseDate": "May 16, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Clean digital watch face. Battery & OLED friendly. True Black BG & customizable.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1793145599
     },
     {
         "id": "nanox1",
@@ -2569,7 +2571,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Jun 26, 2022",
-        "lastUpdated": "Aug 4, 2026",
+        "lastUpdated": "Oct 15, 2026",
         "shortDescription": "Battery friendly, digital Wear OS watch face with custom complications.",
         "onSale": false
     },
