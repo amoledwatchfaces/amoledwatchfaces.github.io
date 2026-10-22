@@ -128,7 +128,7 @@
         "lastUpdated": "Aug 31, 2026",
         "shortDescription": "Circular layout with 8 customizable complications. Simple, clean, and effective.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1792799999
     },
     {
@@ -965,7 +965,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Your personal information hub with 6 customizable complications & many themes.",
         "onSale": false,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1792108799
     },
     {
@@ -1595,7 +1595,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "7 custom complications. Battery Friendly. Hybrid design. Multiple themes.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1792799999
     },
     {
@@ -1762,7 +1762,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Pride Month watch face. With LGBTQ+ Rainbow Flags and Symbols. Battery friendly.",
         "onSale": false,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1792108799
     },
     {
@@ -2162,9 +2162,9 @@
         "hasWeather": false,
         "isTrialEnabled": true,
         "hasAltImages": false,
-        "pushToken": "05nmmnFf7yb5ld9OPKjZn3tFA9f/EqwH4MgXdmphZdY=:MS4wLjA=",
+        "pushToken": "Sex04TJNmkmNSoLAjVo7FIZACLYnMBtA2hrYhn7J1Ig=:MS4wLjA=",
         "releaseDate": "Jan 3, 2023",
-        "lastUpdated": "Aug 4, 2026",
+        "lastUpdated": "Oct 22, 2026",
         "shortDescription": "Premium Wear OS watch face. Analog & modern design. Fully customizable.",
         "onSale": false
     },
@@ -2527,7 +2527,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "\"Casio\" style Wear OS retro digital battery friendly and customizable watch face",
         "onSale": false,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1792108799
     },
     {
@@ -3414,7 +3414,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background fitness analog Watch face with gradient color bars",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1792799999
     },
     {
@@ -3747,7 +3747,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Modern stylish and unique analog watch face. Made especially for ladies.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1793059199
     },
     {
@@ -3766,7 +3766,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, sporty & battery friendly #watchface for Wear OS",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1793059199
     },
     {
