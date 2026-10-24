@@ -1,5 +1,5 @@
 [
-{
+    {
         "id": "creepy",
         "appName": "Creepy (Halloween)",
         "packageName": "com.amoledwatchfaces.creepy",
@@ -12,9 +12,9 @@
         "hasWeather": false,
         "isTrialEnabled": false,
         "hasAltImages": true,
-        "pushToken": "",
+        "pushToken": "hCDftpRD13GqBLYyKTrIsxU03ks6Q6o1se5Z4+7wkaM=:MS4wLjA=",
         "releaseDate": "Oct 24, 2026",
-        "lastUpdated": "Oct 18, 2026",
+        "lastUpdated": "Oct 24, 2026",
         "shortDescription": "Celebrate Halloween on Wear OS with Creepy, an animated pumpkin watch face!",
         "onSale": true,
         "discount": 0.3,
@@ -2183,7 +2183,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "A unique Wear OS watch face with time represented by progress bars.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1793491199
     },
     {
@@ -3722,7 +3722,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Battery friendly watch face with the Next Event / Schedule complication.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1793491199
     },
     {
