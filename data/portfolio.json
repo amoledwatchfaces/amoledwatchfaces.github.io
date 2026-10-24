@@ -1,4 +1,23 @@
 [
+{
+        "id": "creepy",
+        "appName": "Creepy (Halloween)",
+        "packageName": "com.amoledwatchfaces.creepy",
+        "isWatchFace": true,
+        "isAvailable": true,
+        "isAvailableOnGithub": false,
+        "isOpenSource": false,
+        "isFree": false,
+        "isAnalog": false,
+        "hasWeather": false,
+        "isTrialEnabled": false,
+        "hasAltImages": true,
+        "pushToken": "",
+        "releaseDate": "Oct 24, 2026",
+        "lastUpdated": "Oct 24, 2026",
+        "shortDescription": "Celebrate Halloween on Wear OS with Creepy, an animated pumpkin watch face!",
+        "onSale": false
+    },
     {
         "id": "solarpath",
         "appName": "Solar Path",
