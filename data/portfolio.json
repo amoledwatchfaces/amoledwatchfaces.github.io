@@ -14,9 +14,11 @@
         "hasAltImages": true,
         "pushToken": "",
         "releaseDate": "Oct 24, 2026",
-        "lastUpdated": "Oct 24, 2026",
+        "lastUpdated": "Oct 18, 2026",
         "shortDescription": "Celebrate Halloween on Wear OS with Creepy, an animated pumpkin watch face!",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.3,
+        "saleEndTime": 1793491199
     },
     {
         "id": "solarpath",
