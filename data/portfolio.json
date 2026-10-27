@@ -915,7 +915,9 @@
         "releaseDate": "Nov 8, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Packed with material themes, clock fonts & 8 complication slots for flexibility!",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1793750399
     },
     {
         "id": "pathfinder",
@@ -1144,7 +1146,9 @@
         "releaseDate": "Jun 21, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Highly customizable watch face. Optional fonts, gradients, custom complications.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1793750399
     },
     {
         "id": "inverted",
@@ -1769,7 +1773,7 @@
         "releaseDate": "Jul 29, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Rugged & rough, BIG digital watch face with many custom complications slots.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1793059199
     },
@@ -1807,7 +1811,9 @@
         "releaseDate": "Jun 18, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Tactical watch face for Wear OS 4 & 3(API 30+). Battery friendly & customizable.",
-        "onSale": false
+        "onSale": true,
+        "discount": 1.0,
+        "saleEndTime": 1793750399
     },
     {
         "id": "materialyou2",
@@ -3144,7 +3150,9 @@
         "releaseDate": "Jan 19, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Sport & fitness oriented, true black background digital Watch face for Wear OS",
-        "onSale": false
+        "onSale": true,
+        "discount": 1.0,
+        "saleEndTime": 1793750399
     },
     {
         "id": "awfmodernminimal",
@@ -3549,7 +3557,9 @@
         "releaseDate": "Oct 28, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black BG, fitness oriented & battery friendly Watch face for Wear OS",
-        "onSale": false
+        "onSale": true,
+        "discount": 1.0,
+        "saleEndTime": 1793750399
     },
     {
         "id": "awfladiesanalog2",
@@ -3689,7 +3699,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Oct 10, 2021",
-        "lastUpdated": "Sep 16, 2026",
+        "lastUpdated": "Oct 20, 2026",
         "shortDescription": "Wear OS custom complication for Phone Battery level (%). Add to any Watch face!",
         "onSale": false
     },
@@ -3795,7 +3805,7 @@
         "releaseDate": "Sep 24, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Modern stylish and unique analog watch face. Made especially for ladies.",
-        "onSale": true,
+        "onSale": false,
         "discount": 1,
         "saleEndTime": 1793059199
     },
@@ -3814,7 +3824,7 @@
         "releaseDate": "Sep 21, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, sporty & battery friendly #watchface for Wear OS",
-        "onSale": true,
+        "onSale": false,
         "discount": 1,
         "saleEndTime": 1793059199
     },
@@ -3924,7 +3934,7 @@
         "releaseDate": "Sep 7, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, fitness and battery friendly watch face for Wear OS.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1793059199
     },
