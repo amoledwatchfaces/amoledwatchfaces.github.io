@@ -1659,9 +1659,9 @@
         "hasWeather": false,
         "isTrialEnabled": true,
         "hasAltImages": false,
-        "pushToken": "kJli0cOkCgguOYsVnCvFEWdTeR15uf1nLAqDsOShc4w=:MS4wLjA=",
+        "pushToken": "BH4BoubZGiDhGqtwO3/cvnHO82mEBEpBop3Y0a3NZx4=:MS4wLjA=",
         "releaseDate": "Sep 24, 2023",
-        "lastUpdated": "Aug 4, 2026",
+        "lastUpdated": "Oct 27, 2026",
         "shortDescription": "Modular design. Optional time font settings. Battery friendly & pixel perfect.",
         "onSale": false,
         "discount": 0.5,
@@ -1812,7 +1812,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Tactical watch face for Wear OS 4 & 3(API 30+). Battery friendly & customizable.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1793750399
     },
     {
@@ -3151,7 +3151,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Sport & fitness oriented, true black background digital Watch face for Wear OS",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1793750399
     },
     {
@@ -3558,7 +3558,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black BG, fitness oriented & battery friendly Watch face for Wear OS",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1793750399
     },
     {
