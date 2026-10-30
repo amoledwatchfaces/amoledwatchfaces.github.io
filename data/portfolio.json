@@ -1965,7 +1965,7 @@
         "releaseDate": "Apr 24, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Sporty watch face with custom complications & unlimited color styles",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1793318399
     },
@@ -2950,7 +2950,9 @@
         "releaseDate": "Mar 29, 2022",
         "lastUpdated": "Aug 5, 2026",
         "shortDescription": "Binary Watch face. Time interpreted in binary format. For geeks & techy people.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1794009599
     },
     {
         "id": "fit3",
@@ -3001,7 +3003,7 @@
         "releaseDate": "Mar 29, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Special OLED edition watch face. Fit series variant. 30 colors. Customizable.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1793318399
     },
