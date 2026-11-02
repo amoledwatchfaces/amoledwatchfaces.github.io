@@ -1501,7 +1501,7 @@
         "shortDescription": "Unique dual tone color themes and digital clock glow effect. Make it your own!",
         "onSale": true,
         "discount": 0.3,
-        "saleEndTime": 1794095999
+        "saleEndTime": 1793750399
     },
     {
         "id": "infograph2",
@@ -2278,7 +2278,7 @@
         "releaseDate": "Dec 2, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Many custom complications. Gradient bars. True blacks = Battery friendly.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1793577599
     },
@@ -3470,7 +3470,9 @@
         "releaseDate": "Nov 16, 2021",
         "lastUpdated": "Sep 2, 2026",
         "shortDescription": "True black background, terminal, geek - programmer watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1794268799
     },
     {
         "id": "awfdashdigital",
