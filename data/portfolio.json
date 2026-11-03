@@ -9,7 +9,7 @@
         "isOpenSource": false,
         "isFree": false,
         "isAnalog": false,
-        "hasWeather": false,
+        "hasWeather": true,
         "isTrialEnabled": false,
         "hasAltImages": true,
         "pushToken": "",
