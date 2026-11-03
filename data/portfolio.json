@@ -1,5 +1,24 @@
 [
     {
+        "id": "verge",
+        "appName": "Verge",
+        "packageName": "com.amoledwatchfaces.verge",
+        "isWatchFace": true,
+        "isAvailable": false,
+        "isAvailableOnGithub": false,
+        "isOpenSource": false,
+        "isFree": false,
+        "isAnalog": false,
+        "hasWeather": false,
+        "isTrialEnabled": false,
+        "hasAltImages": true,
+        "pushToken": "",
+        "releaseDate": "Nov 6, 2026",
+        "lastUpdated": "Nov 3, 2026",
+        "shortDescription": "Futuristic digital watch face with vibrant themes & custom complications.",
+        "onSale": false
+    },
+    {
         "id": "creepy",
         "appName": "Creepy (Halloween)",
         "packageName": "com.amoledwatchfaces.creepy",
