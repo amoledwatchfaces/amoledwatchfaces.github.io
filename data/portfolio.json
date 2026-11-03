@@ -1501,7 +1501,7 @@
         "shortDescription": "Unique dual tone color themes and digital clock glow effect. Make it your own!",
         "onSale": true,
         "discount": 0.3,
-        "saleEndTime": 1793750399
+        "saleEndTime": 1794095999
     },
     {
         "id": "infograph2",
@@ -1677,7 +1677,7 @@
         "hasAltImages": false,
         "pushToken": "BH4BoubZGiDhGqtwO3/cvnHO82mEBEpBop3Y0a3NZx4=:MS4wLjA=",
         "releaseDate": "Sep 24, 2023",
-        "lastUpdated": "Aug 4, 2026",
+        "lastUpdated": "Oct 26, 2026",
         "shortDescription": "Modular design. Optional time font settings. Battery friendly & pixel perfect.",
         "onSale": false,
         "discount": 0.5,
@@ -3305,7 +3305,7 @@
         "releaseDate": "Dec 13, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, big and bold font watch face for Wear OS",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1793663999
     },
@@ -3828,7 +3828,9 @@
         "releaseDate": "Sep 29, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background and battery friendly watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1794355199
     },
     {
         "id": "awflmoderna",
