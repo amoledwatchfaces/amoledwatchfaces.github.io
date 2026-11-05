@@ -33,7 +33,7 @@
         "hasAltImages": true,
         "pushToken": "hCDftpRD13GqBLYyKTrIsxU03ks6Q6o1se5Z4+7wkaM=:MS4wLjA=",
         "releaseDate": "Oct 24, 2026",
-        "lastUpdated": "Oct 17, 2026",
+        "lastUpdated": "Oct 18, 2026",
         "shortDescription": "Celebrate Halloween on Wear OS with Creepy, an animated pumpkin watch face!",
         "onSale": false,
         "discount": 0.3,
@@ -55,7 +55,7 @@
         "hasAltImages": true,
         "pushToken": "",
         "releaseDate": "Oct 7, 2026",
-        "lastUpdated": "Oct 19, 2026",
+        "lastUpdated": "Oct 20, 2026",
         "shortDescription": "Astronomical 24-hour solar watch face tracking sun and twilight phases.",
         "onSale": true,
         "discount": 0.3,
@@ -203,7 +203,7 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 8, 2026",
+        "lastUpdated": "Aug 9, 2026",
         "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly.",
         "onSale": false
     },
@@ -394,7 +394,7 @@
         "hasAltImages": false,
         "pushToken": "VsG29QxwoDQ0mKLNbSG5xyzPpijBuR5/iIeoC67PGX8=:MS4wLjA=",
         "releaseDate": "Oct 13, 2025",
-        "lastUpdated": "Aug 19, 2026",
+        "lastUpdated": "Aug 20, 2026",
         "shortDescription": "Sleek, highly customizable watch face inspired by Galaxy Watch Circle Dashboard.",
         "onSale": false
     },
@@ -792,7 +792,7 @@
         "hasAltImages": false,
         "pushToken": "a7WEocRumulPDVe4v31DgLAZbarBpbxn0g1TlwhfjZg=:MS4wLjA=",
         "releaseDate": "Feb 17, 2025",
-        "lastUpdated": "Sep 16, 2026",
+        "lastUpdated": "Sep 17, 2026",
         "shortDescription": "Modern & highly customizable watch face, inspired by Galaxy Watch Ultra Analog.",
         "onSale": false
     },
@@ -953,7 +953,7 @@
         "hasAltImages": false,
         "pushToken": "P27J6k0pfLgmmpGIU5gMlr4eublibvccwmW9zkYUusE=:MS4wLjA=",
         "releaseDate": "Oct 27, 2024",
-        "lastUpdated": "Oct 26, 2026",
+        "lastUpdated": "Oct 27, 2026",
         "shortDescription": "Analog watch face with customizable themes, watch hands, and complications.",
         "onSale": false,
         "discount": 0.5,
@@ -1607,7 +1607,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Oct 29, 2023",
-        "lastUpdated": "Jul 12, 2026",
+        "lastUpdated": "Jul 13, 2026",
         "shortDescription": "Enough scrolling through the list of apps. Use Tile to launch favorite apps!",
         "onSale": false
     },
@@ -1698,7 +1698,7 @@
         "hasAltImages": false,
         "pushToken": "BH4BoubZGiDhGqtwO3/cvnHO82mEBEpBop3Y0a3NZx4=:MS4wLjA=",
         "releaseDate": "Sep 24, 2023",
-        "lastUpdated": "Oct 26, 2026",
+        "lastUpdated": "Oct 27, 2026",
         "shortDescription": "Modular design. Optional time font settings. Battery friendly & pixel perfect.",
         "onSale": false,
         "discount": 0.5,
@@ -2675,7 +2675,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Jun 26, 2022",
-        "lastUpdated": "Oct 14, 2026",
+        "lastUpdated": "Oct 15, 2026",
         "shortDescription": "Battery friendly, digital Wear OS watch face with custom complications.",
         "onSale": false
     },
@@ -3154,7 +3154,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Feb 7, 2022",
-        "lastUpdated": "Oct 13, 2026",
+        "lastUpdated": "Oct 14, 2026",
         "shortDescription": "Simple, black background digital watch face with a wave seconds hand for Wear OS",
         "onSale": false
     },
@@ -3281,7 +3281,9 @@
         "releaseDate": "Jan 1, 2022",
         "lastUpdated": "Oct 27, 2026",
         "shortDescription": "Fitness and sporty digital watch face with true black background for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1794527999
     },
     {
         "id": "awfrun3",
@@ -3391,7 +3393,7 @@
         "releaseDate": "Dec 5, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Tactical & military - army, black BG digital Watch face for Wear OS.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1793836799
     },
