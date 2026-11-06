@@ -203,7 +203,7 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 9, 2026",
+        "lastUpdated": "Aug 8, 2026",
         "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly.",
         "onSale": false
     },
@@ -506,7 +506,9 @@
         "releaseDate": "Jul 24, 2025",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Highly customizable analog watch face with wrist-reactive aurora lights.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1794614399
     },
     {
         "id": "nova",
@@ -862,7 +864,9 @@
         "releaseDate": "Dec 30, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "A minimal and customizable watch face with wrist-reactive aurora lights.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1794614399
     },
     {
         "id": "weatherAnalog",
@@ -1080,7 +1084,7 @@
         "releaseDate": "Aug 4, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Mix and match complication slots, fonts, and themes to create a unique look.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1793923199
     },
@@ -1188,7 +1192,7 @@
         "releaseDate": "May 30, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Watch time come alive as digital clock fills with each passing second.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1793923199
     },
@@ -1226,7 +1230,7 @@
         "releaseDate": "May 8, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Animated digital clock movement. 6 custom complications & two time modes.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1793923199
     },
@@ -1556,7 +1560,9 @@
         "releaseDate": "Nov 30, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Gradient progress bars. 8 custom complications. Battery friendly. InfoBlock v2",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1794614399
     },
     {
         "id": "analogm3",
@@ -1573,7 +1579,9 @@
         "releaseDate": "Nov 16, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Unique material 3 design analog watch face. Customizable themes and watch hands.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1794614399
     },
     {
         "id": "glancex",
@@ -3069,7 +3077,7 @@
         "releaseDate": "Mar 28, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Fitness oriented digital watch face for Wear OS. Colorful and customizable.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1793923199
     },
