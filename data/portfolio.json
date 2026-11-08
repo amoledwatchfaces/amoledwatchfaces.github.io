@@ -1522,7 +1522,7 @@
         "releaseDate": "Dec 19, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Unique dual tone color themes and digital clock glow effect. Make it your own!",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.3,
         "saleEndTime": 1794095999
     },
@@ -2184,7 +2184,7 @@
         "releaseDate": "Feb 6, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Tactical Wear OS Watch face. Customizable & low power consumption. Pixel perfect",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.3,
         "saleEndTime": 1794095999
     },
