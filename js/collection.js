@@ -495,9 +495,21 @@ function initLatestRelease() {
   } else if (lang === 'es') {
     comingSoonText = 'Próximamente';
     comingSoonAction = 'Próximamente disponible en Google Play';
+  } else if (lang === 'fr') {
+    comingSoonText = 'Bientôt';
+    comingSoonAction = 'Bientôt disponible sur Google Play';
+  } else if (lang === 'it') {
+    comingSoonText = 'Prossimamente';
+    comingSoonAction = 'Disponibile a breve su Google Play';
+  } else if (lang === 'ko') {
+    comingSoonText = '출시 예정';
+    comingSoonAction = 'Google Play에서 곧 출시 예정';
   } else if (lang === 'pl') {
     comingSoonText = 'Wkrótce';
     comingSoonAction = 'Wkrótce dostępne w Google Play';
+  } else if (lang === 'pt') {
+    comingSoonText = 'Em breve';
+    comingSoonAction = 'Disponível em breve no Google Play';
   }
 
   const badgeStatusHtml = isAvail
@@ -542,7 +554,11 @@ function initLatestRelease() {
         ${slidesHtml}
       </div>`;
 
-  const releasePrefix = window.i18n ? window.i18n.t('latest_release.released', 'Released') : 'Released';
+  const releaseDateTimestamp = parseDate(latest.releaseDate);
+  const isUpcoming = !isAvail || (releaseDateTimestamp > Date.now());
+  const releasePrefix = isUpcoming
+    ? (window.i18n ? window.i18n.t('latest_release.release', 'Release') : 'Release')
+    : (window.i18n ? window.i18n.t('latest_release.released', 'Released') : 'Released');
 
   container.innerHTML = `
     <div class="latest-release-card">

@@ -32,7 +32,8 @@
   "latest_release": {
     "heading": "최신 출시작",
     "badge": "신규 출시",
-    "released": "출시일"
+    "released": "출시일",
+    "release": "출시"
   },
   "featured_deals": {
     "heading": "주요 할인 혜택",

@@ -32,7 +32,8 @@
   "latest_release": {
     "heading": "Latest Release",
     "badge": "NEW RELEASE",
-    "released": "Released"
+    "released": "Released",
+    "release": "Release"
   },
   "featured_deals": {
     "heading": "Featured Deals",

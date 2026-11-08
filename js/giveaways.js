@@ -194,19 +194,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const redeemBtnText = window.i18n ? window.i18n.t('giveaways.btn_redeem', 'Redeem on Google Play') : 'Redeem on Google Play';
     const claimNoteText = window.i18n ? window.i18n.t('giveaways.claim_note', 'Tap the button above to automatically apply this code on Google Play, or copy and paste it in the Play Store.') : 'Tap the button above to automatically apply this code on Google Play, or copy and paste it in the Play Store.';
 
+    const watchFaceUrl = (giveaway.playStoreUrl && giveaway.playStoreUrl.includes('details?id='))
+      ? giveaway.playStoreUrl
+      : (giveaway.packageName
+        ? `https://play.google.com/store/apps/details?id=${encodeURIComponent(giveaway.packageName)}`
+        : 'https://play.google.com/store/apps/dev?id=5591589606735981545');
+
     card.innerHTML = `
       <div id="badge-${giveaway.id}" class="giveaway-badge-top ${isAvailable ? '' : 'out-of-codes'}">
         <span class="live-dot" style="${isAvailable ? '' : 'background:#ef4444'}"></span>
         <span class="badge-text" data-i18n="${badgeKey}">${badgeText}</span>
       </div>
 
-      <div class="giveaway-icon-wrap">
+      <a href="${watchFaceUrl}" target="_blank" rel="noopener" class="giveaway-icon-wrap" aria-label="${escapeHtml(giveaway.title)} on Google Play">
         <img src="${getSafeIconUrl(giveaway.iconUrl)}" alt="${escapeHtml(giveaway.title)}" class="giveaway-icon" width="140" height="140" loading="lazy" decoding="async" />
-      </div>
+      </a>
 
-      <h2 class="giveaway-title">${escapeHtml(giveaway.title)}</h2>
+      <h2 class="giveaway-title">
+        <a href="${watchFaceUrl}" target="_blank" rel="noopener" class="giveaway-title-link">
+          ${escapeHtml(giveaway.title)}
+        </a>
+      </h2>
       <div class="giveaway-author">
-        by <a href="${giveaway.playStoreUrl || 'https://play.google.com/store/apps/dev?id=5591589606735981545'}" target="_blank" rel="noopener">amoledwatchfaces™</a>
+        by <a href="https://play.google.com/store/apps/dev?id=5591589606735981545" target="_blank" rel="noopener">amoledwatchfaces™</a>
       </div>
 
       <div class="giveaway-inventory">
