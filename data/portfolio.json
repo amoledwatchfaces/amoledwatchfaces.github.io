@@ -91,9 +91,9 @@
         "hasWeather": true,
         "isTrialEnabled": true,
         "hasAltImages": true,
-        "pushToken": "7eDjnsBUmRpD5i0jW+Gu3CuU9tgndBmrWvDFYKbvHxE=:MS4wLjA=",
+        "pushToken": "N5ca9ouaD554B1Vhn5iPXV9dnsNDRG/yCic9dILFANc=:MS4wLjA=",
         "releaseDate": "Sep 18, 2026",
-        "lastUpdated": "Sep 20, 2026",
+        "lastUpdated": "Nov 11, 2026",
         "shortDescription": "The original Adventurer watch face, redesigned with Material 3 Expressive.",
         "onSale": false
     },
@@ -1645,7 +1645,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Highly readable design. Material design. Watch Face Format. Battery friendly.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1794441599
     },
     {
@@ -2235,7 +2235,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background watch face. 7x custom complications & 30 color themes",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1794441599
     },
     {
@@ -2438,7 +2438,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Simple analog Wear OS watch face. Material style. True black BG. Customizable.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1794873599
     },
     {
@@ -2859,7 +2859,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "RUN series watch face. Big & Bold font, not OLED but optimized for all day use.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1794441599
     },
     {
@@ -3060,7 +3060,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Sporty digital watch face for Wear OS devices. Battery efficient and High-res.",
         "onSale": false,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1794182399
     },
     {
@@ -3202,7 +3202,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background fitness watch face for Wear OS, customizable, premium feel",
         "onSale": false,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1794182399
     },
     {
@@ -3644,7 +3644,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background minimal glowing effect digital Watch face for Wear OS",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1794873599
     },
     {
