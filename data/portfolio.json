@@ -734,7 +734,9 @@
         "releaseDate": "Mar 19, 2025",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Highly customizable, colorful, & informative watch face for outdoor adventures.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1795219199
     },
     {
         "id": "glide",
@@ -800,7 +802,7 @@
         "hasAltImages": false,
         "pushToken": "a7WEocRumulPDVe4v31DgLAZbarBpbxn0g1TlwhfjZg=:MS4wLjA=",
         "releaseDate": "Feb 17, 2025",
-        "lastUpdated": "Sep 16, 2026",
+        "lastUpdated": "Sep 17, 2026",
         "shortDescription": "Modern & highly customizable watch face, inspired by Galaxy Watch Ultra Analog.",
         "onSale": false
     },
@@ -963,7 +965,7 @@
         "hasAltImages": false,
         "pushToken": "P27J6k0pfLgmmpGIU5gMlr4eublibvccwmW9zkYUusE=:MS4wLjA=",
         "releaseDate": "Oct 27, 2024",
-        "lastUpdated": "Oct 26, 2026",
+        "lastUpdated": "Oct 27, 2026",
         "shortDescription": "Analog watch face with customizable themes, watch hands, and complications.",
         "onSale": false,
         "discount": 0.5,
@@ -1350,7 +1352,7 @@
         "hasAltImages": false,
         "pushToken": "Ly4ZfARqvPQ/lsH7rRIX/LrQjwa1AuvdMLc7MDwauTI=:MS4wLjA=",
         "releaseDate": "Mar 18, 2024",
-        "lastUpdated": "Aug 4, 2026",
+        "lastUpdated": "Nov 3, 2026",
         "shortDescription": "Unique watch face design. Watch Face Format. Battery friendly. True Black BG.",
         "onSale": false
     },
@@ -1629,7 +1631,7 @@
         "hasAltImages": false,
         "pushToken": "",
         "releaseDate": "Oct 29, 2023",
-        "lastUpdated": "Jul 12, 2026",
+        "lastUpdated": "Jul 13, 2026",
         "shortDescription": "Enough scrolling through the list of apps. Use Tile to launch favorite apps!",
         "onSale": false
     },
@@ -1720,7 +1722,7 @@
         "hasAltImages": false,
         "pushToken": "BH4BoubZGiDhGqtwO3/cvnHO82mEBEpBop3Y0a3NZx4=:MS4wLjA=",
         "releaseDate": "Sep 24, 2023",
-        "lastUpdated": "Oct 26, 2026",
+        "lastUpdated": "Oct 27, 2026",
         "shortDescription": "Modular design. Optional time font settings. Battery friendly & pixel perfect.",
         "onSale": false,
         "discount": 0.5,
@@ -3315,7 +3317,7 @@
         "releaseDate": "Jan 1, 2022",
         "lastUpdated": "Oct 27, 2026",
         "shortDescription": "Fitness and sporty digital watch face with true black background for Wear OS.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1794527999
     },
@@ -3687,7 +3689,9 @@
         "releaseDate": "Oct 25, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Premium and customizable battery friendly analog watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1795219199
     },
     {
         "id": "awfminimal",
