@@ -12,9 +12,9 @@
         "hasWeather": true,
         "isTrialEnabled": true,
         "hasAltImages": true,
-        "pushToken": "eJcb0fXS5it+JZM838iWT8ucZZKl4ifHi4WpgEY0Zqc=:MS4wLjA=",
+        "pushToken": "/UKEj08HfMyX/NmSXdo7p2sNRPhaSgnLDIsP0rk9MAI=:MS4wLjA=",
         "releaseDate": "Nov 13, 2026",
-        "lastUpdated": "Nov 3, 2026",
+        "lastUpdated": "Nov 14, 2026",
         "shortDescription": "Futuristic digital watch face with vibrant themes & custom complications.",
         "onSale": true,
         "discount": 0.2,
@@ -1746,7 +1746,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Sporty watch face made in Watch Face Format. Battery friendly and customizable.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1795305599
     },
     {
@@ -2114,7 +2114,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Battery friendly Wear OS watch face. Many color styles & custom complications.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1795305599
     },
     {
