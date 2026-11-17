@@ -205,9 +205,9 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 8, 2026",
+        "lastUpdated": "Aug 9, 2026",
         "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.4,
         "saleEndTime": 1794873599
     },
@@ -245,7 +245,9 @@
         "releaseDate": "Apr 23, 2026",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Only custom complications, that's it.",
-        "onSale": false
+        "onSale": true,
+        "discount": 1.0,
+        "saleEndTime": 1795564799
     },
     {
         "id": "digest",
@@ -738,7 +740,7 @@
         "shortDescription": "Highly customizable, colorful, & informative watch face for outdoor adventures.",
         "onSale": true,
         "discount": 0.5,
-        "saleEndTime": 1795219199
+        "saleEndTime": 1795305599
     },
     {
         "id": "glide",
@@ -808,7 +810,9 @@
         "releaseDate": "Feb 17, 2025",
         "lastUpdated": "Sep 17, 2026",
         "shortDescription": "Modern & highly customizable watch face, inspired by Galaxy Watch Ultra Analog.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1795305599
     },
     {
         "id": "maverick",
@@ -825,7 +829,9 @@
         "releaseDate": "Feb 5, 2025",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Time redefined. Maverick is your customizable watch face for everyday adventure.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1795564799
     },
     {
         "id": "radial",
@@ -842,7 +848,9 @@
         "releaseDate": "Jan 27, 2025",
         "lastUpdated": "Oct 27, 2026",
         "shortDescription": "Digital clock with optional fonts, encircled by 8 custom complications.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.4,
+        "saleEndTime": 1795564799
     },
     {
         "id": "kinetic",
@@ -1047,7 +1055,7 @@
         "shortDescription": "Colorful, customizable, & multilanguage watch face with text-based time display.",
         "onSale": true,
         "discount": 0.5,
-        "saleEndTime": 1794959999
+        "saleEndTime": 1795305599
     },
     {
         "id": "adventurer",
@@ -1064,7 +1072,7 @@
         "releaseDate": "Aug 20, 2024",
         "lastUpdated": "Aug 12, 2026",
         "shortDescription": "Complex & highly customizable watch face. Inspired by Active from Pixel Watch 3.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.4,
         "saleEndTime": 1794873599
     },
@@ -1136,7 +1144,7 @@
         "releaseDate": "Jul 23, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Goal-focused design. Optional fonts, material themes, & custom complications.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.4,
         "saleEndTime": 1794873599
     },
@@ -1322,7 +1330,9 @@
         "releaseDate": "Apr 4, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Be a Digital Nomad with this visually appealing & customizable watch face.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1795305599
     },
     {
         "id": "timeMode",
@@ -1358,7 +1368,9 @@
         "releaseDate": "Mar 18, 2024",
         "lastUpdated": "Nov 3, 2026",
         "shortDescription": "Unique watch face design. Watch Face Format. Battery friendly. True Black BG.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1795564799
     },
     {
         "id": "arcsd5",
@@ -1375,7 +1387,9 @@
         "releaseDate": "Mar 12, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Arcs digital version with customizable time fonts and 8 custom complications.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1795564799
     },
     {
         "id": "basicAnalog",
@@ -2191,7 +2205,7 @@
         "releaseDate": "Feb 13, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Track your heart rate in real time.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1794873599
     },
@@ -2453,7 +2467,7 @@
         "releaseDate": "Oct 25, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Simple analog Wear OS watch face. Material style. True black BG. Customizable.",
-        "onSale": true,
+        "onSale": false,
         "discount": 1,
         "saleEndTime": 1794873599
     },
@@ -2529,7 +2543,9 @@
         "releaseDate": "Sep 26, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Created for Wear OS. Material You design. Battery Friendly. Customizable.",
-        "onSale": false
+        "onSale": true,
+        "discount": 1.0,
+        "saleEndTime": 1795564799
     },
     {
         "id": "healthface2",
@@ -2622,7 +2638,9 @@
         "releaseDate": "Aug 3, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Material 3 design (Material You) Watch face for Wear OS /w custom complications",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1795564799
     },
     {
         "id": "tactq",
@@ -2984,7 +3002,7 @@
         "releaseDate": "Apr 6, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "OLED Studios analog watch face. Many customization options. Power efficient.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1794873599
     },
@@ -3003,7 +3021,7 @@
         "releaseDate": "Apr 4, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Wear OS 3+ watch face. Custom complications. App shortcuts. Multiple colors.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1794873599
     },
@@ -3456,7 +3474,7 @@
         "releaseDate": "Dec 1, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background digital watch face with high readable font for Wear OS",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1794873599
     },
@@ -3511,7 +3529,7 @@
         "releaseDate": "Nov 23, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Hoot Hoot! Unique, artistic & customizable watch face with a sleek owl look",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.4,
         "saleEndTime": 1794873599
     },
@@ -3642,7 +3660,9 @@
         "releaseDate": "Nov 3, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background sportive lifestyle analog watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.5,
+        "saleEndTime": 1795564799
     },
     {
         "id": "awfmnmlglow",
@@ -3659,7 +3679,7 @@
         "releaseDate": "Nov 1, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background minimal glowing effect digital Watch face for Wear OS",
-        "onSale": true,
+        "onSale": false,
         "discount": 1,
         "saleEndTime": 1794873599
     },
@@ -3716,7 +3736,9 @@
         "releaseDate": "Oct 23, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, minimal and battery friendly watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1795564799
     },
     {
         "id": "awfclassicface",
@@ -3788,7 +3810,7 @@
         "releaseDate": "Oct 11, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, Wear OS watch face with big digital numbers.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1794873599
     },
@@ -3898,7 +3920,7 @@
         "releaseDate": "Sep 30, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Unique Text Time watch face with beautiful colors. Read time without numbers.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.7,
         "saleEndTime": 1794873599
     },
@@ -3974,7 +3996,9 @@
         "releaseDate": "Sep 20, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, sporty and battery friendly analog watch face for Wear OS",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1795564799
     },
     {
         "id": "awfmohawk",
