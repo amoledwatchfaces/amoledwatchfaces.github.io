@@ -1,5 +1,24 @@
 [
     {
+        "id": "zodiac",
+        "appName": "Zodiac",
+        "packageName": "com.amoledwatchfaces.zodiac",
+        "isWatchFace": true,
+        "isAvailable": true,
+        "isAvailableOnGithub": false,
+        "isOpenSource": false,
+        "isFree": true,
+        "isAnalog": true,
+        "hasWeather": false,
+        "isTrialEnabled": false,
+        "hasAltImages": true,
+        "pushToken": "",
+        "releaseDate": "Nov 20, 2026",
+        "lastUpdated": "Nov 20, 2026",
+        "shortDescription": "Geometric watch face featuring dynamic time hands & dual time zone support.",
+        "onSale": false
+    },
+    {
         "id": "verge",
         "appName": "Verge",
         "packageName": "com.amoledwatchfaces.verge",
