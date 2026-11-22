@@ -393,7 +393,7 @@
         "hasAltImages": false,
         "pushToken": "FbFrrwIQemMDOEGAgIE1ARPNlsWhmvr4wgYwCYCVgeg=:MS4wLjA=",
         "releaseDate": "Jan 6, 2026",
-        "lastUpdated": "Aug 4, 2026",
+        "lastUpdated": "Nov 14, 2026",
         "shortDescription": "Highly customizable, power efficient analog watch face design. Make it your own.",
         "onSale": false,
         "discount": 0.4,
@@ -1794,7 +1794,7 @@
         "releaseDate": "Sep 11, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Sporty watch face made in Watch Face Format. Battery friendly and customizable.",
-        "onSale": true,
+        "onSale": false,
         "discount": 1,
         "saleEndTime": 1795305599
     },
@@ -2162,7 +2162,7 @@
         "releaseDate": "Mar 30, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Battery friendly Wear OS watch face. Many color styles & custom complications.",
-        "onSale": true,
+        "onSale": false,
         "discount": 1,
         "saleEndTime": 1795305599
     },
@@ -3418,7 +3418,9 @@
         "releaseDate": "Dec 14, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background watch face for Wear OS. LCD display font. Pixel perfect.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1795996799
     },
     {
         "id": "awfhikeone",
@@ -3530,7 +3532,9 @@
         "releaseDate": "Nov 29, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background Infograph digital Watch face for Wear OS",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1795996799
     },
     {
         "id": "awfsportxr",
@@ -3680,7 +3684,9 @@
         "releaseDate": "Nov 8, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1795564799
     },
     {
         "id": "awfmotion0x",
@@ -4253,7 +4259,7 @@
         "releaseDate": "Aug 23, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, battery friendly analog Watch face for Wear OS",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1795305599
     },
