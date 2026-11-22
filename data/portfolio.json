@@ -31,9 +31,9 @@
         "hasWeather": true,
         "isTrialEnabled": true,
         "hasAltImages": true,
-        "pushToken": "/UKEj08HfMyX/NmSXdo7p2sNRPhaSgnLDIsP0rk9MAI=:MS4wLjA=",
+        "pushToken": "38/CxvSvZ6j4AOicvpYwEYBk3pS+Sn18Qmmn75Ssm2A=:MS4wLjA=",
         "releaseDate": "Nov 13, 2026",
-        "lastUpdated": "Nov 16, 2026",
+        "lastUpdated": "Nov 22, 2026",
         "shortDescription": "Futuristic digital watch face with vibrant themes & custom complications.",
         "onSale": false,
         "discount": 0.2,
@@ -267,7 +267,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Only custom complications, that's it.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1795564799
     },
     {
@@ -2577,7 +2577,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Created for Wear OS. Material You design. Battery Friendly. Customizable.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1795564799
     },
     {
