@@ -17,11 +17,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  sync-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  sync-and-build:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.git-diff.outputs.changed }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -72,13 +71,27 @@ jobs:
         with:
           path: '.'
 
+  deploy:
+    needs: sync-and-build
+    if: needs.sync-and-build.outputs.changed == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
       - name: Deploy to GitHub Pages
-        if: steps.git-diff.outputs.changed == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
 
       - name: Purge Cloudflare CDN Cache
-        if: steps.git-diff.outputs.changed == 'true'
         env:
           CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
