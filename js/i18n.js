@@ -2566,7 +2566,7 @@
     if (!SUPPORTED_LANGS.includes(lang) || lang === currentLang) return;
     localStorage.setItem('lang', lang);
     const path = window.location.pathname;
-    const slug = path.replace(/^\/(?:de|es|pl|sk)\/?/, '').replace(/^\//, '');
+    const slug = path.replace(/^\/(?:de|es|fr|it|ko|pl|pt|sk)\/?/, '').replace(/^\//, '');
     const targetUrl = lang === 'en' ? (slug ? `/${slug}` : '/') : (slug ? `/${lang}/${slug}` : `/${lang}/`);
     window.location.href = targetUrl;
   }
