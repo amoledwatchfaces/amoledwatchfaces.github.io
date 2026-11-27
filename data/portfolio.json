@@ -1,5 +1,26 @@
 [
     {
+        "id": "nothing",
+        "appName": "Nothing, Just a Watch Face",
+        "packageName": "com.amoledwatchfaces.nothing",
+        "isWatchFace": true,
+        "isAvailable": true,
+        "isAvailableOnGithub": false,
+        "isOpenSource": false,
+        "isFree": false,
+        "isAnalog": false,
+        "hasWeather": true,
+        "isTrialEnabled": false,
+        "hasAltImages": true,
+        "pushToken": "",
+        "releaseDate": "Nov 27, 2026",
+        "lastUpdated": "Nov 20, 2026",
+        "shortDescription": "Sleek dot-matrix digital dial for Wear OS. Pure black, crisp & data-driven.",
+        "onSale": true,
+        "discount": 0.2,
+        "saleEndTime": 1796428799
+    },
+    {
         "id": "zodiac",
         "appName": "Zodiac",
         "packageName": "com.amoledwatchfaces.zodiac",
