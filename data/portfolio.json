@@ -1,7 +1,7 @@
 [
     {
         "id": "nothing",
-        "appName": "Nothing, Just a Watch Face",
+        "appName": "Nothing",
         "packageName": "com.amoledwatchfaces.nothing",
         "isWatchFace": true,
         "isAvailable": true,
