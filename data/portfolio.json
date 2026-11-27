@@ -10,7 +10,7 @@
         "isFree": false,
         "isAnalog": false,
         "hasWeather": true,
-        "isTrialEnabled": false,
+        "isTrialEnabled": true,
         "hasAltImages": true,
         "pushToken": "q4GGfnUvNObYNVecCsdfziUJSMjzVm2o8dPn5KFb0bA=:MS4wLjA=",
         "releaseDate": "Nov 27, 2026",
