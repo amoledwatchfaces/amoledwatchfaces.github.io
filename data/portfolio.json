@@ -12,9 +12,9 @@
         "hasWeather": true,
         "isTrialEnabled": false,
         "hasAltImages": true,
-        "pushToken": "",
+        "pushToken": "q4GGfnUvNObYNVecCsdfziUJSMjzVm2o8dPn5KFb0bA=:MS4wLjA=",
         "releaseDate": "Nov 27, 2026",
-        "lastUpdated": "Nov 20, 2026",
+        "lastUpdated": "Nov 27, 2026",
         "shortDescription": "Sleek dot-matrix digital dial for Wear OS. Pure black, crisp & data-driven.",
         "onSale": true,
         "discount": 0.2,
@@ -1380,7 +1380,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Inspired by Pixel Watch \"Classic\" watch face. Optimized & fully customizable.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1796255999
     },
     {
@@ -3041,7 +3041,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Premium feel digital Watch face. Glow effect. Battery friendly & pixel perfect.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1796255999
     },
     {
@@ -3411,7 +3411,7 @@
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background, pixel perfect, fitness digital watch face for Wear OS.",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1796255999
     },
     {
@@ -4127,7 +4127,7 @@
         "lastUpdated": "Oct 27, 2026",
         "shortDescription": "True black background & battery friendly health focused Watch face for Wear OS",
         "onSale": true,
-        "discount": 1.0,
+        "discount": 1,
         "saleEndTime": 1796255999
     },
     {
