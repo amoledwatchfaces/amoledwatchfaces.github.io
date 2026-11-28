@@ -14,7 +14,7 @@
         "hasAltImages": true,
         "pushToken": "hMj6BR7hkUtSeTcjhnHxCQk8bYMwO4zzGy8/vv0HkEs=:MS4wLjA=",
         "releaseDate": "Nov 27, 2026",
-        "lastUpdated": "Nov 27, 2026",
+        "lastUpdated": "Nov 20, 2026",
         "shortDescription": "Sleek dot-matrix digital dial for Wear OS. Pure black, crisp & data-driven.",
         "onSale": true,
         "discount": 0.2,
@@ -249,7 +249,7 @@
         "hasAltImages": true,
         "pushToken": "bG341G7NiKvjfE87uwuV0VaXFBenyP43GFuoAmFJrPs=:MS4wLjA=",
         "releaseDate": "May 25, 2026",
-        "lastUpdated": "Aug 8, 2026",
+        "lastUpdated": "Aug 9, 2026",
         "shortDescription": "Designed with a native Wear OS aesthetic. Customizable & battery friendly.",
         "onSale": false,
         "discount": 0.4,
@@ -365,7 +365,7 @@
         "releaseDate": "Feb 23, 2026",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Built for rough conditions with rugged, bold time and custom complications.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1795823999
     },
@@ -815,7 +815,7 @@
         "releaseDate": "Mar 13, 2025",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Big & bold digital clock, custom complications, active and modern design.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1795823999
     },
@@ -927,7 +927,7 @@
         "releaseDate": "Jan 9, 2025",
         "lastUpdated": "Oct 27, 2026",
         "shortDescription": "Stylish, dynamic watch face with themes, custom complications, and dark mode.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1795823999
     },
@@ -1191,7 +1191,7 @@
         "releaseDate": "Jul 27, 2024",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Current weather, conditions, forecast, chance of rain, UV & two complications.",
-        "onSale": true,
+        "onSale": false,
         "discount": 0.5,
         "saleEndTime": 1795823999
     },
@@ -2127,7 +2127,9 @@
         "releaseDate": "Apr 18, 2023",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Hybrid watch face with large digital clock and 8 custom complication slots.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1796515199
     },
     {
         "id": "photowatchface",
@@ -3061,7 +3063,7 @@
         "shortDescription": "Classic Watch face with 4 custom complications. Customizable. Battery friendly.",
         "onSale": true,
         "discount": 0.7,
-        "saleEndTime": 1796342399
+        "saleEndTime": 1796255999
     },
     {
         "id": "awfoledanalog",
@@ -3154,7 +3156,7 @@
         "shortDescription": "Unique digital watch face for fitness, sport. Battery friendly & pixel perfect.",
         "onSale": true,
         "discount": 0.7,
-        "saleEndTime": 1796428799
+        "saleEndTime": 1796255999
     },
     {
         "id": "rushe",
@@ -3228,7 +3230,9 @@
         "releaseDate": "Feb 22, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Informer X digital watch face. True black background. Pixel perfect design.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1796515199
     },
     {
         "id": "awfpixelanalog",
@@ -3336,7 +3340,9 @@
         "releaseDate": "Jan 26, 2022",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "Pixel perfect analog Watch face with many customization options for Wear OS",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1796515199
     },
     {
         "id": "awfpace2",
@@ -3735,7 +3741,7 @@
         "shortDescription": "True black background watch face for Wear OS.",
         "onSale": true,
         "discount": 0.7,
-        "saleEndTime": 1795996799
+        "saleEndTime": 1796255999
     },
     {
         "id": "awfmotion0x",
@@ -4257,7 +4263,9 @@
         "releaseDate": "Aug 29, 2021",
         "lastUpdated": "Aug 4, 2026",
         "shortDescription": "True black background and battery friendly hybrid watch face for Wear OS.",
-        "onSale": false
+        "onSale": true,
+        "discount": 0.7,
+        "saleEndTime": 1796515199
     },
     {
         "id": "awfpacepro",
